@@ -1,6 +1,7 @@
 {
   "processed_ids": [
-    "4mhrPQfCkJk"
+    "4mhrPQfCkJk",
+    "eA8CAWUZnso"
   ],
   "processed_videos": [
     {
@@ -10,10 +11,18 @@
       "md_file": "YT_Labodesreseaux_Transcript/2026-10-09_YT-4mhrPQfCkJk_Filmora 16 Les 5 NOUVEAUTÉS que j'attendais_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "html_file": "YT_Labodesreseaux_Transcript/2026-10-09_YT-4mhrPQfCkJk_Filmora 16 Les 5 NOUVEAUTÉS que j'attendais_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "screenshots_count": 56
+    },
+    {
+      "id": "eA8CAWUZnso",
+      "title": "Nano Banana 2.1 : LE TEST",
+      "upload_date": "20261007",
+      "md_file": "YT_Labodesreseaux_Transcript/2026-10-07_YT-eA8CAWUZnso_Nano Banana 2.1 LE TEST_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "html_file": "YT_Labodesreseaux_Transcript/2026-10-07_YT-eA8CAWUZnso_Nano Banana 2.1 LE TEST_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "screenshots_count": 47
     }
   ],
-  "last_run_timestamp": "2026-10-10T07:04:21Z",
-  "completed_count": 1,
+  "last_run_timestamp": "2026-10-10T07:11:19Z",
+  "completed_count": 2,
   "total_catalog_count": 1263,
   "status": "idle"
 }

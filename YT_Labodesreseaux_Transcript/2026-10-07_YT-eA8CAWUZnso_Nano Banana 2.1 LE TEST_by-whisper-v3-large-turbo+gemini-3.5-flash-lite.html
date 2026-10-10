@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Nano Banana 2.1 : LE TEST — Labo des Réseaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-box {
+            margin-bottom: 1.5rem;
+        }
+        .tools-box h3, .points-box h3 {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tool-tag {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #e2e8f0;
+            padding: 0.35rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .points-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .points-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Timeline Section */
+        section.timeline-section {
+            margin-top: 2rem;
+        }
+
+        .timeline-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            margin-bottom: 1.8rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        .timeline-block:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .timeline-time {
+            background: rgba(20, 30, 51, 0.7);
+            padding: 0.85rem 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 0.25rem 0.65rem;
+            border-radius: 0.35rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .verbatim-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 3px solid #10b981;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .verbatim-header, .visual-header, .screenshots-header {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .verbatim-text {
+            font-size: 0.96rem;
+            line-height: 1.65;
+            color: #f1f5f9;
+            font-style: italic;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.5);
+            border-left: 3px solid #8b5cf6;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: #cbd5e1;
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .visual-details strong {
+            color: #e2e8f0;
+        }
+
+        /* Screenshots grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 16, 28, 0.7);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px dashed rgba(148, 163, 184, 0.2);
+        }
+
+        .segment-screenshots-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.65rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .screenshot-card {
+            background: #0b1120;
+            border-radius: 0.6rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .img-wrapper {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .img-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .zoom-badge {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 0.2rem 0.55rem;
+            border-radius: 0.35rem;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .img-wrapper:hover .zoom-badge {
+            opacity: 1;
+        }
+
+        .screenshot-caption {
+            padding: 0.65rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #93c5fd;
+        }
+
+        .caption-text {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Nano Banana 2.1 : LE TEST</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📺 Labo Des Réseaux</span>
+                <a href="https://www.youtube.com/watch?v=eA8CAWUZnso" target="_blank" rel="noopener" class="badge badge-yt">
+                    ▶️ Voir sur YouTube (eA8CAWUZnso)
+                </a>
+                <span class="badge">📅 2026-10-07</span>
+                <span class="badge">⏱️ 9:29</span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            
+            <div class="summary-card">
+                <p>**Google vient de déployer la version 2.1 de son modèle de génération d&#x27;images, Nano Banana, venant remplacer la version 2 sur ses plateformes phares telles que Gemini et Google Flow, tout en devenant accessible via l&#x27;API de Gemini. À travers cette mise à jour, l&#x27;entreprise ambitionne d&#x27;apporter des corrections bienvenues sur les artefacts visuels, de consolider la gestion multimodale et de perfectionner la mise en page textuelle.**</p><p>**Pour mesurer la portée de ces évolutions, le créateur propose une batterie de tests comparatifs poussés face à la version 2.0 et face à la concurrence (notamment GPT Image 2.5 Sunburst via API). Si les résultats sur les styles textuels ou le photoréalisme relèvent davantage de l&#x27;ajustement incrémental que de la révolution technologique, des progrès notables se distinguent nettement dans l&#x27;intégration d&#x27;images de référence multiples, la cohérence des compositions et l&#x27;édition conversationnelle.**</p><p>**L&#x27;analyse met également en lumière les nouvelles synergies déployées au sein de l&#x27;écosystème Google, à l&#x27;instar de la fonctionnalité « Demander à Studio » intégrée directement à l&#x27;interface YouTube pour automatiser la création de miniatures contextuelles. En conclusion, bien que cette mouture 2.1 prépare le terrain aux prochaines grandes annonces attendues autour de Gemini 4 Argon, elle s&#x27;impose d&#x27;ores et déjà comme un outil de choix hautement performant, en particulier pour la conception d&#x27;infographies complexes en français.**</p>
+            </div>
+
+            <div class="tools-box">
+                <h3>🛠️ Outils, Modèles & Logiciels Présentés</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">Google Nano Banana 2.1 &amp; 2.0** (Modèles phares de génération d&#x27;images de Google)</span><span class="tool-tag">Google Gemini &amp; API Gemini** (Interface conversationnelle et accès programmatique)</span><span class="tool-tag">Google Flow** (Plateforme de création et d&#x27;édition d&#x27;images de Google)</span><span class="tool-tag">Plateforme Xfield / Higgsfield.ai** (Environnement de test multi-modèles via API)</span><span class="tool-tag">GPT Image 2.5 Sunburst** (Modèle concurrent utilisé pour les benchmarks de performance)</span><span class="tool-tag">YouTube Studio / Fonctionnalité « Demander à Studio »** (Outil natif d&#x27;automatisation des miniatures)</span>
+                </div>
+            </div>
+
+            <div class="points-box">
+                <h3>🔑 Points Clés & Enseignements Stratégiques</h3>
+                <ul>
+                    <li><span class="point-bullet">✦</span><span>Évolution incrémentale :** La version 2.1 de Nano Banana ne révolutionne pas le marché mais apporte des optimisations ciblées en matière de qualité visuelle et de réalisme (du 1K jusqu&#x27;au 4K).</span></li><li><span class="point-bullet">✦</span><span>Édition conversationnelle fluide :** Le modèle conserve une forte cohérence stylistique lors de modifications successives au sein d&#x27;une même session sur Google Flow (ajout d&#x27;éléments, modification des décors).</span></li><li><span class="point-bullet">✦</span><span>Capacités multimodales étendues :** Le système intègre désormais la fusion simultanée de jusqu&#x27;à 14 images de référence (réparties en 4 personnages et 10 objets).</span></li><li><span class="point-bullet">✦</span><span>Paramètre de réflexion configurable :** L&#x27;utilisateur peut ajuster le niveau de réflexion du modèle selon trois modes (minimum, médium et par défaut).</span></li><li><span class="point-bullet">✦</span><span>Gestion du texte et infographies :** Amélioration majeure de la mise en page textuelle et de l&#x27;orthographe, avec un bilinguisme enfin maîtrisé permettant de générer des infographies complexes entièrement en français sans mélange linguistique indésirable.</span></li><li><span class="point-bullet">✦</span><span>Limites sur les visages de référence :** Bien que la composition globale et l&#x27;éclairage progressent, le rendu des visages humains à partir d&#x27;une fiche personnage reste perfectible comparé à certains modèles concurrents.</span></li><li><span class="point-bullet">✦</span><span>Performances comparatives :** Face à GPT Image 2.5 Sunburst, le modèle de Google accuse parfois un léger retard sur la fidélité stricte des traits du visage, mais compense par des structures de composition et des éclairages naturels très réussis.</span></li><li><span class="point-bullet">✦</span><span>Automatisation des miniatures YouTube :** L&#x27;outil « Demander à Studio » analyse la dernière vidéo longue publiée pour proposer automatiquement une miniature contextuelle intégrant le sujet, le titre, le personnage et les logos adaptés.</span></li><li><span class="point-bullet">✦</span><span>Cas d&#x27;usage optimal :** C&#x27;est principalement sur la conception d&#x27;infographies textuelles et la mise en scène d&#x27;objets multiples que Nano Banana 2.1 déploie son plein potentiel stratégique.</span></li><li><span class="point-bullet">✦</span><span>Perspective d&#x27;avenir :** Cette mise à jour mineure s&#x27;inscrit dans une transition technique en attendant le lancement imminent des modèles de nouvelle génération, tel que Gemini 4 Argon.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle</h2>
+            
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Google met à jour son modèle d&#x27;image, Nano Banana passe à la version 2.1. Une nouvelle version qui va remplacer Nano Banana 2 sur Gemini ou encore Google Flow et qui sera aussi disponible via l&#x27;API de Gemini. Donc pour y avoir accès via Google Gemini c&#x27;est très très simple, il suffira de créer une image, ça sera automatiquement ce nouveau modèle qui sera utilisé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la documentation DeepMind et l&#x27;interface de Google Gemini.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de présentation de Nano Banana 2.1, liste des canaux de distribution (Application Gemini, Google AI Studio, API Gemini, Google Flow, etc.), et interface de génération d&#x27;images avec un visuel de chalutier.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente les nouveautés de la mise à jour Nano Banana 2.1, montre sa documentation officielle et l&#x27;interface de génération sur Gemini.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_01_000001.jpg" alt="Présentation du modèle Nano Banana 2.1 avec une illustration visuelle et une description textuelle des améliorations." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_01_000001.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:01</span>
+                        <span class="caption-text">Présentation du modèle Nano Banana 2.1 avec une illustration visuelle et une description textuelle des améliorations.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_01_000010.jpg" alt="Page web de documentation DeepMind listant les différents canaux de distribution du modèle Nano Banana 2.1." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_01_000010.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Page web de documentation DeepMind listant les différents canaux de distribution du modèle Nano Banana 2.1.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_01_000019.jpg" alt="Interface de l&#x27;application Google Gemini affichant une image générée d&#x27;un bateau de pêche en mer et le champ de prompt." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_01_000019.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Interface de l&#x27;application Google Gemini affichant une image générée d&#x27;un bateau de pêche en mer et le champ de prompt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:21 - 00:00:43</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La même chose en se rendant sur Google Flow. Alors, ce nouveau modèle, on nous annonce une légère évolution par rapport au précédent Google Nano Banana 2. Que ça soit dans le texte ou image, ou dans l&#x27;utilisation de référence, ou dans ses capacités d&#x27;édition, on voit à chaque fois sur les différentes catégories une légère amélioration, même si ce n&#x27;est pas un grand bond en avant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, interface Google Flow et site de documentation Google DeepMind.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de sélection de modèles IA (Nano Banana Pro, Nano Banana 2 Lite, Nano Banana 2.1) et tableaux de scores d&#x27;évaluation des performances.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue entre l&#x27;interface de génération et les cartes de modèles de Google DeepMind pour analyser les performances.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_02_000022.jpg" alt="Interface de Google Flow montrant le menu déroulant de sélection des modèles d&#x27;intelligence artificielle." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_02_000022.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:22</span>
+                        <span class="caption-text">Interface de Google Flow montrant le menu déroulant de sélection des modèles d&#x27;intelligence artificielle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_02_000032.jpg" alt="Page de documentation Google DeepMind présentant les tableaux comparatifs des capacités d&#x27;édition du modèle." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_02_000032.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:32</span>
+                        <span class="caption-text">Page de documentation Google DeepMind présentant les tableaux comparatifs des capacités d&#x27;édition du modèle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_02_000041.jpg" alt="Page de documentation Google DeepMind montrant les benchmarks et fonctionnalités de conversion de texte en image." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_02_000041.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:41</span>
+                        <span class="caption-text">Page de documentation Google DeepMind montrant les benchmarks et fonctionnalités de conversion de texte en image.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:43 - 00:01:03</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Du coup, j&#x27;ai voulu voir un petit peu ce qui changeait de mon côté. Une des premières bonnes nouvelles, c&#x27;est dans sa capacité d&#x27;édition à travers la même conversation. Par exemple, ici avec Google Flow, où on est passé d&#x27;une image, ici la voiture jaune dans un ciel bleu, avec la modification de la voiture en rouge, le changement du ciel pour que ça soit la nuit, l&#x27;ajout d&#x27;une caravane à la voiture.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Google Flow (navigateur Google Chrome).</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL Google Flow, images générées de voiture volante, barres de prompts et historique des modifications.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur montre l&#x27;historique des modifications d&#x27;une image étape par étape dans Google Flow.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_03_000044.jpg" alt="Interface de Google Flow montrant une image finale avec une voiture rouge volante et une caravane sur fond de ciel nocturne étoilé." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_03_000044.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:44</span>
+                        <span class="caption-text">Interface de Google Flow montrant une image finale avec une voiture rouge volante et une caravane sur fond de ciel nocturne étoilé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_03_000053.jpg" alt="Interface de Google Flow affichant l&#x27;image initiale d&#x27;une voiture jaune volante dans un ciel bleu avec des nuages." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_03_000053.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:53</span>
+                        <span class="caption-text">Interface de Google Flow affichant l&#x27;image initiale d&#x27;une voiture jaune volante dans un ciel bleu avec des nuages.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_03_000101.jpg" alt="Interface de Google Flow affichant une étape intermédiaire de modification avec un ciel de nuit et une voiture rouge tractant une caravane." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_03_000101.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:01</span>
+                        <span class="caption-text">Interface de Google Flow affichant une étape intermédiaire de modification avec un ciel de nuit et une voiture rouge tractant une caravane.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:03 - 00:01:26</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On voit qu&#x27;à chaque fois, on a la même cohérence et la qualité qui a été préservée à travers les différents designs. Ensuite, j&#x27;ai continué l&#x27;exercice en voulant ajouter ici une image référence extérieure, donc celle du chien, en indiquant que celui-ci sort la tête de la fenêtre. Là, par contre, le résultat est un petit peu moins bien, malgré le fait que le prompt a été compris perd tout de suite en réalisme.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web (Google Chrome) avec l&#x27;interface de Google Flow.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL de Google Flow, interface web du générateur d&#x27;images/vidéos montrant un résultat visuel avec une voiture rouge tractant une caravane, volant dans un ciel étoilé au-dessus des nuages, avec un chien qui passe la tête par la fenêtre.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le résultat de l&#x27;ajout d&#x27;une image référence extérieure (le chien) dans Google Flow, en précisant que le résultat est un peu moins bien.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_04_000124.jpg" alt="Interface du navigateur affichant le projet Google Flow avec une image générée montrant une voiture volante et une caravane au-dessus des nuages avec un chien à la fenêtre, et le créateur en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_04_000124.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Interface du navigateur affichant le projet Google Flow avec une image générée montrant une voiture volante et une caravane au-dessus des nuages avec un chien à la fenêtre, et le créateur en bas à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:26 - 00:01:52</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">D&#x27;ailleurs si on va en détail dans la documentation les nouveautés qui sont mises en avant c&#x27;est une qualité visuelle et un réalisme amélioré pour les sorties que ce soit en 1K jusqu&#x27;à la 4K une correction des artefacts une amélioration du rang du texte surtout sur la mise en page d&#x27;infographie la fusion jusqu&#x27;à 14 images référence donc 4 personnages et 10 objets un ancrage à la recherche web et aux images de Google et un niveau de réflexion configurable donc minimum, médium et par défaut.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la documentation technique de Gemini API (Google AI Studio).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte descriptif de &quot;Gemini Nano Banana 2.1&quot; détaillant les résolutions 1K à 4K, la correction d&#x27;artefacts, le rendu du texte et la fusion d&#x27;images.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente et commente en direct la documentation officielle des nouveautés de l&#x27;API Gemini.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_05_000127.jpg" alt="Capture d&#x27;écran de la documentation officielle de Gemini API présentant Gemini Nano Banana 2.1 et ses nouveautés." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_05_000127.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:27</span>
+                        <span class="caption-text">Capture d&#x27;écran de la documentation officielle de Gemini API présentant Gemini Nano Banana 2.1 et ses nouveautés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_05_000139.jpg" alt="Capture d&#x27;écran similaire montrant la liste des principales nouveautés de Gemini Nano Banana 2.1." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_05_000139.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:39</span>
+                        <span class="caption-text">Capture d&#x27;écran similaire montrant la liste des principales nouveautés de Gemini Nano Banana 2.1.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_05_000150.jpg" alt="Capture d&#x27;écran centrée sur la fin de la liste des fonctionnalités du modèle Gemini Nano Banana 2.1." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_05_000150.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:50</span>
+                        <span class="caption-text">Capture d&#x27;écran centrée sur la fin de la liste des fonctionnalités du modèle Gemini Nano Banana 2.1.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:52 - 00:02:12</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On va voir tout de suite maintenant avec des tests comparatifs. Et pour ça, je suis passé par la plateforme Xfield qui permet d&#x27;avoir les deux modèles en API. Donc tout d&#x27;abord, texte ou vidéo avec des prompts construits. Exemple ici avec un Jack Russell faisant du scooter. Ici donc, on est bien sur la version 2.1. Comparatif avec le même prompt sur la version 2.0.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, plateforme Higgsfield (higgsfield.ai)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau latéral affichant le prompt en anglais, modèle utilisé (Nano Banana 2.1 et Nano Banana 2), paramètres de taille et qualité, vidéo générée d&#x27;un Jack Russell en scooter.</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison côte à côte ou séquentielle entre les versions 2 et 2.1 du modèle de génération vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_06_000202.jpg" alt="Interface de la plateforme Higgsfield affichant le résultat du modèle Banana 2.1 avec un chien sur un scooter et le panneau jaune &#x27;Banana 2.1&#x27;." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_06_000202.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:02</span>
+                        <span class="caption-text">Interface de la plateforme Higgsfield affichant le résultat du modèle Banana 2.1 avec un chien sur un scooter et le panneau jaune &#x27;Banana 2.1&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_06_000211.jpg" alt="Interface de la plateforme Higgsfield affichant le résultat de la version précédente Nano Banana 2 avec le même prompt et le panneau jaune &#x27;Banana 2&#x27;." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_06_000211.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Interface de la plateforme Higgsfield affichant le résultat de la version précédente Nano Banana 2 avec le même prompt et le panneau jaune &#x27;Banana 2&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:13 - 00:02:47</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On voit qu&#x27;on a une qualité d&#x27;image similaire, mais peut-être une meilleure compréhension dans le sens où là on n&#x27;a pas le sentiment que le scooter est en mouvement malgré que l&#x27;arrière-plan est en flou et ici la scène donne plus de cohérence à noter aussi la lumière sur le poil du Jack Russell c&#x27;est un léger détail mais une image qui semble un tout petit peu supérieure j&#x27;ai voulu essayer aussi avec d&#x27;autres styles et surtout en ajoutant du texte puisque c&#x27;était une fonctionnalité qui était mise en avant donc ici on est sur 2.1 avec un étudiant qui doit copier au tableau je n&#x27;utiliserai pas l&#x27;IA dans un style animé</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, plateforme Higgsfield.ai, incrustation vidéo du présentateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL de Higgsfield, vignette vidéo avec étiquette &quot;Banana 2&quot; et &quot;Banana 2.1&quot;, panneau de prompt latéral détaillant les paramètres de génération.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur compare deux générations de vidéos en analysant la qualité visuelle, la cohérence du mouvement et les détails.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_07_000214.jpg" alt="Interface du site Higgsfield affichant une vidéo générée d&#x27;un Jack Russell portant un casque et conduisant un scooter, avec le présentateur en incrustation." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_07_000214.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:14</span>
+                        <span class="caption-text">Interface du site Higgsfield affichant une vidéo générée d&#x27;un Jack Russell portant un casque et conduisant un scooter, avec le présentateur en incrustation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_07_000246.jpg" alt="Interface du site Higgsfield montrant une autre génération avec un élève écrivant sur un tableau noir et le panneau de prompt latéral visible." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_07_000246.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Interface du site Higgsfield montrant une autre génération avec un élève écrivant sur un tableau noir et le panneau de prompt latéral visible.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:47 - 00:03:20</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">la scène me convient sauf la place du tableau bien sûr puisqu&#x27;elle a été mis au milieu de la classe à noter qu&#x27;avec nano banana 2 on avait quelque chose qui était très bien aussi et peut-être même ici plus exploitable par rapport à vos 2.1 ici sur un style claymation en 2.1 avec un inspecteur qui interroge un serveur en fin de service là le détail qui me dérange un petit peu c&#x27;est l&#x27;inscription du café qui a été mal réalisé en arrière plan Par contre les détails de la scène derrière, on voit bien les tasses en fin de journée, le menu, la buée de fin de soirée avec l&#x27;éclairage, c&#x27;est pas trop mal.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, plateforme de génération d&#x27;images (Higgsfield AI), panneau latéral de prompts et détails techniques.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image de style claymation représentant un inspecteur de police interrogeant un serveur dans un café, prompt détaillé dans le panneau latéral, modèle &quot;Nano Banana 2.1&quot;, résolution 1376x768.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et analyse comparative d&#x27;une image générée avec le modèle Nano Banana 2.1 illustrant une scène de style claymation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_08_000304.jpg" alt="Interface de la plateforme montrant une image générée dans un style claymation avec un inspecteur et un serveur dans un café, et le panneau latéral affichant le prompt et le modèle Nano Banana 2.1." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_08_000304.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:04</span>
+                        <span class="caption-text">Interface de la plateforme montrant une image générée dans un style claymation avec un inspecteur et un serveur dans un café, et le panneau latéral affichant le prompt et le modèle Nano Banana 2.1.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_08_000319.jpg" alt="Même interface de la plateforme de génération d&#x27;images avec le rendu claymation et le panneau de détails du modèle Nano Banana 2.1, avec un bouton d&#x27;enregistrement visible en haut à gauche." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_08_000319.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:19</span>
+                        <span class="caption-text">Même interface de la plateforme de génération d&#x27;images avec le rendu claymation et le panneau de détails du modèle Nano Banana 2.1, avec un bouton d&#x27;enregistrement visible en haut à gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:21 - 00:03:46</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais encore une fois ici sur du 2.0, on voit vraiment pas trop la différence. Et même ici il a bien réussi à mettre le café même si au dessus c&#x27;est illisible. Pareil en termes de détails d&#x27;arrière-plan, aucun souci, ça se vaut. Pour du photoréalisme, ici on est sur Nano Banana 2. et là je voulais que le personnage principal boit un matcha et qu&#x27;à côté il y ait un journal qui dit l&#x27;automne sera doux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de Higgsfield AI (assets et détails de génération).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau de détails avec le modèle &#x27;Nano Banana 2&#x27;, le prompt textuel descriptif et l&#x27;image générée.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente et analyse les résultats visuels obtenus avec le modèle d&#x27;IA Banana 2.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_09_000322.jpg" alt="Interface du générateur avec une image générée montrant deux personnages en pâte à modeler dans un café, étiquetée Banana 2." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_09_000322.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:22</span>
+                        <span class="caption-text">Interface du générateur avec une image générée montrant deux personnages en pâte à modeler dans un café, étiquetée Banana 2.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_09_000333.jpg" alt="Gros plan sur la même image générée montrant les détails des personnages et du décor de café style stop-motion." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_09_000333.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:33</span>
+                        <span class="caption-text">Gros plan sur la même image générée montrant les détails des personnages et du décor de café style stop-motion.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_09_000344.jpg" alt="Affichage d&#x27;une autre image générée sur le modèle Banana 2 représentant une femme buvant un matcha sur un banc de parc." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_09_000344.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:44</span>
+                        <span class="caption-text">Affichage d&#x27;une autre image générée sur le modèle Banana 2 représentant une femme buvant un matcha sur un banc de parc.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:46 - 00:04:08</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le problème c&#x27;est qu&#x27;ici on a un manque de cohérence puisque on ne sait pas où le banc commence et fini ou alors c&#x27;est une table, pas terrible. A noter qu&#x27;à chaque fois je fais seulement une seule génération et ça c&#x27;est sur Nano Banana 2.1 ou si le matcha latte est beaucoup plus respecté. Bon après sur la lumière c&#x27;est quasiment pareil par contre sur la mise en scène il a bien réussi à mettre le journal à côté.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de Higgsfield AI (higgsfield.ai) avec un panneau latéral de détails et de prompt.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image générée d&#x27;une femme tenant un matcha latte sur un banc, panneau latéral affichant le prompt détaillé et les détails techniques (Modèle: Nano Banana 2.1, Dimensions: 1376x768).
+[DESC_IMAGE_2] Le créateur analyse l&#x27;image générée en soulignant la qualité du rendu du matcha latte et les défauts de cohérence du banc.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_10_000357.jpg" alt="Interface du générateur d&#x27;images affichant le résultat généré avec le modèle Nano Banana 2.1, montrant une femme sur un banc avec un matcha latte et un journal." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_10_000357.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:57</span>
+                        <span class="caption-text">Interface du générateur d&#x27;images affichant le résultat généré avec le modèle Nano Banana 2.1, montrant une femme sur un banc avec un matcha latte et un journal.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_10_000407.jpg" alt="Même vue sur l&#x27;interface du générateur d&#x27;images Higgsfield avec le modèle Nano Banana 2.1, illustrant les détails de génération et le prompt textuel." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_10_000407.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:07</span>
+                        <span class="caption-text">Même vue sur l&#x27;interface du générateur d&#x27;images Higgsfield avec le modèle Nano Banana 2.1, illustrant les détails de génération et le prompt textuel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:08 - 00:04:31</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par contre, autant sur Nano Banana 2, j&#x27;avais le monde qui était indiqué. Ici, j&#x27;ai une marque de journal que je n&#x27;arrive pas à déchiffrer. Le titre est bien présent et c&#x27;est celui-ci qui était bien indiqué dans mon prompt. Donc texte ou image, on peut dire une très très légère évolution, pas une révolution. Par contre, il est annoncé que normalement, il est meilleur sur les images référence.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la plateforme Higgsfield.ai</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image générée avec texte lisible, interface latérale avec panneau &#x27;Prompt&#x27; et détails du modèle &#x27;Banana 2&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur analyse et compare le rendu textuel des images générées par les différentes versions d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_11_000409.jpg" alt="Image générée par IA montrant une femme buvant une boisson sur un banc avec un journal affichant le texte &#x27;L&#x27;automne sera doux&#x27;." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_11_000409.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:09</span>
+                        <span class="caption-text">Image générée par IA montrant une femme buvant une boisson sur un banc avec un journal affichant le texte &#x27;L&#x27;automne sera doux&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_11_000429.jpg" alt="Interface de la plateforme Higgsfield montrant une image générée avec le modèle &#x27;Banana 2&#x27; où le créateur boit un café sur le vieux port." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_11_000429.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:29</span>
+                        <span class="caption-text">Interface de la plateforme Higgsfield montrant une image générée avec le modèle &#x27;Banana 2&#x27; où le créateur boit un café sur le vieux port.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:31 - 00:04:52</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On a tenté avec un prompt simple et une image référence d&#x27;une fiche personnage, donc la mienne, d&#x27;indiquer il boit un café sur le Vioport à midi. En termes de visage sur les modèles de Google, on a toujours un petit souci. On a toujours ces petits détails qui s&#x27;ajoutent. Donc là par exemple, si on zoom, terrasse synaptotique notre d&#x27;arbre, il s&#x27;est embrouillé à vouloir en faire trop.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la plateforme Higgsfield.ai (section Assets)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Une image de référence de personnage (sheet) présentant quatre angles différents du créateur, avec un panneau latéral de détails (Source : Original Upload, Type : Image, Format : JPG).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente sa propre fiche personnage utilisée comme image de référence pour tester la génération d&#x27;images par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_12_000432.jpg" alt="Capture d&#x27;écran de l&#x27;interface du générateur Higgsfield AI montrant une fiche personnage avec différentes vues (portrait, face, dos, profil)." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_12_000432.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:32</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface du générateur Higgsfield AI montrant une fiche personnage avec différentes vues (portrait, face, dos, profil).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:53 - 00:05:15</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le même prompt cette fois-ci avec 2.1. Et là j&#x27;ai été agréablement surpris. Même si encore on n&#x27;a pas un visage référence qui est à 100%, la composition est beaucoup plus agréable. avec une mise en scène et puis une lumière de midi qui fait beaucoup plus naturel. Donc ici, avantage à 2.1. Et je n&#x27;ai pas pu me retenir comme on est sur de l&#x27;image référence. De comparer aussi avec GPT 2.5, ici j&#x27;ai pris le modèle API Sunburst.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de la plateforme Higgsfield (higgsfield.ai) avec un panneau latéral de détails et de prompts, et l&#x27;incrustation vidéo du créateur en bas à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL Higgsfield, panneaux &quot;PROMPT&quot; avec une image de référence (visage), texte du prompt &quot;il boit un café sur le vieux port à midi&quot;, et encarts texte &quot;Banana 2.1&quot; et &quot;GPT 2.5 Sunburst&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur compare les rendus visuels générés par différents modèles d&#x27;IA (Banana 2.1 versus GPT 2.5 Sunburst) en commentant la qualité de la composition et de la lumière.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_13_000454.jpg" alt="Affichage d&#x27;un test comparatif sur l&#x27;interface d&#x27;Higgsfield montrant une image générée avec Banana 2.1 sur le Vieux-Port." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_13_000454.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:54</span>
+                        <span class="caption-text">Affichage d&#x27;un test comparatif sur l&#x27;interface d&#x27;Higgsfield montrant une image générée avec Banana 2.1 sur le Vieux-Port.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_13_000514.jpg" alt="Affichage d&#x27;un test comparatif avec GPT 2.5 Sunburst montrant un rendu d&#x27;image générée sur le Vieux-Port de Marseille." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_13_000514.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:14</span>
+                        <span class="caption-text">Affichage d&#x27;un test comparatif avec GPT 2.5 Sunburst montrant un rendu d&#x27;image générée sur le Vieux-Port de Marseille.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:16 - 00:05:38</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Là, c&#x27;est vrai qu&#x27;en termes de référence visage, il est meilleur que les modèles Google. Et pareil en termes de texte, même si ici derrière, ça fait un petit peu IA, je n&#x27;ai pas de faute. Et donc pour de l&#x27;IA, j&#x27;ai un résultat quand même satisfaisant. Alors ensuite, on nous dit que le modèle est quand même plus intelligent et il arrive à comprendre mieux les consignes. Donc ici je l&#x27;ai testé dans une mise en situation, celle de la réalisation de la miniature de cette vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la plateforme Higgsfield (higgsfield.ai).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image générée montrant un homme tenant deux bananes avec le texte &#x27;Nano Banana 2.1&#x27; en arrière-plan, et un panneau latéral affichant le prompt textuel et les références d&#x27;images (@image 1, @image 2).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente le résultat de la génération d&#x27;image avec l&#x27;intégration de texte et de visages cohérents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_14_000536.jpg" alt="Capture d&#x27;écran de l&#x27;interface de l&#x27;outil Higgsfield affichant l&#x27;image générée avec le texte &#x27;Nano Banana 2.1&#x27; et le panneau latéral avec le prompt et les détails." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_14_000536.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:36</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de l&#x27;outil Higgsfield affichant l&#x27;image générée avec le texte &#x27;Nano Banana 2.1&#x27; et le panneau latéral avec le prompt et les détails.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:38 - 00:06:03</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En commençant déjà par le modèle 2.0, donc le prompt dans une miniature YouTube, au milieu on voit le personnage, remplace la tête du personnage de l&#x27;image 1, pour la référence c&#x27;est David Goudeneuf, avec ma fiche caractère. Je ne veux pas qu&#x27;il change le costume, par contre il change la tête du personnage pour mettre celle du numéro 2, en essayant de garder l&#x27;expression du personnage 1, et en lui faisant tenir une banane dans chaque main avec le titre au-dessus, Nano Banana 2.1.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:04 - 00:06:23</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On voit qu&#x27;avec Nano Banana 2, la consigne de garder le costume a pas été trop respectée. Pareil, les bananes pas trop sexy. La tête du personnage qui garde l&#x27;expression, ça va encore. Par contre, avec Nano Banana 2.1, on est un petit peu mieux, c&#x27;est-à-dire qu&#x27;on a bien le costume qui a été respecté et même en termes de composition, c&#x27;est beaucoup plus sympa.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de l&#x27;outil Higgsfield AI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image générée avec le texte &quot;NANO BANANA 2.1&quot;, un panneau latéral affichant les images de référence (@image 1, @image 2) et le prompt textuel décrivant la composition.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente le résultat visuel amélioré obtenu avec la version Nano Banana 2.1 par rapport à la version précédente.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_16_000621.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface du générateur avec le résultat de Nano Banana 2.1 et le prompt utilisé." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_16_000621.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:21</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface du générateur avec le résultat de Nano Banana 2.1 et le prompt utilisé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:23 - 00:06:49</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sur la tête, on a un peu un mix entre les deux têtes. et je refais le test avec GPT-image 2.5, Sunburst, et je trouve que c&#x27;est le résultat le plus original et la composition la plus réussie. D&#x27;ailleurs, je pense que je mettrai les deux miniatures en AB testing et je pense que c&#x27;est celle-ci qui va ressortir sur le long terme. Ce modèle 2.1, il va être intéressant dans l&#x27;utilisation des autres outils de Google comme YouTube, où on voit, on a une nouveauté maintenant, c&#x27;est demander à Studio ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, Higgsfield, YouTube Studio</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface Higgsfield avec affichage d&#x27;une image générée (miniature YouTube &#x27;Nano Banana 2.1&#x27;) et d&#x27;un prompt textuel, ainsi que le tableau de bord YouTube Studio avec la liste des vidéos de la chaîne.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une miniature générée par IA sur Higgsfield et évoque l&#x27;utilisation de YouTube Studio pour les tests A/B.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_17_000636.jpg" alt="Capture d&#x27;écran du site Higgsfield montrant une miniature YouTube générée avec le texte &#x27;Nano Banana 2.1&#x27; et le créateur tenant des bananes, avec le panneau de prompt et la webcam du créateur en incrustation." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_17_000636.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:36</span>
+                        <span class="caption-text">Capture d&#x27;écran du site Higgsfield montrant une miniature YouTube générée avec le texte &#x27;Nano Banana 2.1&#x27; et le créateur tenant des bananes, avec le panneau de prompt et la webcam du créateur en incrustation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_17_000648.jpg" alt="Capture d&#x27;écran du tableau de bord YouTube Studio montrant la liste des vidéos publiées et le contenu de la chaîne, avec la webcam du créateur en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_17_000648.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:48</span>
+                        <span class="caption-text">Capture d&#x27;écran du tableau de bord YouTube Studio montrant la liste des vidéos publiées et le contenu de la chaîne, avec la webcam du créateur en bas à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:50 - 00:07:09</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et par exemple, on peut demander de créer notre miniature pour notre vidéo YouTube directement depuis la plateforme. Donc en utilisant Studio, tu demandes « Génère une miniature pour ma dernière vidéo longue ». Et ce que je trouve intéressant, c&#x27;est qu&#x27;on va avoir YouTube qui va analyser notre dernière vidéo et qui va directement nous proposer une miniature en tenant compte de la composition de la vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> YouTube Studio / Panneau latéral &#x27;Demander à Studio&#x27;</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt utilisateur « Génère une miniature pour ma dernière vidéo longue » et messages de l&#x27;assistant IA « Obtention des détails spécifiques pour cette vidéo... » puis « Création de styles de miniatures... »</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur utilise l&#x27;assistant IA intégré à YouTube Studio pour générer automatiquement une miniature basée sur sa dernière vidéo publiée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_18_000651.jpg" alt="Vue globale de l&#x27;interface YouTube Studio montrant la liste des vidéos au centre et le panneau d&#x27;assistant &#x27;Demander à Studio&#x27; sur la droite." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_18_000651.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:51</span>
+                        <span class="caption-text">Vue globale de l&#x27;interface YouTube Studio montrant la liste des vidéos au centre et le panneau d&#x27;assistant &#x27;Demander à Studio&#x27; sur la droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_18_000700.jpg" alt="Gros plan sur le panneau de l&#x27;assistant montrant le prompt envoyé pour générer une miniature de vidéo longue." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_18_000700.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:00</span>
+                        <span class="caption-text">Gros plan sur le panneau de l&#x27;assistant montrant le prompt envoyé pour générer une miniature de vidéo longue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_18_000708.jpg" alt="Gros plan sur le panneau de l&#x27;assistant affichant le message de chargement indiquant la création des styles de miniatures." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_18_000708.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:08</span>
+                        <span class="caption-text">Gros plan sur le panneau de l&#x27;assistant affichant le message de chargement indiquant la création des styles de miniatures.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:10 - 00:07:47</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc généralement, reprendre notre tête en image référence et le sujet de la vidéo pour nous proposer quelque chose, ça permet d&#x27;avoir des propositions toutes prêtes. Alors ça ne vaut pas encore une miniature qu&#x27;on a travaillée de notre côté, mais franchement il y a une évolution. donc bon ma tête est pas parfaite mais il a compris le sujet de ma dernière vidéo, il m&#x27;a marqué un titre, il m&#x27;a mis les logos, il m&#x27;a mis le personnage principal et moi qui explique comment j&#x27;ai créé une vidéo sur les backrooms, donc voilà pas encore parfait mais à noter que ça commence vraiment à s&#x27;améliorer du côté de Google et de YouTube et que bientôt peut-être on aura la possibilité de générer des miniatures de très bonne qualité en automatique depuis notre compte YouTube.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de génération d&#x27;images et navigateur web.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Miniature YouTube avec le texte « SÉRIE IA », un smartphone affichant un personnage, et le visage du youtubeur.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une proposition de miniature générée par intelligence artificielle en utilisant son image de référence.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_19_000728.jpg" alt="Aperçu d&#x27;une miniature YouTube générée par IA intitulée « SÉRIE IA » avec le visage du créateur." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_19_000728.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:28</span>
+                        <span class="caption-text">Aperçu d&#x27;une miniature YouTube générée par IA intitulée « SÉRIE IA » avec le visage du créateur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_19_000745.jpg" alt="Vue identique de la miniature YouTube générée par IA, le créateur commentant le résultat à l&#x27;écran." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_19_000745.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:45</span>
+                        <span class="caption-text">Vue identique de la miniature YouTube générée par IA, le créateur commentant le résultat à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:47 - 00:08:09</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Retour sur nos tests pour tester le maximum d&#x27;entrées. Donc ici avec les 14 entrées. 13 objets plus ma fiche personnage. Pour les mettre en scène dans une composition originale. Donc les 14 objets sont là. Après la composition, j&#x27;ai une tête un petit peu bizarre je trouve. Plus le fait d&#x27;avoir les tableaux à côté. Là on est sur Nano Banana 2. Ça c&#x27;est le résultat que j&#x27;ai eu avec GPT Image 2.5 Sunburst.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, plateforme Higgsfield AI (assets et interface de génération).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau latéral avec les miniatures des objets sources (pomme, extincteur, seau, etc.), le prompt &quot;Met en scènes l&#x27;ensemble de ces images dans une composition originale&quot;, et le nom des modèles (Nano Banana 2, GPT 2.5 Sunburst).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente et commente les résultats de tests de composition d&#x27;images intégrant 14 entrées différentes générées par différentes intelligences artificielles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_20_000748.jpg" alt="Interface du générateur Higgsfield affichant l&#x27;image générée avec Nano Banana 2 montrant le test d&#x27;intégration de 14 éléments." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_20_000748.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:48</span>
+                        <span class="caption-text">Interface du générateur Higgsfield affichant l&#x27;image générée avec Nano Banana 2 montrant le test d&#x27;intégration de 14 éléments.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_20_000758.jpg" alt="Affichage de l&#x27;interface Higgsfield avec une variante de composition générée par Nano Banana 2." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_20_000758.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:58</span>
+                        <span class="caption-text">Affichage de l&#x27;interface Higgsfield avec une variante de composition générée par Nano Banana 2.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_20_000808.jpg" alt="Résultat de génération affiché sur l&#x27;interface avec le modèle GPT 2.5 Sunburst montrant le test des 14 entrées." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_20_000808.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:08</span>
+                        <span class="caption-text">Résultat de génération affiché sur l&#x27;interface avec le modèle GPT 2.5 Sunburst montrant le test des 14 entrées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:10 - 00:08:43</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Où la tête n&#x27;a pas du tout été prise en compte. Mais la composition, on voit encore que le modèle est très très fort. et sachant que lui il peut aller au delà de 14 images, et 2.1, encore une fois, le personnage n&#x27;est pas ressemblant à 100%, mais pour le coup ici la composition est beaucoup plus naturelle, vraiment pas trop mal. Et dernier exemple, là où Google annonce vraiment un gap, c&#x27;était sur tout ce qui était génération d&#x27;infographie, donc Nano Banana 2, ici sur une infographie sur la révolution française, on voit qu&#x27;il nous mélange le français et l&#x27;anglais, qu&#x27;on a quelque chose qui est pas terrible, ça c&#x27;est la version faite avec GPT Image 2.5 Sunburst,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, plateforme d&#x27;IA générative (Higgsfield), interface avec panneau de prompt latéral, webcam du présentateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Infographies historiques sur la Révolution française, panneaux de paramètres de modèle d&#x27;IA (Model: Nano Banana 2 / GPT Image 2.5 Flare, Quality: High, dimensions 1376x768 et 1344x752), prompt : « Une infographie expliquant la révolution française ».</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente et compare différentes infographies générées par des modèles d&#x27;IA successifs, évaluant la qualité de leur composition et leur respect du sujet.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_21_000827.jpg" alt="Interface d&#x27;un générateur affichant une infographie détaillée sur la Révolution française générée avec le modèle Nano Banana 2." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_21_000827.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:27</span>
+                        <span class="caption-text">Interface d&#x27;un générateur affichant une infographie détaillée sur la Révolution française générée avec le modèle Nano Banana 2.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_21_000842.jpg" alt="Interface d&#x27;un générateur affichant une autre version d&#x27;infographie sur la Révolution française générée avec le modèle GPT Image 2.5 Flare." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_21_000842.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:42</span>
+                        <span class="caption-text">Interface d&#x27;un générateur affichant une autre version d&#x27;infographie sur la Révolution française générée avec le modèle GPT Image 2.5 Flare.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:43 - 00:09:02</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Très très complet, beaucoup de texte, peut-être un petit peu chargé mais au moins tout est là. Et ça c&#x27;est la version Nano Banana 2.1 et pour le coup je trouve vraiment pas mal. En termes de composition, en termes de lecture, tout est en français parfaitement, on n&#x27;a pas du mélange français-anglais. On a une logique qui est beaucoup plus claire donc vraiment à tester sur des infographies.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de génération d&#x27;images / infographies (plateforme type Higgsfield).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Infographie historique détaillée sur &quot;La Révolution Française (1789-1799)&quot;, prompt &quot;Une infographie expliquant la révolution française&quot;, paramètres du modèle (Nano Banana 2.1).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente et analyse l&#x27;infographie générée, soulignant la qualité du texte en français et la composition.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_22_000853.jpg" alt="Affichage de l&#x27;interface de l&#x27;outil avec l&#x27;infographie générée sur la Révolution Française et le panneau de configuration avec le modèle Nano Banana 2.1." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_22_000853.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:53</span>
+                        <span class="caption-text">Affichage de l&#x27;interface de l&#x27;outil avec l&#x27;infographie générée sur la Révolution Française et le panneau de configuration avec le modèle Nano Banana 2.1.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_22_000901.jpg" alt="Vue similaire montrant l&#x27;infographie complète générée par l&#x27;IA sur la Révolution Française, avec le présentateur en incrustation." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_22_000901.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:01</span>
+                        <span class="caption-text">Vue similaire montrant l&#x27;infographie complète générée par l&#x27;IA sur la Révolution Française, avec le présentateur en incrustation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:02 - 00:09:24</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je pense que c&#x27;est là que le modèle va prendre tout son sens et sera le meilleur. Voilà pour cette petite mise à jour. C&#x27;est un petit peu comme ce qu&#x27;on a eu avec le modèle vidéo Omni Flash 1.1. On est vraiment sur du léger ajustement. En attendant, je pense, les grosses annonces de Google et notamment Gemini 4 Argon qui devrait arriver prochainement accompagné de belles promesses.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le blog officiel de Google.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Article intitulé &quot;Gemini 4 Argon : notre prochaine ère d&#x27;intelligence de pointe&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur commente l&#x27;annonce future de Gemini 4 Argon sur Google.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_23_000913.jpg" alt="Affichage du blog officiel Google présentant l&#x27;article sur Gemini 4 Argon, avec le créateur incrusté en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_23_000913.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:13</span>
+                        <span class="caption-text">Affichage du blog officiel Google présentant l&#x27;article sur Gemini 4 Argon, avec le créateur incrusté en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/eA8CAWUZnso/frame_23_000922.jpg" alt="Vue similaire sur l&#x27;article du blog Google concernant le lancement de Gemini 4 Argon." loading="lazy" onclick="openLightbox('../screenshots/eA8CAWUZnso/frame_23_000922.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:22</span>
+                        <span class="caption-text">Vue similaire sur l&#x27;article du blog Google concernant le lancement de Gemini 4 Argon.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:24 - 00:09:29</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Merci d&#x27;avoir suivi cette vidéo. C&#x27;était Marco. Je te dis à très bientôt sur le Labo des Réseaux pour d&#x27;autres tutos.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        </section>
+
+        <footer>
+            Généré automatiquement par l'agent de veille multimodale Antigravity — Pipeline Whisper-v3-large-turbo & Gemini-3.5-flash-lite.
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture plein écran" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
