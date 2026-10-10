@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `5 / 1263` (`0.4%`)
+- **Vidéos traitées** : `6 / 1263` (`0.5%`)
 - **Modèle Audio** : `whisper-v3-large-turbo` (Faster-Whisper, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse d'écrans, interfaces & démonstrations)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -22,6 +22,7 @@
 | 2026-10-03 | [fUokaQ-NnZE](https://www.youtube.com/watch?v=fUokaQ-NnZE) | **Claude OPUS 5.5 a créé MA SÉRIE de 8 épisodes (MCP Higgsfield)** | [2026-10-03_YT-fUokaQ-NnZE_Claude OPUS 5.5 a créé MA SÉRIE de 8 épisodes (MCP Higgsfield)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md](YT_Labodesreseaux_Transcript/2026-10-03_YT-fUokaQ-NnZE_Claude OPUS 5.5 a créé MA SÉRIE de 8 épisodes (MCP Higgsfield)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [Voir Rapport HTML](YT_Labodesreseaux_Transcript/2026-10-03_YT-fUokaQ-NnZE_Claude OPUS 5.5 a créé MA SÉRIE de 8 épisodes (MCP Higgsfield)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | `39` |
 | 2026-09-30 | [u66ICS8uDTE](https://www.youtube.com/watch?v=u66ICS8uDTE) | **Arrête de payer pour des Crédits IA que tu n’utilises pas : HIGGSFIELD API** | [2026-09-30_YT-u66ICS8uDTE_Arrête de payer pour des Crédits IA que tu n’utilises pas HIGGSFIELD API_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md](YT_Labodesreseaux_Transcript/2026-09-30_YT-u66ICS8uDTE_Arrête de payer pour des Crédits IA que tu n’utilises pas HIGGSFIELD API_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [Voir Rapport HTML](YT_Labodesreseaux_Transcript/2026-09-30_YT-u66ICS8uDTE_Arrête de payer pour des Crédits IA que tu n’utilises pas HIGGSFIELD API_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | `44` |
 | 2026-09-26 | [2Ned0kvFNqM](https://www.youtube.com/watch?v=2Ned0kvFNqM) | **Claude Opus 5.5 : Motion Design, Animation, Montage Vidéo, un PROMPT et il se DÉBROUILLE** | [2026-09-26_YT-2Ned0kvFNqM_Claude Opus 5.5 Motion Design, Animation, Montage Vidéo, un PROMPT et il se DÉBR_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md](YT_Labodesreseaux_Transcript/2026-09-26_YT-2Ned0kvFNqM_Claude Opus 5.5 Motion Design, Animation, Montage Vidéo, un PROMPT et il se DÉBR_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [Voir Rapport HTML](YT_Labodesreseaux_Transcript/2026-09-26_YT-2Ned0kvFNqM_Claude Opus 5.5 Motion Design, Animation, Montage Vidéo, un PROMPT et il se DÉBR_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | `36` |
+| 2026-09-24 | [aCP21Uh03zo](https://www.youtube.com/watch?v=aCP21Uh03zo) | **10 Plans IMPOSSIBLES à réaliser avec Seedance 2.5** | [2026-09-24_YT-aCP21Uh03zo_10 Plans IMPOSSIBLES à réaliser avec Seedance 2.5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md](YT_Labodesreseaux_Transcript/2026-09-24_YT-aCP21Uh03zo_10 Plans IMPOSSIBLES à réaliser avec Seedance 2.5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [Voir Rapport HTML](YT_Labodesreseaux_Transcript/2026-09-24_YT-aCP21Uh03zo_10 Plans IMPOSSIBLES à réaliser avec Seedance 2.5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | `53` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

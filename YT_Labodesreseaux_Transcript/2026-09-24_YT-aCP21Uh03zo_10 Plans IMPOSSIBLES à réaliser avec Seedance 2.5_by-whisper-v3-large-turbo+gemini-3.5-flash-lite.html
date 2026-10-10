@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 10 Plans IMPOSSIBLES à réaliser avec Seedance 2.5 — Labo des Réseaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-box {
+            margin-bottom: 1.5rem;
+        }
+        .tools-box h3, .points-box h3 {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tool-tag {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #e2e8f0;
+            padding: 0.35rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .points-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .points-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Timeline Section */
+        section.timeline-section {
+            margin-top: 2rem;
+        }
+
+        .timeline-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            margin-bottom: 1.8rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        .timeline-block:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .timeline-time {
+            background: rgba(20, 30, 51, 0.7);
+            padding: 0.85rem 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 0.25rem 0.65rem;
+            border-radius: 0.35rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .verbatim-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 3px solid #10b981;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .verbatim-header, .visual-header, .screenshots-header {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .verbatim-text {
+            font-size: 0.96rem;
+            line-height: 1.65;
+            color: #f1f5f9;
+            font-style: italic;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.5);
+            border-left: 3px solid #8b5cf6;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: #cbd5e1;
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .visual-details strong {
+            color: #e2e8f0;
+        }
+
+        /* Screenshots grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 16, 28, 0.7);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px dashed rgba(148, 163, 184, 0.2);
+        }
+
+        .segment-screenshots-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.65rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .screenshot-card {
+            background: #0b1120;
+            border-radius: 0.6rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .img-wrapper {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .img-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .zoom-badge {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 0.2rem 0.55rem;
+            border-radius: 0.35rem;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .img-wrapper:hover .zoom-badge {
+            opacity: 1;
+        }
+
+        .screenshot-caption {
+            padding: 0.65rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #93c5fd;
+        }
+
+        .caption-text {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 10 Plans IMPOSSIBLES à réaliser avec Seedance 2.5</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📺 Labo Des Réseaux</span>
+                <a href="https://www.youtube.com/watch?v=aCP21Uh03zo" target="_blank" rel="noopener" class="badge badge-yt">
+                    ▶️ Voir sur YouTube (aCP21Uh03zo)
+                </a>
+                <span class="badge">📅 2026-09-24</span>
+                <span class="badge">⏱️ 16:36</span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            
+            <div class="summary-card">
+                <p>**Dans cette vidéo, le créateur de la chaîne « Labo Des Réseaux » explore en profondeur le modèle de génération vidéo Seedance 2.5 à travers dix cas pratiques et « plans impossibles ». Il démontre comment cet outil, comparable aux standards de production cinématographique, permet de réaliser en quelques minutes des séquences complexes nécessitant habituellement des équipes lourdes, des grues de tournage et des semaines de post-production. L&#x27;analyse met en avant le rôle de la plateforme Artlist et de son écosystème (AI Toolkit, Studio, Flows) comme environnement central pour exploiter pleinement ces technologies.**</p><p>**Au-delà de la simple génération textuelle, la vidéo se positionne comme un tutoriel avancé axé sur le contrôle de la mise en scène et la maîtrise des fonctionnalités cachées de Seedance 2.5. Le présentateur détaille des techniques de direction artistique pointues, telles que l&#x27;utilisation de plages de temps chiffrées pour rythmer les dézooms, le guidage de la caméra via des tracés manuels, l&#x27;importation de maquettes 3D filaires issues de Blender, ou encore l&#x27;exploitation du clonage vocal et de références multiples pour assurer la cohérence visuelle sur de longues durées.**</p><p>**L&#x27;analyse conclut sur la polyvalence exceptionnelle de Seedance 2.5, qui s&#x27;impose non seulement comme un moteur de création pure, mais également comme un outil surpuissant d&#x27;édition, de retouche et de transformation (changement de météo, modification de styles en plein vol, gestion du POV). Le créateur souligne que, malgré une courbe d&#x27;apprentissage et des subtilités linguistiques à dompter, une utilisation méthodique et structurée permet aux créateurs de contenu et aux professionnels d&#x27;atteindre un niveau de qualité inédit pour les formats courts et les réseaux sociaux.**</p>
+            </div>
+
+            <div class="tools-box">
+                <h3>🛠️ Outils, Modèles & Logiciels Présentés</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">Seedance 2.5 :** Modèle phare de génération et d&#x27;édition vidéo par IA (gestion multi-plan, plan-séquence, audio-référence).</span><span class="tool-tag">Artlist :** Plateforme partenaire et agrégateur de modèles IA, incluant l&#x27;onglet *AI Toolkit*, *Artlist Studio*, des templates et des outils de génération audio.</span><span class="tool-tag">Nano Banana Pro :** Modèle de génération d&#x27;images haute qualité utilisé pour les textures et assets visuels.</span><span class="tool-tag">Seed Dream 5.0 Pro :** Modèle d&#x27;image alternatif mentionné dans la bibliothèque Artlist.</span><span class="tool-tag">GPT Image 2.5 :** Modèle d&#x27;génération d&#x27;images.</span><span class="tool-tag">Kling 3.0 / One 3.0 / Minimax H3 / VIO 3.1 :** Modèles vidéo alternatifs disponibles sur la plateforme.</span><span class="tool-tag">Claude &amp; ChatGPT :** Assistants conversationnels utilisés pour la rédaction, l&#x27;optimisation et la structuration des prompts complexes.</span><span class="tool-tag">Blender :** Logiciel de modélisation et d&#x27;animation 3D utilisé pour concevoir des mouvements de caméra cinématiques et précis.</span><span class="tool-tag">Aperçu (macOS) :** Outil natif utilisé pour tracer des trajectoires de caméras en rouge sur des images de référence.</span><span class="tool-tag">ElevenLabs :** Outil de génération et de synthèse vocale utilisé pour créer les audios de référence.</span>
+                </div>
+            </div>
+
+            <div class="points-box">
+                <h3>🔑 Points Clés & Enseignements Stratégiques</h3>
+                <ul>
+                    <li><span class="point-bullet">✦</span><span>Gestion de la durée et résolution :** Seedance 2.5 génère de 4 à 30 secondes en un seul prompt, en supportant une résolution maximale de 1080p sur la plateforme Artlist.</span></li><li><span class="point-bullet">✦</span><span>Puissance des références multiples :** Le modèle accepte jusqu&#x27;à 50 éléments par génération (30 images, 10 clips vidéo, 10 fichiers audio), permettant une personnalisation et une cohérence accrues.</span></li><li><span class="point-bullet">✦</span><span>Rythme par plages horaires chiffrées :** Pour structurer des mouvements amples (comme un dézoom spatial), diviser le prompt par tranches de secondes (ex: 0-3s, 3-6s) évite que le modèle ne perde le fil ou gère mal le tempo.</span></li><li><span class="point-bullet">✦</span><span>Rédaction de prompts en anglais :** Bien que le modèle comprenne le français, l&#x27;utilisation de l&#x27;anglais est recommandée pour limiter les erreurs d&#x27;interprétation sémantique.</span></li><li><span class="point-bullet">✦</span><span>Guidage par tracé visuel simple :** Dessiner un trajet de caméra en rouge sur une image de référence (via Aperçu sur Mac) permet d&#x27;orienter grossièrement le mouvement d&#x27;un drone ou d&#x27;un sujet.</span></li><li><span class="point-bullet">✦</span><span>Contrôle cinématique avancé via Blender :** L&#x27;exportation de volumes gris et de mouvements de caméra 3D depuis Blender vers Seedance 2.5 garantit une précision reproductible de niveau professionnel.</span></li><li><span class="point-bullet">✦</span><span>Technique des images Start/End Frame :** Indispensable pour créer des timelapses fluides (comme l&#x27;évolution d&#x27;un jardin) en maintenant un cadrage rigoureusement identique entre le point de départ et d&#x27;arrivée.</span></li><li><span class="point-bullet">✦</span><span>Clonage et intégration vocale :** Seedance 2.5 est capable de cloner un audio de référence (provenant d&#x27;ElevenLabs) pour l&#x27;appliquer à une nouvelle réplique textuelle, garantissant une parfaite fusion avec l&#x27;ambiance sonore.</span></li><li><span class="point-bullet">✦</span><span>Utilisation de planches de personnages (Storyboard) :** Fournir une planche de quatre vues ou un storyboard de plusieurs cases aide le modèle à maintenir la cohérence d&#x27;un héros sur un plan-séquence étendu.</span></li><li><span class="point-bullet">✦</span><span>Édition et retouche vidéo par IA :** Le modèle excelle dans la modification de plans existants, permettant de changer dynamiquement la météo (passer de la rue sèche à la pluie) ou d&#x27;ajouter des accessoires en cours de route.</span></li><li><span class="point-bullet">✦</span><span>Mélange de styles et gestion du POV :** Seedance 2.5 gère le changement de styles artistiques au sein d&#x27;un même prompt et maîtrise les vues à la première personne (POV), idéales pour les formats verticaux des réseaux sociaux.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle</h2>
+            
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:01 - 00:00:38</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si Dance 2.5 c&#x27;est fou on atteint le niveau cinéma. Ce modèle il entre déjà dans la fabrication des films, des séries, des publicités d&#x27;aujourd&#x27;hui. Un plan qui avant demandait une équipe, une grue, trois semaines de post-production. Tu le sors maintenant en dix minutes assis derrière ton pc. Sur le papier tout le monde peut maintenant faire des</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo générée par intelligence artificielle (Seedance 2.5)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Filigrane Seedance 2.5 affiché en bas à gauche sur des plans vidéo de démonstration</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de exemples de clips vidéo générés par le modèle Seedance 2.5 illustrant sa qualité cinématographique</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:38 - 00:01:02</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vidéos de malade. Tout le monde ? En réalité la grande majorité des utilisateurs passent à côté de 90% de ce que Seed Dance 2.5 sait faire. Et c&#x27;est justement ce que j&#x27;avais envie de te partager dans cette vidéo. 10 plans impossibles entre techniques, fonctionnalités cachées et astuces perso pour qu&#x27;à la fin tu maîtrises Seed Dance 2.5 comme un pro.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo YouTube avec incrustation du présentateur (picture-in-picture) et superpositions graphiques.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte incrusté &#x27;Seedance 2.5&#x27; et &#x27;10 plans impossibles&#x27; illustrant les capacités du générateur vidéo.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur introduit les techniques et fonctionnalités cachées de Seed Dance 2.5 à travers des exemples visuels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_02_000039.jpg" alt="Animation montrant deux personnages de dos sur un toit face à un coucher de soleil, avec le logo &#x27;Seedance 2.5&#x27; en bas à gauche." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_02_000039.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:39</span>
+                        <span class="caption-text">Animation montrant deux personnages de dos sur un toit face à un coucher de soleil, avec le logo &#x27;Seedance 2.5&#x27; en bas à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_02_000050.jpg" alt="Scène de rue avec une personne marchant, le créateur dans l&#x27;encadré en bas à droite et le texte &#x27;Seedance 2.5&#x27;." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_02_000050.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:50</span>
+                        <span class="caption-text">Scène de rue avec une personne marchant, le créateur dans l&#x27;encadré en bas à droite et le texte &#x27;Seedance 2.5&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_02_000100.jpg" alt="Démonstration d&#x27;un plan de jardin avec le texte &#x27;10 plans impossibles&#x27; affiché à l&#x27;écran et le créateur visible en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_02_000100.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Démonstration d&#x27;un plan de jardin avec le texte &#x27;10 plans impossibles&#x27; affiché à l&#x27;écran et le créateur visible en bas à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:02 - 00:01:23</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour commencer il me fallait un endroit où Seed Dance 2.5 tourne avec toutes ses fonctionnalités. Et ça a été rendu possible par Artlist, le partenaire de cette vidéo. Tu connais peut-être Artlist pour ses musiques et ses banques d&#x27;images. Mais c&#x27;est aussi devenu un excellent agrégateur de modèles IA, avec en plus de très bons outils maison.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web (site officiel d&#x27;Artlist).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Le site met en avant différents modèles d&#x27;IA intégrés (Sora, Veo, Kling, Seedance, ElevenLabs, etc.) et un bouton jaune &#x27;Start Free Now&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur introduit la plateforme partenaire Artlist en montrant sa page d&#x27;accueil et ses fonctionnalités d&#x27;agrégateur de modèles IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_03_000112.jpg" alt="Page d&#x27;accueil du site Artlist affichant le slogan &#x27;Make your best creative work with AI&#x27; avec en arrière-plan un œil en gros plan." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_03_000112.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:12</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Artlist affichant le slogan &#x27;Make your best creative work with AI&#x27; avec en arrière-plan un œil en gros plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_03_000122.jpg" alt="Page d&#x27;accueil du site Artlist affichant le slogan &#x27;Make your best creative work with AI&#x27; avec en arrière-plan une scène fantastique/mythologique animée." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_03_000122.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:22</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Artlist affichant le slogan &#x27;Make your best creative work with AI&#x27; avec en arrière-plan une scène fantastique/mythologique animée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:23 - 00:01:50</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour les modèles, ça se passe dans la section AI Toolkit. Tu accéderas à la plupart des modèles images et vidéos du marché dans leur dernière version. Côté images, on a Nano Banana Pro, Seed Dream 5.0 Pro ou encore GPT Image 2.5. Côté vidéo, Kling 3.0, One 3.0, Minimax H3, VIO 3.1 et celui qui nous intéresse aujourd&#x27;hui, Seed Dance 2.5.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;Artlist (AI Toolkit)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de sélection de modèles (Seedance 2.5, Veo 3.1, etc.), options de génération vidéo/image, paramètres de durée et de résolution.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;AI Toolkit pour présenter la sélection de modèles d&#x27;IA disponibles sur la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_04_000124.jpg" alt="Page d&#x27;accueil de la plateforme Artlist montrant l&#x27;accès à l&#x27;AI Toolkit et l&#x27;Artlist Studio." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_04_000124.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Artlist montrant l&#x27;accès à l&#x27;AI Toolkit et l&#x27;Artlist Studio.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_04_000137.jpg" alt="Interface de génération de contenu de l&#x27;AI Toolkit avec un menu déroulant permettant de choisir entre Image, Video, Voiceover et Music." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_04_000137.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:37</span>
+                        <span class="caption-text">Interface de génération de contenu de l&#x27;AI Toolkit avec un menu déroulant permettant de choisir entre Image, Video, Voiceover et Music.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_04_000148.jpg" alt="Fenêtre de sélection des modèles d&#x27;intelligence artificielle affichant Seedance 2.5, Seedance 2.0 Fast, Luma Ray 3.2, Veo 3.1 et d&#x27;autres options de configuration (Aspect Ratio, Duration, Resolution, Audio)." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_04_000148.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Fenêtre de sélection des modèles d&#x27;intelligence artificielle affichant Seedance 2.5, Seedance 2.0 Fast, Luma Ray 3.2, Veo 3.1 et d&#x27;autres options de configuration (Aspect Ratio, Duration, Resolution, Audio).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:50 - 00:02:14</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les versions antérieures restent tout de même toujours accessibles et elles coûtent moins de crédit, ça c&#x27;est toujours pratique. Au-delà des modèles, il y a des outils pensés pour la création. Artlist Studio, un assistant pour monter tes séquences et fabriquer ton court-métrage. Et Flow qui te permet de construire tes propres workflows que tu pourras réutiliser d&#x27;un projet à l&#x27;autre, parfait pour les agences et les professionnels de l&#x27;IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Artlist Studio (interface web / application de création vidéo).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Projet &#x27;Rooftop Chase&#x27;, lecteur vidéo central, timeline horizontale découpée en images clés et section inférieure affichant une galerie de plans (&#x27;Shot 1&#x27; à &#x27;Shot 10&#x27;).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et démonstration de l&#x27;outil Artlist Studio pour la gestion et le montage des séquences de court-métrage.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_05_000202.jpg" alt="Interface d&#x27;Artlist Studio montrant le projet &#x27;Rooftop Chase&#x27; avec la timeline des plans et la liste des &#x27;Shots&#x27;." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_05_000202.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:02</span>
+                        <span class="caption-text">Interface d&#x27;Artlist Studio montrant le projet &#x27;Rooftop Chase&#x27; avec la timeline des plans et la liste des &#x27;Shots&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:14 - 00:02:33</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a aussi des templates IA, de la génération audio, une connexion MCP. Bref, je te conseille d&#x27;y faire un tour. En plus en ce moment il y a des offres d&#x27;abonnement très intéressantes avec accès illimité sur certains modèles. Le lien est en description et en commentaire épinglé. Allez on est sur Artlist dans l&#x27;onglet AI Toolkit.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web Artlist (onglets AI Toolkit, Flows, page de tarification)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formules d&#x27;abonnement avec crédits et options illimitées, interface de génération d&#x27;images par IA, workflows visuels.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;interface d&#x27;Artlist AI Toolkit, les workflows (Flows) et commente les offres d&#x27;abonnement disponibles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_06_000215.jpg" alt="Interface d&#x27;Artlist Flows montrant un générateur d&#x27;images basé sur l&#x27;IA sous forme de nœuds." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_06_000215.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:15</span>
+                        <span class="caption-text">Interface d&#x27;Artlist Flows montrant un générateur d&#x27;images basé sur l&#x27;IA sous forme de nœuds.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_06_000223.jpg" alt="Page de tarification d&#x27;Artlist affichant les différentes formules d&#x27;abonnement (AI Starter, AI Core, AI Creator, Custom Business) avec le présentateur en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_06_000223.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Page de tarification d&#x27;Artlist affichant les différentes formules d&#x27;abonnement (AI Starter, AI Core, AI Creator, Custom Business) avec le présentateur en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_06_000231.jpg" alt="Interface de l&#x27;onglet AI Toolkit sur Artlist avec la zone de saisie pour générer des images et des aperçus de créations en bas." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_06_000231.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Interface de l&#x27;onglet AI Toolkit sur Artlist avec la zone de saisie pour générer des images et des aperçus de créations en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:33 - 00:02:54</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On sélectionne le mode vidéo et on choisit notre modèle Seed Dance 2.5. Un mot rapide sur les caractéristiques de Seed Dance 2.5. La durée d&#x27;abord avec Seed Dance tu génères de 4 à 30 secondes en un seul prompt. Il sait aussi bien faire du multi-plan comme du plan séquence. Côté résolution, sur Artlist, on a une version jusqu&#x27;à 1080p.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo Artlist / Seed Dance 2.5 avec incrustation du présentateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes informatifs : &quot;Seeddance 2.5 sur Artlist&quot;, &quot;Durée de génération : 4-30 s&quot;, &quot;1080p Full HD • maximum actuel du modèle&quot;, &quot;4K : pas encore disponible&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur détaille les caractéristiques techniques du modèle Seed Dance 2.5, notamment la durée et la résolution.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_07_000243.jpg" alt="Écran récapitulatif montrant la durée de génération de 4 à 30 secondes pour Seed Dance 2.5 sur Artlist." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_07_000243.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:43</span>
+                        <span class="caption-text">Écran récapitulatif montrant la durée de génération de 4 à 30 secondes pour Seed Dance 2.5 sur Artlist.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_07_000252.jpg" alt="Écran récapitulatif indiquant la résolution maximale de 1080p Full HD pour Seed Dance 2.5 sur Artlist." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_07_000252.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:52</span>
+                        <span class="caption-text">Écran récapitulatif indiquant la résolution maximale de 1080p Full HD pour Seed Dance 2.5 sur Artlist.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:54 - 00:03:14</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est la résolution maximum en ce moment et on espère que la 4K arrive bientôt. Côté référence, on monte jusqu&#x27;à 50 par génération, 30 images, 10 clips vidéo, 10 fichiers audio. Ce qui est pratique avec Artlist, tu peux piocher directement dans ta bibliothèque d&#x27;assets pour les références et tu pourras aussi charger tes propres fichiers depuis ton ordinateur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:14 - 00:03:37</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Avec SeedDance, on a quelque chose de vraiment intéressant sur les références audio. j&#x27;en dis pas plus, on le verra plus tard dans cette vidéo. Et concernant les références vidéo, ça ouvre la porte à l&#x27;édition vidéo par IA. Là aussi, on le verra plus tard dans cette vidéo. Mais pour la première vidéo impossible, je voulais te montrer ce que le modèle a dans le ventre en texte ou vidéo classique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur s&#x27;adresse directement au public pour introduire la suite de la vidéo.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:40 - 00:03:58</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, on va utiliser des plages de temps chiffrées pour gagner en précision. Je veux que la caméra parte d&#x27;une goutte de pluie et recule jusqu&#x27;à voir la Terre depuis son orbite. Aucune coupe, un dézoom parfaitement fluide. L&#x27;astuce pour réussir ce dézoom impossible, c&#x27;est de donner le rythme à seat dance.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:58 - 00:04:21</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Seconde 0 à 3 la fenêtre, seconde 3 à 6 la rue, seconde 6 à 9 la ville. Sans ça, le modèle risque de traîner ou mal gérer le rythme du dézoom. Pour la rédaction du prompt lui-même, tu n&#x27;es pas obligé de faire tout à la main. Si tu as ton idée et ta direction, des IA comme Claude ou ChatGPT peuvent t&#x27;assister. Ici j&#x27;ai demandé à Claude de m&#x27;écrire le prompt Seed Dance 2.5 avec ses directives.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Claude (Anthropic).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt : &quot;Écris-moi un prompt pour Seedance 2.5 en anglais. La scène : la caméra part d&#x27;une goutte de pluie sur une vitre et recule jusqu&#x27;à voir la Terre depuis l&#x27;orbite...&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;utilisation de l&#x27;outil conversationnel Claude pour générer et structurer le prompt détaillé de la vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_11_000409.jpg" alt="Interface de l&#x27;assistant IA Claude affichant un prompt rédigé demandant la création d&#x27;un scénario vidéo de dézoom." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_11_000409.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:09</span>
+                        <span class="caption-text">Interface de l&#x27;assistant IA Claude affichant un prompt rédigé demandant la création d&#x27;un scénario vidéo de dézoom.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_11_000419.jpg" alt="Vue identique de l&#x27;interface de Claude montrant la formulation détaillée du prompt pour Seedance 2.5." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_11_000419.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:19</span>
+                        <span class="caption-text">Vue identique de l&#x27;interface de Claude montrant la formulation détaillée du prompt pour Seedance 2.5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:21 - 00:04:39</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La caméra part d&#x27;une goutte de pluie et recule jusqu&#x27;à voir la terre depuis son orbite, sans aucune coupe, avec un dézoom fluide et j&#x27;ai précisé le rythme par tranche de 3 secondes. J&#x27;ai aussi demandé le prompt en anglais. Le modèle comprend bien français mais l&#x27;anglais limite les erreurs d&#x27;interprétation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Artlist AI Toolkit / Générateur vidéo en ligne</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt en anglais décrivant les actions par tranches (0-3 sec, 3-6 sec, etc.) jusqu&#x27;à la vue de la Terre depuis l&#x27;orbite, options de réglage (Seedance 2.5, 16:9, 720p, 10 Sec) et bouton &quot;Generate&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le prompt rédigé en anglais pour limiter les erreurs d&#x27;interprétation du modèle d&#x27;IA vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_12_000438.jpg" alt="Interface du générateur vidéo Artlist affichant le prompt en anglais détaillé par tranches de 3 secondes pour un effet de dézoom de la goutte de pluie jusqu&#x27;à l&#x27;espace." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_12_000438.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:38</span>
+                        <span class="caption-text">Interface du générateur vidéo Artlist affichant le prompt en anglais détaillé par tranches de 3 secondes pour un effet de dézoom de la goutte de pluie jusqu&#x27;à l&#x27;espace.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:54 - 00:05:29</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;effet est bien maîtrisé, le timing des scènes a bien aidé niveau rythme. c&#x27;est une super technique. D&#x27;ailleurs mettre un nouvel événement visible toutes les trois secondes c&#x27;est une règle de base pour un bon rythme à l&#x27;écran. Sur Atleast il y a également une option pour améliorer tes promptes, pratique pour gagner en précision à partir d&#x27;une idée simple et si tu ne veux pas passer par cloud. Et ne t&#x27;inquiète pas j&#x27;ai créé un guide complet qui reprend mes explications, mes astuces et mes techniques sur SeedDance 2.5 ainsi que tous les prompts présents dans cette vidéo. Il est disponible gratuitement via le lien en description.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web d&#x27;Artlist (AI Toolkit)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Champ de prompt avec le texte descriptif de la scène de la goutte d&#x27;eau et de la Terre, et page de téléchargement du guide Seedance 2.5.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur montre l&#x27;interface d&#x27;amélioration de prompt sur Artlist puis présente le guide gratuit de Seedance 2.5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_13_000512.jpg" alt="Interface de la plateforme Artlist montrant un champ de saisie de prompt (« Start with your idea »)." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_13_000512.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:12</span>
+                        <span class="caption-text">Interface de la plateforme Artlist montrant un champ de saisie de prompt (« Start with your idea »).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_13_000527.jpg" alt="Page de présentation du « Seedance 2.5 Guide » avec un bouton de téléchargement." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_13_000527.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:27</span>
+                        <span class="caption-text">Page de présentation du « Seedance 2.5 Guide » avec un bouton de téléchargement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:31 - 00:05:54</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour la deuxième vidéo, je veux un plan aérien sur un boulevard parisien avec un chat de 40 mètres de haut. Mais surtout, je veux décider moi-même du mouvement de caméra. Alors, je ne l&#x27;ai pas écrit, je l&#x27;ai dessiné. J&#x27;ai généré l&#x27;image du chat dans la rue avec Nano Banana Pro. Je l&#x27;ai ouvert avec l&#x27;aperçu de mon Mac et j&#x27;ai tracé le trajet du drone en rouge par-dessus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aperçu (macOS), Présentation vidéo Seedance 2.5 / Artlist</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image générée d&#x27;un chat géant dans une rue de Paris annotée à main levée en rouge avec les repères &#x27;Départ&#x27; et &#x27;Arrivée&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment il a dessiné le trajet du drone directement sur l&#x27;image générée ouverte dans l&#x27;application Aperçu de son Mac.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_14_000552.jpg" alt="Capture d&#x27;écran de l&#x27;application &#x27;Aperçu&#x27; sur Mac montrant une image aérienne d&#x27;un chat géant dans Paris avec des tracés rouges de trajectoire et les mentions &#x27;Départ&#x27; et &#x27;Arrivée&#x27;." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_14_000552.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:52</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;application &#x27;Aperçu&#x27; sur Mac montrant une image aérienne d&#x27;un chat géant dans Paris avec des tracés rouges de trajectoire et les mentions &#x27;Départ&#x27; et &#x27;Arrivée&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:54 - 00:06:22</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai ajouté aussi l&#x27;indication de la case départ et de la case arrivée. Pour le prompt, je me suis fait aider par Claude. Je lui ai demandé d&#x27;indiquer à Seed Dance que la ligne rouge est la trajectoire de la caméra, en précisant que c&#x27;est une consigne de mise en scène, et pas un élément à afficher. Le résultat n&#x27;est pas mal du tout, mais pour être honnête, je n&#x27;ai pas exactement la précision que je souhaitais.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Générateur vidéo en ligne (Artlist / Seedance).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt indiquant que la vidéo ne doit contenir aucune ligne rouge ni élément graphique, et paramètres (Seedance 2.5, format 16:9, qualité 720p).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le résultat vidéo obtenu grâce au prompt optimisé avec Claude.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_15_000608.jpg" alt="Interface du générateur vidéo montrant le résultat de la génération avec le prompt textuel et les réglages." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_15_000608.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:08</span>
+                        <span class="caption-text">Interface du générateur vidéo montrant le résultat de la génération avec le prompt textuel et les réglages.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:22 - 00:06:44</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le trait rouge sur une référence, c&#x27;est bien pour une trajectoire simple. Mais pour un mouvement précis et reproductible, il faut monter d&#x27;un cran. Là, j&#x27;ai construit le mouvement dans Blender. Si tu ne connais pas bien l&#x27;outil, tu peux faire comme moi et te faire aider par ChatGPT ou Claude. Là, j&#x27;ai réalisé une vidéo très simple, pas de texture, pas de lumière, que des volumes gris.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Blender 3.2.1 LTS</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface de modélisation 3D avec objets géométriques gris (cube, plans), panneau des propriétés à droite et timeline en bas.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la construction d&#x27;un mouvement simple en 3D dans Blender sans texture.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_16_000633.jpg" alt="Interface du logiciel 3D Blender affichant une scène simple en niveaux de gris." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_16_000633.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:33</span>
+                        <span class="caption-text">Interface du logiciel 3D Blender affichant une scène simple en niveaux de gris.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_16_000642.jpg" alt="Gros plan sur un objet 3D rectangulaire minimaliste et sans texture dans Blender." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_16_000642.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:42</span>
+                        <span class="caption-text">Gros plan sur un objet 3D rectangulaire minimaliste et sans texture dans Blender.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:44 - 00:07:04</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La seule chose qui m&#x27;importe, c&#x27;est le mouvement de la caméra. Un zoom vers la boîte, un tour complet à 360 degrés et un dézoom, 12 secondes au total. Je charge maintenant cette vidéo en référence sur Artlist. Et pour le prompt, j&#x27;ai demandé à Claude d&#x27;indiquer à SidDance de suivre le mouvement de la caméra de la vidéo de référence.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Artlist (AI Toolkit)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu d&#x27;options de génération (Start &amp; End Frame, Image Reference, Video Reference, Audio File, Character) et champ de prompt textuel.</p>
+                        <p><strong>Action / Démonstration :</strong> Importation d&#x27;une vidéo de référence et saisie d&#x27;un prompt pour guider le mouvement de caméra de l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_17_000654.jpg" alt="Interface d&#x27;Artlist montrant le menu d&#x27;ajout de référence avec l&#x27;option &#x27;Video Reference&#x27; sélectionnée." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_17_000654.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:54</span>
+                        <span class="caption-text">Interface d&#x27;Artlist montrant le menu d&#x27;ajout de référence avec l&#x27;option &#x27;Video Reference&#x27; sélectionnée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_17_000702.jpg" alt="Interface d&#x27;Artlist affichant le prompt textuel demandant à Seedance de suivre la trajectoire de la caméra de la vidéo de référence." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_17_000702.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:02</span>
+                        <span class="caption-text">Interface d&#x27;Artlist affichant le prompt textuel demandant à Seedance de suivre la trajectoire de la caméra de la vidéo de référence.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:04 - 00:07:24</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En lui décrivant le décor et les éléments que je voulais, une boîte d&#x27;allumettes sur un bureau. Voilà le résultat. Et si on met la vidéo de référence et le rendu côte à côte, c&#x27;est juste parfait.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun logiciel ou interface visible.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte ou réglage affiché, uniquement le visuel de la boîte d&#x27;allumettes générée.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le résultat visuel généré par l&#x27;IA illustrant la description du décor.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:24 - 00:07:43</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Diriger un plan à partir d&#x27;une maquette 3D, c&#x27;est une vraie technique avancée de cinéma. Pouvoir le faire chez soi avec Blender et Seed Dance 2.5, c&#x27;est juste dingue. Ici, on utilise le principe Start Frame, End Frame. Avec, on va créer un effet Timelapse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de présentation vidéo / diapositive explicative Seeddance 2.5 sur Artlist.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &#x27;Start frame + end frame&#x27;, &#x27;Seedance crée le mouvement entre les deux états&#x27;, &#x27;DEUX IMAGES • UNE TRANSITION CONTINUE&#x27;, &#x27;VIDÉO 4 : LE JARDIN × SEEDDANCE 2.5&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur explique le principe d&#x27;animation par images clés de début et de fin pour générer une transition fluide avec Seed Dance 2.5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_19_000725.jpg" alt="Présentation d&#x27;un plan tourné avec une maquette 3D incrustée en bas à gauche de l&#x27;écran." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_19_000725.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:25</span>
+                        <span class="caption-text">Présentation d&#x27;un plan tourné avec une maquette 3D incrustée en bas à gauche de l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_19_000741.jpg" alt="Schéma explicatif sur fond noir détaillant le principe &#x27;Start frame + end frame&#x27; avec Seed Dance 2.5." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_19_000741.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:41</span>
+                        <span class="caption-text">Schéma explicatif sur fond noir détaillant le principe &#x27;Start frame + end frame&#x27; avec Seed Dance 2.5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:43 - 00:08:06</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Parfait pour du contenu réseau sociaux. J&#x27;ai commencé à créer des images de référence sur Artlist avec Nano Banana Pro. Un jardin en friche, puis le même jardin entretenu avec en plus une nouvelle terrasse et un coin barbecue. Avec l&#x27;aide de Claude, j&#x27;ai écrit mon prompt Seed Dance 2.5 qui génère le timelapse d&#x27;un jardinier qui nettoie ce jardin et construit la terrasse et le barbecue.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Artlist (outil de génération d&#x27;images et vidéos par IA)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes de prompts détaillés en anglais, réglages de modèles (Nano Banana 2, Seedance 2.5), paramètres de format (16:9, 2K) et options de génération vidéo.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la création et l&#x27;affinage des prompts d&#x27;image et de vidéo sur Artlist pour planifier la transformation du jardin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_20_000754.jpg" alt="Interface d&#x27;Artlist affichant l&#x27;image générée d&#x27;un jardin entretenu avec terrasse et barbecue, accompagnée du panneau de prompt textuel et des réglages du modèle Nano Banana 2." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_20_000754.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:54</span>
+                        <span class="caption-text">Interface d&#x27;Artlist affichant l&#x27;image générée d&#x27;un jardin entretenu avec terrasse et barbecue, accompagnée du panneau de prompt textuel et des réglages du modèle Nano Banana 2.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_20_000804.jpg" alt="Interface d&#x27;Artlist montrant la rédaction d&#x27;un prompt détaillé pour Seed Dance 2.5 décrivant la transformation d&#x27;un jardin en friche en jardin entretenu par un jardinier." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_20_000804.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:04</span>
+                        <span class="caption-text">Interface d&#x27;Artlist montrant la rédaction d&#x27;un prompt détaillé pour Seed Dance 2.5 décrivant la transformation d&#x27;un jardin en friche en jardin entretenu par un jardinier.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:06 - 00:08:25</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le point critique, les deux images doivent avoir exactement le même cadrage. J&#x27;ai donc généré d&#x27;abord l&#x27;image de départ, puis j&#x27;ai utilisé cette image en référence dans une deuxième génération Nano Banana Pro pour créer l&#x27;image d&#x27;arrivée. Le résultat est bluffant et ce n&#x27;est qu&#x27;une idée parmi tous les types de timelapse que tu peux faire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web / Interface utilisateur de gestion de bibliothèque multimédia (Artlist ou similaire).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Galerie de miniatures classées dans &quot;My Library&quot;, avec des images avant/après d&#x27;un jardin et des personnages sous différents angles.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;interface et la bibliothèque d&#x27;images générées servant à réaliser le timelapse avec le même cadrage.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_21_000807.jpg" alt="Interface d&#x27;une application montrant une galerie d&#x27;images avec des exemples de génération d&#x27;IA (personnages, décors de jardin)." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_21_000807.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:07</span>
+                        <span class="caption-text">Interface d&#x27;une application montrant une galerie d&#x27;images avec des exemples de génération d&#x27;IA (personnages, décors de jardin).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_21_000815.jpg" alt="Poursuite de la navigation dans la galerie d&#x27;images de l&#x27;interface avec les miniatures de projets." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_21_000815.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:15</span>
+                        <span class="caption-text">Poursuite de la navigation dans la galerie d&#x27;images de l&#x27;interface avec les miniatures de projets.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:26 - 00:08:46</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour cette cinquième vidéo, on part sur une scène d&#x27;anime japonais.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Seedance 2.5 / Artlist</p>
+                        <p><strong>Contenu textuel & Code :</strong> Vidéo 5 : Dialogue sur les toits / Titre : Une scène d&#x27;anime au coucher du soleil / Description : Deux lycéens de dos sur un toit / Tags : Scène simple, ambiance japonaise, plan fixe.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente le projet numéro 5 inspiré d&#x27;une scène d&#x27;anime japonais.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_22_000844.jpg" alt="Interface de présentation Seedance 2.5 sur Artlist avec le titre &#x27;Une scène d&#x27;anime au coucher du soleil&#x27;." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_22_000844.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:44</span>
+                        <span class="caption-text">Interface de présentation Seedance 2.5 sur Artlist avec le titre &#x27;Une scène d&#x27;anime au coucher du soleil&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:46 - 00:09:05</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Deux lycéens de dos sur un toit au coucher de soleil. Rien de compliqué en somme. Sauf qu&#x27;on vient y ajouter une réplique en français. Et pour ça, on va utiliser un audio de référence. J&#x27;ai créé un audio de référence sur Artlist avec Elevenlabs. Mais cet audio, il n&#x27;a rien à voir avec le dialogue de ma vidéo. Et c&#x27;est justement le but.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web Artlist (AI Toolkit)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Champ de texte avec un prompt en français et options de voix (Eleven v3, French, Generate)</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface d&#x27;Artlist où il configure son idée et prépare la génération audio/vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_23_000903.jpg" alt="Interface de la plateforme Artlist montrant la zone de saisie pour démarrer un projet avec le bouton Generate." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_23_000903.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:03</span>
+                        <span class="caption-text">Interface de la plateforme Artlist montrant la zone de saisie pour démarrer un projet avec le bouton Generate.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:05 - 00:09:29</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si Dance 2.5 a une particularité, il est capable de cloner la voix que tu lui donnes en référence et l&#x27;utiliser avec la phrase que tu vas écrire dans ton prompt. Ça permet de gagner en précision, ça permet aussi à ce que la voix s&#x27;intègre parfaitement avec l&#x27;ambiance sonore de la vidéo. Il faut donc lui donner un extrait de voix bien clair et écrire la phrase exacte que ton personnage doit prononcer dans le prompt.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface graphique de présentation vidéo de la chaîne &#x27;Labo Des Réseaux&#x27; sur Seedance 2.5.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte explicatif : &quot;La voix est clonée&quot;, &quot;Deux consignes essentielles&quot;, &quot;Voix bien claire&quot; et &quot;Phrase exacte&quot; dans le prompt.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des spécificités techniques et des bonnes pratiques pour le clonage vocal avec l&#x27;outil Seedance 2.5.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_24_000906.jpg" alt="Écran graphique explicatif sur Seedance 2.5 montrant le clonage vocal où une voix de référence est transformée via un prompt." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_24_000906.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:06</span>
+                        <span class="caption-text">Écran graphique explicatif sur Seedance 2.5 montrant le clonage vocal où une voix de référence est transformée via un prompt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_24_000917.jpg" alt="Écran graphique détaillant les deux consignes essentielles pour Seedance 2.5 : fournir une voix bien claire et rédiger la phrase exacte dans le prompt." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_24_000917.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:17</span>
+                        <span class="caption-text">Écran graphique détaillant les deux consignes essentielles pour Seedance 2.5 : fournir une voix bien claire et rédiger la phrase exacte dans le prompt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:29 - 00:09:59</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je sélectionne donc mon audio en référence. On l&#x27;écoute juste avant. Hé, mais c&#x27;est pas du tout ce que je voulais faire. La réplique est écrite dans le prompt. Tu la vois ici. J&#x27;ai aussi donné des indications de jeu au personnage, notamment sur l&#x27;émotion. Et voilà le résultat. Alors, t&#x27;as décidé de partir, c&#x27;est ça ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Artlist (plateforme de création et d&#x27;outils IA)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface de prompt avec référence audio (@aud1), descriptions détaillées de scènes animées, instructions de dialogue (« Alors tu as décidé de partir, c&#x27;est ça »).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la structure d&#x27;un prompt complexe combinant référence audio et directives émotionnelles pour la génération de vidéo par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_25_000930.jpg" alt="Interface de l&#x27;outil IA sur Artlist montrant les paramètres du prompt pour la génération vidéo." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_25_000930.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:30</span>
+                        <span class="caption-text">Interface de l&#x27;outil IA sur Artlist montrant les paramètres du prompt pour la génération vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_25_000944.jpg" alt="Suite du prompt textuel détaillant les instructions de scène, le style d&#x27;animation et la réplique en français." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_25_000944.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:44</span>
+                        <span class="caption-text">Suite du prompt textuel détaillant les instructions de scène, le style d&#x27;animation et la réplique en français.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_25_000958.jpg" alt="Résultat de la génération vidéo montrant un personnage en gros plan avec une larme à l&#x27;œil sur fond de coucher de soleil." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_25_000958.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:58</span>
+                        <span class="caption-text">Résultat de la génération vidéo montrant un personnage en gros plan avec une larme à l&#x27;œil sur fond de coucher de soleil.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:59 - 00:10:21</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Seed Dance 2.5 a parfois du mal avec le français. surtout quand un mot sort du vocabulaire courant, comme par exemple avec de l&#x27;argot ou des expressions particulières. Mais cette technique, un audio de référence et un prompt précis, donne de bons résultats. L&#x27;objectif ici, c&#x27;est un long travelling sur un personnage qui reste cohérent du début à la fin.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;Artlist (générateur Seedance 2.5) et présentation vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes descriptifs de prompt en anglais, réglages (Model: Seedance 2.5, Aspect ratio: 16:9, Quality: 720p) et infographie sur le mouvement de caméra.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur illustre l&#x27;utilisation de Seedance 2.5 pour générer des plans cohérents avec des prompts spécifiques et commente les résultats.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_26_001000.jpg" alt="Interface de génération vidéo montrant un plan large animé et un prompt détaillé sur Artlist avec Seedance 2.5." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_26_001000.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:00</span>
+                        <span class="caption-text">Interface de génération vidéo montrant un plan large animé et un prompt détaillé sur Artlist avec Seedance 2.5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_26_001010.jpg" alt="Gros plan du personnage dans la même interface de Seedance 2.5 sur Artlist, illustrant la cohérence visuelle." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_26_001010.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:10</span>
+                        <span class="caption-text">Gros plan du personnage dans la même interface de Seedance 2.5 sur Artlist, illustrant la cohérence visuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_26_001019.jpg" alt="Diapositive explicative sur le &#x27;Long travelling&#x27; avec Seedance 2.5 et le présentateur en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_26_001019.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:19</span>
+                        <span class="caption-text">Diapositive explicative sur le &#x27;Long travelling&#x27; avec Seedance 2.5 et le présentateur en bas à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:21 - 00:11:11</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour aider le modèle, je lui donne en référence une planche 4 vues de mon personnage. Celle-ci contient différents angles, on part sur 30 secondes, un seul plan, aucune coupe, notre héroïne en ciré jaune créée avec Nano Banana Pro, elle va fuir à travers 5 décors différents. Voyons ce que ça donne. Alors c&#x27;est pas mal, là j&#x27;ai vraiment misé sur le personnage et sa cohérence.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Lecteur vidéo / Sortie de génération IA</p>
+                        <p><strong>Contenu textuel & Code :</strong> Séquence vidéo générée par IA montrant un personnage en ciré jaune fuyant à travers différents décors.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des résultats de génération vidéo par le créateur.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:12 - 00:11:32</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai aussi donné dans le prompt des indications précises sur les mouvements de caméra et le plan séquence en général. Et cette planche de référence, elle me fait penser à une autre technique, le storyboard. Tu donnes une planche qui illustre les différentes scènes que tu veux dans ta vidéo. Et avec Seed Dance 2.5 qui monte jusqu&#x27;à 30 secondes, tu peux très bien lui donner un storyboard de 5 ou 6 cases.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Incrustation vidéo sur fond vert (chroma key) avec un présentateur en coin inférieur droit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Vidéo illustrative de mouvements de caméra continus générés par intelligence artificielle.</p>
+                        <p><strong>Action / Démonstration :</strong> Le youtubeur commente les capacités de génération vidéo en plan-séquence de Seed Dance 2.5.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:32 - 00:12:06</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Seed Dance 2.5 ce n&#x27;est pas que de la création, c&#x27;est aussi un outil surpuissant pour l&#x27;édition et la retouche. Et la meilleure preuve que je peux te donner c&#x27;est le changement de météo sur un plan. J&#x27;ai d&#x27;abord créé un plan de référence. Une femme qui marche dans la rue. En prenant cette vidéo de référence j&#x27;ai changé la météo pour faire tomber de la pluie et ensuite lui faire ouvrir un parapluie en conséquence. Voilà le résultat. C&#x27;est une vraie prouesse et dans mon expérience professionnelle</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;Artlist / Seedance 2.5 et retour caméra du studio du créateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt textuel décrivant la scène de la femme marchant dans la rue, paramètres de configuration (Seedance 2.5, 1280x720, 12s, MP4) et aperçu vidéo comparatif avant/après.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;interface de l&#x27;outil et montre le résultat concret de la modification de la météo (ajout d&#x27;un parapluie et de pluie) à partir d&#x27;un plan de référence existant.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_29_001149.jpg" alt="Interface de la plateforme Artlist montrant le lecteur vidéo du plan de référence d&#x27;une femme marchant dans la rue, avec le panneau latéral détaillant le prompt textuel et les paramètres de génération Seedance 2.5." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_29_001149.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:49</span>
+                        <span class="caption-text">Interface de la plateforme Artlist montrant le lecteur vidéo du plan de référence d&#x27;une femme marchant dans la rue, avec le panneau latéral détaillant le prompt textuel et les paramètres de génération Seedance 2.5.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_29_001204.jpg" alt="Comparatif en picture-in-picture montrant le plan de référence original en haut à droite et la nouvelle version modifiée avec un parapluie et une ambiance pluvieuse à gauche, pendant que le présentateur commente le résultat." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_29_001204.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:04</span>
+                        <span class="caption-text">Comparatif en picture-in-picture montrant le plan de référence original en haut à droite et la nouvelle version modifiée avec un parapluie et une ambiance pluvieuse à gauche, pendant que le présentateur commente le résultat.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-30">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:06 - 00:12:40</span>
+                <span class="segment-idx">Segment #30</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">récente sur des projets où on me demandait de changer la météo voire passer du jour à la nuit Seed Dance 2.5 a parfaitement géré. Dans cette vidéo on va mettre en avant deux forces du modèle la gestion du pov et le changement de style en pleine génération l&#x27;idée je suis un boxeur et à chaque coup que je prends le décor change autour de moi j&#x27;ai travaillé imprompte avec plusieurs styles et une chute un peu drôle et j&#x27;ai pensé la vidéo pour le format vertical encore une fois c&#x27;est parfait pour les réseaux sociaux. Pour plus de précision je donne une image de référence du</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme Artlist (AI Toolkit / Générateur vidéo)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt textuel décrivant un combat de boxe en POV avec des changements de style à chaque coup : « Four punches land in this video... », choix du modèle « Seedance 2.5 », format 9:16, 720p, 15 Sec.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface de génération vidéo et détaille le prompt textuel utilisé pour tester la gestion du POV et le changement de style en pleine génération.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_30_001239.jpg" alt="Interface de la plateforme Artlist montrant l&#x27;éditeur de génération vidéo par IA avec un prompt détaillé sur un combat de boxe en POV et les réglages de Seedance 2.5." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_30_001239.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:39</span>
+                        <span class="caption-text">Interface de la plateforme Artlist montrant l&#x27;éditeur de génération vidéo par IA avec un prompt détaillé sur un combat de boxe en POV et les réglages de Seedance 2.5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-31">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:40 - 00:13:17</span>
+                <span class="segment-idx">Segment #31</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">boxer et encore une fois j&#x27;ai minuté les changements pour que le modèle ne parte pas dans tous les sens. Voilà le résultat. Techniquement très intéressant si tu veux mélanger les styles, travailler des projets plus artistiques, plus psychédéliques ou abstraits. Seed Dance 2.5 c&#x27;est donc gérer plusieurs styles et ça même au sein du même prompt. Le POV c&#x27;est aussi une</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration et vue face caméra du créateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Animation verticale montrant un personnage squelettique boxant.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le résultat visuel obtenu avec l&#x27;outil Seed Dance 2.5.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-32">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:17 - 00:13:35</span>
+                <span class="segment-idx">Segment #32</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une approche de réalisation intéressante, bien maîtrisée par Seed Dance 2.5. Sur cette vidéo, on repart sur de l&#x27;édition. Cette fois pour ajouter des éléments qui n&#x27;existaient pas. Très pratiques pour modifier un plan en post-production. Ici, c&#x27;est ma première vidéo générée aussi avec Seed Dance 2.5.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo Seed Dance 2.5 sur Artlist.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &#x27;SEEDANCE 2.5&#x27;, &#x27;VIDÉO 9 • LE BRAQUAGE&#x27;, &#x27;Ajouter ce qui n&#x27;existait pas&#x27;, &#x27;AJOUT D&#x27;ÉLÉMENTS EN POST-PRODUCTION&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;outil Seed Dance 2.5 et sa capacité d&#x27;édition générative pour ajouter des éléments inexistants dans un plan.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_32_001326.jpg" alt="Diapositive de présentation de Seed Dance 2.5 intitulée &#x27;Ajouter ce qui n&#x27;existait pas&#x27;." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_32_001326.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:26</span>
+                        <span class="caption-text">Diapositive de présentation de Seed Dance 2.5 intitulée &#x27;Ajouter ce qui n&#x27;existait pas&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-33">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:36 - 00:14:12</span>
+                <span class="segment-idx">Segment #33</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et finalement, mon but, ça va être d&#x27;équiper les cambrioleurs de masques. J&#x27;ai donc créé des masques de clown avec Nano Banana Pro. Et avec un prompt assez simple et ma nouvelle image de référence, je vais demander à Seed Dance d&#x27;équiper les cambrioleurs avec ses nouveaux masques. Voyons le résultat. Si on compare les deux vidéos, on voit bien que seuls les masques ont changé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo avec affichage multi-fenêtres et comparatif avant/après.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Vidéo de démonstration illustrant le remplacement de cagoules par des masques de clown sur des personnages.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur compare le résultat de la transformation vidéo effectuée avec Seed Dance et Nano Banana Pro.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_33_001354.jpg" alt="Comparaison vidéo avant/après montrant un cambrioleur portant un masque de clown généré par IA." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_33_001354.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:54</span>
+                        <span class="caption-text">Comparaison vidéo avant/après montrant un cambrioleur portant un masque de clown généré par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_33_001410.jpg" alt="Grille vidéo multi-écrans avec le présentateur en bas à droite analysant les différentes variations générées." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_33_001410.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:10</span>
+                        <span class="caption-text">Grille vidéo multi-écrans avec le présentateur en bas à droite analysant les différentes variations générées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-34">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:12 - 00:14:30</span>
+                <span class="segment-idx">Segment #34</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pouvoir faire de l&#x27;édition aussi précise avec Seed Dance 2.5, c&#x27;est vraiment un atout. Pour aller encore plus loin dans l&#x27;édition, j&#x27;ai voulu finir par la reproduction d&#x27;une trend. C&#x27;est la reprise d&#x27;un passage du clip Storm. En ce moment on voit cet effet partout sur Instagram.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo Artlist avec incrustation du créateur (face-cam).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &quot;Seedance 2.5 sur Artlist&quot;, &quot;Vidéo 10 : Reproduire une trend&quot;, &quot;Réinterpréter une trend Instagram&quot;, &quot;Un passage de clip devient une nouvelle scène&quot;, &quot;Même dynamique • Nouveaux éléments&quot;, schémas &quot;Passage du clip&quot; vers &quot;Nouvelle version&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur introduit la dernière étape de la vidéo : la reproduction et la réinterprétation d&#x27;une trend populaire d&#x27;Instagram.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_34_001421.jpg" alt="Diapositive de présentation Artlist avec le titre &#x27;Réinterpréter une trend Instagram&#x27; et le sous-titre &#x27;Un passage de clip devient une nouvelle scène&#x27;." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_34_001421.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:21</span>
+                        <span class="caption-text">Diapositive de présentation Artlist avec le titre &#x27;Réinterpréter une trend Instagram&#x27; et le sous-titre &#x27;Un passage de clip devient une nouvelle scène&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_34_001429.jpg" alt="Diapositive de présentation Artlist identique montrant le concept de réinterprétation d&#x27;une trend Instagram avec Seed Dance 2.5." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_34_001429.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:29</span>
+                        <span class="caption-text">Diapositive de présentation Artlist identique montrant le concept de réinterprétation d&#x27;une trend Instagram avec Seed Dance 2.5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-35">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:30 - 00:14:51</span>
+                <span class="segment-idx">Segment #35</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On a préparé nos références. J&#x27;ai pris Marco en multi-angle, un glacier dont on va prendre la tenue et la glace que Marco va tenir à la place de la cigarette. Ce n&#x27;est vraiment pas évident, il faut bien indiquer au modèle que puisque c&#x27;est une glace, l&#x27;action de fumée du clip original doit disparaître. Et pour gagner en précision, j&#x27;ai demandé à Claude de me préparer un prompt en JSON.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;assistant IA Claude.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt détaillé rédigé en anglais décrivant les références (@Image 1, @Image 2, @Image 3), les consignes de remplacement du personnage, de la glace et des costumes de la foule.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la rédaction et l&#x27;optimisation d&#x27;un prompt complexe via l&#x27;assistant Claude pour préparer la génération vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_35_001450.jpg" alt="Interface de l&#x27;assistant textuel Claude affichant un prompt détaillé pour guider le modèle vidéo (Seedance 2.5)." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_35_001450.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:50</span>
+                        <span class="caption-text">Interface de l&#x27;assistant textuel Claude affichant un prompt détaillé pour guider le modèle vidéo (Seedance 2.5).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-36">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:51 - 00:15:37</span>
+                <span class="segment-idx">Segment #36</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En général quand j&#x27;ai beaucoup d&#x27;éléments à modifier en édition, je privilégie le JSON. Petite astuce si un jour tu bloques, donne ton prompt à Claude ou TchaGPT et demande-lui une version JSON. Ça débloque parfois la situation. Voilà le résultat. Bon alors c&#x27;est sans la musique parce qu&#x27;avec YouTube je ne peux pas la mettre pour des questions de droits d&#x27;auteur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Extrait vidéo diffusé à l&#x27;écran, pas d&#x27;interface logicielle technique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Vidéo visuelle avec des personnages en uniforme et un encart incrusté.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente le résultat final de son montage vidéo.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-37">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:15:37 - 00:15:57</span>
+                <span class="segment-idx">Segment #37</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais sur Instagram ou TikTok c&#x27;est parfait si la musique est disponible dans leur bibliothèque. Si on met les deux clips côte à côte, le résultat en édition est vraiment impressionnant. Alors que retenir de ces 10 prompts impossibles ? Seed Dance 2.5 donne le meilleur de lui-même quand on est précis. Un prompt minuté, des références bien choisies, des consignes claires.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Studio d&#x27;enregistrement personnel / Caméra face caméra du YouTubeur</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte d&#x27;interface, simple plan de présentation du vidéaste avec visuels d&#x27;illustration en fond ou en incrustation.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente ses conclusions sur l&#x27;utilisation de l&#x27;outil Seed Dance 2.5 et discute des résultats vidéo obtenus.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-38">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:15:57 - 00:16:16</span>
+                <span class="segment-idx">Segment #38</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La clé d&#x27;un prompt réussi ne se trouve pas forcément dans la qualité du texte, mais dans le travail sur tes références. La planche, l&#x27;image annotée, la scène Blender, la piste audio. Finalement, on adopte les mêmes méthodes que l&#x27;industrie du cinéma, avec un vrai travail de préparation avant le tournage d&#x27;une scène. Voilà, j&#x27;espère que la vidéo t&#x27;a plu.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Studio vidéo et incrustation (chroma key / picture-in-picture) sur fond neutre ou virtuel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun élément d&#x27;interface technique ou de logiciel n&#x27;est affiché à l&#x27;écran, uniquement le présentateur et des illustrations visuelles.
+[DESC_IMAGE_1] Le présentateur conclut sa vidéo en parlant face caméra, illustré par des visuels thématiques.
+[DESC_IMAGE_2] Le présentateur conclut sa vidéo en parlant face caméra, illustré par des visuels thématiques.
+[DESC_IMAGE_3] Le présentateur conclut sa vidéo en parlant face caméra, illustré par des visuels thématiques.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-39">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:16:17 - 00:16:36</span>
+                <span class="segment-idx">Segment #39</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si tu veux essayer Artlist à ton tour, le lien est en description et commentaires épinglés. Jette un œil aux abonnements, il y a en plus en ce moment des offres avec des modèles en accès illimité. En description tu trouveras aussi un lien vers le guide gratuit sur SeedDance 2.5 avec tous les prompts et toutes les techniques de cette vidéo. Merci et à bientôt sur le Labo des Réseaux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la plateforme Artlist et sa page de présentation des offres et ressources.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Noms des abonnements (AI Starter à 11,99€, AI Core à 23,99€, AI Creator à 41,67€), quotas de crédits, et description du guide gratuit Seeddance 2.5.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur montre à l&#x27;écran les différentes offres d&#x27;abonnements d&#x27;Artlist ainsi que le guide gratuit disponible en téléchargement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_39_001618.jpg" alt="Page d&#x27;accueil du site Artlist avec le slogan &#x27;Make your best creative work with AI&#x27; et les logos des modèles intégrés." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_39_001618.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:16:18</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Artlist avec le slogan &#x27;Make your best creative work with AI&#x27; et les logos des modèles intégrés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_39_001626.jpg" alt="Grille comparative des abonnements Artlist (AI Starter, AI Core, AI Creator, Custom Business) avec les détails des crédits et des fonctionnalités." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_39_001626.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:16:26</span>
+                        <span class="caption-text">Grille comparative des abonnements Artlist (AI Starter, AI Core, AI Creator, Custom Business) avec les détails des crédits et des fonctionnalités.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/aCP21Uh03zo/frame_39_001635.jpg" alt="Page de téléchargement du guide gratuit &#x27;Seeddance 2.5 Guide&#x27; présentant les 10 techniques pour des vidéos impossibles." loading="lazy" onclick="openLightbox('../screenshots/aCP21Uh03zo/frame_39_001635.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:16:35</span>
+                        <span class="caption-text">Page de téléchargement du guide gratuit &#x27;Seeddance 2.5 Guide&#x27; présentant les 10 techniques pour des vidéos impossibles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        </section>
+
+        <footer>
+            Généré automatiquement par l'agent de veille multimodale Antigravity — Pipeline Whisper-v3-large-turbo & Gemini-3.5-flash-lite.
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture plein écran" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
