@@ -1,0 +1,16 @@
+[Unit]
+Description=YouTube Labo Des Réseaux Zero-Token Passive Listener Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/YT_Labodesreseaux
+ExecStart=/usr/bin/python3 /root/YT_Labodesreseaux/daemon_listener.py
+Restart=always
+RestartSec=30
+StandardOutput=append:/var/log/yt_labodesreseaux.log
+StandardError=append:/var/log/yt_labodesreseaux.log
+
+[Install]
+WantedBy=multi-user.target
