@@ -1,0 +1,25 @@
+# API Keys & Credentials
+gemini_visual_keys.txt
+gemini_*keys*.txt
+*.key
+*.token
+
+# Python & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Temporary work directories & Heavy Media
+tmp_work/
+/tmp/
+*.mp4
+*.mkv
+*.webm
+*.part
+*.ytdl
+
+# Logs
+*.log
+yt_labodesreseaux.log
