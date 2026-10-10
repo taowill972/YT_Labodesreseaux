@@ -5,7 +5,8 @@
     "fUokaQ-NnZE",
     "u66ICS8uDTE",
     "2Ned0kvFNqM",
-    "aCP21Uh03zo"
+    "aCP21Uh03zo",
+    "GLauPqEXpBg"
   ],
   "processed_videos": [
     {
@@ -55,10 +56,18 @@
       "md_file": "YT_Labodesreseaux_Transcript/2026-09-24_YT-aCP21Uh03zo_10 Plans IMPOSSIBLES à réaliser avec Seedance 2.5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "html_file": "YT_Labodesreseaux_Transcript/2026-09-24_YT-aCP21Uh03zo_10 Plans IMPOSSIBLES à réaliser avec Seedance 2.5_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "screenshots_count": 53
+    },
+    {
+      "id": "GLauPqEXpBg",
+      "title": "Filmora contre GPT-6 Astra : j'ai testé 2 Workflows de MONTAGE IA",
+      "upload_date": "20260923",
+      "md_file": "YT_Labodesreseaux_Transcript/2026-09-23_YT-GLauPqEXpBg_Filmora contre GPT-6 Astra j'ai testé 2 Workflows de MONTAGE IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "html_file": "YT_Labodesreseaux_Transcript/2026-09-23_YT-GLauPqEXpBg_Filmora contre GPT-6 Astra j'ai testé 2 Workflows de MONTAGE IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "screenshots_count": 60
     }
   ],
-  "last_run_timestamp": "2026-10-10T07:42:18Z",
-  "completed_count": 6,
+  "last_run_timestamp": "2026-10-10T07:50:46Z",
+  "completed_count": 7,
   "total_catalog_count": 1263,
   "status": "idle"
 }
