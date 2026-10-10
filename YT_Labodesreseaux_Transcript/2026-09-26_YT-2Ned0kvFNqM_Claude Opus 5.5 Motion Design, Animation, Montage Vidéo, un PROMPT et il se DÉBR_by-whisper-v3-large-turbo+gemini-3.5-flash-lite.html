@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Claude Opus 5.5 : Motion Design, Animation, Montage Vidéo, un PROMPT et il se DÉBROUILLE — Labo des Réseaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-box {
+            margin-bottom: 1.5rem;
+        }
+        .tools-box h3, .points-box h3 {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tool-tag {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #e2e8f0;
+            padding: 0.35rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .points-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .points-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Timeline Section */
+        section.timeline-section {
+            margin-top: 2rem;
+        }
+
+        .timeline-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            margin-bottom: 1.8rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        .timeline-block:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .timeline-time {
+            background: rgba(20, 30, 51, 0.7);
+            padding: 0.85rem 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 0.25rem 0.65rem;
+            border-radius: 0.35rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .verbatim-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 3px solid #10b981;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .verbatim-header, .visual-header, .screenshots-header {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .verbatim-text {
+            font-size: 0.96rem;
+            line-height: 1.65;
+            color: #f1f5f9;
+            font-style: italic;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.5);
+            border-left: 3px solid #8b5cf6;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: #cbd5e1;
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .visual-details strong {
+            color: #e2e8f0;
+        }
+
+        /* Screenshots grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 16, 28, 0.7);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px dashed rgba(148, 163, 184, 0.2);
+        }
+
+        .segment-screenshots-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.65rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .screenshot-card {
+            background: #0b1120;
+            border-radius: 0.6rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .img-wrapper {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .img-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .zoom-badge {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 0.2rem 0.55rem;
+            border-radius: 0.35rem;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .img-wrapper:hover .zoom-badge {
+            opacity: 1;
+        }
+
+        .screenshot-caption {
+            padding: 0.65rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #93c5fd;
+        }
+
+        .caption-text {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Claude Opus 5.5 : Motion Design, Animation, Montage Vidéo, un PROMPT et il se DÉBROUILLE</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📺 Labo Des Réseaux</span>
+                <a href="https://www.youtube.com/watch?v=2Ned0kvFNqM" target="_blank" rel="noopener" class="badge badge-yt">
+                    ▶️ Voir sur YouTube (2Ned0kvFNqM)
+                </a>
+                <span class="badge">📅 2026-09-26</span>
+                <span class="badge">⏱️ 10:51</span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            
+            <div class="summary-card">
+                <p>Dans cette vidéo, le créateur de la chaîne **Labo Des Réseaux** explore les capacités révolutionnaires de **Claude Opus 5.5 (modèle d&#x27;Anthropic)** en matière de **motion design, d&#x27;animation et de montage vidéo**. L&#x27;outil permet de générer des séquences animées complexes, des intros percutantes et des montages verticaux complets (TikTok, Reels, Shorts) directement à partir d&#x27;un simple prompt textuel, sans nécessiter de compétences en code, de MCP ou de logiciels tiers complexes. Le modèle procède en écrivant du code pour dessiner et animer chaque image avant de convertir le tout en fichier MP4 téléchargeable.</p><p>Le test s&#x27;articule autour de trois cas d&#x27;usage principaux : la création d&#x27;une introduction stylisée (avec ou sans voix off générée par l&#x27;IA), la production d&#x27;un dessin animé éducatif de format court entièrement autonome (sur l&#x27;histoire du grain de riz et de la croissance exponentielle), et l&#x27;enrichissement d&#x27;une vidéo &quot;talking head&quot; (face cam) brute en y intégrant un habillage dynamique en 3D motion design. Le créateur détaille sa méthode itérative, soulignant l&#x27;importance cruciale de **fournir un contexte précis, des références artistiques, des chartes graphiques et un découpage scène par scène** pour éviter l&#x27;effet &quot;générique&quot; et standardisé propre aux productions d&#x27;IA de masse.</p><p>Malgré un temps de traitement allant de 8 à 30 minutes selon la complexité et quelques micro-défauts de transition ou de cohérence narrative, le résultat final s&#x27;avère **bluffant et immédiatement publiable**. Le créateur conclut sur une note nuancée : si cet outil démocratise l&#x27;accès au motion design et fluidifie les workflows de création de contenu, il prédit une **surproduction potentielle de contenus similaires** sur les réseaux sociaux. Il encourage l&#x27;utilisation de l&#x27;API d&#x27;Opus 5.5 pour automatiser et coupler le modèle à d&#x27;autres solutions de pointe (voix off pro, génération d&#x27;assets visuels) afin de conserver une réelle singularité créative.</p>
+            </div>
+
+            <div class="tools-box">
+                <h3>🛠️ Outils, Modèles & Logiciels Présentés</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">Claude Opus 5.5** (Modèle d&#x27;intelligence artificielle d&#x27;Anthropic / Abonnement Claude Pro et accès API)</span><span class="tool-tag">Claude.ai** (Interface de chat et espace de travail)</span><span class="tool-tag">Claude Code** / Espace Coworks (Environnements d&#x27;utilisation et d&#x27;automatisation)</span><span class="tool-tag">Eleven Labs** (Mentionné pour l&#x27;intégration future de voix off professionnelles via API)</span><span class="tool-tag">XFIL** (Mentionné pour la génération d&#x27;assets visuels via API)</span><span class="tool-tag">Plateformes de formats verticaux** (TikTok, Instagram Reels, YouTube Shorts)</span>
+                </div>
+            </div>
+
+            <div class="points-box">
+                <h3>🔑 Points Clés & Enseignements Stratégiques</h3>
+                <ul>
+                    <li><span class="point-bullet">✦</span><span>Fonctionnement technique novateur :** Claude Opus 5.5 ne se contente pas de générer de la vidéo brute, il code les éléments graphiques et les anime frame par frame (comme une page web animée) avant de les exporter automatiquement au format MP4.</span></li><li><span class="point-bullet">✦</span><span>Accessibilité sans compétences requises :** La création d&#x27;animations motion design complexes, d&#x27;intros de vidéos ou le montage de formats courts ne nécessite plus de maîtriser des logiciels lourds, des MCP ou des abonnements à des suites logicielles spécialisées.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;impératif du contexte et du prompting avancé :** Pour contrer l&#x27;effet &quot;générique&quot; (effet ChatGPT), il est indispensable d&#x27;alimenter l&#x27;IA en contexte précis : charte graphique, codes couleurs, style visuel (ex: style Vox), fiches de personnages de référence et découpage rigoureux scène par scène.</span></li><li><span class="point-bullet">✦</span><span>Gestion des temps de rendu :** Les générations prennent du temps (compter entre 8 et 30 minutes selon la complexité et le niveau d&#x27;effort demandé au modèle), ce qui nécessite d&#x27;intégrer cette latence dans son flux de production.</span></li><li><span class="point-bullet">✦</span><span>Intégration transparente sur vidéos &quot;Talking Head&quot; :** Le modèle est capable d&#x27;analyser une vidéo de type face cam (tournée en format vertical 9:16ème) et d&#x27;y superposer un habillage en motion design rythmé tout en conservant la piste audio originale du narrateur.</span></li><li><span class="point-bullet">✦</span><span>Création de contenus narratifs automatisés :** Capacité à concevoir de A à Z des histoires éducatives rythmées pour le format court (comme la démonstration de la croissance exponentielle avec l&#x27;analogie du jeu d&#x27;échecs).</span></li><li><span class="point-bullet">✦</span><span>Optimisation par l&#x27;API :** Pour industrialiser et professionnaliser le workflow, l&#x27;utilisation de l&#x27;API d&#x27;Opus 5.5 via des scripts ou des environnements comme Claude Code permet d&#x27;automatiser les tâches répétitives.</span></li><li><span class="point-bullet">✦</span><span>Couplage multi-IA (Workflow pro) :** Le système peut être optimisé en branchant des API externes spécialisées pour la voix off (ex: Eleven Labs) ou la génération d&#x27;images et de vidéos (ex: modèles XFIL).</span></li><li><span class="point-bullet">✦</span><span>Risque de saturation des réseaux sociaux :** La facilité de génération d&#x27;animations via un simple prompt menace d&#x27;entraîner une surproduction de contenus visuellement standardisés, obligeant les créateurs à soigner leur direction artistique pour se démarquer.</span></li><li><span class="point-bullet">✦</span><span>Valeur persistante des vrais motion designers :** Face à l&#x27;homogénéisation des styles générés par l&#x27;IA, le travail sur-mesure de véritables professionnels du motion design gagnera encore plus en valeur et en singularité.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle</h2>
+            
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Créer sa petite animation, sa séquence de motion design pour illustrer sa vidéo ou même confier le montage de son TikTok Reels ou Short YouTube, Claude vient de le rendre possible, tout cela sans MCP, sans abonnement supplémentaire, juste en utilisant son dernier modèle, Opus 5.5. La preuve avec cette intro de vidéo et d&#x27;autres exemples faciles à reproduire, je te montre tout de suite.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Style visuel de papier découpé et animation graphique façon motion design (type Vox ou explicatif).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes et graphismes : &#x27;ANIMATION&#x27;, logo &#x27;CLAUDE&#x27;, &#x27;MARKO&#x27;, &#x27;DÉMONSTRATION&#x27;, &#x27;PROMPTS - RENDUS&#x27; et fenêtres de code ou de prévisualisation.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente visuellement la création d&#x27;animations et de séquences de motion design générées par intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_01_000001.jpg" alt="Une animation de type motion design minimaliste sur fond quadrillé avec une timeline de montage en bas et le mot &#x27;ANIMATION&#x27;." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_01_000001.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:01</span>
+                        <span class="caption-text">Une animation de type motion design minimaliste sur fond quadrillé avec une timeline de montage en bas et le mot &#x27;ANIMATION&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_01_000011.jpg" alt="Le logo animé de Claude sous forme d&#x27;étoile stylisée à branches multiples dans un cercle sur fond papier quadrillé." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_01_000011.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Le logo animé de Claude sous forme d&#x27;étoile stylisée à branches multiples dans un cercle sur fond papier quadrillé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_01_000020.jpg" alt="Un personnage en papier découpé nommé Marko montrant du doigt des exemples de prompts et de rendus visuels de motion design." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_01_000020.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:20</span>
+                        <span class="caption-text">Un personnage en papier découpé nommé Marko montrant du doigt des exemples de prompts et de rendus visuels de motion design.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:42</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Car oui, cette introduction a été réalisée par Claude Opus 5.5 juste à partir d&#x27;un prompt. Le nouveau modèle d&#x27;Anthropic impressionne. Et dans cette vidéo, on va s&#x27;intéresser à ses capacités de motion design. On verra donc comment j&#x27;ai réalisé cette introduction de vidéo, mais aussi comment créer un projet dans le style animation pour les réseaux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Style graphique d&#x27;animation, habillage vidéo pour les réseaux sociaux.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes explicatifs, icône YouTube, maquette de smartphone avec formes géométriques.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du plan de la vidéo et introduction aux techniques de motion design et d&#x27;animation pour réseaux sociaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_02_000032.jpg" alt="Animation graphique au format paysage avec le texte « dans cette vidéo... » et une icône de lecture YouTube." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_02_000032.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:32</span>
+                        <span class="caption-text">Animation graphique au format paysage avec le texte « dans cette vidéo... » et une icône de lecture YouTube.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_02_000041.jpg" alt="Écran de transition montrant le titre « PARTIE 02 : CRÉER UN PROJET STYLE ANIMATION » à côté d&#x27;une maquette de smartphone affichant des formes géométriques animées." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_02_000041.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:41</span>
+                        <span class="caption-text">Écran de transition montrant le titre « PARTIE 02 : CRÉER UN PROJET STYLE ANIMATION » à côté d&#x27;une maquette de smartphone affichant des formes géométriques animées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:42 - 00:01:05</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et dans une dernière partie, on verra si Opus 5.5 peut nous monter un Reels, un Short, un TikTok pour nos réseaux, en mélangeant face cam et motion design. Pour rappel, pour utiliser le nouveau modèle Opus 5.5, il nous faudra à minimum un abonnement Cloud Pro. Ainsi, on pourra le charger dans notre chat ou dans l&#x27;espace Coworks, ainsi si on veut le sélectionner sur Cloud Code.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de Claude (claude.ai)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres d&#x27;abonnement Free (0 €), Pro (15 €) et Max (à partir de 90 €) ; interface de chat Claude avec option de sélection de modèle.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la page des tarifs pour l&#x27;abonnement Pro requis puis présente l&#x27;interface de discussion avec le sélecteur de modèle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_03_000054.jpg" alt="Page des tarifs du site Claude montrant les offres Free, Pro et Max." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_03_000054.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Page des tarifs du site Claude montrant les offres Free, Pro et Max.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_03_000104.jpg" alt="Interface de Claude avec le champ de saisie &#x27;Qu&#x27;est-ce qui mijote, Marko ?&#x27; et les boutons Chat et Cowork." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_03_000104.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:04</span>
+                        <span class="caption-text">Interface de Claude avec le champ de saisie &#x27;Qu&#x27;est-ce qui mijote, Marko ?&#x27; et les boutons Chat et Cowork.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:05 - 00:01:24</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les exemples que je vais présenter ici se font via l&#x27;abonnement Pro, mais bien sûr, si tu as besoin de plus de crédit, Opus 5.5 est aussi disponible en API, on en reparle en fin de vidéo. Donc déjà, à froid, j&#x27;ai voulu lui demander tout simplement, créez-moi une introduction de vidéo en motion design, reprenant le texte suivant. C&#x27;est tout.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:24 - 00:01:42</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et là, Opus 5 s&#x27;est mis en route et il a commencé à me coder la vidéo. Alors quand je dis coder la vidéo, qu&#x27;est-ce qui se passe en fait ? Il va coder les images, puis les animer frame par frame pour les transformer en rendu animation web qu&#x27;il va par la suite transformer en MP4 et nous proposer de le télécharger.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:42 - 00:02:02</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc je résume simplement. Bien sûr, il y a beaucoup plus de procédés que ça. Mais ce qu&#x27;il faut savoir, c&#x27;est que toi, en tant qu&#x27;utilisateur, tu as juste à attendre pour avoir ton animation motion design créée ici au bout de 8 minutes et téléchargeable. Donc là avec vraiment très très peu d&#x27;informations, j&#x27;ai déjà une intro complète.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;outil Claude (Claude.ai) et lecteur vidéo en plein écran avec incrustation de la webcam du créateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fichiers partagés incluant &#x27;Intro claude opus55 16x9 (MP4)&#x27;, &#x27;Intro claude opus55 source (HTML)&#x27;, minuterie de génération (~8 minutes), et texte animé &#x27;Créer sa petite animation&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente le résultat final de l&#x27;animation motion design générée automatiquement et met en avant le bouton de téléchargement du fichier MP4.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_06_000152.jpg" alt="Interface de l&#x27;outil Claude (Claude.ai/cowork) montrant un fichier vidéo MP4 généré (&#x27;Intro claude opus55 16x9&#x27;) prêt à être téléchargé après environ 8 minutes de traitement." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_06_000152.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:52</span>
+                        <span class="caption-text">Interface de l&#x27;outil Claude (Claude.ai/cowork) montrant un fichier vidéo MP4 généré (&#x27;Intro claude opus55 16x9&#x27;) prêt à être téléchargé après environ 8 minutes de traitement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_06_000200.jpg" alt="Aperçu en plein écran de l&#x27;animation motion design générée, affichant le texte &#x27;Créer sa petite animation&#x27; avec une esthétique professionnelle et soignée." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_06_000200.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:00</span>
+                        <span class="caption-text">Aperçu en plein écran de l&#x27;animation motion design générée, affichant le texte &#x27;Créer sa petite animation&#x27; avec une esthétique professionnelle et soignée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:02 - 00:02:30</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors je n&#x27;ai pas de voix off sur cette intro, donc je vais continuer la conversation et demander si Claude peut me rajouter une voix off. Et là incroyable, sans même que je branche en API un logiciel comme Eleven Labs, j&#x27;aurai ma vidéo disponible avec une voix off. Bien sûr, il n&#x27;y aura pas d&#x27;émotion et ça ne sera pas trop professionnel. Mais si on la lance, créer sa petite animation, sa séquence de motion design, pour illustrer sa vidéo, ou même confier le montage de son TikTok, réel ou short YouTube.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Claude (Anthropic) et timeline de montage vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de discussion avec l&#x27;IA sur la voix off, boutons de téléchargement pour &quot;Intro claude opus55 16x9 voixoff&quot; et &quot;Voixoff intro seule&quot;, lecteur audio avec curseur de progression.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;interface de l&#x27;IA Claude qui a généré automatiquement la voix off et la vidéo pour l&#x27;intro.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_07_000216.jpg" alt="Interface de l&#x27;assistant IA Claude affichant une conversation textuelle avec des fichiers audio téléchargeables et un lecteur audio intégré." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_07_000216.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Interface de l&#x27;assistant IA Claude affichant une conversation textuelle avec des fichiers audio téléchargeables et un lecteur audio intégré.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:31 - 00:02:52</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le résultat est là. Alors, par contre, ce résultat, même s&#x27;il est sympathique, il est très générique. Et on risque fort de rencontrer le phénomène affiche chat GPT si on prend tous de manière simple pour avoir son motion design. C&#x27;est pour ça que dans un second temps, j&#x27;ai voulu recréer l&#x27;intro en lui donnant beaucoup plus de contexte.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;assistant IA Claude.ai</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt de direction artistique pour la vidéo, palette de couleurs, description des personnages, éléments graphiques et structure des scènes.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le prompt enrichi fourni à l&#x27;IA pour générer une intro de motion design plus personnalisée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_08_000250.jpg" alt="Interface du site Claude.ai montrant un prompt détaillé de direction artistique pour la création de vidéo." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_08_000250.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Interface du site Claude.ai montrant un prompt détaillé de direction artistique pour la création de vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:52 - 00:03:15</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ici quand je parle de contexte, c&#x27;est surtout que je lui ai donné un style propre, ici le style Vox, avec des formes géométriques épurées, typographies, bol de sens et rive, et un collage texturé gris visible en fond, stop motion subtil, une palette de couleurs avec les codes couleurs pour l&#x27;accompagner, une indication sur les transitions globales, je lui ai donné aussi une indication de voix off, les effets sonores, et très important, je lui ai donné des références.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Document texte / Interface de rédaction ou de prise de notes.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte descriptif de direction artistique (style Vox, typographie bold sans-serif, palette de couleurs, transitions globales, scène 1, scène 3).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente et commente son document de direction artistique et de scénarisation vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_09_000253.jpg" alt="Capture d&#x27;écran montrant un document textuel décrivant la direction artistique de style Vox avec des codes couleurs." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_09_000253.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:53</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un document textuel décrivant la direction artistique de style Vox avec des codes couleurs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_09_000303.jpg" alt="Capture d&#x27;écran montrant la suite du document textuel détaillant les transitions globales et les éléments graphiques." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_09_000303.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la suite du document textuel détaillant les transitions globales et les éléments graphiques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_09_000314.jpg" alt="Capture d&#x27;écran affichant la section du document sur la scène 3 et la description des visuels avec du texte sélectionné." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_09_000314.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:14</span>
+                        <span class="caption-text">Capture d&#x27;écran affichant la section du document sur la scène 3 et la description des visuels avec du texte sélectionné.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:15 - 00:03:36</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je vais donner une fiche caractère référence pour essayer de me créer un motion design. Et j&#x27;ai aussi donné le logo de Claude puisqu&#x27;il est mentionné dans la vidéo. Ensuite pour pouvoir maîtriser ce qui se passe à l&#x27;écran, j&#x27;ai refait scène par scène avec le redattage de celle-ci pour bien avoir ce qui s&#x27;affiche avec le texte qui est dit. Je génère. Ici j&#x27;en ai une pour une dizaine de minutes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Claude AI / Cowork</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt de direction artistique (style Vox), codes couleur, progression des tâches (construire l&#x27;animation, générer les SFX, vérifier les images).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la configuration et le suivi de la création du motion design via l&#x27;intelligence artificielle Claude.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_10_000325.jpg" alt="Interface de l&#x27;outil Claude montrant le prompt de configuration de la direction artistique et la palette de couleurs pour le motion design." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_10_000325.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:25</span>
+                        <span class="caption-text">Interface de l&#x27;outil Claude montrant le prompt de configuration de la direction artistique et la palette de couleurs pour le motion design.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_10_000334.jpg" alt="Progression de la tâche en cours avec l&#x27;affichage des étapes et des commandes exécutées dans l&#x27;interface de Claude." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_10_000334.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Progression de la tâche en cours avec l&#x27;affichage des étapes et des commandes exécutées dans l&#x27;interface de Claude.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:36 - 00:04:01</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il a pris la décision de ne pas me mettre les lunettes parce que sur le point que j&#x27;avais fourni j&#x27;avais dit avec des lunettes mais la photo n&#x27;avait pas de lunettes. donc très très bien, et il a ajouté un petit texte supplémentaire, donc prise d&#x27;initiative de sa part, pourquoi pas, et en téléchargeant la vidéo et en la lançant, c&#x27;est celle que tu as vue en introduction de cette vidéo. On continue les tests avec cette fois-ci la volonté de créer un format récurrent sur TikTok 100% animé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Lecteur vidéo (QuickTime ou similaire) avec barre de progression et timeline audio/vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un visuel de type Polaroid avec des formes géométriques et le mot &quot;ANIMATION&quot;, ainsi qu&#x27;une timeline avec une piste audio et un bloc orange &quot;ANIMATION&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur visionne la vidéo générée pour analyser le résultat de l&#x27;animation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_11_000349.jpg" alt="Capture d&#x27;écran montrant le lecteur vidéo et une timeline avec une animation en cours de lecture." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_11_000349.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:49</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le lecteur vidéo et une timeline avec une animation en cours de lecture.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:02 - 00:04:37</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans un premier temps travail préparatoire, je vais demander de me trouver une histoire pour un dessin animé éducatif d&#x27;une minute au format TikTok, prendre une histoire connue avec un hook fort et une révélation à la fin. opus 5 réfléchit donc moi je les mets en moyen sachant qu&#x27;on peut le mettre aussi en élevé mais ça va user beaucoup plus de crédit néanmoins on n&#x27;a pas la même sensation qu&#x27;on a avec gpt6 astra et en termes de crédit on a le sentiment de pouvoir faire beaucoup plus de choses même si astra a sorti les modèles sol et luna récemment et il m&#x27;a sorti une histoire que je pourrais modifier je pourrais donner des références ici là je vais laisser travailler en paix pour</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;assistant IA (Claude / Cowork) avec panneau latéral de contexte et de progression.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompts textuels pour la création d&#x27;un dessin animé éducatif TikTok, suggestions d&#x27;histoires (croissance exponentielle, Semmelweis, Ératosthène), et logs d&#x27;exécution de commandes.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur rédige et envoie des prompts successifs à l&#x27;IA pour concevoir et structurer le contenu d&#x27;une vidéo courte éducative.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_12_000403.jpg" alt="Saisie d&#x27;un prompt initial dans l&#x27;interface de l&#x27;IA (On cogite / Claude) pour demander une histoire éducative au format TikTok." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_12_000403.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:03</span>
+                        <span class="caption-text">Saisie d&#x27;un prompt initial dans l&#x27;interface de l&#x27;IA (On cogite / Claude) pour demander une histoire éducative au format TikTok.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_12_000420.jpg" alt="Affichage de la réponse de l&#x27;IA proposant une histoire et des suggestions, avec un second prompt utilisateur en bas pour définir la direction artistique." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_12_000420.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:20</span>
+                        <span class="caption-text">Affichage de la réponse de l&#x27;IA proposant une histoire et des suggestions, avec un second prompt utilisateur en bas pour définir la direction artistique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_12_000436.jpg" alt="Exécution de commandes et d&#x27;outils (TTS, proxy) par l&#x27;agent IA suite au nouveau prompt sur la direction artistique." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_12_000436.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:36</span>
+                        <span class="caption-text">Exécution de commandes et d&#x27;outils (TTS, proxy) par l&#x27;agent IA suite au nouveau prompt sur la direction artistique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:38 - 00:05:11</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">avoir mon petit dessin animé en motion design d&#x27;une minute on est parti voix off essais sonores tout est en train de se créer on va accélérer la vidéo ici on en a eu pour 27 minutes de travail donc c&#x27;est quand même assez conséquent si on veut le mettre en place dans un workflow répété faudra plutôt se tourner vers une automatisation avec le code et l&#x27;api on va pouvoir télécharger et regarder le reste droit a failli perdre tout son royaume à cause d&#x27;un seul grain de riz il y a très longtemps en inde un vieux sage invente un jeu tout nouveau les échecs Magnifique. Demande-moi ce que tu veux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Lecteur vidéo / Sortie de génération de motion design.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Personnage animé en 2D sur fond rayonné orange avec des confettis, texte &quot;DEMANDE-MOI CE QUE&quot; affiché.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du résultat final du motion design créé automatiquement (dessin animé de type format vertical/Reels/Shorts).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_13_000509.jpg" alt="Animation du petit dessin animé en motion design généré, affichant un personnage style magicien/génie avec du texte incrusté en bas." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_13_000509.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:09</span>
+                        <span class="caption-text">Animation du petit dessin animé en motion design généré, affichant un personnage style magicien/génie avec du texte incrusté en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:11 - 00:05:31</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un grain de riz sur la première case. Deux sur la deuxième. Quatre sur la troisième. Et tu doubles jusqu&#x27;à la dernière. Ah, c&#x27;est tout. Accord. Case 10, 512 grains. Une poignée. Case 21, plus d&#x27;un million de grains. Case 32, plus de 2 milliards.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphismes animés au format vertical (style Shorts/Reels) illustrant le problème mathématique du riz sur l&#x27;échiquier.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &quot;LA RÈGLE DU SAGE&quot;, &quot;SUR LA PREMIÈRE CASE&quot;, &quot;C&#x27;EST TOUT ?&quot;, &quot;CASE 32&quot;, &quot;884 443 379&quot;, &quot;CASE TRENTE-DEUX&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Explication animée de la progression géométrique des grains de riz sur l&#x27;échiquier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_14_000512.jpg" alt="Illustration d&#x27;un échiquier avec le texte &quot;LA RÈGLE DU SAGE&quot; et &quot;SUR LA PREMIÈRE CASE&quot; montrant un grain de riz." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_14_000512.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:12</span>
+                        <span class="caption-text">Illustration d&#x27;un échiquier avec le texte &quot;LA RÈGLE DU SAGE&quot; et &quot;SUR LA PREMIÈRE CASE&quot; montrant un grain de riz.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_14_000530.jpg" alt="Affichage du chiffre pour la &quot;CASE 32&quot; avec des illustrations de chariot de riz et de silo." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_14_000530.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:30</span>
+                        <span class="caption-text">Affichage du chiffre pour la &quot;CASE 32&quot; avec des illustrations de chariot de riz et de silo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:32 - 00:05:53</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">50 tonnes. Et il reste encore 32 cases. Au total, 18 milliards de milliards de grains. des siècles de toute la récolte mondiale de riz. Aucun royaume au monde ne peut payer ça. Alors le roi a une idée. D&#x27;accord, mais tu les comptes toi-même, un par un. Ce piège a un nom, la croissance exponentielle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Animation vidéo explicative (style motion design).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &#x27;50 TONNES&#x27;, &#x27;TRÉSOR : VIDE&#x27;, &#x27;AUCUN ROYAUME AU MONDE&#x27;, &#x27;CE PIÈGE A UN NOM&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Animation visuelle illustrant l&#x27;accumulation de poids de riz, l&#x27;appauvrissement du royaume et l&#x27;introduction graphique de la notion de croissance exponentielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_15_000533.jpg" alt="Illustration graphique du poids de riz accumulé affichant &#x27;50 Tonnes&#x27;." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_15_000533.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:33</span>
+                        <span class="caption-text">Illustration graphique du poids de riz accumulé affichant &#x27;50 Tonnes&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_15_000542.jpg" alt="Animation montrant un roi désespéré devant un coffre vide et l&#x27;indication &#x27;TRÉSOR : VIDE&#x27;." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_15_000542.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:42</span>
+                        <span class="caption-text">Animation montrant un roi désespéré devant un coffre vide et l&#x27;indication &#x27;TRÉSOR : VIDE&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_15_000551.jpg" alt="Graphique animé illustrant la progression mathématique avec le texte &#x27;CE PIÈGE A UN NOM&#x27;." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_15_000551.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:51</span>
+                        <span class="caption-text">Graphique animé illustrant la progression mathématique avec le texte &#x27;CE PIÈGE A UN NOM&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:53 - 00:06:16</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est exactement comme ça qu&#x27;une vidéo devient virale. Alors déjà en termes de rendu, on est sur des motion design proches du dessin animé. Donc ça c&#x27;est assez sympa, le hook est bien travaillé. L&#x27;histoire par contre je trouve elle est assez décousue, la voix off n&#x27;est pas trop adaptée. Et au final j&#x27;aurais peut-être dû relire certains passages parce que je pense qu&#x27;il manque des petits bouts pour pouvoir assembler le tableau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo de démonstration au format vertical (Short/Reel) avec incrustation webcam du créateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes incrustés à l&#x27;écran : &quot;EN INDE, IL Y A LONGTEMPS&quot;, &quot;IL Y A TRÈS LONGTEMPS&quot;, &quot;LA RÈGLE DU SAGE&quot;, &quot;DEUX SUR LA DEUXIÈME.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur analyse et commente un exemple de vidéo virale au format vertical présentant une histoire animée.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:16 - 00:06:35</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais franchement sur un travail autonome d&#x27;une minute c&#x27;est assez surprenant. Surtout la façon d&#x27;animer les personnages au motion design que je trouve très rigolo. Donc le format court ça marche et imaginons maintenant on souhaite vraiment le travailler. Dans le cas présent j&#x27;ai tourné ma vidéo style vertical pour TikTok, Instagram et Youtube.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;outil conversationnel &quot;On cogite&quot;</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fichier vidéo &quot;Opus 55.mp4&quot; chargé, champ de texte avec le prompt &quot;Voici ma vidéo&quot;, modèle sélectionné &quot;Opus 5.5 Moyen&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Importation et préparation d&#x27;un fichier vidéo dans l&#x27;interface de l&#x27;outil &quot;On cogite&quot; pour analyse ou traitement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_17_000626.jpg" alt="Interface de l&#x27;outil &quot;On cogite&quot; avec un fichier vidéo importé (&quot;Opus 55.mp4&quot;) et une zone de texte." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_17_000626.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:26</span>
+                        <span class="caption-text">Interface de l&#x27;outil &quot;On cogite&quot; avec un fichier vidéo importé (&quot;Opus 55.mp4&quot;) et une zone de texte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_17_000634.jpg" alt="Interface de l&#x27;outil &quot;On cogite&quot; avec le créateur en incrustation à gauche, tapant le message &quot;Voici ma vidéo&quot;." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_17_000634.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:34</span>
+                        <span class="caption-text">Interface de l&#x27;outil &quot;On cogite&quot; avec le créateur en incrustation à gauche, tapant le message &quot;Voici ma vidéo&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:35 - 00:06:54</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Qui présente justement le motion design grâce à Opus 5.5. Et donc je vais donner cette vidéo où il n&#x27;y a aucun montage, aucune animation, aucune motion design. C&#x27;est seulement moi qui parle devant la caméra. Voici ma vidéo format 9-16ème qui présente les nouveautés de motion design d&#x27;Opus 5.5.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;outil d&#x27;intelligence artificielle &#x27;On cogite&#x27; (Opus 5.5).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fichier vidéo &#x27;Opus 55.mp4&#x27; joint dans le chat avec un prompt textuel décrivant la modification en format 9:16.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur écrit un prompt pour demander à Opus 5.5 d&#x27;ajouter du motion design à une vidéo face caméra.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_18_000645.jpg" alt="Interface d&#x27;un assistant IA montrant l&#x27;import d&#x27;une vidéo MP4 et un prompt de modification." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_18_000645.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:45</span>
+                        <span class="caption-text">Interface d&#x27;un assistant IA montrant l&#x27;import d&#x27;une vidéo MP4 et un prompt de modification.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_18_000653.jpg" alt="Suite de la rédaction du prompt détaillant la demande de motion design scène par scène." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_18_000653.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:53</span>
+                        <span class="caption-text">Suite de la rédaction du prompt détaillant la demande de motion design scène par scène.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:55 - 00:07:14</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je voudrais que tu refasses la vidéo pour inclure justement du motion design. Avant tout je souhaite que tu reprends l&#x27;ensemble du script, que tu détailles ce qui se passe scène par scène. Comme ça on peut corriger ensemble. et je voudrais un style 3D motion design avec beaucoup de rythme et bien expliqué sur les parties techniques avec des schémas animés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:14 - 00:07:33</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ma vidéo a été analysée, j&#x27;ai mon découpage qui a été fait, une direction artistique a été proposée et je suis d&#x27;accord même s&#x27;il me demande de changer le texte, je lui dis non non non, je ne veux pas du tout changer le texte et je veux que tu reprennes ma voix de narrateur. Je ne sais pas si c&#x27;est possible, on va voir tout de suite en le soumettant et là on laisse travailler l&#x27;IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:33 - 00:07:53</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors ici, on a dû relancer Claude une deuxième fois parce que la limite d&#x27;action avait été atteinte pour la réponse. Donc, j&#x27;ai redemandé de continuer et la vidéo est prête. Alors là, le travail m&#x27;a pris un petit peu plus de 30 minutes. Donc, encore une fois, il faut avoir bien ça à l&#x27;esprit. La solution n&#x27;est pas magique. Elle demande du travail de contexte en amont.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:53 - 00:08:13</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Elle demande du temps. Mais à la fin, on va voir le résultat en téléchargeant et en le lançant. Est-ce que ça ne vous a plus besoin de logiciel ou de compétences pour faire du motion design ? Une phrase avec Opus 5.5, Claude crée ta vidéo, ton animation. Et même pas besoin de skills de MCP ou d&#x27;abonnements supplémentaires. Non, non, en une seule phrase tu as ta vidéo, comme c&#x27;est intro en motion design.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo au format vertical (Shorts/Reels) avec éléments graphiques incrustés (bulles de texte et animations de l&#x27;interface).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes incrustés &#x27;OPUS 5.5&#x27;, &#x27;1 phrase&#x27;, &#x27;Une intro 3D néon violet sur l&#x27;, &#x27;1 VIDÉO&#x27;, et &#x27;rendu_motion.mp4&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur explique les capacités de l&#x27;outil et montre des animations textuelles illustrant le processus de création par IA.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:14 - 00:08:34</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dynamiser tes présentations, illustrer un passage de ta vidéo, créer du contenu viral pour tes réseaux. Les possibilités sont infinies, mais si un seul prompt te suffit, encore faut-il réussir à le structurer, pour ne pas avoir la même bouillie que tout le monde va générer. Alors tu vas devoir donner du contexte, des références et une direction artistique. Bref, être le plus précis possible.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface vidéo verticale de type YouTube Shorts / Reels avec animations graphiques et incrustation webcam.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &#x27;Tes présentations&#x27;, &#x27;Ton prompt&#x27;, &#x27;Un prompt structuré&#x27;, &#x27;Direction artistique&#x27;, &#x27;Références&#x27;, &#x27;Contexte&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur explique la structure idéale d&#x27;un prompt avec un visuel de blocs empilés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_23_000832.jpg" alt="Schéma animé en blocs empilés représentant les composants d&#x27;un prompt structuré (Direction artistique, Références, Contexte)." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_23_000832.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:32</span>
+                        <span class="caption-text">Schéma animé en blocs empilés représentant les composants d&#x27;un prompt structuré (Direction artistique, Références, Contexte).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:34 - 00:08:52</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, Clodopus 5 écrit du code qui dessine et anime chaque image comme une page web animée et Clod te transforme le tout en fichier MP4 téléchargé. Assur, tu peux améliorer le workflow en ajoutant en API des voix off pro ou encore des images et vidéos IA générées par les meilleurs modèles du marché.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface graphique animée de présentation de workflow d&#x27;intelligence artificielle.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &quot;Claude Opus 5.5&quot;, &quot;Il écrit du code&quot;, &quot;Export en MP4&quot;, &quot;Améliorer le workflow&quot;, &quot;Voix off pro&quot;, &quot;Images et vidéos IA&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation étape par étape du fonctionnement de Claude Opus 5.5 pour la génération de code animé et son exportation vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_24_000835.jpg" alt="Illustration animée montrant Claude Opus 5.5 en train d&#x27;écrire du code." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_24_000835.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:35</span>
+                        <span class="caption-text">Illustration animée montrant Claude Opus 5.5 en train d&#x27;écrire du code.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_24_000843.jpg" alt="Animation illustrant l&#x27;exportation du résultat en fichier MP4." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_24_000843.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:43</span>
+                        <span class="caption-text">Animation illustrant l&#x27;exportation du résultat en fichier MP4.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_24_000850.jpg" alt="Schéma d&#x27;amélioration du workflow intégrant des voix off pro, des images et des vidéos IA via API." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_24_000850.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:50</span>
+                        <span class="caption-text">Schéma d&#x27;amélioration du workflow intégrant des voix off pro, des images et des vidéos IA via API.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:52 - 00:09:16</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bref, le résultat peut être très variable et c&#x27;est sûr qu&#x27;on va être un peu inondé sur les réseaux. Une bonne façon aussi de rappeler que le contenu pro animé par de vrais motion designers fera encore plus la différence. Alors je suis agréablement surpris. Il a gardé ma vidéo et mon audio original en incluant dedans le motion design et en mettant du rythme, en bien expliquant l&#x27;ensemble des schémas.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Studio d&#x27;enregistrement personnel / format vidéo vertical type Reel ou Short YouTube avec habillage graphique animé.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes incrustés dynamiquement : &#x27;Résultat variable&#x27;, &#x27;De vrais motion designers font encore plus la différence&#x27;, &#x27;Même pas besoin de&#x27;, &#x27;OPUS 5.5&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur commente l&#x27;impact des outils d&#x27;IA et de l&#x27;automatisation sur les réseaux sociaux, illustré par des sous-titres animés et des graphismes.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:17 - 00:09:43</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Franchement tout est clair. Il y a peut-être 2-3 défauts de transition et puis à la fin on voit aussi qu&#x27;il arrive du mal à illustrer cette toute dernière partie. mais franchement le livrable est là, je vais pouvoir le publier sur les réseaux sans aucun souci. C&#x27;est très impressionnant et j&#x27;en viens donc à cette conclusion que ça peut être un outil pour nous accompagner lors de présentations, lors de vidéos éducatives ou pour nous assister dans le montage pour expliquer des parties en motion design.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Studio vidéo et graphismes incrustés de type tutoriel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &#x27;1 VIDÉO&#x27;, barre de progression &#x27;rendu_motion.mp4&#x27; et encadré &#x27;Ton prompt&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente ses conclusions sur l&#x27;outil testé dans la vidéo.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:43 - 00:10:02</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Comme je le dis dans ce petit reel TikTok, est-ce qu&#x27;on ne va pas assister à une surproduction de ce type de vidéos et du coup, on va arriver à des résultats qui vont se ressembler tous avec des techniques de prompt qui vont être partagées et des styles qui vont se copier les uns les autres. Donc voilà, là c&#x27;est tout nouveau, c&#x27;est tout frais. On va en entendre parler sur les réseaux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> AUCUNE</p>
+                        <p><strong>Contenu textuel & Code :</strong> AUCUN</p>
+                        <p><strong>Action / Démonstration :</strong> AUCUNE</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:03 - 00:10:28</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Est-ce qu&#x27;au final, ça ne va pas perdre de son charme et à force d&#x27;être utilisé, ça va être mis de côté par les viewers ? C&#x27;est quand même une super solution. Le prix en API, si on veut l&#x27;intégrer à un workflow cloud code dans une automatisation, sachant qu&#x27;en API, on peut brancher une voix off, par exemple, d&#x27;11Labs ou de fiches audio et pourquoi pas aussi l&#x27;API de XFIL pour pouvoir générer ces assets avec les meilleurs modèles du marché.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de Claude (Anthropic) - section Tarifs API.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de prix pour les modèles Fable 5.1, Opus 5.5, Sonnet 5 et Haiku 4.5 avec les détails de mise en cache, d&#x27;entrée et de sortie.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente les tarifs des différentes API de Claude pour illustrer leur intégration dans des workflows cloud.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_28_001016.jpg" alt="Page web de tarification de l&#x27;API Claude montrant les différents modèles (Fable, Opus, Sonnet, Haiku) et leurs coûts en tokens." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_28_001016.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:16</span>
+                        <span class="caption-text">Page web de tarification de l&#x27;API Claude montrant les différents modèles (Fable, Opus, Sonnet, Haiku) et leurs coûts en tokens.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/2Ned0kvFNqM/frame_28_001027.jpg" alt="Page web de tarification de l&#x27;API Claude montrant les différents modèles (Fable, Opus, Sonnet, Haiku) et leurs coûts en tokens." loading="lazy" onclick="openLightbox('../screenshots/2Ned0kvFNqM/frame_28_001027.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:27</span>
+                        <span class="caption-text">Page web de tarification de l&#x27;API Claude montrant les différents modèles (Fable, Opus, Sonnet, Haiku) et leurs coûts en tokens.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:29 - 00:10:50</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ça, je pense, on en fera une vidéo dédiée. Et bien sûr, ce modèle Opus 5.5, il ne va pas que servir à faire du motion design. Il est très bon aussi dans tout ce qui va être création d&#x27;applications, création de sites internet, dans le code et dans les automatisations. Bref, à vous de le tester de votre côté. Merci d&#x27;avoir suivi ce tuto et je te dis à très bientôt sur le Labo des Réseaux pour de nouvelles vidéos.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucune interface logicielle ou web affichée, plan de type &quot;talking head&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte, prompt ou menu visible à l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur conclut le tutoriel et remercie les spectateurs.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        </section>
+
+        <footer>
+            Généré automatiquement par l'agent de veille multimodale Antigravity — Pipeline Whisper-v3-large-turbo & Gemini-3.5-flash-lite.
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture plein écran" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

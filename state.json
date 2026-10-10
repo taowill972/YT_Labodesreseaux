@@ -3,7 +3,8 @@
     "4mhrPQfCkJk",
     "eA8CAWUZnso",
     "fUokaQ-NnZE",
-    "u66ICS8uDTE"
+    "u66ICS8uDTE",
+    "2Ned0kvFNqM"
   ],
   "processed_videos": [
     {
@@ -37,10 +38,18 @@
       "md_file": "YT_Labodesreseaux_Transcript/2026-09-30_YT-u66ICS8uDTE_Arrête de payer pour des Crédits IA que tu n’utilises pas HIGGSFIELD API_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "html_file": "YT_Labodesreseaux_Transcript/2026-09-30_YT-u66ICS8uDTE_Arrête de payer pour des Crédits IA que tu n’utilises pas HIGGSFIELD API_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "screenshots_count": 44
+    },
+    {
+      "id": "2Ned0kvFNqM",
+      "title": "Claude Opus 5.5 : Motion Design, Animation, Montage Vidéo, un PROMPT et il se DÉBROUILLE",
+      "upload_date": "20260926",
+      "md_file": "YT_Labodesreseaux_Transcript/2026-09-26_YT-2Ned0kvFNqM_Claude Opus 5.5 Motion Design, Animation, Montage Vidéo, un PROMPT et il se DÉBR_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "html_file": "YT_Labodesreseaux_Transcript/2026-09-26_YT-2Ned0kvFNqM_Claude Opus 5.5 Motion Design, Animation, Montage Vidéo, un PROMPT et il se DÉBR_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "screenshots_count": 36
     }
   ],
-  "last_run_timestamp": "2026-10-10T07:24:05Z",
-  "completed_count": 4,
+  "last_run_timestamp": "2026-10-10T07:30:13Z",
+  "completed_count": 5,
   "total_catalog_count": 1263,
   "status": "idle"
 }
