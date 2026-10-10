@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Claude OPUS 5.5 a créé MA SÉRIE de 8 épisodes (MCP Higgsfield) — Labo des Réseaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-box {
+            margin-bottom: 1.5rem;
+        }
+        .tools-box h3, .points-box h3 {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tool-tag {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #e2e8f0;
+            padding: 0.35rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .points-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .points-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Timeline Section */
+        section.timeline-section {
+            margin-top: 2rem;
+        }
+
+        .timeline-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            margin-bottom: 1.8rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        .timeline-block:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .timeline-time {
+            background: rgba(20, 30, 51, 0.7);
+            padding: 0.85rem 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 0.25rem 0.65rem;
+            border-radius: 0.35rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .verbatim-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 3px solid #10b981;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .verbatim-header, .visual-header, .screenshots-header {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .verbatim-text {
+            font-size: 0.96rem;
+            line-height: 1.65;
+            color: #f1f5f9;
+            font-style: italic;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.5);
+            border-left: 3px solid #8b5cf6;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: #cbd5e1;
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .visual-details strong {
+            color: #e2e8f0;
+        }
+
+        /* Screenshots grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 16, 28, 0.7);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px dashed rgba(148, 163, 184, 0.2);
+        }
+
+        .segment-screenshots-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.65rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .screenshot-card {
+            background: #0b1120;
+            border-radius: 0.6rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .img-wrapper {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .img-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .zoom-badge {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 0.2rem 0.55rem;
+            border-radius: 0.35rem;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .img-wrapper:hover .zoom-badge {
+            opacity: 1;
+        }
+
+        .screenshot-caption {
+            padding: 0.65rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #93c5fd;
+        }
+
+        .caption-text {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Claude OPUS 5.5 a créé MA SÉRIE de 8 épisodes (MCP Higgsfield)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📺 Labo Des Réseaux</span>
+                <a href="https://www.youtube.com/watch?v=fUokaQ-NnZE" target="_blank" rel="noopener" class="badge badge-yt">
+                    ▶️ Voir sur YouTube (fUokaQ-NnZE)
+                </a>
+                <span class="badge">📅 2026-10-03</span>
+                <span class="badge">⏱️ 13:04</span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            
+            <div class="summary-card">
+                <p>**Cette vidéo de la chaîne « Labo Des Réseaux » explore l&#x27;automatisation totale de la création de contenu vidéo grâce à l&#x27;association de Claude.ai et de la plateforme Xfield via un connecteur MCP.** Le créateur démontre comment un modèle de pointe tel qu&#x27;**Opus 5.5** peut gérer l&#x27;intégralité d&#x27;un projet de fiction, de l&#x27;idéation initiale jusqu&#x27;à la production autonome d&#x27;une mini-série de 8 épisodes au format vertical pour les réseaux sociaux. L&#x27;objectif est de s&#x27;affranchir des équipes de tournage et des compétences techniques lourdes pour concevoir des séries de fictions, des publicités ou du contenu marketing en déléguant le travail de coordination à une intelligence artificielle.</p><p>**Le tutoriel détaille pas à pas la configuration technique nécessaire, débutant par l&#x27;association d&#x27;un compte Claude Pro et d&#x27;un abonnement Xfield à l&#x27;aide des connecteurs MCP.** Une fois la liaison établie, le système permet de piloter la génération d&#x27;assets graphiques, de fiches personnages et de séquences vidéos directement depuis l&#x27;interface de conversation de l&#x27;assistant. Le créateur montre l&#x27;utilisation de modèles spécifiques comme **GPT 2.5** pour la cohérence visuelle des personnages et **WAN 3.0** pour l&#x27;optimisation de la génération vidéo, tout en mesurant précisément l&#x27;impact financier de l&#x27;opération en crédits consommés.</p><p>**En conclusion, l&#x27;expérience prouve qu&#x27;il est désormais possible de produire une série complète en moins de deux heures avec un minimum d&#x27;intervention humaine, se limitant à quelques ajustements de montage et à une validation du scénario.** Si le créateur note des limites inhérentes à la spontanéité narrative de l&#x27;IA nécessitant un travail d&#x27;écriture plus poussé, il souligne le formidable potentiel de productivité de cette méthode. Cette synergie technologique ouvre la voie à de nouveaux cas d&#x27;usage allant de l&#x27;animation de concepts marketing à la création d&#x27;applications, de jeux ou d&#x27;influenceurs virtuels.</p><p>---</p>
+            </div>
+
+            <div class="tools-box">
+                <h3>🛠️ Outils, Modèles & Logiciels Présentés</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">Claude.ai (Modèle Opus 5.5)** : Assistant conversationnel et modèle de réflexion avancé utilisé pour manager le projet, rédiger les scripts et orchestrer les générations.</span><span class="tool-tag">Xfield (higgsfield.ai)** : Agrégateur et plateforme cloud de génération d&#x27;images et de vidéos par IA.</span><span class="tool-tag">Connecteur MCP (Model Context Protocol)** : Protocole de liaison permettant de connecter Claude.ai aux outils d&#x27;Xfield.</span><span class="tool-tag">GPT 2.5** : Modèle d&#x27;intelligence artificielle utilisé pour la génération et la constance des fiches personnages.</span><span class="tool-tag">WAN 3.0** : Modèle de génération vidéo performant et optimisé en termes de coût en crédits.</span><span class="tool-tag">Supercomputer d&#x27;Xfield** : Outil intégré permettant d&#x27;utiliser des modèles de réflexion directement au sein de la plateforme Xfield sans abonnement Claude.</span><span class="tool-tag">API d&#x27;Xfield** : Alternative de paiement à l&#x27;utilisation (pay-as-you-go) sans abonnement mensuel.</span><span class="tool-tag">GPT Astra** : Outil alternatif mentionné pour des flux de travail similaires connectés à Xfield.</span><span class="tool-tag"></span>
+                </div>
+            </div>
+
+            <div class="points-box">
+                <h3>🔑 Points Clés & Enseignements Stratégiques</h3>
+                <ul>
+                    <li><span class="point-bullet">✦</span><span>Délégation complète du workflow** : Claude Opus 5.5 gère l&#x27;organisation du projet, structure le synopsis, rédige les règles de l&#x27;univers et enchaîne la création des épisodes de manière autonome.</span></li><li><span class="point-bullet">✦</span><span>Connexion par MCP** : L&#x27;association fluide entre Claude et Xfield s&#x27;effectue simplement en activant le connecteur dédié dans les options de personnalisation de l&#x27;assistant.</span></li><li><span class="point-bullet">✦</span><span>Gestion de la récurrence des personnages** : L&#x27;utilisation de fiches personnages détaillées (plans de face, profil et dos) garantit la consistance visuelle des protagonistes à travers les différents épisodes.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des coûts et des ressources** : Il est recommandé de consulter les tarifs et la consommation en crédits des différents modèles sur Xfield (comme WAN 3.0) avant de lancer des générations massives de vidéos.</span></li><li><span class="point-bullet">✦</span><span>Autonomie de production** : Le processus de génération d&#x27;un épisode prend en moyenne entre 11 et 12 minutes, permettant de lancer les tâches en arrière-plan et de récupérer une série complète après environ 1h30.</span></li><li><span class="point-bullet">✦</span><span>Flexibilité des modifications** : En cas d&#x27;insatisfaction sur une séquence précise, il n&#x27;est pas nécessaire de régénérer l&#x27;épisode en entier ; il suffit de cibler le plan défectueux en s&#x27;appuyant sur les assets déjà enregistrés.</span></li><li><span class="point-bullet">✦</span><span>Nécessité d&#x27;un suivi narratif** : Le créateur souligne qu&#x27;un travail d&#x27;écriture et de réflexion en amont plus poussé avec l&#x27;IA permet d&#x27;éviter les facilités scénaristiques et d&#x27;améliorer la qualité globale de la série.</span></li><li><span class="point-bullet">✦</span><span>Diversification des cas d&#x27;usage** : La connexion entre Claude et Xfield ne se limite pas aux séries vidéo ; elle s&#x27;applique également au marketing, à la création de publicités, de sites web, de jeux vidéo ou d&#x27;applications.</span></li><li><span class="point-bullet">✦</span><span>Alternative sans abonnement Claude** : Le &quot;Supercomputer&quot; d&#x27;Xfield permet d&#x27;accéder à des modèles de réflexion directement depuis la plateforme, imputant uniquement les crédits d&#x27;utilisation.</span></li><li><span class="point-bullet">✦</span><span>Modèle économique flexible** : L&#x27;utilisation de l&#x27;API Xfield offre la possibilité de payer strictement à la consommation (pay-as-you-go) sans s&#x27;engager sur un abonnement mensuel fixe.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle</h2>
+            
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:23</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si on y était ? Le moment où n&#x27;importe qui peut réaliser une série sans équipe de tournage, sans acteur, sans scénariste, bref, juste via une conversation avec Lya, en l&#x27;occurrence ici sur Claude et son dernier modèle, Opus 5.5. C&#x27;est ce qu&#x27;on va voir donc dans cette vidéo en produisant une série de 8 épisodes de 30 secondes, format vertical, TikTok short reels.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface graphique d&#x27;assistant conversationnel IA et interface de présentation vidéo.
+[DESC_IMAGE_1] Le présentateur s&#x27;exprime face caméra dans son studio avec un éclairage violet.
+[DESC_IMAGE_2] Une interface d&#x27;assistant IA simulant une conversation textuelle pour créer une série.
+[DESC_IMAGE_3] Une vue d&#x27;ensemble montrant la production d&#x27;une série de 8 épisodes verticaux de 30 secondes.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran illustrant la conversation avec l&#x27;IA (« Crée-moi une série de 8 épisodes de 30 secondes ») et les vignettes des 8 épisodes (EP 01 à EP 08).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur introduit le sujet de la vidéo en montrant comment interagir avec un assistant IA pour générer le concept d&#x27;une mini-série.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_01_000012.jpg" alt="Une interface d&#x27;assistant IA simulant une conversation textuelle pour créer une série." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_01_000012.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:12</span>
+                        <span class="caption-text">Une interface d&#x27;assistant IA simulant une conversation textuelle pour créer une série.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_01_000022.jpg" alt="Une vue d&#x27;ensemble montrant la production d&#x27;une série de 8 épisodes verticaux de 30 secondes." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_01_000022.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:22</span>
+                        <span class="caption-text">Une vue d&#x27;ensemble montrant la production d&#x27;une série de 8 épisodes verticaux de 30 secondes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:24 - 00:00:54</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Oui, c&#x27;est vrai, on aurait pu directement s&#x27;attaquer au format 20 minutes, mais ça aurait coûté un petit peu cher en token. Là ce que je te propose c&#x27;est vraiment de te montrer tout le processus et le coût final pour pouvoir ainsi le dupliquer et voir que ça n&#x27;a jamais été aussi facile juste à partir de Claude de chercher une idée, la développer, créer ses personnages et les mettre en scène à travers une série d&#x27;épisodes qui se suivent pour ensuite la propulser sur les réseaux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Claude (LLM) et lecteur vidéo intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte listant des &quot;Défauts à corriger au montage&quot; et une vidéo montrant un acteur tenant un téléphone.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;utilisation de Claude pour analyser et corriger les détails d&#x27;un projet vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_02_000052.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de Claude avec du texte à gauche et une vidéo de démonstration à droite." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_02_000052.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:52</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de Claude avec du texte à gauche et une vidéo de démonstration à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:54 - 00:01:19</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors avant toute chose, ce qu&#x27;il va nous falloir dans un premier temps, c&#x27;est au moins un compte CloudPro, puisqu&#x27;ici nous allons utiliser le dernier modèle de réflexion Opus 5.5. Ici Opus 5.5 va nous permettre d&#x27;organiser toutes nos idées et de manager toute l&#x27;organisation de projet pour ainsi nous produire les épisodes les uns les autres à la suite montés de A à Z.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de Claude (Anthropic) - Page de tarification (Tarifs).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres d&#x27;abonnement : Free (0 €), Pro (15 €/mois), Max (à partir de 90 €/mois) avec listes de fonctionnalités détaillées.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente les différents abonnements disponibles pour utiliser l&#x27;intelligence artificielle Claude.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_03_000106.jpg" alt="Affichage de la page de tarification du site Claude montrant les offres Free, Pro et Max." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_03_000106.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Affichage de la page de tarification du site Claude montrant les offres Free, Pro et Max.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_03_000117.jpg" alt="Vue similaire sur la page de tarification de Claude pendant l&#x27;explication des offres d&#x27;abonnement." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_03_000117.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:17</span>
+                        <span class="caption-text">Vue similaire sur la page de tarification de Claude pendant l&#x27;explication des offres d&#x27;abonnement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:19 - 00:01:38</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais il va nous falloir aussi un générateur d&#x27;images et de vidéos IA. Ici, on va passer par Xfield, un agrégateur qui va nous permettre de pouvoir sélectionner parmi plusieurs modèles ce qu&#x27;on juge nécessaire à la création de notre série. En description et en commentaire de vidéo, tu trouveras un lien qui te renvoie vers Xfield.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, site de Higgsfield AI (higgsfield.ai)</p>
+                        <p><strong>Contenu textuel & Code :</strong> &quot;Welcome to Higgsfield Apps&quot;, catégories professionnelles (Virality Predictor, Expand image, Angles 2.0, Shots), grille de tarifs (Plus à $35/mois, Ultra à $70/mois)</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la plateforme agrégateur d&#x27;IA Higgsfield et de ses différentes fonctionnalités de génération d&#x27;images et de vidéos.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_04_000128.jpg" alt="Page d&#x27;accueil de la plateforme Higgsfield AI montrant les différents outils et applications de génération vidéo." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_04_000128.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:28</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Higgsfield AI montrant les différents outils et applications de génération vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_04_000137.jpg" alt="Page de tarification (Pricing) de Higgsfield AI avec les abonnements Plus et Ultra." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_04_000137.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:37</span>
+                        <span class="caption-text">Page de tarification (Pricing) de Higgsfield AI avec les abonnements Plus et Ultra.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:38 - 00:01:59</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tu pourras ainsi consulter les différents types d&#x27;abonnements et sélectionner celui qui te convient le mieux. Une fois donc que ton compte Cloud et Xfield sont opérationnels, on va les connecter ensemble via le MCP. Pour pouvoir le faire, c&#x27;est très simple. Tu te rends sur Cloud dans personnaliser, tu vas aller chercher connecteur et dans la barre de recherche, tu vas taper Xfield.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant Higgsfield.ai et Claude.ai
+[DESC_IMAGE_2] Gros plan du présentateur de la chaîne YouTube face caméra, sans élément d&#x27;interface visible.
+[DESC_IMAGE_3] Page de personnalisation de l&#x27;interface Claude (claude.ai/customize/connectors) montrant l&#x27;onglet des connecteurs et diverses compétences.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs d&#x27;abonnements, options de crédits, options de personnalisation, connecteurs et compétences de Claude AI</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre les abonnements disponibles puis se rend sur Claude pour expliquer comment connecter les comptes via le MCP dans l&#x27;onglet connecteurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_05_000139.jpg" alt="Page de tarification d&#x27;une plateforme d&#x27;IA (Higgsfield) montrant différents abonnements (Plus, Ultra) et crédits." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_05_000139.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:39</span>
+                        <span class="caption-text">Page de tarification d&#x27;une plateforme d&#x27;IA (Higgsfield) montrant différents abonnements (Plus, Ultra) et crédits.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_05_000157.jpg" alt="Page de personnalisation de l&#x27;interface Claude (claude.ai/customize/connectors) montrant l&#x27;onglet des connecteurs et diverses compétences." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_05_000157.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:57</span>
+                        <span class="caption-text">Page de personnalisation de l&#x27;interface Claude (claude.ai/customize/connectors) montrant l&#x27;onglet des connecteurs et diverses compétences.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:59 - 00:02:22</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tu n&#x27;auras ainsi qu&#x27;à connecter Xfield à Cloud pour que tu puisses maintenant générer tes images et vidéos à partir de Cloud, sachant que ceux-ci seront aussi disponibles dans les assets générés d&#x27;Xfield. Tu vas voir c&#x27;est très simple, dans un premier temps on va se rendre dans notre conversation Cowork. Et ici on vérifie bien dans l&#x27;outil plus en allant dans Connecteur que notre connecteur Xfield est bien activé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:22 - 00:02:43</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant dans un premier temps on va essayer de trouver un concept de série sans réalisation pour le moment. Ainsi je vais lui indiquer, sans aucune réalisation je souhaiterais créer une série pour les réseaux sociaux, 8 épisodes de moins de 30 secondes, format vertical. Je n&#x27;ai pas encore d&#x27;idée sur les personnages, l&#x27;ambiance, le style, mais pourquoi pas quelque chose en lien avec les backrooms.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:43 - 00:03:09</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un personnage donc qui chercherait à s&#x27;enfuir, il faudrait une introduction, que ça nous donne envie de regarder la série, et un cliffhanger à la fin pour pouvoir peut-être annoncer une saison 2. Ok, on lance le prompt, et là, Opus 5.5 va nous proposer le synopsis des 8 épisodes. Il nous donne aussi les règles de l&#x27;univers, et nous propose, avant de commencer à réaliser les épisodes, de pourquoi pas nous générer les fiches personnages.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:09 - 00:03:36</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est exactement ça qu&#x27;on va faire dans un premier temps. On va demander la fiche personnage de notre héros pour savoir si celui-ci, il colle bien à l&#x27;ambiance. Donc en lui demandant de réaliser la fiche personnage de Théo, c&#x27;est ici que le MCP d&#x27;XField va intervenir. Et en fait, Claude va nous demander l&#x27;autorisation pour pouvoir faire en sorte d&#x27;envoyer le prompt qu&#x27;il a réalisé pour créer cette fiche personnage à XField et ainsi nous crée une image.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;assistant IA Claude</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt utilisateur « réalise moi la fiche personnage de Théo », indications « Outils chargés », « Mémoire lue », mention « a utilisé l&#x27;intégration Higgsfield » et « Ad Multiplier and Creative Workflows » en cours.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la soumission du prompt pour générer la fiche personnage via l&#x27;intégration MCP.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_09_000323.jpg" alt="Interface de Claude montrant la requête pour créer la fiche personnage de Théo avec le chargement des outils et l&#x27;intégration Higgsfield." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_09_000323.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:23</span>
+                        <span class="caption-text">Interface de Claude montrant la requête pour créer la fiche personnage de Théo avec le chargement des outils et l&#x27;intégration Higgsfield.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:36 - 00:03:57</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ici on voit qu&#x27;il a utilisé en modèle d&#x27;image GPT 2.5, donc sûrement le modèle le plus réaliste en ce moment du marché. Notre fiche personnage est parfaite, c&#x27;est-à-dire que nous avons un plan de face, un plan entier de profil et de dos. Ça va nous permettre d&#x27;avoir de la récurrence à travers les 8 épisodes pour que le personnage principal garde de la consistance.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de chat web / générateur d&#x27;images IA avec incrustation vidéo du créateur en bas à droite.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Génération d&#x27;une fiche personnage avec des vues multiples (face, profil, dos), boutons d&#x27;action (Animate, Edit, Download), et options d&#x27;intégration Higgsfield.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur commente la fiche personnage générée et explique son utilité pour assurer la récurrence du personnage sur plusieurs épisodes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_10_000347.jpg" alt="Affichage de la fiche personnage générée par IA montrant un portrait de face et un plan complet sous différents angles." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_10_000347.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:47</span>
+                        <span class="caption-text">Affichage de la fiche personnage générée par IA montrant un portrait de face et un plan complet sous différents angles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_10_000356.jpg" alt="Affichage de l&#x27;interface montrant les détails d&#x27;intégration et les options d&#x27;outils liés à Higgsfield et la génération." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_10_000356.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:56</span>
+                        <span class="caption-text">Affichage de l&#x27;interface montrant les détails d&#x27;intégration et les options d&#x27;outils liés à Higgsfield et la génération.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:57 - 00:04:17</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si on retourne dans Xfield et qu&#x27;on va dans les assets, on voit bien que la génération a été faite et on retrouvera notre fiche personnage juste ici. Donc je me suis aussi noté les crédits que j&#x27;avais en début de session. J&#x27;étais à 4350, on va voir combien on va en dépenser pour justement réaliser ce drama, cette série IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Higgsfield Apps, interface web d&#x27;IA générative et interface de chat/automatisation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface d&#x27;accueil Higgsfield, fiches personnages avec multiples angles de vue, détails de génération (modèle GPT image 2.5) et fenêtre de code JSON.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue sur la plateforme Higgsfield, consulte la fiche personnage générée et examine les permissions de l&#x27;application.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_11_000358.jpg" alt="Page d&#x27;accueil de la plateforme Higgsfield Apps avec des exemples d&#x27;effets IA et le créateur visible en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_11_000358.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:58</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Higgsfield Apps avec des exemples d&#x27;effets IA et le créateur visible en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_11_000407.jpg" alt="Affichage d&#x27;une fiche personnage générée comportant plusieurs vues d&#x27;un même homme en costume, avec les détails du prompt sur le panneau latéral." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_11_000407.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:07</span>
+                        <span class="caption-text">Affichage d&#x27;une fiche personnage générée comportant plusieurs vues d&#x27;un même homme en costume, avec les détails du prompt sur le panneau latéral.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_11_000415.jpg" alt="Fenêtre contextuelle d&#x27;autorisation affichant du code JSON (job_id) pour l&#x27;utilisation d&#x27;une application ou d&#x27;une intégration." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_11_000415.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:15</span>
+                        <span class="caption-text">Fenêtre contextuelle d&#x27;autorisation affichant du code JSON (job_id) pour l&#x27;utilisation d&#x27;une application ou d&#x27;une intégration.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:17 - 00:04:37</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Retour sur Claude qui me demande si la fiche personnage me correspond. Là ça me va, c&#x27;est parfait. Et avant de continuer, on va lui demander de générer les autres fiches personnages qui vont intervenir au cours des 8 épisodes. Je vais avoir ainsi Lina qui est mon personnage féminin de la série. On ne sait pas pourquoi elle, elle est prisonnière des backrooms.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;outil d&#x27;IA et de génération (Higgsfield via Claude).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Vues multiples du personnage féminin (Lina), fichiers de téléchargement (lina.png, employe.png) et boîte de dialogue de l&#x27;assistant.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la génération de la fiche personnage de Lina, le personnage féminin principal de la série.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_12_000435.jpg" alt="Affichage de la fiche personnage générée pour Lina avec des vues sous différents angles (face, profil, dos)." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_12_000435.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:35</span>
+                        <span class="caption-text">Affichage de la fiche personnage générée pour Lina avec des vues sous différents angles (face, profil, dos).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:37 - 00:04:59</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et on a le mystérieux employé, personnage typique, horrifique, qui colle parfaitement à cet univers. Maintenant qu&#x27;on a ces personnages, Claude nous propose de générer quelques décors qui vont accompagner les 8 épisodes pour nous mettre dans l&#x27;ambiance des backrooms. Et ici j&#x27;ai la réalisation suivante avec les images clés qui devraient être utilisées à travers les différents épisodes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Claude / Higgsfield avec affichage du chat et des visuels générés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes de prompts pour les épisodes et visualisations de personnages et décors (backrooms).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la transition entre la génération des personnages et la création des décors avec l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_13_000438.jpg" alt="Interface montrant des générations de personnages pour la série, notamment l&#x27;employé mystérieux avec des vues de face et de profil." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_13_000438.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:38</span>
+                        <span class="caption-text">Interface montrant des générations de personnages pour la série, notamment l&#x27;employé mystérieux avec des vues de face et de profil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_13_000448.jpg" alt="Interface de discussion textuelle en cours de chargement (&#x27;En cours...&#x27;) pour la création des décors de la série." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_13_000448.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:48</span>
+                        <span class="caption-text">Interface de discussion textuelle en cours de chargement (&#x27;En cours...&#x27;) pour la création des décors de la série.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_13_000457.jpg" alt="Interface montrant la génération d&#x27;un décor inspiré des backrooms avec des néons et des couloirs labyrinthiques via l&#x27;intégration de Higgsfield." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_13_000457.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:57</span>
+                        <span class="caption-text">Interface montrant la génération d&#x27;un décor inspiré des backrooms avec des néons et des couloirs labyrinthiques via l&#x27;intégration de Higgsfield.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:59 - 00:05:18</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et donc maintenant il me propose d&#x27;attaquer les promptes pour l&#x27;épisode 1. Ok je vais valider et on va pouvoir voir ce que ça donne. Le prompt est prêt et dans sa logique il va me réaliser deux clics qu&#x27;il va combiner pour pouvoir créer ce premier épisode. C&#x27;est très détaillé, c&#x27;est horodaté. Donc on sait ce qui va se passer de telle seconde à telle seconde.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de type assistant conversationnel / LLM (style Claude)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Scripts de prompts structurés au format JSON avec des horodatages (&quot;time&quot;, &quot;shot&quot;, &quot;camera&quot;, &quot;look&quot;, &quot;audio&quot;, &quot;constraints&quot;)</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;utilisation des prompts détaillés et horodatés générés par l&#x27;IA pour structurer les scènes de l&#x27;épisode.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_14_000500.jpg" alt="Affichage du panneau de discussion avec une interface de type assistant textuel, montrant un prompt structuré pour une série vidéo." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_14_000500.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:00</span>
+                        <span class="caption-text">Affichage du panneau de discussion avec une interface de type assistant textuel, montrant un prompt structuré pour une série vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_14_000508.jpg" alt="Affichage du générateur de code avec un prompt JSON détaillé et horodaté pour le clip 2 de l&#x27;épisode." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_14_000508.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:08</span>
+                        <span class="caption-text">Affichage du générateur de code avec un prompt JSON détaillé et horodaté pour le clip 2 de l&#x27;épisode.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_14_000516.jpg" alt="Vue détaillée de la structure JSON avec l&#x27;horodatage précis décrivant les actions planifiées pour le cliffhanger." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_14_000516.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:16</span>
+                        <span class="caption-text">Vue détaillée de la structure JSON avec l&#x27;horodatage précis décrivant les actions planifiées pour le cliffhanger.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:18 - 00:05:38</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et il me donne aussi des indications de montage si je veux rajouter des petits détails de mon côté. Moi ça me paraît correct, je vais donc demander de générer ce premier épisode. Je vais juste lui préciser le modèle que je souhaite utiliser. Ici, je veux qu&#x27;il utilise WAN 3.0 puisque c&#x27;est un modèle très performant et qui ne sera pas trop gourmand en crédit.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:38 - 00:06:07</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est aussi important de l&#x27;avoir en tête. Avant de valider quoi que ce soit comme action sur X-File, surtout sur de la génération vidéo, ne pas hésiter à aller faire un tour sur la plateforme et voir quel modèle prendre et combien ça coûtera en tel format pour tant de secondes. Ici donc, il est parti pour me réaliser l&#x27;épisode 1. et ça a duré 11 minutes 17 pour me générer ce premier épisode, donc deux séquences séparées qu&#x27;il a assemblées ensemble au montage, et qu&#x27;il me propose directement de visionner juste ici, et de télécharger.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de type assistant IA / LLM (avec panneau de chat et lecteur vidéo intégré)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de description d&#x27;un épisode de série (&quot;Série réseaux sociaux 8 épisodes&quot;, &quot;Le décor&quot;, &quot;Le cliffhanger&quot;, &quot;Un défaut à surveiller&quot;) et un lecteur affichant &quot;Niveau zero episode 1 . MP4&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le résultat généré et le compte-rendu textuel de la génération vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_16_000605.jpg" alt="Interface de discussion textuelle à gauche affichant un récapitulatif avec un lecteur vidéo à droite et le créateur en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_16_000605.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:05</span>
+                        <span class="caption-text">Interface de discussion textuelle à gauche affichant un récapitulatif avec un lecteur vidéo à droite et le créateur en bas à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:07 - 00:06:27</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ainsi je vais pouvoir faire la même chose au fil de la conversation pour les 8 épisodes, et à la fin donc avoir ma série complète, on va avancer dans le temps et voir si le tout est cohérent. Alors ça y est, j&#x27;ai ma série complète, mes 8 épisodes qui ont été générés, en moyenne pour chaque épisode il a mis entre 11 et 12 minutes, des épisodes qui varient entre 20 et 30 secondes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:27 - 00:06:51</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si je vais dans mes assets, je vois l&#x27;ensemble des séquences qui ont été réalisées. Et en crédit, je vois que maintenant je suis à 3564. Donc en moyenne, j&#x27;en ai eu pour 100 crédits par épisode. Donc voilà ce que ça m&#x27;a coûté de mon côté. Toi, le coût, il variera selon le niveau d&#x27;abonnement que tu as. Et puis les modèles que tu vas utiliser pour créer ta série et le nombre de secondes que tu vas mettre par épisode.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Higgsfield Apps.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte &quot;WELCOME TO HIGGSFIELD APPS&quot;, menus de navigation (Explore, Image, Video, Audio, MCP, API, etc.), et différentes fonctionnalités présentées sous forme de cartes (Virality Predictor, Expand image, Angles 2.0, Shots).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment accéder à la section &quot;Assets&quot; de l&#x27;application pour consulter les séquences générées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_18_000628.jpg" alt="Page d&#x27;accueil de la plateforme Higgsfield Apps avec le curseur pointant sur l&#x27;onglet &quot;Assets&quot;." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_18_000628.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:28</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Higgsfield Apps avec le curseur pointant sur l&#x27;onglet &quot;Assets&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:51 - 00:07:15</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En tout cas, moi ici, je suis très content du résultat. Alors j&#x27;ai juste fait une modification, c&#x27;est que j&#x27;ai régénéré une autre idée pour l&#x27;épisode 8 puisque la fin ne me plaisait pas. Mais le reste c&#x27;est quasi parfait, il y a des petites incohérences, rien de trop compliqué. Avec 5 minutes de montage, j&#x27;ai coupé des séquences à droite à gauche. Et vraiment si j&#x27;avais eu des problèmes sur un épisode, j&#x27;aurais pu régénérer une séquence sans régénérer l&#x27;épisode en entier.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Claude.ai et lecteur vidéo intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de retour de projet &quot;Série réseaux sociaux 8 épisodes&quot; avec des listes à puces sur les modifications, les défauts à corriger et un fichier MP4 &quot;Niveau zero episode 8&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre son écran de travail sur Claude.ai pour illustrer ses modifications d&#x27;écriture et les retours sur sa série.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_19_000652.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de Claude avec le texte de révision de l&#x27;épisode 8 et un lecteur vidéo à droite." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_19_000652.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:52</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de Claude avec le texte de révision de l&#x27;épisode 8 et un lecteur vidéo à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_19_000703.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de Claude avec les défauts à corriger au montage et un extrait vidéo de l&#x27;acteur au téléphone." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_19_000703.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:03</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de Claude avec les défauts à corriger au montage et un extrait vidéo de l&#x27;acteur au téléphone.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_19_000713.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de Claude avec les retours de montage et un extrait vidéo d&#x27;une scène avec un personnage de dos et un acteur au premier plan." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_19_000713.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:13</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de Claude avec les retours de montage et un extrait vidéo d&#x27;une scène avec un personnage de dos et un acteur au premier plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:15 - 00:07:36</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En sélectionnant justement le nombre de secondes qu&#x27;il me faut et réutiliser ma conversation de Claude où j&#x27;ai déjà tous mes assets qui sont uploadés. donc mes caractères références et les décors principaux. On va voir tout de suite ce que la série donne. Donc il y a 8 épisodes de moins de 30 secondes. Il y en a pour à peu près 3 minutes de visionnage. Je te laisse regarder et on fait le débrief après.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:41 - 00:08:05</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si quelqu&#x27;un voit cette vidéo, je m&#x27;appelle Théo. Je ne sais pas où je suis. Il y a quelqu&#x27;un ? 37 fois.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo narrative / fiction inspirée des creepypastas (Backrooms)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Inscription murale &quot;THÉO, C&#x27;EST TA 37ÈME FOIS&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur met en scène une situation narrative et immersive de type &quot;Backrooms&quot;.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_21_000804.jpg" alt="Gros plan sur un mur avec l&#x27;inscription manuscrite &quot;THÉO, C&#x27;EST TA 37ÈME FOIS&quot;." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_21_000804.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:04</span>
+                        <span class="caption-text">Gros plan sur un mur avec l&#x27;inscription manuscrite &quot;THÉO, C&#x27;EST TA 37ÈME FOIS&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:06 - 00:08:32</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je ne me souviens de rien. C&#x27;est là que je me suis réveillé. Il n&#x27;y a personne.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun logiciel ou interface technique visible (vidéo narrative type fiction).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Ambiance de type Backrooms, couloirs infinis, murs jaunis, éclairage néon, silhouette au sol, mention &#x27;Ep3&#x27;.
+[DESC_IMAGE_3] Séquence narrative de fiction où un personnage se réveille seul dans un environnement mystérieux.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:33 - 00:08:58</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai rêvé. Maman ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Scène narrative fictive / Vidéo générée par IA</p>
+                        <p><strong>Contenu textuel & Code :</strong> Personnage inquiet et étrange couloir monochrome aux murs jaunâtres</p>
+                        <p><strong>Action / Démonstration :</strong> Illustration d&#x27;une séquence narrative dramatique et mystérieuse</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:58 - 00:09:23</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je ne fais confiance à personne. ne fait confiance à personne. Ils entendent tout.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> AUCUNE</p>
+                        <p><strong>Contenu textuel & Code :</strong> AUCUNE</p>
+                        <p><strong>Action / Démonstration :</strong> AUCUNE</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:23 - 00:09:46</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">T&#x27;es là depuis quand ? Depuis hier. Il y a une sortie. La lumière verde. Je sais où elle est. Alors on y va ? Tu... Tu travailles pour eux ? Mais c&#x27;est qui eux ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun logiciel ou interface technique visible.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fiction narrative interactive ou mini-série au format vertical sur le thème des &#x27;Backrooms&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Scène jouée par des acteurs dans un décor généré ou recréé.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:46 - 00:10:39</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est moi. Tous moi. Si quelqu&#x27;un voit cette vidéo,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo narrative / fiction (aucune interface logicielle ou outil technique affiché).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Séquence narrative montrant un personnage face à ses doubles ou dans un environnement oppressant.
+[DESC_IMAGE_1] Récit d&#x27;une histoire fictionnelle ou mise en scène visuelle par le créateur.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:39 - 00:11:02</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">je m&#x27;appelle Théo. Je sais pas où je suis. Donc voilà, si je devrais être un petit peu critique, c&#x27;est que je trouve que ça manque peut-être d&#x27;écriture. Il y a des facilités de scénario. Mais c&#x27;est vrai que de mon côté, je n&#x27;ai pas vraiment trop travaillé avec Claude.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de l&#x27;assistant IA Claude.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte listant les défauts à corriger au montage (chiffre, téléphone dans le champ, son) et lecteur vidéo avec un fichier MP4 intitulé &#x27;Niveau zero episode 8 fin a&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;interface de Claude et commente les retours textuels et vidéo générés par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_27_001050.jpg" alt="Interface de Claude affichant une conversation avec du texte de critique de scénario et une vidéo intégrée, aux côtés du présentateur." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_27_001050.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:50</span>
+                        <span class="caption-text">Interface de Claude affichant une conversation avec du texte de critique de scénario et une vidéo intégrée, aux côtés du présentateur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_27_001100.jpg" alt="Vue similaire sur l&#x27;interface de Claude avec les retours sur le montage vidéo." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_27_001100.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:00</span>
+                        <span class="caption-text">Vue similaire sur l&#x27;interface de Claude avec les retours sur le montage vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:02 - 00:11:24</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;aurais donc peut-être dû passer plus de temps en réflexion et en écriture de scénario. C&#x27;était aussi le but de l&#x27;exercice. Avec un minimum, ce que Claude et Xfield peuvent me faire, le résultat est plutôt pas mal. Et surtout, il a été réalisé de façon autonome. C&#x27;est-à-dire que j&#x27;ai juste eu à vérifier peut-être l&#x27;épisode 1, mais après j&#x27;ai laissé Claude tourner avec les autorisations.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:24 - 00:11:42</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">à condition aussi qu&#x27;il faut penser d&#x27;avoir assez de crédits sur Xfield et anticiper le nombre de crédits que ça va nous coûter. Mais ensuite, je fais autre chose et je reviens 1h30 après, j&#x27;ai ma série complète qui est quasi prête à être diffusée. Ici, j&#x27;ai juste fait 2-3 ajustements, mais je peux inonder mes réseaux avec ce nouveau drama.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-30">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:42 - 00:12:00</span>
+                <span class="segment-idx">Segment #30</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ce principe, si je l&#x27;ai utilisé sur une série, je pourrais aussi imaginer l&#x27;utiliser en marketing dans la création de publicité ou pourquoi pas réfléchir influenceurs IA et créer du contenu autour de celui-ci dans différentes vidéos, dans différents trends. Cette connexion Cloud Xfield, elle peut aussi permettre de faire d&#x27;autres choses.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Claude.ai (navigateur web)</p>
+                        <p><strong>Contenu textuel & Code :</strong> &quot;J&#x27;aurais besoin d&#x27;une pub insta de...&quot;, &quot;Pub choco cookie wom MP4&quot;, texte de description du résultat publicitaire généré.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la génération d&#x27;une publicité vidéo à partir d&#x27;un prompt et d&#x27;une image de cookie sur Claude AI.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_30_001143.jpg" alt="Interface de Claude AI montrant la saisie d&#x27;un prompt pour créer une publicité Instagram avec l&#x27;image d&#x27;un cookie." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_30_001143.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:43</span>
+                        <span class="caption-text">Interface de Claude AI montrant la saisie d&#x27;un prompt pour créer une publicité Instagram avec l&#x27;image d&#x27;un cookie.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_30_001151.jpg" alt="Interface de Claude AI affichant le résultat de la génération d&#x27;une vidéo publicitaire au format vertical MP4 (Pub choco cookie wom)." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_30_001151.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:51</span>
+                        <span class="caption-text">Interface de Claude AI affichant le résultat de la génération d&#x27;une vidéo publicitaire au format vertical MP4 (Pub choco cookie wom).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_30_001159.jpg" alt="Gros plan sur le lecteur vidéo intégré à l&#x27;interface de Claude AI montrant le contenu de la publicité générée avec du chocolat fondant." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_30_001159.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:59</span>
+                        <span class="caption-text">Gros plan sur le lecteur vidéo intégré à l&#x27;interface de Claude AI montrant le contenu de la publicité générée avec du chocolat fondant.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-31">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:00 - 00:12:23</span>
+                <span class="segment-idx">Segment #31</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bâtir des sites internet avec des images et des vidéos IA. Bâtir aussi ses propres applications ou jeux avec les assets graphiques créés grâce à Cloud et Xfield. Et d&#x27;ailleurs, si tu n&#x27;as pas Cloud, tu peux aussi passer par le supercomputer sur Xfield. Il se trouve sur le menu en allant dans Supercomputer. Et en fait ici, tu vas sélectionner le modèle de réflexion que tu veux utiliser.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> After Effects et Supercomputer (interface web d&#x27;IA).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de sélection de modèles IA (Auto, GPT 6 Astra, Claude Opus 5.5, Claude Fable 5.1), interface de chat, code, étapes de développement du jeu (&#x27;Sakura Catch&#x27;).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment passer par le supercomputer pour sélectionner un modèle d&#x27;IA et bâtir des applications ou jeux à l&#x27;aide d&#x27;assets graphiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_31_001212.jpg" alt="Interface détaillée montrant le processus de création d&#x27;un jeu vidéo, divisé en étapes (Idea, Character, Game Logic, Pixel Art, Final Build) avec le logiciel After Effects et du code en cours d&#x27;exécution." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_31_001212.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:12</span>
+                        <span class="caption-text">Interface détaillée montrant le processus de création d&#x27;un jeu vidéo, divisé en étapes (Idea, Character, Game Logic, Pixel Art, Final Build) avec le logiciel After Effects et du code en cours d&#x27;exécution.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_31_001221.jpg" alt="Interface de l&#x27;outil &#x27;Supercomputer&#x27; avec un menu déroulant permettant de sélectionner le modèle d&#x27;intelligence artificielle &#x27;Claude Opus 5.5&#x27; pour la création." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_31_001221.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:21</span>
+                        <span class="caption-text">Interface de l&#x27;outil &#x27;Supercomputer&#x27; avec un menu déroulant permettant de sélectionner le modèle d&#x27;intelligence artificielle &#x27;Claude Opus 5.5&#x27; pour la création.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-32">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:23 - 00:12:41</span>
+                <span class="segment-idx">Segment #32</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc ça va te prendre des crédits Xfield quand même, puisqu&#x27;ici tu ne payes pas l&#x27;abonnement Cloud, mais tu vas payer son utilisation sur Xfield. Et tu peux lancer ta conversation pour créer tes vidéos, tes applications ou encore tes jeux vidéo. Sachant que cet exercice, je l&#x27;ai fait aussi à travers différents exemples via GPT Astra et la connexion Xfield.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme Xfield (ou outil de création similaire basé sur le cloud).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Vignettes de projets créatifs, icônes d&#x27;applications, compteurs de vues et de crédits, noms de projets (CharacterSheet, Thumbnail Maker, MicroDrama Studio, Director&#x27;s Cut).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre les différentes applications et créations possibles que l&#x27;on peut lancer sur la plateforme en utilisant des crédits.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_32_001232.jpg" alt="Grille de vignettes colorées et variées illustrant différents types de créations graphiques, de jeux vidéo ou de scènes animées, avec le visage du présentateur en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_32_001232.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:32</span>
+                        <span class="caption-text">Grille de vignettes colorées et variées illustrant différents types de créations graphiques, de jeux vidéo ou de scènes animées, avec le visage du présentateur en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_32_001240.jpg" alt="Interface de la plateforme avec une grille de projets et d&#x27;applications (CharacterSheet, Thumbnail Maker, MicroDrama Studio, etc.) affichant des statistiques de vues et de crédits, le présentateur apparaissant en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_32_001240.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:40</span>
+                        <span class="caption-text">Interface de la plateforme avec une grille de projets et d&#x27;applications (CharacterSheet, Thumbnail Maker, MicroDrama Studio, etc.) affichant des statistiques de vues et de crédits, le présentateur apparaissant en bas à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-33">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:42 - 00:13:03</span>
+                <span class="segment-idx">Segment #33</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ici, on est passé sur un abonnement. Mais si tu veux vraiment payer que ce que tu dépenses sur Xfield sans système d&#x27;abonnement, tu peux aussi passer par une nouveauté, c&#x27;est l&#x27;API d&#x27;Xfield. On a fait une vidéo sur le sujet, elle s&#x27;affiche juste ici. Merci d&#x27;avoir suivi cette vidéo, je te mets tous les liens en description. Et je te dis à très bientôt pour une nouvelle vidéo, pour un nouveau tuto.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, plateforme Xfield.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Miniatures de projets vidéo et d&#x27;outils IA (CharacterSHEET, Thumbnail Maker, MicroDrama Studio, Director&#x27;s Cut, Soul Directory, AI Drone Director, etc.), compteurs de vues et de crédits.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur conclut la vidéo tout en naviguant visuellement dans le catalogue des fonctionnalités et des créations de la plateforme Xfield.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_33_001243.jpg" alt="Interface d&#x27;Xfield affichant une grille de projets et de miniatures de créations vidéo." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_33_001243.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:43</span>
+                        <span class="caption-text">Interface d&#x27;Xfield affichant une grille de projets et de miniatures de créations vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/fUokaQ-NnZE/frame_33_001302.jpg" alt="Navigation dans la bibliothèque de projets et de modèles de génération sur Xfield." loading="lazy" onclick="openLightbox('../screenshots/fUokaQ-NnZE/frame_33_001302.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:02</span>
+                        <span class="caption-text">Navigation dans la bibliothèque de projets et de modèles de génération sur Xfield.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        </section>
+
+        <footer>
+            Généré automatiquement par l'agent de veille multimodale Antigravity — Pipeline Whisper-v3-large-turbo & Gemini-3.5-flash-lite.
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture plein écran" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
