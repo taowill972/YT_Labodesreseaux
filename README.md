@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `0 / 1263` (`0.0%`)
+- **Vidéos traitées** : `1 / 1263` (`0.1%`)
 - **Modèle Audio** : `whisper-v3-large-turbo` (Faster-Whisper, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse d'écrans, interfaces & démonstrations)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -17,6 +17,7 @@
 
 | Date | Réf. Vidéo | Titre Français / Sujet | Fiche Markdown | Fiche Interactive HTML | Captures |
 | :--- | :--- | :--- | :--- | :--- | :---: |
+| 2026-10-09 | [4mhrPQfCkJk](https://www.youtube.com/watch?v=4mhrPQfCkJk) | **Filmora 16 : Les 5 NOUVEAUTÉS que j'attendais** | [2026-10-09_YT-4mhrPQfCkJk_Filmora 16 Les 5 NOUVEAUTÉS que j'attendais_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md](YT_Labodesreseaux_Transcript/2026-10-09_YT-4mhrPQfCkJk_Filmora 16 Les 5 NOUVEAUTÉS que j'attendais_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [Voir Rapport HTML](YT_Labodesreseaux_Transcript/2026-10-09_YT-4mhrPQfCkJk_Filmora 16 Les 5 NOUVEAUTÉS que j'attendais_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | `56` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

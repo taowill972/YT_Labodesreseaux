@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Filmora 16 : Les 5 NOUVEAUTÉS que j&#x27;attendais — Labo des Réseaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-box {
+            margin-bottom: 1.5rem;
+        }
+        .tools-box h3, .points-box h3 {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tool-tag {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #e2e8f0;
+            padding: 0.35rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .points-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .points-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Timeline Section */
+        section.timeline-section {
+            margin-top: 2rem;
+        }
+
+        .timeline-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            margin-bottom: 1.8rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        .timeline-block:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .timeline-time {
+            background: rgba(20, 30, 51, 0.7);
+            padding: 0.85rem 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 0.25rem 0.65rem;
+            border-radius: 0.35rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .verbatim-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 3px solid #10b981;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .verbatim-header, .visual-header, .screenshots-header {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .verbatim-text {
+            font-size: 0.96rem;
+            line-height: 1.65;
+            color: #f1f5f9;
+            font-style: italic;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.5);
+            border-left: 3px solid #8b5cf6;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: #cbd5e1;
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .visual-details strong {
+            color: #e2e8f0;
+        }
+
+        /* Screenshots grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 16, 28, 0.7);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px dashed rgba(148, 163, 184, 0.2);
+        }
+
+        .segment-screenshots-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.65rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .screenshot-card {
+            background: #0b1120;
+            border-radius: 0.6rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .img-wrapper {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .img-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .zoom-badge {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 0.2rem 0.55rem;
+            border-radius: 0.35rem;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .img-wrapper:hover .zoom-badge {
+            opacity: 1;
+        }
+
+        .screenshot-caption {
+            padding: 0.65rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #93c5fd;
+        }
+
+        .caption-text {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Filmora 16 : Les 5 NOUVEAUTÉS que j&#x27;attendais</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📺 Labo Des Réseaux</span>
+                <a href="https://www.youtube.com/watch?v=4mhrPQfCkJk" target="_blank" rel="noopener" class="badge badge-yt">
+                    ▶️ Voir sur YouTube (4mhrPQfCkJk)
+                </a>
+                <span class="badge">📅 2026-10-09</span>
+                <span class="badge">⏱️ 11:29</span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            
+            <div class="summary-card">
+                <p>**La vidéo de la chaîne « Labo Des Réseaux » propose une exploration approfondie de Filmora 16, la toute dernière version du célèbre logiciel de montage vidéo de Wondershare.** L&#x27;analyste y met en avant une dizaine de nouveautés majeures conçues pour optimiser drastiquement le flux de travail des créateurs de contenu, en mettant l&#x27;accent sur le gain de temps et l&#x27;accroissement des libertés créatives et d&#x27;édition.</p><p>**À travers des cas pratiques basés sur des projets de danse et de tutoriels, le créateur démontre l&#x27;efficacité concrète de fonctionnalités clés telles que l&#x27;analyse média par intelligence artificielle, les dossiers multimédias intelligents et le suivi de caméra automatisé.** Ces outils permettent de transformer des tâches chronophages — comme le tri des rushes ou le recadrage dynamique — en actions instantanées, tout en propulsant la précision du montage à un niveau supérieur.</p><p>**En conclusion, l&#x27;adoption de Filmora 16 s&#x27;avère particulièrement stratégique pour les monteurs cherchant à allier rapidité et professionnalisme.** Les options avancées de masques de couleur, d&#x27;animations combinées et de correction intelligente de texte confirment que le logiciel s&#x27;adresse aussi bien aux débutants qu&#x27;aux créateurs exigeants souhaitant dynamiser leurs productions sans alourdir leur charge de travail.</p>
+            </div>
+
+            <div class="tools-box">
+                <h3>🛠️ Outils, Modèles & Logiciels Présentés</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">Filmora 16** (Logiciel de montage vidéo principal par Wondershare)</span><span class="tool-tag">Analyse média par IA** (Outil d&#x27;indexation automatique de fichiers et de génération de mots-clés)</span><span class="tool-tag">Dossier multimédia intelligent** (Fonction d&#x27;organisation par règles conditionnelles)</span><span class="tool-tag">Outil de cadrage et de suivi automatique** (Suivi de caméra par tête, corps ou personnalisé)</span><span class="tool-tag">Masque de couleur et Calque d&#x27;étalonnage** (Outils de correction colorimétrique localisée avec formes géométriques)</span><span class="tool-tag">Menu Animation (Option Combo)** (Application d&#x27;animations d&#x27;entrée et de sortie combinées sur la durée totale d&#x27;un clip)</span><span class="tool-tag">Correction intelligente du texte** (Fonction d&#x27;automatisation et de correction des sous-titres et légendes dynamiques)</span><span class="tool-tag">Enregistreur d&#x27;écran et multi-écran PC** (Outil intégré pour le streaming, la capture de jeux, de voix off et de webcam)</span>
+                </div>
+            </div>
+
+            <div class="points-box">
+                <h3>🔑 Points Clés & Enseignements Stratégiques</h3>
+                <ul>
+                    <li><span class="point-bullet">✦</span><span>Gain de temps au dérochage** : L&#x27;analyse média par IA permet d&#x27;analyser des dizaines de fichiers en un clic pour générer automatiquement des noms, durées, mots-clés, descriptions de scènes et suggestions de montage.</span></li><li><span class="point-bullet">✦</span><span>Recherche textuelle optimisée** : Grâce aux tags générés par l&#x27;IA, il devient possible de retrouver instantanément des plans précis dans sa bibliothèque en tapant de simples mots-clés (ex: &quot;danse&quot;).</span></li><li><span class="point-bullet">✦</span><span>Organisation automatisée des rushes** : La création de dossiers multimédias intelligents permet de trier les fichiers selon des critères stricts (nom, résolution, type ou images par seconde) pour alimenter la timeline en un clin d&#x27;œil.</span></li><li><span class="point-bullet">✦</span><span>Suivi de caméra intelligent** : L&#x27;outil de suivi automatique (tête, corps ou personnalisé) simplifie le tracking des sujets en mouvement et s&#x27;avère indispensable pour les réajustages en format vertical (9:16).</span></li><li><span class="point-bullet">✦</span><span>Étalonnage ciblé par masques** : L&#x27;utilisation de calques d&#x27;étalonnage géométriques (rectangles, ellipses ou formes libres) permet d&#x27;appliquer des filtres ou des ambiances colorimétriques uniquement sur une zone spécifique de l&#x27;image.</span></li><li><span class="point-bullet">✦</span><span>Créativité accrue avec les animations combo** : L&#x27;option d&#x27;animation combinée permet de lier des mouvements (comme une rotation) sur toute la longueur d&#x27;une vidéo ou de les positionner précisément au cœur d&#x27;une séquence charnière.</span></li><li><span class="point-bullet">✦</span><span>Correction de texte automatisée** : La fonction de correction intelligente évite des heures de relecture sur les sous-titres longs, couplée à des modèles dynamiques variés (rétro, surlignage, lueur, etc.).</span></li><li><span class="point-bullet">✦</span><span>Studio d&#x27;enregistrement intégré** : L&#x27;outil de capture d&#x27;écran, de jeux vidéo, de webcam et de multi-écran PC intégré à Filmora 16 facilite grandement la création de tutoriels et de contenus live sans recourir à des logiciels tiers.</span></li><li><span class="point-bullet">✦</span><span>Flexibilité de mise à niveau** : Les utilisateurs disposant déjà d&#x27;une version précédente de Filmora peuvent effectuer une mise à jour directe vers la version 16 depuis l&#x27;interface du logiciel.</span></li><li><span class="point-bullet">✦</span><span>Modèle d&#x27;essai et licences** : Filmora 16 propose une version d&#x27;essai gratuite avec filigrane (watermark) et s&#x27;articule autour de différentes offres d&#x27;abonnement adaptées aux besoins des monteurs.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle</h2>
+            
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:20</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Filmora vient de lancer sa toute nouvelle version Filmora 16. Avec celle-ci, une dizaine de nouvelles fonctionnalités voient le jour. Exemple, ici c&#x27;était les dossiers de rush que je devais trier avant Filmora 16. Et maintenant, avec cette nouvelle version, ça se fait en un seul clic. C&#x27;est d&#x27;ailleurs un petit peu la thématique commune à toutes ces nouvelles fonctionnalités.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Explorateur de fichiers macOS (Finder)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fichiers vidéo au format .mp4 (ex: 2248534-uhd_3840_2160_24fps.mp4), création et renommage d&#x27;un dossier</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre un dossier de rushs non triés avant l&#x27;utilisation des fonctionnalités de Filmora 16.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_01_000010.jpg" alt="Le dossier &#x27;Rush&#x27; du système d&#x27;exploitation avec de multiples fichiers vidéo et un dossier en cours de tri par le créateur." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_01_000010.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Le dossier &#x27;Rush&#x27; du système d&#x27;exploitation avec de multiples fichiers vidéo et un dossier en cours de tri par le créateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:43</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Elles vont notamment nous permettre de gagner beaucoup de temps, mais il y a aussi des nouvelles fonctionnalités qui nous permettent d&#x27;avoir encore plus la main côté édition et côté aussi créativité. Justement, dans cette vidéo, je te propose qu&#x27;on explore ensemble 5 nouveautés que j&#x27;ai sélectionnées et qui vont s&#x27;intégrer parfaitement à ton workflow. Et on va voir via des exemples complets comment moi j&#x27;ai adopté ces nouvelles fonctionnalités à travers mes différents projets.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site officiel de Wondershare Filmora (filmora.wondershare.fr).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation du site Wondershare Filmora avec les boutons &quot;Télécharger gratuitement&quot; et &quot;Voir les tarifs et les offres&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur introduit les nouvelles fonctionnalités du logiciel de montage Filmora et navigue sur le site officiel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_02_000032.jpg" alt="Le présentateur présente le site web de Wondershare Filmora montrant l&#x27;interface du logiciel de montage vidéo." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_02_000032.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:32</span>
+                        <span class="caption-text">Le présentateur présente le site web de Wondershare Filmora montrant l&#x27;interface du logiciel de montage vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_02_000042.jpg" alt="Le site web de Wondershare Filmora affiche une vidéo promotionnelle en arrière-plan avec le présentateur en incrustation." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_02_000042.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Le site web de Wondershare Filmora affiche une vidéo promotionnelle en arrière-plan avec le présentateur en incrustation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:43 - 00:01:03</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour rappel, tu peux télécharger et essayer gratuitement Filmora 16 en passant par le lien disponible en description et en commentaire épinglé. Ensuite, si le logiciel te plaît, il te faudra une licence pour pouvoir télécharger 100 watermarks. Tu as différents abonnements avec différents offres qui sont proposées. Je te laisse parcourir celui qui t&#x27;ira le mieux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site officiel de Wondershare Filmora.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes de présentation de Filmora 16, boutons « Télécharger gratuitement » et « Voir les tarifs », ainsi que les différentes offres d&#x27;abonnement (Plan Premium Annuel, Trimestriel, Perpétuel).</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur montre les différentes options de téléchargement et présente les offres d&#x27;abonnements disponibles pour le logiciel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_03_000044.jpg" alt="Page d&#x27;accueil officielle de Filmora 16 avec les options de téléchargement et de tarification." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_03_000044.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:44</span>
+                        <span class="caption-text">Page d&#x27;accueil officielle de Filmora 16 avec les options de téléchargement et de tarification.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_03_000053.jpg" alt="Grille tarifaire de Wondershare Filmora montrant les abonnements Individuels, Équipe &amp; Business, et Éducation." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_03_000053.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:53</span>
+                        <span class="caption-text">Grille tarifaire de Wondershare Filmora montrant les abonnements Individuels, Équipe &amp; Business, et Éducation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_03_000101.jpg" alt="Suite de la page des tarifs avec le détail des fonctionnalités incluses dans chaque formule d&#x27;abonnement." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_03_000101.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:01</span>
+                        <span class="caption-text">Suite de la page des tarifs avec le détail des fonctionnalités incluses dans chaque formule d&#x27;abonnement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:03 - 00:01:25</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et petite info, si tu as déjà Filmora installé sur ton ordinateur, tu peux mettre à jour la version Filmora 16 en te rendant juste ici et en téléchargeant cette dernière mise à jour. On va donc commencer avec un outil qui va nous aider dans le dérochage. Ça va être l&#x27;analyse média par IA. Alors ici, j&#x27;ai uploadé les différents plans que je vais utiliser pour mon projet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Wondershare Filmora (interface de démarrage et espace de montage)
+[DESC_IMAGE_3] Notification de mise à jour vers Filmora 16 et grille de clips média dans l&#x27;espace de travail du logiciel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment mettre à jour le logiciel et présente l&#x27;interface avec les fichiers multimédias importés pour l&#x27;analyse par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_04_000114.jpg" alt="Fenêtre de notification de Wondershare Filmora V16.0.10 affichant les nouveautés et la possibilité d&#x27;effectuer une mise à jour gratuite." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_04_000114.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:14</span>
+                        <span class="caption-text">Fenêtre de notification de Wondershare Filmora V16.0.10 affichant les nouveautés et la possibilité d&#x27;effectuer une mise à jour gratuite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_04_000123.jpg" alt="Interface principale du logiciel Filmora avec le chutier contenant différents clips vidéo importés et la timeline en bas." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_04_000123.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Interface principale du logiciel Filmora avec le chutier contenant différents clips vidéo importés et la timeline en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:25 - 00:01:43</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On peut voir qu&#x27;il y en a beaucoup. Mais maintenant, on va pouvoir, en sélectionnant les plans souhaités, donc ici, je vais mettre l&#x27;ensemble de mes plans, faire un clic droit et aller dans la nouveauté, analyser les médias paris. Ici, ça me coûtera un petit peu en crédit. On voit que les 18 fichiers ont été analysés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Filmora (logiciel de montage vidéo)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bibliothèque de clips vidéo, menu contextuel avec l&#x27;option &quot;Analyse des médias par IA&quot;, et panneau des tâches en cours.
+[DESC_IMAGE_3] Le créateur montre l&#x27;utilisation de l&#x27;outil d&#x27;analyse par IA sur l&#x27;ensemble des plans sélectionnés.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_05_000126.jpg" alt="Interface du logiciel de montage affichant la bibliothèque de médias contenant plusieurs clips vidéo." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_05_000126.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:26</span>
+                        <span class="caption-text">Interface du logiciel de montage affichant la bibliothèque de médias contenant plusieurs clips vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_05_000134.jpg" alt="Menu contextuel ouvert sur un clic droit, mettant en avant l&#x27;option d&#x27;analyse des médias par IA." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_05_000134.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:34</span>
+                        <span class="caption-text">Menu contextuel ouvert sur un clic droit, mettant en avant l&#x27;option d&#x27;analyse des médias par IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_05_000141.jpg" alt="Panneau latéral affichant les tâches de création et l&#x27;analyse des médias en cours de traitement." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_05_000141.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Panneau latéral affichant les tâches de création et l&#x27;analyse des médias en cours de traitement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:43 - 00:02:03</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et maintenant, si je vais dans résultat de l&#x27;analyse des fichiers, on va voir ici l&#x27;ensemble de ceux-ci, où nous avons le nom, la durée, mais surtout les mots-clés. et si on se balade, le sujet principal, la scène, est une description de ce qui se passe, ainsi qu&#x27;une suggestion de montage.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Wondershare Filmora (Résultats de l&#x27;analyse des fichiers)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux avec colonnes Progression, Média, Nom, Durée, Mots-clés, Sujet principal, Scène/lieu, Description et Suggestions de montage.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur parcourt l&#x27;interface pour montrer les métadonnées et analyses automatiques générées pour chaque fichier vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_06_000153.jpg" alt="Affichage des résultats de l&#x27;analyse des fichiers multimédias avec les colonnes de progression, noms, durées et mots-clés associés." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_06_000153.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:53</span>
+                        <span class="caption-text">Affichage des résultats de l&#x27;analyse des fichiers multimédias avec les colonnes de progression, noms, durées et mots-clés associés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_06_000201.jpg" alt="Navigation dans le tableau pour afficher les colonnes détaillant le sujet principal, la scène/lieu, la description et les suggestions de montage." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_06_000201.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:01</span>
+                        <span class="caption-text">Navigation dans le tableau pour afficher les colonnes détaillant le sujet principal, la scène/lieu, la description et les suggestions de montage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:03 - 00:02:36</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par exemple, pour la première scène avec mes danseurs, j&#x27;ai grande salle, danseurs, danser, deux danseurs dans une grande salle blanche qui marchent l&#x27;un vers l&#x27;autre et exécutent une chorégraphie, parfait. Et ce matériel est idéal pour une séquence de performance artistique, un documentaire sur la danse contemporaine. C&#x27;est génial. Donc par exemple maintenant, si j&#x27;ai besoin de retrouver mes plans par rapport à la danse, je peux aller ici dans la recherche et taper le mot clé danse pour ainsi avoir les deux vidéos qui comportent les tags et le sujet de la danse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:36 - 00:03:04</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ainsi, j&#x27;ai une deuxième vidéo qui s&#x27;affiche juste ici. Et c&#x27;est exactement ça. On voit que nous avons une vidéo d&#x27;une durée de 3 secondes dans un studio fond beige avec des danseuses et la description des 3 femmes en tenue qui sont en train de faire une chorégraphie. Donc ça, c&#x27;est vraiment très très bien si en tout notre dossier qu&#x27;il n&#x27;a pas été trié et en une seule seconde, l&#x27;IA nous met des tags, des descriptions et on va pouvoir retrouver au fur et à mesure nos plans pour pouvoir faire notre séquence de montage.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (type Wondershare Filmora avec panneau Média et recherche textuelle).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau de recherche avec le terme &quot;danse&quot;, affichant deux clips vidéo avec leurs descriptions détaillées (&quot;Trois femmes en tenue...&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la fonction d&#x27;analyse automatique des médias et de description textuelle des vidéos.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_08_000303.jpg" alt="Interface du logiciel montrant les résultats d&#x27;analyse des médias avec la description des clips vidéo." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_08_000303.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Interface du logiciel montrant les résultats d&#x27;analyse des médias avec la description des clips vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:04 - 00:03:31</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">A noter aussi qu&#x27;on a une petite nouveauté qui nous permet de ne pas passer par l&#x27;IA, qui se trouve ici, dossier multimédia intelligent. Ce petit menu va nous permettre de créer des dossiers manuellement, mais ici en fait ce qu&#x27;on va faire c&#x27;est que par exemple, on va créer ici danse, et après on va automatiquement lier l&#x27;ensemble des fichiers qui soit contiennent le mot danse avec une règle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;application de montage vidéo Wondershare Filmora.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre modale &quot;Nouveau dossier multimédia intelligent&quot; avec options de nommage et critères de correspondances (Nom de fichier, Content, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur renomme le dossier intelligent pour y lier automatiquement les fichiers correspondants.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_09_000317.jpg" alt="Fenêtre de création d&#x27;un &quot;Nouveau dossier multimédia intelligent&quot; avec le nom par défaut." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_09_000317.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:17</span>
+                        <span class="caption-text">Fenêtre de création d&#x27;un &quot;Nouveau dossier multimédia intelligent&quot; avec le nom par défaut.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_09_000329.jpg" alt="Le même menu de création de dossier intelligent avec le nom &quot;Danse&quot; saisi par le créateur." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_09_000329.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:29</span>
+                        <span class="caption-text">Le même menu de création de dossier intelligent avec le nom &quot;Danse&quot; saisi par le créateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:31 - 00:03:51</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc par exemple ici, si on a nom du fichier contient dense, on pourra créer pour avoir ainsi notre fichier qui s&#x27;est mis automatiquement. Donc j&#x27;avais juste un seul de mes roches qui s&#x27;appelait dense, il est arrivé ici. Mais par exemple, imaginons, je crée un nouveau dossier intelligent et ici en fait, je vais l&#x27;appeler FPS.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (Wondershare Filmora)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Dossier intelligent &#x27;Danse&#x27;, fichier vidéo &#x27;danse.mp4&#x27;, aperçu vidéo à droite et le présentateur en incrustation en bas à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le fonctionnement d&#x27;un dossier intelligent qui trie automatiquement les fichiers en fonction de leur nom.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_10_000341.jpg" alt="Interface du logiciel montrant le dossier multimédia intelligent &#x27;Danse&#x27; avec un fichier vidéo importé automatiquement." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_10_000341.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:41</span>
+                        <span class="caption-text">Interface du logiciel montrant le dossier multimédia intelligent &#x27;Danse&#x27; avec un fichier vidéo importé automatiquement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:52 - 00:04:15</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et je vais choisir cette fois-ci parmi toutes les options disponibles. Donc on a type, durée, résolution, image par seconde. on va prendre image par seconde et on va choisir tous nos fichiers qui sont en 24 fps. Ou on peut dire n&#x27;est pas en 24 fps pour avoir les autres ou même ici régler les fps. Bien sûr, on peut aussi additionner des règles pour pouvoir avoir des dossiers intelligents un petit peu plus complets.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> DaVinci Resolve, fenêtre de création de dossier multimédia intelligent</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus déroulants de critères (Nom de fichier, Type, Durée, Résolution, Images par seconde, etc.) et champs de configuration conditionnelle.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur configure les règles de filtrage intelligent basées sur la fréquence d&#x27;images (fps) des médias.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_11_000353.jpg" alt="Sélection du critère &#x27;Images par seconde&#x27; dans le menu déroulant du dossier multimédia intelligent de DaVinci Resolve." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_11_000353.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:53</span>
+                        <span class="caption-text">Sélection du critère &#x27;Images par seconde&#x27; dans le menu déroulant du dossier multimédia intelligent de DaVinci Resolve.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_11_000404.jpg" alt="Configuration de la règle sur les images par seconde fixée à 24 fps." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_11_000404.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:04</span>
+                        <span class="caption-text">Configuration de la règle sur les images par seconde fixée à 24 fps.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_11_000414.jpg" alt="Ajout d&#x27;une règle supplémentaire en cliquant sur le bouton plus pour cumuler les critères de filtrage." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_11_000414.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:14</span>
+                        <span class="caption-text">Ajout d&#x27;une règle supplémentaire en cliquant sur le bouton plus pour cumuler les critères de filtrage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:16 - 00:04:36</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si je fais ça, j&#x27;aurai ainsi la vidéo qui est en 24 fps qui s&#x27;affiche directement en raccourci et je pourrai ainsi la charger sur ma timeline. Une façon donc simple de s&#x27;organiser manuellement pour gagner du temps ou encore plus simple avec l&#x27;IA qui nous permet d&#x27;aller très très vite et d&#x27;utiliser ainsi des mots-clés pour avoir ce qu&#x27;on souhaite en un seul clic.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (type Filmora) avec panneau de médias, timeline et écran de prévisualisation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Dossiers multimédias, fichiers vidéo 24 fps, timeline de montage et onglet &quot;Résultats de l&#x27;analyse des...&quot; avec des descriptions de scènes.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment charger un fichier vidéo dans la timeline puis utilise une fonction de recherche par IA basée sur des mots-clés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_12_000417.jpg" alt="Interface du logiciel de montage affichant un chutier avec un dossier FPS et une vidéo de vagues." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_12_000417.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:17</span>
+                        <span class="caption-text">Interface du logiciel de montage affichant un chutier avec un dossier FPS et une vidéo de vagues.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_12_000426.jpg" alt="La vidéo de vagues sélectionnée est maintenant positionnée sur la timeline principale du logiciel." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_12_000426.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:26</span>
+                        <span class="caption-text">La vidéo de vagues sélectionnée est maintenant positionnée sur la timeline principale du logiciel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_12_000435.jpg" alt="Affichage des résultats d&#x27;analyse intelligente par IA avec des suggestions de montage basées sur des mots-clés." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_12_000435.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:35</span>
+                        <span class="caption-text">Affichage des résultats d&#x27;analyse intelligente par IA avec des suggestions de montage basées sur des mots-clés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:37 - 00:05:04</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, revenons sur notre projet qui était en lien avec la danse. Donc ici sur notre timeline, on a chargé notre projet et justement ici, on va utiliser une nouveauté que j&#x27;attendais personnellement. C&#x27;est l&#x27;outil de cadrage et de suivi automatique. C&#x27;est-à-dire que si je fais double clic sur ma timeline, j&#x27;arrive sur mon menu vidéo et dans le menu suivi, je vais avoir le suivi de caméra qui va être disponible.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du logiciel de montage vidéo Wondershare Filmora.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de recherche de médias, timeline de montage et panneau de réglages &#x27;Suivi&#x27; avec les options &#x27;Suivi de la caméra&#x27;, &#x27;Tête&#x27; et &#x27;Corps&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur importe un projet lié à la danse sur la timeline et accède au menu vidéo pour présenter l&#x27;outil de cadrage et de suivi automatique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_13_000438.jpg" alt="Recherche de médias avec le mot-clé &#x27;danse&#x27; dans le logiciel de montage." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_13_000438.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:38</span>
+                        <span class="caption-text">Recherche de médias avec le mot-clé &#x27;danse&#x27; dans le logiciel de montage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_13_000451.jpg" alt="Intégration du clip vidéo de danse dans la timeline de montage et aperçu du rendu." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_13_000451.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:51</span>
+                        <span class="caption-text">Intégration du clip vidéo de danse dans la timeline de montage et aperçu du rendu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_13_000503.jpg" alt="Affichage du menu des paramètres vidéo et du sous-menu de suivi automatique de la caméra." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_13_000503.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:03</span>
+                        <span class="caption-text">Affichage du menu des paramètres vidéo et du sous-menu de suivi automatique de la caméra.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:05 - 00:05:29</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors en le cochant ici, je vais pouvoir sélectionner parmi les trois options tête, corps ou personnalisé. Ici, j&#x27;ai les trois têtes qui ont été présélectionnées et la tête de la danseuse principale qui est sélectionnée. Je peux changer le suivi de caméra et passer sur une des autres danseuses pour décider du suivi. Je peux le faire aussi avec les corps qui seront automatiquement reconnus ou tout simplement personnalisés ou ce que la caméra devra suivre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (Wondershare Filmora)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus &quot;Suivi de la caméra&quot;, options Tête, Corps, Personnalisé, boutons &quot;Commencer&quot; et &quot;OK&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment sélectionner et modifier les cibles de suivi de caméra (têtes des danseuses) dans le logiciel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_14_000506.jpg" alt="Interface du logiciel de montage affichant les options de suivi de caméra avec les choix Tête, Corps et Personnalisé." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_14_000506.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:06</span>
+                        <span class="caption-text">Interface du logiciel de montage affichant les options de suivi de caméra avec les choix Tête, Corps et Personnalisé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_14_000517.jpg" alt="Gros plan sur la fenêtre de prévisualisation montrant trois danseuses avec des cadres de détection faciale." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_14_000517.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:17</span>
+                        <span class="caption-text">Gros plan sur la fenêtre de prévisualisation montrant trois danseuses avec des cadres de détection faciale.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_14_000527.jpg" alt="Interface montrant la sélection de l&#x27;option de suivi personnalisé dans les réglages de suivi de caméra." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_14_000527.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:27</span>
+                        <span class="caption-text">Interface montrant la sélection de l&#x27;option de suivi personnalisé dans les réglages de suivi de caméra.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:29 - 00:05:48</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, si on fait plutôt corps et qu&#x27;on sélectionne la danseuse du milieu, on va pouvoir régler le tremblement, sélectionner les options cadrage automatique, verrouillage et arrière-plan flou pour pouvoir commencer à voir un traitement et ainsi un suivi de caméra qui est focus sur la danseuse principale.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (type CapCut)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de suivi activées par des curseurs verts, cadre vert de sélection sur la danseuse du milieu, et bouton &#x27;Effacer le suivi de cible&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment appliquer un suivi de cible et configurer les options de cadrage et d&#x27;effets sur une danseuse spécifique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_15_000547.jpg" alt="Interface du logiciel montrant le suivi de cible (tracking) sur la danseuse centrale avec des options activées." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_15_000547.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:47</span>
+                        <span class="caption-text">Interface du logiciel montrant le suivi de cible (tracking) sur la danseuse centrale avec des options activées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:48 - 00:06:12</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ça c&#x27;est très pratique par exemple si on rebasculait en format 9-16ème, qu&#x27;on décidait de réajuster la caméra et surtout tout au long de la vidéo de sélectionner exactement la danseuse qu&#x27;on souhaite suivre. Donc par exemple ici si je disais de sélectionner plutôt la danseuse de gauche, ainsi j&#x27;aurais mon suivi de caméra qui est focus sur cette danseuse là.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (type Wondershare Filmora) avec panneau de suivi, timeline et prévisualisation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de suivi de la caméra, options de recadrage automatique, curseurs de tremblement et de flou d&#x27;arrière-plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment passer en format vertical 9:16 et sélectionner une danseuse spécifique à suivre grâce à l&#x27;outil de suivi IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_16_000549.jpg" alt="Interface du logiciel de montage montrant l&#x27;outil de suivi de la caméra avec trois danseuses en arrière-plan." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_16_000549.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:49</span>
+                        <span class="caption-text">Interface du logiciel de montage montrant l&#x27;outil de suivi de la caméra avec trois danseuses en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_16_000600.jpg" alt="Ajustement du format et recadrage automatique centré sur la danseuse." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_16_000600.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:00</span>
+                        <span class="caption-text">Ajustement du format et recadrage automatique centré sur la danseuse.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_16_000611.jpg" alt="Sélection précise et zoom sur une danseuse spécifique avec un cadre de suivi actif." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_16_000611.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:11</span>
+                        <span class="caption-text">Sélection précise et zoom sur une danseuse spécifique avec un cadre de suivi actif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:12 - 00:06:34</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On repasse toujours sur notre projet de danse, cette fois-ci en 16 neuvième, pour pouvoir explorer, pareil avec un double clic, une nouveauté qui va nous permettre ici, dans Masque de couleur, d&#x27;ajouter un calque d&#x27;étalonnage. Celui-ci en fait va nous permettre d&#x27;ajouter un calque, donc nous avons la possibilité d&#x27;ajouter un calque rectangle, une ellipse, ou alors de dessiner.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (type Wondershare Filmora).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus &#x27;Couleur&#x27;, &#x27;Masque de couleur&#x27;, &#x27;Calques&#x27;, boutons d&#x27;outils de masquage (Ellipse, Rectangle, Pinceau).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur navigue dans le logiciel, sélectionne l&#x27;onglet des masques de couleur et ajoute un calque d&#x27;étalonnage pour la correction colorimétrique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_17_000613.jpg" alt="Interface du logiciel de montage montrant la médiathèque avec des clips vidéo de danse et la timeline principale." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_17_000613.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:13</span>
+                        <span class="caption-text">Interface du logiciel de montage montrant la médiathèque avec des clips vidéo de danse et la timeline principale.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_17_000623.jpg" alt="Panneau des paramètres de couleur et onglet &#x27;Masque de couleur&#x27; avec l&#x27;option d&#x27;ajouter un calque d&#x27;étalonnage." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_17_000623.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:23</span>
+                        <span class="caption-text">Panneau des paramètres de couleur et onglet &#x27;Masque de couleur&#x27; avec l&#x27;option d&#x27;ajouter un calque d&#x27;étalonnage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_17_000633.jpg" alt="Panneau affichant le calque d&#x27;étalonnage créé et les différents outils de masquage disponibles (rectangle, ellipse, pinceau)." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_17_000633.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:33</span>
+                        <span class="caption-text">Panneau affichant le calque d&#x27;étalonnage créé et les différents outils de masquage disponibles (rectangle, ellipse, pinceau).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:34 - 00:06:56</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, par exemple, on va faire un rectangle qu&#x27;on va dessiner vraiment au milieu. Ici, le but, c&#x27;est qu&#x27;ils changent de couleur quand ils vont se réunir. Et ainsi, nous allons pouvoir, en sélectionnant ce calque, aller ensuite soit dans Basique pour sélectionner un filtre, soit directement dans les courbes ou les roues de couleur pour définir l&#x27;ambiance de ce cadre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (type Filmora / CapCut) avec panneau d&#x27;étalonnage des couleurs, timeline et fenêtre de prévisualisation.
+[DESC_IMAGE_3] Paramètres de couleur : Calques, Basique, HSL, Courbes, Roues de couleurs, HDR, avec les sections Ombres, Tons moyens, Tons clairs.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur trace un masque rectangulaire au milieu de l&#x27;image et montre comment accéder aux roues de couleurs pour modifier l&#x27;ambiance.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_18_000635.jpg" alt="Interface du logiciel de montage montrant l&#x27;application d&#x27;un masque rectangulaire au centre de la vidéo." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_18_000635.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:35</span>
+                        <span class="caption-text">Interface du logiciel de montage montrant l&#x27;application d&#x27;un masque rectangulaire au centre de la vidéo.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_18_000645.jpg" alt="Ajustement de la position et de la taille du masque rectangulaire sur l&#x27;interface d&#x27;étalonnage." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_18_000645.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:45</span>
+                        <span class="caption-text">Ajustement de la position et de la taille du masque rectangulaire sur l&#x27;interface d&#x27;étalonnage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_18_000655.jpg" alt="Navigation dans les onglets de couleur pour sélectionner les roues de couleurs et ajuster l&#x27;ambiance du calque." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_18_000655.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:55</span>
+                        <span class="caption-text">Navigation dans les onglets de couleur pour sélectionner les roues de couleurs et ajuster l&#x27;ambiance du calque.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:56 - 00:07:26</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par exemple ici, en basique, si on mettait une intensité, on va dire, de 90 films de stock, en fait, qu&#x27;est-ce que ça va nous donner ? Ça va nous donner... C&#x27;est un petit peu mal cadré, on va juste le remettre comme ceci, parfait. Ça va nous donner cet effet-là, des deux danseurs qui arrivent, et une fois qu&#x27;ils sont dans cette zone, le masque de couleur va s&#x27;appliquer, et ainsi, au montage, on a cet effet-là.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (type CapCut) avec panneau de prévisualisation et curseurs de réglage.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre de prévisualisation vidéo affichant deux danseurs dans une grande salle, un effet lumineux rose encadrant une porte, et des paramètres de réglage à gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le rendu visuel après l&#x27;application de l&#x27;effet et du masque sur la vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_19_000724.jpg" alt="Aperçu du logiciel de montage vidéo montrant la scène avec deux danseurs et un effet de masque de couleur rose sur une porte." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_19_000724.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:24</span>
+                        <span class="caption-text">Aperçu du logiciel de montage vidéo montrant la scène avec deux danseurs et un effet de masque de couleur rose sur une porte.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:26 - 00:07:46</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce masque de couleur, il peut aussi servir à corriger des défauts. Par exemple, un ciel un petit peu gris, ou alors pourquoi pas nous servir pour faire une mise en avant d&#x27;un de nos personnages pendant la séquence. Bref, une possibilité en plus dans n&#x27;importe lequel de vos projets. Ensuite, une nouveauté, en sélectionnant une séquence dans notre menu animation. Avant, nous avions les animations d&#x27;entrée et de sortie.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Filmora (ou logiciel de montage équivalent)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus Animation, Préréglages de mouvement (Entrée, Sortie, Combo), timeline avec piste vidéo et audio, moniteur de prévisualisation avec une scène intérieure lumineuse.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment sélectionner une séquence et applique des préréglages d&#x27;animation/mouvement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_20_000745.jpg" alt="Image 2 montre l&#x27;interface complète du logiciel de montage avec le panneau d&#x27;animation, la timeline, le moniteur et le présentateur." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_20_000745.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:45</span>
+                        <span class="caption-text">Image 2 montre l&#x27;interface complète du logiciel de montage avec le panneau d&#x27;animation, la timeline, le moniteur et le présentateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:47 - 00:08:06</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et maintenant, nous pouvons appliquer l&#x27;option combo, qui va vous nous permettre de combiner l&#x27;animation en entrée et en sortie et sur la totalité de notre vidéo. Par exemple ici, la durée de l&#x27;animation rotation que j&#x27;ai sélectionnée va durer pendant toute la vidéo pour faire cet effet danse en rotation, en entrée et en sortie.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:07 - 00:08:31</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais si je souhaite, je peux aussi faire commencer l&#x27;animation un petit peu plus loin ou la faire arrêter avant la sortie pour avoir mon animation au milieu de ma séquence. Par exemple, le moment où les deux danseurs se rencontrent pour avoir ainsi un effet de rotation au moment de la rencontre et proposer quelque chose d&#x27;original en entrée et en sortie jusqu&#x27;à la fin de la chorégraphie.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation orale ou séquence sans interface partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:32 - 00:09:07</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">A parcourir donc pour ajouter beaucoup plus de créativité, ce qui est bien justement, c&#x27;est qu&#x27;on va pouvoir mettre ces animations au milieu d&#x27;une vidéo pour pouvoir créer un effet. On en a plusieurs à disponibilité. Et bien sûr, on peut toujours rester en entrée et en sortie d&#x27;animation sur notre séquence ou alors d&#x27;aller dans Préréglage des images clés pour pouvoir sélectionner parmi les effets les plus populaires et les glisser directement sur notre timeline pour ainsi ici les mettre où l&#x27;on souhaite avec la possibilité de changer les keyframes et ainsi espacer le mouvement pour pouvoir dicter le rythme</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (Wondershare Filmora).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu &quot;Animation&quot; avec les sous-onglets &quot;Préréglages de mouvement&quot; et &quot;Préréglages des images clés&quot;, affichant diverses icônes d&#x27;effets (fondu, zoom, vortex, glisser).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente l&#x27;onglet des préréglages d&#x27;images clés pour ajouter des animations créatives sur une séquence vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_23_000906.jpg" alt="Interface du logiciel de montage montrant les préréglages des images clés et le panneau de prévisualisation." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_23_000906.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:06</span>
+                        <span class="caption-text">Interface du logiciel de montage montrant les préréglages des images clés et le panneau de prévisualisation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:07 - 00:09:26</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">comme par exemple ici sur un zoom. Pour le dernier exemple on a changé de projet parce que pour montrer cette nouveauté il me fallait du texte. En effet, en sélectionnant mon rush, en allant dans titre et dans sous-titres, je vais pouvoir bien sûr gérer mes légendes dynamiques.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (type Wondershare Filmora).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus &#x27;Titres&#x27;, &#x27;Sous-titres IA&#x27;, &#x27;Légende dynamique&#x27; et paramètres de transcription.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la navigation vers l&#x27;onglet &#x27;Titres&#x27; et l&#x27;option &#x27;Sous-titres&#x27; pour gérer les légendes dynamiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_24_000916.jpg" alt="Vue d&#x27;ensemble du logiciel de montage avec la bibliothèque de médias et la timeline active." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_24_000916.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:16</span>
+                        <span class="caption-text">Vue d&#x27;ensemble du logiciel de montage avec la bibliothèque de médias et la timeline active.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_24_000924.jpg" alt="Navigation dans les menus de sous-titres et sélection de l&#x27;option &#x27;Légende dynamique&#x27;." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_24_000924.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:24</span>
+                        <span class="caption-text">Navigation dans les menus de sous-titres et sélection de l&#x27;option &#x27;Légende dynamique&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:26 - 00:09:45</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais la nouveauté, c&#x27;est que je vais avoir maintenant une correction intelligente du texte. Donc ça ne coûte pas cher en crédit et ça permet de ne pas repasser des heures, surtout quand les vidéos sont longues, pour pouvoir changer ceci. Ainsi, le traitement va se faire, mes sous-titres vont être appliqués et corrigés automatiquement sans que je n&#x27;aie à repasser dessus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo (type Wondershare Filmora).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre pop-up &quot;Détection de voix&quot; avec une barre de progression à 100%, options de transcription et correction intelligente du texte visible dans le panneau latéral gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le traitement en cours de la détection vocale et de la correction automatique des sous-titres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_25_000936.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface d&#x27;un logiciel de montage vidéo avec une fenêtre de progression de détection de voix." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_25_000936.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:36</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface d&#x27;un logiciel de montage vidéo avec une fenêtre de progression de détection de voix.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:45 - 00:10:04</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bien sûr, en double-clic dessus, je pourrais aller dans Modèles pour pouvoir changer les modèles et sélectionner peut-être les templates qui m&#x27;iront le mieux. On en a plusieurs, simple, en lueur, en rétro, en surlignage, en rythme, en esthétique. Bref, n&#x27;hésite pas à les parcourir et de sélectionner celui qui tira le mieux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Filmora (logiciel de montage vidéo)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de sous-titres, modèles, options de style (lueur, rétro, surlignage), timeline vidéo et prévisualisation.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment accéder aux modèles de sous-titres et naviguer parmi les différents styles disponibles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_26_000946.jpg" alt="Interface du logiciel de montage Filmora affichant les options de sous-titres et la timeline principale." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_26_000946.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:46</span>
+                        <span class="caption-text">Interface du logiciel de montage Filmora affichant les options de sous-titres et la timeline principale.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_26_000954.jpg" alt="Navigation dans l&#x27;onglet des modèles de sous-titres avec les catégories visibles (Simple, Lueur, Rétro, etc.)." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_26_000954.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:54</span>
+                        <span class="caption-text">Navigation dans l&#x27;onglet des modèles de sous-titres avec les catégories visibles (Simple, Lueur, Rétro, etc.).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_26_001002.jpg" alt="Sélection du modèle &quot;Surlignage&quot; montrant les différentes options de templates de texte dynamique disponibles." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_26_001002.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:02</span>
+                        <span class="caption-text">Sélection du modèle &quot;Surlignage&quot; montrant les différentes options de templates de texte dynamique disponibles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:04 - 00:10:23</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ça, ce n&#x27;est qu&#x27;une partie des nouveautés, c&#x27;est les 5 que j&#x27;ai directement intégrées à mon workflow. Mais je sais aussi qu&#x27;il y a une super option maintenant qui permet, ça se passe directement ici dans Média, c&#x27;est juste là, c&#x27;est ça, de pouvoir enregistrer l&#x27;écran et même multi-écran de son PC. Donc on va pouvoir streamer ses jeux vidéo, c&#x27;est-à-dire s&#x27;enregistrer en même temps qu&#x27;on enregistre le jeu.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> CapCut (logiciel de montage vidéo)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Onglet Média, boutons &#x27;Importer&#x27;, &#x27;Enregistrer&#x27;, liste de clips multimédias (danse, vagues, etc.), et menu déroulant avec les options : &#x27;Enregistrer l&#x27;écran du PC&#x27;, &#x27;Enregistrer voix off&#x27;, &#x27;Enregistrer depuis la webcam&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la fonctionnalité d&#x27;enregistrement d&#x27;écran intégrée au logiciel de montage CapCut.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_27_001013.jpg" alt="Vue générale de l&#x27;interface du logiciel de montage CapCut avec le panneau média ouvert." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_27_001013.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:13</span>
+                        <span class="caption-text">Vue générale de l&#x27;interface du logiciel de montage CapCut avec le panneau média ouvert.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_27_001021.jpg" alt="Zoom sur le menu déroulant &#x27;Enregistrer&#x27; dans l&#x27;onglet Média du logiciel CapCut, affichant les options d&#x27;enregistrement d&#x27;écran, voix off et webcam." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_27_001021.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:21</span>
+                        <span class="caption-text">Zoom sur le menu déroulant &#x27;Enregistrer&#x27; dans l&#x27;onglet Média du logiciel CapCut, affichant les options d&#x27;enregistrement d&#x27;écran, voix off et webcam.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:23 - 00:10:44</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Enregistrer la voix off ou enregistrer depuis la webcam. Par exemple ici, si je fais enregistrement de l&#x27;écran PC, je vais avoir ici ma petite barre d&#x27;enregistrement que je vais pouvoir mettre où je veux sur mon PC. Je vais pouvoir sélectionner les fenêtres que je souhaite enregistrer et après démarrer l&#x27;enregistrement. J&#x27;ai aussi ma petite icône Filmora qui va se mettre ici pour savoir où j&#x27;en suis sur mon enregistrement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, site officiel de Filmora et barre d&#x27;outils d&#x27;enregistrement.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Barre d&#x27;enregistrement avec options &quot;Zone&quot;, &quot;Fenêtre&quot;, micro, webcam et bouton de démarrage.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la barre d&#x27;outils flottante permettant de configurer l&#x27;enregistrement d&#x27;écran.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_28_001033.jpg" alt="Capture d&#x27;écran montrant le site web de Filmora avec la barre d&#x27;outils d&#x27;enregistrement superposée et le présentateur en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_28_001033.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:33</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le site web de Filmora avec la barre d&#x27;outils d&#x27;enregistrement superposée et le présentateur en bas à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_28_001042.jpg" alt="Vue similaire affichant la barre d&#x27;outils d&#x27;enregistrement de l&#x27;écran avec les options de sélection de zone et de fenêtre." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_28_001042.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:42</span>
+                        <span class="caption-text">Vue similaire affichant la barre d&#x27;outils d&#x27;enregistrement de l&#x27;écran avec les options de sélection de zone et de fenêtre.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:44 - 00:11:03</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc voilà c&#x27;est plutôt sympa et moi je pense je vais l&#x27;utiliser pour enregistrer mes tutos à l&#x27;avenir. On a aussi des petites nouveautés qui nous permettent de télécharger directement d&#x27;un seul coup en plusieurs formats, qui nous permettent aussi de changer les raccourcis si on avait des habitudes de travail différentes de Filmora et qu&#x27;on souhaite garder les mêmes raccourcis que l&#x27;on utilisait avant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Logiciel de montage vidéo Filmora</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus d&#x27;exportation par lot, options de résolution (720P, 1080P, 2K, 4K), fenêtre de gestion et de création de raccourcis clavier personnalisés (« Create Shortcut Preset »).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente les nouvelles fonctionnalités de Filmora, notamment l&#x27;exportation multi-format en un clic et la personnalisation des raccourcis clavier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_29_001053.jpg" alt="Interface de Filmora montrant le panneau d&#x27;exportation par lot avec différentes résolutions sélectionnables (720P, 1080P, 2K, 4K)." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_29_001053.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:53</span>
+                        <span class="caption-text">Interface de Filmora montrant le panneau d&#x27;exportation par lot avec différentes résolutions sélectionnables (720P, 1080P, 2K, 4K).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_29_001101.jpg" alt="Interface de Filmora affichant les raccourcis clavier et la fenêtre de création d&#x27;un préréglage personnalisé (« Create Shortcut Preset »)." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_29_001101.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:01</span>
+                        <span class="caption-text">Interface de Filmora affichant les raccourcis clavier et la fenêtre de création d&#x27;un préréglage personnalisé (« Create Shortcut Preset »).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-30">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:03 - 00:11:26</span>
+                <span class="segment-idx">Segment #30</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une possibilité de changer les plans de caméra en 360, ça ça a l&#x27;air incroyable. Bref, il y a plein de nouveautés à tester avec cette version 16. Pour rappel, tu peux télécharger et essayer gratuitement Filmora 16 en te rendant dans le lien disponible en description et en commentaire épinglé. N&#x27;hésite pas donc à les parcourir et si tu veux plus de tutos autour de Filmora, il s&#x27;affiche juste à l&#x27;écran.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Filmora 16</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus latéraux incluant &#x27;Suivi de la caméra&#x27;, &#x27;Masque de couleur&#x27;, &#x27;Recadrage vidéo à 360°&#x27;, &#x27;Analyse de médias IA&#x27; et description textuelle de la fonctionnalité.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de la fonction de recadrage à 360 degrés sur une vidéo de rue.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_30_001104.jpg" alt="Interface de Filmora 16 présentant la fonctionnalité de recadrage vidéo à 360° avec un aperçu d&#x27;une rue parisienne." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_30_001104.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:04</span>
+                        <span class="caption-text">Interface de Filmora 16 présentant la fonctionnalité de recadrage vidéo à 360° avec un aperçu d&#x27;une rue parisienne.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4mhrPQfCkJk/frame_30_001114.jpg" alt="Même interface de Filmora 16 avec une icône animée &#x27;360&#x27; au centre de l&#x27;aperçu vidéo pour illustrer la fonction de changement de plan." loading="lazy" onclick="openLightbox('../screenshots/4mhrPQfCkJk/frame_30_001114.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:14</span>
+                        <span class="caption-text">Même interface de Filmora 16 avec une icône animée &#x27;360&#x27; au centre de l&#x27;aperçu vidéo pour illustrer la fonction de changement de plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-31">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:26 - 00:11:29</span>
+                <span class="segment-idx">Segment #31</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;était Marco, merci et à très bientôt sur le Labo des Réseaux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun élément d&#x27;interface, logiciel ou site web affiché.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun texte, prompt ou réglage visible (simple plan de fin de vidéo).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur s&#x27;adresse directement au public pour conclure la vidéo (&quot;merci et à très bientôt sur le Labo des Réseaux&quot;).</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        </section>
+
+        <footer>
+            Généré automatiquement par l'agent de veille multimodale Antigravity — Pipeline Whisper-v3-large-turbo & Gemini-3.5-flash-lite.
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture plein écran" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
