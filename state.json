@@ -2,7 +2,8 @@
   "processed_ids": [
     "4mhrPQfCkJk",
     "eA8CAWUZnso",
-    "fUokaQ-NnZE"
+    "fUokaQ-NnZE",
+    "u66ICS8uDTE"
   ],
   "processed_videos": [
     {
@@ -28,10 +29,18 @@
       "md_file": "YT_Labodesreseaux_Transcript/2026-10-03_YT-fUokaQ-NnZE_Claude OPUS 5.5 a créé MA SÉRIE de 8 épisodes (MCP Higgsfield)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "html_file": "YT_Labodesreseaux_Transcript/2026-10-03_YT-fUokaQ-NnZE_Claude OPUS 5.5 a créé MA SÉRIE de 8 épisodes (MCP Higgsfield)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "screenshots_count": 39
+    },
+    {
+      "id": "u66ICS8uDTE",
+      "title": "Arrête de payer pour des Crédits IA que tu n’utilises pas : HIGGSFIELD API",
+      "upload_date": "20260930",
+      "md_file": "YT_Labodesreseaux_Transcript/2026-09-30_YT-u66ICS8uDTE_Arrête de payer pour des Crédits IA que tu n’utilises pas HIGGSFIELD API_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "html_file": "YT_Labodesreseaux_Transcript/2026-09-30_YT-u66ICS8uDTE_Arrête de payer pour des Crédits IA que tu n’utilises pas HIGGSFIELD API_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "screenshots_count": 44
     }
   ],
-  "last_run_timestamp": "2026-10-10T07:19:00Z",
-  "completed_count": 3,
+  "last_run_timestamp": "2026-10-10T07:24:05Z",
+  "completed_count": 4,
   "total_catalog_count": 1263,
   "status": "idle"
 }

@@ -12,32 +12,40 @@
 ## 📌 Synthèse Exécutive & Outils
 
 ### 💡 Résumé
-**La vidéo du « Labo Des Réseaux » met en lumière l'aberration financière des abonnements IA traditionnels dont les crédits non utilisés sont perdus chaque mois.** Le créateur présente l'API d'Higgsfield comme une alternative économique majeure, un agrégateur puissant où l'utilisateur ne paie que ce qu'il génère réellement, avec des tarifs ultra-compétitifs et des limites de générations simultanées modulables selon le solde du compte (débutant à 2 générations simultanées pour un crédit de 10 $).
+**La vidéo explore une alternative économique aux abonnements d'intelligence artificielle traditionnels en proposant d'utiliser la plateforme API d'Higgsfield.** Contrairement aux formules mensuelles classiques où les crédits non utilisés sont perdus à la date de renouvellement, ce modèle de paiement à l'usage permet de ne payer que pour ce qui est réellement généré, offrant ainsi une flexibilité accrue pour les utilisateurs aux besoins intermittents ou irréguliers.
 
-**Pour surmonter l'ergonomie parfois perfectible de la plateforme native, le tutoriel démontre l'utilisation combinée de l'API et de l'assistant Claude (ou Claude Code).** En injectant le prompt de démarrage rapide fourni par Higgsfield dans l'IA, le créateur automatise la création d'une application locale sur son bureau qui centralise l'ensemble des modèles d'images et de vidéos disponibles, offrant ainsi une interface unifiée, connectée via une clé API sécurisée et facilement personnalisable en langage naturel.
+**Pour centraliser l'accès à l'ensemble des modèles d'images et de vidéos proposés par Higgsfield, le présentateur démontre comment concevoir une application locale personnalisée.** En combinant le prompt de démarrage rapide fourni par la plateforme avec l'assistant de code de Claude (ou des alternatives comme Codex), il devient possible de générer, d'itérer et d'ajuster une interface utilisateur sur mesure installée directement sur le bureau de l'ordinateur.
 
-**En conclusion, l'analyse stratégique nuancera l'abandon total des abonnements au profit du paiement à l'usage.** Si les abonnements gardent l'avantage pour une consommation lissée, illimitée ou pour des modèles spécifiques absents (comme ceux de Google et ChatGPT), le passage par l'API s'impose comme la solution idéale pour le travail par projets (pics de production suivis de pauses), le test comparatif de workflows, ou le prototypage rapide d'applications de génération dédiées à l'entrepreneuriat.
+**En conclusion, si le passage par l'API s'avère particulièrement pertinent pour le travail par projet ou le test de multiples modèles, les abonnements conservent des avantages dans le cadre d'un usage intensif et régulier.** Le créateur souligne également le potentiel de cette infrastructure pour prototyper rapidement des applications métiers ou tester de nouveaux workflows avant un déploiement définitif.
 
 ### 🛠️ Outils, Modèles & Logiciels Présentés
-- **Plateforme API Higgsfield** (open.higgsfield.ai) : Agrégateur d'API de génération d'images et de vidéos à l'usage.**
-- **Claude / Claude Code (Anthropic)** : Assistant conversationnel et outil de génération de code pour concevoir et modifier l'application locale.**
-- **ChatGPT / Codex (OpenAI)** : Alternative mentionnée pour la gestion de code et d'assistants par agent.**
-- **Modèles Vidéo** : Seedance 2.5, Seedance 2.0, Kling 3.0, Minimax H3, Wana 3.0 Prime, Genjutsu, Cinema Studio 4.0.**
-- **Modèles Images** : Grok Imagine 2.0, Ideogram 4.0, Recraft 4.1, Flux 2, Soul 2, Marketing Studio Image.**
+- **Higgsfield (et son espace API / Dashboard)** : Plateforme principale d'agrégation de modèles avec tarification à l'usage.**
+- **Claude (et Claude Code / Application)** : Assistant conversationnel et outil de génération de code pour créer et modifier l'application locale.**
+- **Seedance (versions 2.0 et 2.5)** : Modèles de génération et de traitement de vidéos (notamment *image-to-video*).**
+- **Kling 3.0** : Modèle de génération vidéo.**
+- **Minimax H3** : Modèle vidéo proposé via l'API.**
+- **WANA 3.0 Prime** : Modèle vidéo disponible sur la plateforme.**
+- **Genjutsu & Cinema Studio 4.0** : Modèles vidéo propriétaires (maison) d'Higgsfield.**
+- **Grok Imagine 2.0** : Modèle de génération d'images.**
+- **Ideogram 4.0** : Modèle spécialisé dans la création d'images et de typographies.**
+- **Recraft 4.1** : Modèle orienté vers le design et la génération d'images.**
+- **Soul 2 & Marketing Studio Image** : Modèles d'images maison proposés par Higgsfield.**
+- **Flux 2** : Modèle d'image testé lors de la configuration de l'application locale.**
+- **Codex** : Alternative mentionnée pour les utilisateurs de ChatGPT souhaitant coder l'application.**
 
 ### 🔑 Points Clés & Enseignements Stratégiques
-- Alternative aux abonnements** : Éviter la perte mensuelle des crédits non consommés en basculant sur un modèle de paiement à la génération (Pay-as-you-go).
-- Gestion des limites de concurrence** : Le nombre de générations simultanées est indexé sur le solde de la balance (ex. : 2 générations max pour 10 $, jusqu'à 10 générations pour 25 $ ou plus).
-- Centralisation via application locale** : Utilisation de Claude pour générer une application sur-mesure regroupant tous les modèles sur une seule interface depuis le bureau.
-- Automatisation par Agent** : Récupération du prompt de démarrage rapide ("Copy Prompt Agent") dans l'onglet Quick Start de Higgsfield pour guider l'intelligence artificielle générative de code.
-- Connexion sécurisée** : Génération d'une clé API dédiée depuis le dashboard Higgsfield (avec nom et date d'expiration optionnelle) pour relier l'application locale.
-- Itération et personnalisation de l'UI** : Capacité de modifier l'interface en langage naturel via Claude (ex. : ajout d'un curseur latéral pour la barre de prompt).
-- Référencement d'actifs** : Possibilité d'injecter directement des images de référence issues des assets générés dans les modèles vidéo (ex. : Seedance 2.5 Image-to-Video).
-- Absences notables** : La plateforme ne propose pas encore les modèles de Google et ChatGPT, nécessitant de conserver des abonnements séparés selon les besoins.
-- Cas d'usage optimal pour l'API** : Idéal pour les professionnels travaillant par projets (fortes charges de travail sporadiques suivies de périodes creuses sans facturation).
-- Phase de test de workflows** : L'API sert de banc d'essai parfait pour auditer la qualité de différents modèles avant une intégration définitive dans un processus de production.
-- Maintenance évolutive** : Nécessité de mettre à jour manuellement l'application locale pour intégrer les futurs modèles publiés par la plateforme.
-- Scalabilité commerciale** : Possibilité d'exploiter les API individuelles de Higgsfield pour bâtir de véritables projets de business SaaS autour de la génération visuelle par IA.
+- Optimisation budgétaire** : Le paiement à l'acte évite le gaspillage des crédits mensuels perdus sur les abonnements traditionnels à renouvellement fixe.
+- Gestion des générations simultanées** : Le nombre de requêtes simultanées augmente avec le solde du compte (limité à 2 pour 10$ de balance, jusqu'à 10 pour 25$ ou plus).
+- Diversité des modèles** : Accès centralisé à une vaste gamme de moteurs de pointe pour la vidéo et l'image depuis une seule interface.
+- Création d'une application sur mesure** : Utilisation du prompt "Copy Prompt Agent" depuis l'onglet *Quick Start* pour alimenter Claude et automatiser la création d'un outil local.
+- Personnalisation itérative** : Capacité à demander à l'IA des modifications ergonomiques ciblées sur l'application locale (ex. : ajout d'un curseur latéral pour la barre de prompt).
+- Intégration d'assets** : Possibilité de réutiliser directement les images générées en tant qu'assets de référence pour les modèles vidéo (*image-to-video*).
+- Limites actuelles de l'offre** : Absence notable des modèles phares de Google et de ChatGPT sur la plateforme Higgsfield pour l'instant.
+- Arbitrage abonnement vs API** : L'abonnement reste rentable en cas de consommation maximale et continue, ou pour bénéficier d'un accès illimité sur des volumes élevés.
+- Cas d'usage idéal de l'API** : Parfait pour le travail par projet nécessitant des pics de production intenses suivis de longues périodes d'inactivité.
+- Phase de test et R&D** : L'API sert de formidable bac à sable pour comparer l'efficacité de différents modèles avant d'en intégrer un définitivement dans son workflow.
+- Évolution de la maintenance** : L'utilisation d'une application locale nécessite des mises à jour manuelles ou assistées pour intégrer l'arrivée de nouveaux modèles.
+- Développement de business** : Possibilité d'exploiter les clés API individuelles des modèles pour concevoir et lancer de nouvelles applications ou solutions commerciales.
 
 ---
 
@@ -49,15 +57,18 @@
 > Chaque mois je perds des crédits parce que je ne les utilise pas avant la date de renouvellement de mon abonnement. C'est comme ça que fonctionnent la plupart des abonnements IA. Que ce soit les plateformes dédiées à un modèle ou les agrégateurs. Tu reçois des crédits pour le mois et ceux que tu n'utilises pas sont perdus. Aujourd'hui je te montre une autre façon de générer des images et des vidéos IA passées par l'API d'Exfit.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface graphique personnalisée de présentation vidéo (motion design).
-**Contenu textuel & Code** : Texte explicatif sur les abonnements IA, les crédits restants (940 sur 1000) et les différentes formules (19€, 39€, 79€/mois).
-**Action / Démonstration** : Le présentateur introduit la problématique de la perte mensuelle de crédits sur les abonnements d'intelligence artificielle.
+**Interface & Outils** : Interface graphique animée de présentation vidéo.
+[DESC_IMAGE_3]
+**Contenu textuel & Code** : Textes explicatifs sur les abonnements IA, les crédits, et les options de génération d'images et de vidéos.
+**Action / Démonstration** : Introduction au problème de la perte des crédits d'abonnement IA non utilisés et présentation d'une alternative.
 
 **Captures d'écran :**
-- ![Aperçu du solde de crédits d'un abonnement IA et du temps restant avant renouvellement.](../screenshots/u66ICS8uDTE/frame_01_000001.jpg)  
-  *⏱️ 00:00:01 — Aperçu du solde de crédits d'un abonnement IA et du temps restant avant renouvellement.*
-- ![Comparatif visuel des différents abonnements IA, incluant les plateformes dédiées et les agrégateurs.](../screenshots/u66ICS8uDTE/frame_01_000011.jpg)  
-  *⏱️ 00:00:11 — Comparatif visuel des différents abonnements IA, incluant les plateformes dédiées et les agrégateurs.*
+- ![Illustration graphique montrant un compteur de 940 crédits restants sur 1000 pour un abonnement IA.](../screenshots/u66ICS8uDTE/frame_01_000001.jpg)  
+  *⏱️ 00:00:01 — Illustration graphique montrant un compteur de 940 crédits restants sur 1000 pour un abonnement IA.*
+- ![Schéma comparatif montrant les abonnements IA entre plateformes dédiées et agrégateurs avec des tarifs mensuels.](../screenshots/u66ICS8uDTE/frame_01_000011.jpg)  
+  *⏱️ 00:00:11 — Schéma comparatif montrant les abonnements IA entre plateformes dédiées et agrégateurs avec des tarifs mensuels.*
+- ![Écran de transition affichant le texte 'Une autre façon de générer' avec les options Images et Vidéos.](../screenshots/u66ICS8uDTE/frame_01_000020.jpg)  
+  *⏱️ 00:00:20 — Écran de transition affichant le texte 'Une autre façon de générer' avec les options Images et Vidéos.*
 
 ---
 
@@ -80,14 +91,14 @@
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
 **Interface & Outils** : Interface web de Higgsfield API (Dashboard et page Pricing)
-**Contenu textuel & Code** : Dashboard montrant le solde de l'organisation (9,94$), les dépenses du jour (0,06$) et le tableau comparatif des prix des modèles (Kling 3.0, Seedance, etc.)
-**Action / Démonstration** : Navigation sur le tableau de bord et consultation de la grille tarifaire de la plateforme API.
+**Contenu textuel & Code** : Menus Dashboard, Explore models, Quick start, Documentation, Pricing, API keys, Cashback, Top up, affichage du solde du compte (9.94$), des dépenses du jour et tableau comparatif des prix des différents modèles (Kling 3.0, Seedance, etc.).
+**Action / Démonstration** : Le créateur présente le tableau de bord de son compte API, montre qu'il est crédité puis navigue vers la section des prix pour comparer les tarifs des différents modèles disponibles.
 
 **Captures d'écran :**
-- ![Le tableau de bord du compte utilisateur sur la plateforme Higgsfield API, montrant le solde de l'organisation et un compteur de cashback.](../screenshots/u66ICS8uDTE/frame_03_000054.jpg)  
-  *⏱️ 00:00:54 — Le tableau de bord du compte utilisateur sur la plateforme Higgsfield API, montrant le solde de l'organisation et un compteur de cashback.*
-- ![La page de tarification et de comparaison des prix des différents modèles d'IA sur la plateforme Higgsfield API.](../screenshots/u66ICS8uDTE/frame_03_000103.jpg)  
-  *⏱️ 00:01:03 — La page de tarification et de comparaison des prix des différents modèles d'IA sur la plateforme Higgsfield API.*
+- ![Le tableau de bord du compte utilisateur sur la plateforme Higgsfield API, affichant le solde, le statut du cashback et les options de navigation.](../screenshots/u66ICS8uDTE/frame_03_000054.jpg)  
+  *⏱️ 00:00:54 — Le tableau de bord du compte utilisateur sur la plateforme Higgsfield API, affichant le solde, le statut du cashback et les options de navigation.*
+- ![La page de tarification et de comparaison des modèles sur la plateforme Higgsfield API, montrant les coûts par génération de vidéo et d'image.](../screenshots/u66ICS8uDTE/frame_03_000103.jpg)  
+  *⏱️ 00:01:03 — La page de tarification et de comparaison des modèles sur la plateforme Higgsfield API, montrant les coûts par génération de vidéo et d'image.*
 
 ---
 
@@ -109,15 +120,15 @@
 > Mais plus tu as de crédit sur ton compte, plus ça augmente. Par exemple, des 25$ de balance, on monte jusqu'à 10 générations simultanées. Si je me rends dans Explore Models, je vais avoir tous les modèles disponibles en API. Pour la vidéo, on a Seed Dance 2.5, on aura aussi Seed Dance 2.0, Kling 3.0, Minimax H3 ou encore WANA 3.0 Prime.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Dashboard web de Higgsfield API (open.higgsfield.ai)
-**Contenu textuel & Code** : Menus Dashboard, Explore models, Quick start, Pricing, et cartes de présentation des IA vidéo (bytedance/Seeddance 2.5, higgsfield/Genjutsu, kling/Kling 3.0).
-**Action / Démonstration** : Le créateur navigue dans l'onglet 'Explore models' pour présenter les différents modèles d'intelligence artificielle disponibles via l'API.
+**Interface & Outils** : Higgsfield API (plateforme web en ligne)
+**Contenu textuel & Code** : Menus Dashboard, Explore models, Quick start, Pricing, et miniatures des modèles vidéo (bytedance / Seeddance 2.5, higgsfield / Genjutsu, kling / Kling 3.0) avec tarifs et réductions.
+**Action / Démonstration** : Navigation et présentation des différents modèles d'IA disponibles via l'API.
 
 **Captures d'écran :**
-- ![Vue générale de l'interface Higgsfield API montrant les modèles vidéo disponibles comme Seeddance 2.5 et Kling 3.0.](../screenshots/u66ICS8uDTE/frame_05_000133.jpg)  
-  *⏱️ 00:01:33 — Vue générale de l'interface Higgsfield API montrant les modèles vidéo disponibles comme Seeddance 2.5 et Kling 3.0.*
-- ![Navigation dans le catalogue des modèles d'intelligence artificielle avec les options de génération vidéo et les tarifs associés.](../screenshots/u66ICS8uDTE/frame_05_000143.jpg)  
-  *⏱️ 00:01:43 — Navigation dans le catalogue des modèles d'intelligence artificielle avec les options de génération vidéo et les tarifs associés.*
+- ![Interface de la plateforme Higgsfield API montrant la liste des modèles disponibles, incluant Seeddance 2.5 et Kling 3.0.](../screenshots/u66ICS8uDTE/frame_05_000133.jpg)  
+  *⏱️ 00:01:33 — Interface de la plateforme Higgsfield API montrant la liste des modèles disponibles, incluant Seeddance 2.5 et Kling 3.0.*
+- ![Vue de la même interface Higgsfield API avec les cartes de présentation des différents modèles d'intelligence artificielle vidéo et image.](../screenshots/u66ICS8uDTE/frame_05_000143.jpg)  
+  *⏱️ 00:01:43 — Vue de la même interface Higgsfield API avec les cartes de présentation des différents modèles d'intelligence artificielle vidéo et image.*
 
 ---
 
@@ -127,17 +138,17 @@
 > Et on a aussi les modèles Maison d'Xfield avec Genjutsu ou encore Cinema Studio 4.0. On aura aussi accès aux modèles images, et là il y aura du Grok Imagine 2.0, Ideogram 4.0, Recraft 4.1 et plein d'autres, avec aussi les modèles Maison d'Xfield, Soul 2 ou encore le Marketing Studio Image.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface web de Higgsfield API (Explore models)
-**Contenu textuel & Code** : Miniatures et descriptions de modèles d'IA : Minimax H3, Wan 3.0 Prime, Marketing Studio Image, Grok Imagine 2.0, Soul 2, Ideogram 4.0, Recraft 4.1, Soul Standard
-**Action / Démonstration** : Le présentateur parcourt le catalogue des modèles d'IA d'image et de vidéo disponibles sur la plateforme Higgsfield API.
+**Interface & Outils** : Interface web de Higgsfield API (Explore models).
+**Contenu textuel & Code** : Listes de modèles d'IA (MiniMax H3, Wan 3.0 Prime, Marketing Studio Image, Grok Imagine 2.0, Soul 2, Ideogram 4.0, Recraft 4.1, Soul Standard) avec indicateurs de prix et options de filtrage.
+**Action / Démonstration** : Présentation et navigation à travers les différents modèles vidéo et image disponibles sur la plateforme Higgsfield API.
 
 **Captures d'écran :**
-- ![Interface de Higgsfield API montrant divers modèles vidéo et d'image disponibles sur la plateforme.](../screenshots/u66ICS8uDTE/frame_06_000146.jpg)  
-  *⏱️ 00:01:46 — Interface de Higgsfield API montrant divers modèles vidéo et d'image disponibles sur la plateforme.*
-- ![Vue détaillée de la galerie des modèles d'images incluant Marketing Studio Image, Grok Imagine 2.0, Soul 2, Ideogram 4.0 et Recraft 4.1.](../screenshots/u66ICS8uDTE/frame_06_000155.jpg)  
-  *⏱️ 00:01:55 — Vue détaillée de la galerie des modèles d'images incluant Marketing Studio Image, Grok Imagine 2.0, Soul 2, Ideogram 4.0 et Recraft 4.1.*
-- ![Affichage similaire de l'interface de Higgsfield API mettant en avant les modèles d'images récents.](../screenshots/u66ICS8uDTE/frame_06_000203.jpg)  
-  *⏱️ 00:02:03 — Affichage similaire de l'interface de Higgsfield API mettant en avant les modèles d'images récents.*
+- ![Interface de Higgsfield API montrant divers modèles vidéo disponibles avec leurs tarifs.](../screenshots/u66ICS8uDTE/frame_06_000146.jpg)  
+  *⏱️ 00:01:46 — Interface de Higgsfield API montrant divers modèles vidéo disponibles avec leurs tarifs.*
+- ![Navigation dans Higgsfield API avec les différents modèles d'images listés (Marketing Studio, Grok Imagine 2.0, Soul 2, Ideogram 4.0, Recraft 4.1).](../screenshots/u66ICS8uDTE/frame_06_000155.jpg)  
+  *⏱️ 00:01:55 — Navigation dans Higgsfield API avec les différents modèles d'images listés (Marketing Studio, Grok Imagine 2.0, Soul 2, Ideogram 4.0, Recraft 4.1).*
+- ![Vue similaire sur l'interface de Higgsfield API affichant la grille des modèles d'images disponibles.](../screenshots/u66ICS8uDTE/frame_06_000203.jpg)  
+  *⏱️ 00:02:03 — Vue similaire sur l'interface de Higgsfield API affichant la grille des modèles d'images disponibles.*
 
 ---
 
@@ -147,17 +158,17 @@
 > La liste est plutôt complète, dommage, on n'a pas accès aux modèles de ChatGPT et Google pour l'instant. Je ne sais pas si ça changera, la plateforme est encore toute récente, espérons que la liste de modèles s'enrichisse très vite. Et tous ces modèles, on peut les utiliser directement depuis le site. Par exemple, pour créer une image, je vais tester Grok Imagine 2.0.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Site web de Higgsfield API, interface de test (Playground) et documentation de modèles d'IA.
-**Contenu textuel & Code** : Menus de navigation (Dashboard, Explore models, Quick start, Pricing, API keys), vignettes de modèles (Marketing Studio Image, Grok Imagine 2.0, Soul 2), extraits de code TypeScript et champ de prompt d'entrée.
-**Action / Démonstration** : Le créateur navigue dans le catalogue des modèles d'IA, sélectionne Grok Imagine 2.0 et présente l'interface du playground pour tester la génération d'images.
+**Interface & Outils** : Higgsfield API (site web / plateforme d'IA)
+**Contenu textuel & Code** : Menus de navigation (Dashboard, Explore models, Quick start, API keys), vignettes de modèles (Marketing Studio Image, Grok Imagine 2.0), code TypeScript, et zone de saisie de prompt 'Input' avec le résultat visuel.
+**Action / Démonstration** : Navigation dans la liste des modèles, sélection du modèle Grok Imagine 2.0 et consultation de son interface de test (playground).
 
 **Captures d'écran :**
-- ![Vue d'ensemble de la plateforme Higgsfield API montrant la liste des modèles d'IA disponibles pour les images et vidéos.](../screenshots/u66ICS8uDTE/frame_07_000206.jpg)  
-  *⏱️ 00:02:06 — Vue d'ensemble de la plateforme Higgsfield API montrant la liste des modèles d'IA disponibles pour les images et vidéos.*
-- ![Page de détails du modèle 'Grok Imagine 2.0' sur Higgsfield API avec des exemples de code TypeScript et des options d'intégration.](../screenshots/u66ICS8uDTE/frame_07_000215.jpg)  
-  *⏱️ 00:02:15 — Page de détails du modèle 'Grok Imagine 2.0' sur Higgsfield API avec des exemples de code TypeScript et des options d'intégration.*
-- ![Interface du playground de Higgsfield API pour le modèle Grok Imagine 2.0 affichant le champ de prompt textuel et le résultat généré.](../screenshots/u66ICS8uDTE/frame_07_000223.jpg)  
-  *⏱️ 00:02:23 — Interface du playground de Higgsfield API pour le modèle Grok Imagine 2.0 affichant le champ de prompt textuel et le résultat généré.*
+- ![Vue d'ensemble de la plateforme Higgsfield API montrant la liste des modèles disponibles avec leurs tarifs.](../screenshots/u66ICS8uDTE/frame_07_000206.jpg)  
+  *⏱️ 00:02:06 — Vue d'ensemble de la plateforme Higgsfield API montrant la liste des modèles disponibles avec leurs tarifs.*
+- ![Page de détails du modèle 'Grok Imagine 2.0' sur Higgsfield API avec des options de code et de test.](../screenshots/u66ICS8uDTE/frame_07_000215.jpg)  
+  *⏱️ 00:02:15 — Page de détails du modèle 'Grok Imagine 2.0' sur Higgsfield API avec des options de code et de test.*
+- ![Interface du Playground du modèle Grok Imagine 2.0 affichant le champ de saisie du prompt et le résultat généré.](../screenshots/u66ICS8uDTE/frame_07_000223.jpg)  
+  *⏱️ 00:02:23 — Interface du Playground du modèle Grok Imagine 2.0 affichant le champ de saisie du prompt et le résultat généré.*
 
 ---
 
@@ -167,18 +178,17 @@
 > Je le sélectionne et là dans la partie Playground, je vais avoir une barre de prompt. Je vais pouvoir indiquer mon prompt et faire mes réglages, puis générer. J'ai d'ailleurs le prix qui s'affiche sur le bouton de génération. Voilà mon résultat. A noter, tu retrouveras toutes les générations sur l'onglet Request du modèle. Toujours dans les onglets, tu as aussi un onglet API qui te donne accès à la doc API du modèle et aussi une commande spécifique Copy Agent Prompt.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface web de Higgsfield API / Grok Imagine 2.0 Playground.
-**Contenu textuel & Code** : Champs de saisie de prompt, boutons de réglage (medium, 1k, auto), bouton de génération avec prix ($0.06), onglets Playground, API, Requests, Analytics.
-[DESC_IMAGE_3] Saisie d'un prompt textuel, réglage des paramètres et explication du fonctionnement de la génération et du suivi dans l'onglet Requests.
-**Action / Démonstration** : Démonstration et mise en contexte pratique.
+**Interface & Outils** : Interface web de Higgsfield API (Playground et onglet API).
+**Contenu textuel & Code** : Barres de prompt, boutons de réglages, affichage du prix de génération ($0.06), et onglets Playground, API, Requests, Analytics.
+**Action / Démonstration** : Le créateur montre comment saisir un prompt, configurer les réglages de génération et consulter les détails du modèle et de l'API.
 
 **Captures d'écran :**
-- ![Interface de l'API Higgsfield avec le modèle Grok Imagine 2.0 affichant un prompt textuel et une image générée de cactus.](../screenshots/u66ICS8uDTE/frame_08_000226.jpg)  
-  *⏱️ 00:02:26 — Interface de l'API Higgsfield avec le modèle Grok Imagine 2.0 affichant un prompt textuel et une image générée de cactus.*
-- ![Interface Playground montrant la barre de prompt, les réglages et le bouton de génération affichant le coût de 0,06 $ avec une image de paysage arboré.](../screenshots/u66ICS8uDTE/frame_08_000237.jpg)  
-  *⏱️ 00:02:37 — Interface Playground montrant la barre de prompt, les réglages et le bouton de génération affichant le coût de 0,06 $ avec une image de paysage arboré.*
-- ![Vue de l'API Grok Imagine 2.0 sur la plateforme Higgsfield montrant la documentation, les onglets API, Requests et Analytics, ainsi qu'une notification de cashback.](../screenshots/u66ICS8uDTE/frame_08_000248.jpg)  
-  *⏱️ 00:02:48 — Vue de l'API Grok Imagine 2.0 sur la plateforme Higgsfield montrant la documentation, les onglets API, Requests et Analytics, ainsi qu'une notification de cashback.*
+- ![Interface du playground Higgsfield API montrant un prompt et une image générée de cactus.](../screenshots/u66ICS8uDTE/frame_08_000226.jpg)  
+  *⏱️ 00:02:26 — Interface du playground Higgsfield API montrant un prompt et une image générée de cactus.*
+- ![Interface du playground Higgsfield API avec la saisie d'un prompt textuel et l'affichage du prix sur le bouton de génération.](../screenshots/u66ICS8uDTE/frame_08_000237.jpg)  
+  *⏱️ 00:02:37 — Interface du playground Higgsfield API avec la saisie d'un prompt textuel et l'affichage du prix sur le bouton de génération.*
+- ![Onglet API du modèle Grok Imagine 2.0 sur la plateforme Higgsfield API avec notification de cashback.](../screenshots/u66ICS8uDTE/frame_08_000248.jpg)  
+  *⏱️ 00:02:48 — Onglet API du modèle Grok Imagine 2.0 sur la plateforme Higgsfield API avec notification de cashback.*
 
 ---
 
@@ -188,15 +198,15 @@
 > qui te permet de copier-coller le prompt pour paramétrer l'API du modèle via un agent. Nous, on ne va pas le faire. On utilisera plutôt une autre commande pour donner d'un seul coup tous les modèles à Cloud qui nous préparera une application. Avant ça, je te montre aussi un modèle vidéo depuis la plateforme. Donc je sélectionne dans ma liste de modèles disponibles Seedense 2.5.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface web de Higgsfield API, navigateur web, fenêtres de code TypeScript.
-**Contenu textuel & Code** : Menus de navigation (Dashboard, Explore models, Quick start, Documentation, Pricing, API keys), bannières promotionnelles 'GET 100% CASHBACK ON API SPENDINGS', sélecteurs de formats (Text to Video, Image to Video, Reference to Video, Video Edit, Video Extend) et code de configuration d'API.
-**Action / Démonstration** : Le créateur navigue sur la plateforme Higgsfield API pour explorer les modèles vidéo disponibles et montrer les options de configuration et de code.
+**Interface & Outils** : Dashboard de Higgsfield API, navigateur web.
+**Contenu textuel & Code** : Textes promotionnels 'Get 100% Cashback on API Spendings', menu de sélection des modèles de génération (Text to Video, Image to Video), et code d'intégration TypeScript avec le bouton 'Copy agent prompt'.
+**Action / Démonstration** : Le créateur navigue sur la plateforme Higgsfield API et explore le modèle Seedance 2.5 pour montrer les options de génération et le code d'intégration.
 
 **Captures d'écran :**
-- ![Vue générale du dashboard de la plateforme Higgsfield API avec des bannières promotionnelles de cashback.](../screenshots/u66ICS8uDTE/frame_09_000300.jpg)  
-  *⏱️ 00:03:00 — Vue générale du dashboard de la plateforme Higgsfield API avec des bannières promotionnelles de cashback.*
-- ![Affichage de la page de modèle 'SEEDANCE 2.5' sur l'API Higgsfield avec le menu déroulant des modes vidéo et un extrait de code TypeScript incluant le bouton 'Copy agent prompt'.](../screenshots/u66ICS8uDTE/frame_09_000309.jpg)  
-  *⏱️ 00:03:09 — Affichage de la page de modèle 'SEEDANCE 2.5' sur l'API Higgsfield avec le menu déroulant des modes vidéo et un extrait de code TypeScript incluant le bouton 'Copy agent prompt'.*
+- ![Interface principale de Higgsfield API montrant le tableau de bord avec une offre promotionnelle de cashback sur les dépenses d'API.](../screenshots/u66ICS8uDTE/frame_09_000300.jpg)  
+  *⏱️ 00:03:00 — Interface principale de Higgsfield API montrant le tableau de bord avec une offre promotionnelle de cashback sur les dépenses d'API.*
+- ![Page d'exploration du modèle 'SEEDANCE 2.5' sur Higgsfield API avec un menu déroulant affichant les modes de génération et un bloc de code TypeScript.](../screenshots/u66ICS8uDTE/frame_09_000309.jpg)  
+  *⏱️ 00:03:09 — Page d'exploration du modèle 'SEEDANCE 2.5' sur Higgsfield API avec un menu déroulant affichant les modes de génération et un bloc de code TypeScript.*
 
 ---
 
@@ -206,15 +216,15 @@
 > Tu vois, j'ai aussi la possibilité de choisir les déclinaisons du modèle selon l'usage. Là, je vais utiliser en image to video. Et pareil, je peux générer directement depuis le site ma vidéo en utilisant mes crédits API. Bon, même si l'utilisation des modèles depuis le site est possible, ce n'est pas forcément le plus agréable. Je te conseille de te rendre dans l'onglet Quick Start.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Site web Higgsfield API (Playground Image-to-Video)
-**Contenu textuel & Code** : Menu de gauche avec Dashboard, Explore models, Quick start, Documentation, Pricing ; au centre, les options Prompt, Start/End frames et Generate Audio ; à droite, le panneau de résultat vidéo.
-**Action / Démonstration** : Le créateur montre l'interface de génération vidéo Image-to-Video sur la plateforme Higgsfield API.
+**Interface & Outils** : Site web Higgsfield API (Seedance 2.5)
+**Contenu textuel & Code** : Menu Playground, options Input avec champ de texte, Start/End frame, Generate Audio, durée (10s), résolution (720p), et affichage du résultat vidéo.
+**Action / Démonstration** : Le créateur montre l'utilisation du mode Image-to-Video sur la plateforme et commente l'interface.
 
 **Captures d'écran :**
-- ![Interface du générateur vidéo en ligne Higgsfield API montrant les options Image-to-Video et le résultat en cours de lecture.](../screenshots/u66ICS8uDTE/frame_10_000320.jpg)  
-  *⏱️ 00:03:20 — Interface du générateur vidéo en ligne Higgsfield API montrant les options Image-to-Video et le résultat en cours de lecture.*
-- ![Interface de Higgsfield API avec une flèche rouge pointant vers le menu Quick Start, tandis que le créateur apparaît en incrustation.](../screenshots/u66ICS8uDTE/frame_10_000328.jpg)  
-  *⏱️ 00:03:28 — Interface de Higgsfield API avec une flèche rouge pointant vers le menu Quick Start, tandis que le créateur apparaît en incrustation.*
+- ![Interface du générateur vidéo Higgsfield API affichant le mode Image-to-Video et les options de réglage avec le résultat en cours de génération.](../screenshots/u66ICS8uDTE/frame_10_000320.jpg)  
+  *⏱️ 00:03:20 — Interface du générateur vidéo Higgsfield API affichant le mode Image-to-Video et les options de réglage avec le résultat en cours de génération.*
+- ![Interface de Higgsfield API avec une flèche rouge pointant vers le menu Quick start, et apparition du créateur en incrustation à droite.](../screenshots/u66ICS8uDTE/frame_10_000328.jpg)  
+  *⏱️ 00:03:28 — Interface de Higgsfield API avec une flèche rouge pointant vers le menu Quick start, et apparition du créateur en incrustation à droite.*
 
 ---
 
@@ -224,17 +234,17 @@
 > Et tu vas copier ce prompt avec le bouton Copy Prompt Agent. Je vais ensuite ouvrir Cloud Code via l'application. Alors moi ici, j'utilise l'application Cloud Code, mais si tu es un utilisateur de chat GPT, tu peux utiliser Codex. Claude va me poser quelques questions supplémentaires. Je vais l'orienter en lui demandant d'installer l'application en local.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Higgsfield API, application Claude / Cloud Code.
-**Contenu textuel & Code** : Bouton "Copy agent prompt", interface de discussion avec l'IA et options d'installation technique (Node.js, npm, pnpm).
-**Action / Démonstration** : Le créateur montre comment copier un prompt depuis Higgsfield et l'utiliser dans Claude en interagissant avec l'application.
+**Interface & Outils** : Navigateur web (site Higgsfield API) et application de bureau Claude Code.
+**Contenu textuel & Code** : Documentation technique, instructions de migration d'API, prompts textuels complexes et questions interactives de l'agent IA concernant les dépendances (Node.js, npm, pnpm).
+**Action / Démonstration** : Le créateur montre la copie d'un prompt d'agent depuis une API, puis bascule sur l'application Claude Code pour configurer et installer l'environnement de développement nécessaire.
 
 **Captures d'écran :**
-- ![Interface de l'API Higgsfield montrant le bouton pour copier le prompt d'agent.](../screenshots/u66ICS8uDTE/frame_11_000330.jpg)  
-  *⏱️ 00:03:30 — Interface de l'API Higgsfield montrant le bouton pour copier le prompt d'agent.*
-- ![Interface de l'application Claude affichant le champ de saisie du prompt.](../screenshots/u66ICS8uDTE/frame_11_000339.jpg)  
-  *⏱️ 00:03:39 — Interface de l'application Claude affichant le champ de saisie du prompt.*
-- ![Interface de l'application Claude affichant une demande de configuration de Node.js et les options d'installation.](../screenshots/u66ICS8uDTE/frame_11_000346.jpg)  
-  *⏱️ 00:03:46 — Interface de l'application Claude affichant une demande de configuration de Node.js et les options d'installation.*
+- ![Interface du site web Higgsfield API montrant les instructions pour migrer en un prompt et le bouton pour copier le prompt de l'agent.](../screenshots/u66ICS8uDTE/frame_11_000330.jpg)  
+  *⏱️ 00:03:30 — Interface du site web Higgsfield API montrant les instructions pour migrer en un prompt et le bouton pour copier le prompt de l'agent.*
+- ![Interface de l'application Claude Code affichant un prompt textuel détaillé et des statistiques d'utilisation du modèle.](../screenshots/u66ICS8uDTE/frame_11_000339.jpg)  
+  *⏱️ 00:03:39 — Interface de l'application Claude Code affichant un prompt textuel détaillé et des statistiques d'utilisation du modèle.*
+- ![Interface de Claude Code posant une question interactive sur l'installation de Node.js et pnpm avec des options de réponse.](../screenshots/u66ICS8uDTE/frame_11_000346.jpg)  
+  *⏱️ 00:03:46 — Interface de Claude Code posant une question interactive sur l'installation de Node.js et pnpm avec des options de réponse.*
 
 ---
 
@@ -256,15 +266,15 @@
 > Quelques instants plus tard, j'ai donc mon application de prête. Je vais la lancer. Elle est assez simple, mais on voit bien la liste complète des modèles vidéo et images. Bon, on pourrait sûrement mieux organiser ça. Et justement, ce qui est bien avec notre application, c'est qu'on va pouvoir demander à Claude de faire des ajustements et des modifications.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Application web sur mesure de génération par IA ("Atelier")
-**Contenu textuel & Code** : Menu déroulant des modèles (Seedance 2.0 Fast/Mini, Kling 3.0 Turbo/Standard/Pro/4K/Motion Control), champ de prompt "Describe the scene you imagine...", et bouton "GENERATE".
-**Action / Démonstration** : Le créateur montre l'interface de l'application qu'il vient de lancer, explore la liste complète des modèles vidéo et image disponibles, et démontre les fonctionnalités de base.
+**Interface & Outils** : Application web "Atelier" (interface de génération d'images et vidéos par IA).
+**Contenu textuel & Code** : Menus de sélection de modèles (Seedance 2.0 Fast, Kling 3.0 Turbo, Kling 3.0 4K, etc.), champ de texte "Describe the scene you imagine...", bouton "GENERATE".
+**Action / Démonstration** : Le créateur navigue dans l'interface de son application et explore la liste déroulante des différents modèles vidéo et image disponibles.
 
 **Captures d'écran :**
-- ![Interface de l'application avec le menu déroulant des modèles de génération vidéo ouvert, affichant Seedance, Kling 3.0, etc.](../screenshots/u66ICS8uDTE/frame_13_000416.jpg)  
-  *⏱️ 00:04:16 — Interface de l'application avec le menu déroulant des modèles de génération vidéo ouvert, affichant Seedance, Kling 3.0, etc.*
-- ![Interface principale de l'application de génération d'images et vidéos avec un champ de texte central et un bouton 'Generate'.](../screenshots/u66ICS8uDTE/frame_13_000424.jpg)  
-  *⏱️ 00:04:24 — Interface principale de l'application de génération d'images et vidéos avec un champ de texte central et un bouton 'Generate'.*
+- ![Interface sombre d'une application web avec un menu déroulant affichant différents modèles vidéo et image (Seedance, Kling 3.0).](../screenshots/u66ICS8uDTE/frame_13_000416.jpg)  
+  *⏱️ 00:04:16 — Interface sombre d'une application web avec un menu déroulant affichant différents modèles vidéo et image (Seedance, Kling 3.0).*
+- ![Interface principale de l'application web avec un champ de saisie de prompt et un bouton vert de génération.](../screenshots/u66ICS8uDTE/frame_13_000424.jpg)  
+  *⏱️ 00:04:24 — Interface principale de l'application web avec un champ de saisie de prompt et un bouton vert de génération.*
 
 ---
 
@@ -274,13 +284,13 @@
 > On va voir ça dans un petit moment, mais avant, mon application, elle n'est pas encore connectée à l'API d'Xfield. Donc là, je vais me rendre en bas à gauche. J'ai un bouton Connect API que Claude m'a inclus dans l'application. Je clique dessus, je suis redirigé vers la plateforme API d'XField. Cette fois je clique sur le bouton Create API Key.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Navigateur web, plateforme API Higgsfield AI
-**Contenu textuel & Code** : Menu latéral (Dashboard, Explore models, Quick start, Documentation, Pricing, API keys...), bloc de texte d'instructions pour l'API, illustration d'une clé physique et bouton "Create API key".
-**Action / Démonstration** : Le créateur montre la plateforme API d'Higgsfield et s'apprête à cliquer sur le bouton "Create API key".
+**Interface & Outils** : Interface web de la plateforme Higgsfield API (mode sombre).
+**Contenu textuel & Code** : Menu latéral (Dashboard, Explore models, Quick start, Documentation, Pricing, API keys...), un encadré explicatif avec du code/texte de tâche, et une section "2. Create an API key" avec une illustration de clé et un bouton "Create API key" pointé par une flèche rouge.
+**Action / Démonstration** : Le créateur montre la page de création de clé API sur la plateforme Higgsfield pour connecter son application.
 
 **Captures d'écran :**
-- ![Page de documentation et de gestion des clés API sur la plateforme Higgsfield AI avec une flèche rouge pointant vers le bouton "Create API key".](../screenshots/u66ICS8uDTE/frame_14_000444.jpg)  
-  *⏱️ 00:04:44 — Page de documentation et de gestion des clés API sur la plateforme Higgsfield AI avec une flèche rouge pointant vers le bouton "Create API key".*
+- ![Capture d'écran de la plateforme API d'Higgsfield montrant la section pour créer une clé API.](../screenshots/u66ICS8uDTE/frame_14_000444.jpg)  
+  *⏱️ 00:04:44 — Capture d'écran de la plateforme API d'Higgsfield montrant la section pour créer une clé API.*
 
 ---
 
@@ -290,17 +300,17 @@
 > Je donne un nom à mon API. On peut aussi mettre une date d'expiration. Et je n'ai plus qu'à copier et coller ma clé API dans mon application en local pour pouvoir utiliser tous les modèles IA. On va faire un test avec le modèle Flux 2. Et on a notre résultat, ça marche. On va tester maintenant un modèle IA vidéo. Alors là j'ai un truc qui me gêne dans la barre de prompt.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface web de Higgsfield AI et dashboard de configuration de clés API.
-**Contenu textuel & Code** : Formulaires de création d'API, champ de saisie de clé secrète, invite de prompt pour la génération avec Flux 2.
-**Action / Démonstration** : Le créateur montre comment nommer une clé API, l'insérer dans l'application locale et tester la génération avec le modèle Flux 2.
+**Interface & Outils** : Dashboard de gestion API et interface web de génération d'IA (Atelier / Higgsfield).
+**Contenu textuel & Code** : Menus "Create API key", "Enter name", champ de saisie de clé API masquée, prompt textuel et options de sélection du modèle Flux 2.
+**Action / Démonstration** : Le créateur crée une clé API, l'insère dans l'application locale et configure un test de génération avec le modèle Flux 2.
 
 **Captures d'écran :**
-- ![Interface de création d'une clé API avec champ de nom et option de date d'expiration.](../screenshots/u66ICS8uDTE/frame_15_000446.jpg)  
-  *⏱️ 00:04:46 — Interface de création d'une clé API avec champ de nom et option de date d'expiration.*
-- ![Fenêtre modale de gestion de la clé API pour coller le code d'accès de Higgsfield AI.](../screenshots/u66ICS8uDTE/frame_15_000455.jpg)  
-  *⏱️ 00:04:55 — Fenêtre modale de gestion de la clé API pour coller le code d'accès de Higgsfield AI.*
-- ![Interface principale d'un générateur d'images et de films par IA avec le modèle Flux 2 sélectionné.](../screenshots/u66ICS8uDTE/frame_15_000504.jpg)  
-  *⏱️ 00:05:04 — Interface principale d'un générateur d'images et de films par IA avec le modèle Flux 2 sélectionné.*
+- ![Interface de création d'une clé API avec champ de nom et date d'expiration.](../screenshots/u66ICS8uDTE/frame_15_000446.jpg)  
+  *⏱️ 00:04:46 — Interface de création d'une clé API avec champ de nom et date d'expiration.*
+- ![Fenêtre de gestion de l'API montrant l'insertion et l'enregistrement de la clé secrète.](../screenshots/u66ICS8uDTE/frame_15_000455.jpg)  
+  *⏱️ 00:04:55 — Fenêtre de gestion de l'API montrant l'insertion et l'enregistrement de la clé secrète.*
+- ![Interface de génération d'images et vidéos par IA avec le modèle Flux 2 sélectionné.](../screenshots/u66ICS8uDTE/frame_15_000504.jpg)  
+  *⏱️ 00:05:04 — Interface de génération d'images et vidéos par IA avec le modèle Flux 2 sélectionné.*
 
 ---
 
@@ -310,15 +320,15 @@
 > Je ne peux pas scroller pour voir mon texte. Mais pas grave, comme je te l'ai dit, on va pouvoir personnaliser et améliorer notre application avec l'aide de Claude. Donc là, je vais simplement demander à Claude, peux-tu améliorer l'interface en ajoutant un curseur latéral, une barre latérale pour descendre dans la barre de prompt ? Bon, j'espère qu'il va comprendre ce que je lui ai demandé. Je relance l'application.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface web de Claude (Anthropic)
-**Contenu textuel & Code** : Texte de documentation technique et barre de prompt contenant la requête : "peux tu améliorer l'interface en ajoutant un curseur latéral pour descendre dans la barre de prompt"
-**Action / Démonstration** : Le créateur tape un prompt dans l'interface de Claude pour demander une modification d'interface sur son application.
+**Interface & Outils** : Interface de Claude (assistant IA conversationnel)
+**Contenu textuel & Code** : Texte du prompt saisi : 'peux tu améliorer l'interface en ajoutant un curseur latéral pour descendre dans la barre de prompt' et explications textuelles de l'assistant.
+**Action / Démonstration** : Le créateur demande à l'assistant Claude d'apporter une modification à l'interface de l'application.
 
 **Captures d'écran :**
-- ![Interface de Claude affichant le prompt demandant d'ajouter un curseur latéral pour la barre de prompt.](../screenshots/u66ICS8uDTE/frame_16_000515.jpg)  
-  *⏱️ 00:05:15 — Interface de Claude affichant le prompt demandant d'ajouter un curseur latéral pour la barre de prompt.*
-- ![Réponse de Claude expliquant les modifications apportées à la barre de prompt avec le nouveau prompt de traduction.](../screenshots/u66ICS8uDTE/frame_16_000523.jpg)  
-  *⏱️ 00:05:23 — Réponse de Claude expliquant les modifications apportées à la barre de prompt avec le nouveau prompt de traduction.*
+- ![Interface de l'outil Claude affichant le prompt demandant d'ajouter un curseur latéral.](../screenshots/u66ICS8uDTE/frame_16_000515.jpg)  
+  *⏱️ 00:05:15 — Interface de l'outil Claude affichant le prompt demandant d'ajouter un curseur latéral.*
+- ![Interface de Claude affichant la réponse détaillée de l'IA sur la modification apportée à la barre de prompt.](../screenshots/u66ICS8uDTE/frame_16_000523.jpg)  
+  *⏱️ 00:05:23 — Interface de Claude affichant la réponse détaillée de l'IA sur la modification apportée à la barre de prompt.*
 
 ---
 
@@ -328,17 +338,17 @@
 > Et super, il m'a fait les modifications demandées. C'est beaucoup mieux comme ça. Je vais pouvoir tester Seedense 2.5 avec une image en référence. En plus c'est cool, je peux aller directement chercher cette image de référence dans mes assets générés. C'est super, l'application fonctionne bien avec tous les modèles. C'est une version simplifiée, mais comme on l'a vu, il est tout à fait possible de la personnaliser à l'aide de Cloud pour avoir une application parfaitement adaptée à tes usages.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Application web de génération IA (Seedance 2.5 / Atelier)
-**Contenu textuel & Code** : Prompts textuels de génération vidéo, paramètres (Modèle Seedance 2.5, format 16:9), galerie d'assets et panneau de métadonnées.
-**Action / Démonstration** : Test du modèle Seedance 2.5 avec une image de référence pour générer un timelapse saisonnier d'une rue.
+**Interface & Outils** : Application web de génération vidéo IA (Seedance 2.5) avec panneau latéral et zone de prompt.
+**Contenu textuel & Code** : Prompt en anglais pour créer un time-lapse saisonnier, sélection du modèle Seedance 2.5, format 16:9, et détails de génération.
+**Action / Démonstration** : Le créateur lance une génération vidéo avec image de référence et examine le résultat final.
 
 **Captures d'écran :**
-- ![Interface de l'application de génération avec un champ de texte de prompt et le modèle Seedance 2.5 sélectionné.](../screenshots/u66ICS8uDTE/frame_17_000527.jpg)  
-  *⏱️ 00:05:27 — Interface de l'application de génération avec un champ de texte de prompt et le modèle Seedance 2.5 sélectionné.*
-- ![Vue sur la galerie de générations en cours montrant le lancement de la création vidéo avec le modèle Seedance 2.5.](../screenshots/u66ICS8uDTE/frame_17_000539.jpg)  
-  *⏱️ 00:05:39 — Vue sur la galerie de générations en cours montrant le lancement de la création vidéo avec le modèle Seedance 2.5.*
-- ![Aperçu de la vidéo générée dans l'application, avec le panneau latéral affichant les détails de génération Seedance 2.5 et le youtubeur en bas à droite.](../screenshots/u66ICS8uDTE/frame_17_000550.jpg)  
-  *⏱️ 00:05:50 — Aperçu de la vidéo générée dans l'application, avec le panneau latéral affichant les détails de génération Seedance 2.5 et le youtubeur en bas à droite.*
+- ![Interface de l'application de génération avec un prompt textuel et le modèle Seedance 2.5 sélectionné.](../screenshots/u66ICS8uDTE/frame_17_000527.jpg)  
+  *⏱️ 00:05:27 — Interface de l'application de génération avec un prompt textuel et le modèle Seedance 2.5 sélectionné.*
+- ![Vue sur la génération en cours et les assets récents avec le bouton 'Cancel'.](../screenshots/u66ICS8uDTE/frame_17_000539.jpg)  
+  *⏱️ 00:05:39 — Vue sur la génération en cours et les assets récents avec le bouton 'Cancel'.*
+- ![Affichage du résultat généré avec un panneau de détails et le créateur visible en bas à droite.](../screenshots/u66ICS8uDTE/frame_17_000550.jpg)  
+  *⏱️ 00:05:50 — Affichage du résultat généré avec un panneau de détails et le créateur visible en bas à droite.*
 
 ---
 
@@ -348,15 +358,17 @@
 > Alors est-ce que l'utilisation d'Xfield en API rend forcément l'utilisation d'un abonnement inutile ? Pour moi, non. Déjà parce que comme on l'a vu, même si le service d'API d'Xfield est très complet, il moque encore pour l'instant l'accès à quelques modèles, notamment ceux de Google et ChatGPT. Mais aussi parce que selon tes besoins et la formule choisie, les abonnements peuvent rester une meilleure solution.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface graphique animée de présentation vidéo sur fond sombre.
-**Contenu textuel & Code** : Textes "L'API rend-elle l'abonnement inutile ?", noms de modèles d'IA (Seedance 2.5, Genjutsu, Kling 3.0, MiniMax H3, Wan 3.0 Prime) et schéma de balance avec "API" et "Abonnement".
-**Action / Démonstration** : Le créateur illustre visuellement la question de l'utilité de l'API face à l'abonnement et présente les différents modèles pris en charge.
+**Interface & Outils** : Interface vidéo de la chaîne YouTube 'Labo Des Réseaux' avec des infographies animées.
+**Contenu textuel & Code** : Textes : 'L'API rend-elle l'abonnement inutile ?', noms de modèles IA (Seedance 2.5, Genjutsu, Kling 3.0, MiniMax H3, Wan 3.0 Prime, Marketing Studio, Seedance 2.0, Cinema Studio), et balance comparative 'API' vs 'Abonnement'.
+**Action / Démonstration** : Le créateur illustre par des graphiques animés la comparaison entre l'utilisation d'une API et un abonnement classique.
 
 **Captures d'écran :**
-- ![Grille de vignettes représentant différents modèles d'IA et studios disponibles (Seedance, Genjutsu, Kling, MiniMax, Wan, Marketing Studio, Cinema Studio).](../screenshots/u66ICS8uDTE/frame_18_000602.jpg)  
-  *⏱️ 00:06:02 — Grille de vignettes représentant différents modèles d'IA et studios disponibles (Seedance, Genjutsu, Kling, MiniMax, Wan, Marketing Studio, Cinema Studio).*
-- ![Représentation graphique sous forme de balance comparant l'API et l'Abonnement selon les besoins et la formule.](../screenshots/u66ICS8uDTE/frame_18_000612.jpg)  
-  *⏱️ 00:06:12 — Représentation graphique sous forme de balance comparant l'API et l'Abonnement selon les besoins et la formule.*
+- ![Écran titre posant la question de l'utilité d'un abonnement face à l'utilisation d'une API.](../screenshots/u66ICS8uDTE/frame_18_000552.jpg)  
+  *⏱️ 00:05:52 — Écran titre posant la question de l'utilité d'un abonnement face à l'utilisation d'une API.*
+- ![Grille de sélection affichant différents modèles et outils d'intelligence artificielle disponibles.](../screenshots/u66ICS8uDTE/frame_18_000602.jpg)  
+  *⏱️ 00:06:02 — Grille de sélection affichant différents modèles et outils d'intelligence artificielle disponibles.*
+- ![Représentation graphique d'une balance comparant l'utilisation d'une API et d'un abonnement en fonction des besoins et de la formule.](../screenshots/u66ICS8uDTE/frame_18_000612.jpg)  
+  *⏱️ 00:06:12 — Représentation graphique d'une balance comparant l'utilisation d'une API et d'un abonnement en fonction des besoins et de la formule.*
 
 ---
 
@@ -366,9 +378,9 @@
 > Par exemple, via certaines offres, tu as un accès illimité à certains modèles et avec un engagement longue durée, tu peux aussi avoir des tarifs intéressants sur tes générations. Si tu sais que tu vas consommer chaque mois tous tes crédits et que les modèles inclus correspondent à ton activité, un abonnement reste simple, prévisible et potentiellement rentable.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Aucun (animation de texte)
+**Interface & Outils** : Écran de montage vidéo ou infographie textuelle.
 **Contenu textuel & Code** : Texte affiché : "SIMPLE. PRÉVISIBLE."
-**Action / Démonstration** : Illustration visuelle du propos audio par une phrase clé.
+**Action / Démonstration** : Le créateur illustre visuellement les arguments clés abordés dans sa voix off concernant la simplicité et la prévisibilité des abonnements.
 
 ---
 
@@ -378,13 +390,13 @@
 > Pour moi, le passage par API, c'est une solution plus intéressante à étudier si tu travailles par projet. Par exemple, si tu as besoin de produire énormément d'images et de vidéos pendant quelques jours, puis de ne rien générer pendant plusieurs semaines après. C'est aussi pratique pour tester différents modèles avant de choisir lequel tu intégreras définitivement à ton workflow.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface de présentation de modèles d'IA.
-**Contenu textuel & Code** : Texte principal : 'Tester plusieurs modèles avant de choisir'. Cartes des modèles : Seedance 2.5, Kling 3.0, MiniMax H3, Wan 3.0. Bouton : 'Intégré à ton workflow'.
-**Action / Démonstration** : Le créateur présente l'interface illustrant la possibilité de tester différents modèles avant de faire un choix définitif.
+**Interface & Outils** : Interface de présentation de modèles d'IA avec superposition vidéo du présentateur.
+**Contenu textuel & Code** : Titre : "Tester plusieurs modèles avant de choisir". Cartes de modèles : Seedance 2.5 (sélectionné, "Intégré à ton workflow"), Kling 3.0, MiniMax H3, Wan 3.0 (mention "même prompt").
+**Action / Démonstration** : Le présentateur explique comment il est possible de tester divers modèles d'IA avant d'intégrer le choix définitif dans son workflow.
 
 **Captures d'écran :**
-- ![Présentation des différents modèles d'IA disponibles pour les tests, avec le modèle 'Seedance 2.5' sélectionné.](../screenshots/u66ICS8uDTE/frame_20_000651.jpg)  
-  *⏱️ 00:06:51 — Présentation des différents modèles d'IA disponibles pour les tests, avec le modèle 'Seedance 2.5' sélectionné.*
+- ![Présentation des différents modèles d'IA disponibles pour les tests avec surbrillance sur Seedance 2.5.](../screenshots/u66ICS8uDTE/frame_20_000651.jpg)  
+  *⏱️ 00:06:51 — Présentation des différents modèles d'IA disponibles pour les tests avec surbrillance sur Seedance 2.5.*
 
 ---
 
@@ -394,15 +406,15 @@
 > Attention sur ce dernier point si tu utilises une application en local, comme dans l'exemple de cette vidéo. ça veut dire qu'il faudra aussi la mettre à jour lorsqu'un nouveau modèle sera disponible. Point intéressant dans cette vidéo, on a utilisé l'API pour la génération de vidéos et d'images et on a utilisé une clé API générale XFile regroupant tous les modèles disponibles.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface logicielle locale et schéma explicatif
-**Contenu textuel & Code** : Textes : 'Attention', 'Une app locale se met à jour à la main', 'Mon studio IA', 'Nouveau modèle', 'Dans cette vidéo', 'Vidéos', 'Images', 'Clé API générale tous les modèles', et noms des modèles (Seedance 2.5, Genjutsu, Kling 3.0, MiniMax H3, Wan 3.0 Prime).
-**Action / Démonstration** : Explication par le créateur de la nécessité de mettre à jour manuellement une application locale lors de la sortie d'un nouveau modèle, et présentation du fonctionnement d'une clé API générale pour différents modèles de génération.
+**Interface & Outils** : Application locale "Mon studio IA", interface de gestion de modèles et schéma conceptuel d'API.
+**Contenu textuel & Code** : Texte "Une app locale se met à jour à la main", vignettes de modèles (Seedance 2.5, Genjutsu, Kling 3.0, MiniMax H3, Wan 3.0 Prime, Marketing Studio, Cinema Studio, Nouveau modèle), schéma "Clé API générale" (tous les modèles) connectée aux différents services.
+**Action / Démonstration** : Explication par le créateur de la mise à jour manuelle des applications locales et de l'utilisation d'une clé API générale pour l'accès aux modèles de génération vidéo et image.
 
 **Captures d'écran :**
-- ![Interface d'une application locale 'Mon studio IA' montrant différents modèles de génération (Seedance 2.5, Genjutsu, Kling 3.0, MiniMax H3, etc.) et l'apparition d'un nouveau modèle.](../screenshots/u66ICS8uDTE/frame_21_000703.jpg)  
-  *⏱️ 00:07:03 — Interface d'une application locale 'Mon studio IA' montrant différents modèles de génération (Seedance 2.5, Genjutsu, Kling 3.0, MiniMax H3, etc.) et l'apparition d'un nouveau modèle.*
-- ![Schéma explicatif montrant l'utilisation d'une clé API générale connectée à plusieurs modèles (Seedance 2.5, Genjutsu, Kling 3.0, MiniMax H3, Wan 3.0 Prime) pour la génération de vidéos et d'images.](../screenshots/u66ICS8uDTE/frame_21_000712.jpg)  
-  *⏱️ 00:07:12 — Schéma explicatif montrant l'utilisation d'une clé API générale connectée à plusieurs modèles (Seedance 2.5, Genjutsu, Kling 3.0, MiniMax H3, Wan 3.0 Prime) pour la génération de vidéos et d'images.*
+- ![Interface de démonstration montrant une application locale avec différents modèles d'IA et l'ajout d'un nouveau modèle.](../screenshots/u66ICS8uDTE/frame_21_000703.jpg)  
+  *⏱️ 00:07:03 — Interface de démonstration montrant une application locale avec différents modèles d'IA et l'ajout d'un nouveau modèle.*
+- ![Schéma explicatif montrant l'utilisation d'une clé API générale reliée à différents modèles pour la génération de vidéos et d'images.](../screenshots/u66ICS8uDTE/frame_21_000712.jpg)  
+  *⏱️ 00:07:12 — Schéma explicatif montrant l'utilisation d'une clé API générale reliée à différents modèles pour la génération de vidéos et d'images.*
 
 ---
 
@@ -412,13 +424,13 @@
 > Mais on peut aller plus loin et aussi utiliser individuellement les API de modèles pour la création d'applications spécifiques. Si tu as une idée de business autour de la génération d'images ou de vidéos IA, L'utilisation des API avec les modèles présents sur la plateforme API Xfield, c'est une bonne solution. Pour tester le service API d'Xfield, le lien est en description et en commentaire épinglé.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface web de la plateforme API Higgsfield (dashboard et catalogue de modèles).
-**Contenu textuel & Code** : Catalogue de modèles d'IA (bytedance / Seedance 2.5, higgsfield / Genjutsu, kling / etc.), filtres par type (All models, Image, Video), onglets de navigation (Dashboard, Explore models, Quick start, Documentation, Pricing, API keys, Cashback) et bannières promotionnelles de cashback.
-**Action / Démonstration** : Le présentateur introduit la plateforme API Higgsfield et présente les différents modèles de génération d'images et de vidéos disponibles pour la création d'applications.
+**Interface & Outils** : Dashboard de la plateforme API Higgsfield.
+**Contenu textuel & Code** : Menus de navigation (Dashboard, Explore models, Quick start, Documentation, Pricing, API keys), bannières promotionnelles de cashback, cartes de modèles de génération vidéo (Bytedance Seedance 2.5, Higgsfield Genjutsu, Kling) et le présentateur en bas à droite.
+**Action / Démonstration** : Le présentateur présente la plateforme API Higgsfield pour la création d'applications spécifiques basées sur l'IA.
 
 **Captures d'écran :**
-- ![Interface de la plateforme API Higgsfield montrant les différents modèles disponibles pour la génération d'images et de vidéos, avec le présentateur en bas à droite.](../screenshots/u66ICS8uDTE/frame_22_000734.jpg)  
-  *⏱️ 00:07:34 — Interface de la plateforme API Higgsfield montrant les différents modèles disponibles pour la génération d'images et de vidéos, avec le présentateur en bas à droite.*
+- ![Capture d'écran du tableau de bord de la plateforme API Higgsfield présentant différents modèles d'IA pour la génération de vidéos et d'images.](../screenshots/u66ICS8uDTE/frame_22_000734.jpg)  
+  *⏱️ 00:07:34 — Capture d'écran du tableau de bord de la plateforme API Higgsfield présentant différents modèles d'IA pour la génération de vidéos et d'images.*
 
 ---
 
@@ -428,16 +440,16 @@
 > Merci et à bientôt sur le Labo des Réseaux.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Navigateur web, interface de la plateforme Higgsfield API, tableau de bord de modèles d'IA.
-**Contenu textuel & Code** : Noms des modèles d'IA (bytedance / Seedance 2.5, higgsfield / Genjutsu, kling / Kling 3.0, minimax / MiniMax H3, alibaba / Wan 3.0 Prime), menus de navigation (Dashboard, Explore models, Quick start, Pricing, API keys), bannières promotionnelles de cashback.
-**Action / Démonstration** : Le présentateur conclut la vidéo en présentant la plateforme d'API et en invitant les spectateurs à la découvrir.
+**Interface & Outils** : Navigateur web affichant la plateforme Higgsfield API.
+**Contenu textuel & Code** : Catalogue de modèles d'IA (bytedance / Seedance 2.5, higgsfield / Genjutsu, kling / Kling 3.0, minimax / MiniMax H3, alibaba / Wan 3.0 Prime), menu latéral avec Dashboard, Explore models, Quick start, Documentation, Pricing, API keys, Cashback, Top up, Contact sales. Présence d'une flèche rose pointant vers le bas.
+**Action / Démonstration** : Le présentateur conclut la vidéo en s'adressant aux spectateurs face caméra.
 
 **Captures d'écran :**
-- ![Le présentateur s'exprime devant une interface web de type marketplace de modèles d'IA (Higgsfield API) avec une flèche rose pointant vers le bas.](../screenshots/u66ICS8uDTE/frame_23_000737.jpg)  
-  *⏱️ 00:07:37 — Le présentateur s'exprime devant une interface web de type marketplace de modèles d'IA (Higgsfield API) avec une flèche rose pointant vers le bas.*
-- ![Vue similaire montrant l'interface Higgsfield API avec les différents modèles vidéo et le présentateur en bas à droite.](../screenshots/u66ICS8uDTE/frame_23_000737.jpg)  
-  *⏱️ 00:07:37 — Vue similaire montrant l'interface Higgsfield API avec les différents modèles vidéo et le présentateur en bas à droite.*
-- ![Vue identique de la plateforme Higgsfield API avec les sections de modèles et la flèche rose graphique d'appel à l'action.](../screenshots/u66ICS8uDTE/frame_23_000737.jpg)  
-  *⏱️ 00:07:37 — Vue identique de la plateforme Higgsfield API avec les sections de modèles et la flèche rose graphique d'appel à l'action.*
+- ![Capture d'écran montrant l'interface de Higgsfield API avec le présentateur à l'écran.](../screenshots/u66ICS8uDTE/frame_23_000737.jpg)  
+  *⏱️ 00:07:37 — Capture d'écran montrant l'interface de Higgsfield API avec le présentateur à l'écran.*
+- ![Capture d'écran montrant l'interface de Higgsfield API avec le présentateur à l'écran.](../screenshots/u66ICS8uDTE/frame_23_000737.jpg)  
+  *⏱️ 00:07:37 — Capture d'écran montrant l'interface de Higgsfield API avec le présentateur à l'écran.*
+- ![Capture d'écran montrant l'interface de Higgsfield API avec le présentateur à l'écran.](../screenshots/u66ICS8uDTE/frame_23_000737.jpg)  
+  *⏱️ 00:07:37 — Capture d'écran montrant l'interface de Higgsfield API avec le présentateur à l'écran.*
 
 ---
