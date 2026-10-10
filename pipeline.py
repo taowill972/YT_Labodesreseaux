@@ -4,6 +4,7 @@ import re
 import json
 import time
 import shutil
+import html
 import subprocess
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
