@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Créer une Vidéo MOTION DESIGN avec Chat GPT — Labo des Réseaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-box {
+            margin-bottom: 1.5rem;
+        }
+        .tools-box h3, .points-box h3 {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tool-tag {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #e2e8f0;
+            padding: 0.35rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .points-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .points-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Timeline Section */
+        section.timeline-section {
+            margin-top: 2rem;
+        }
+
+        .timeline-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            margin-bottom: 1.8rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        .timeline-block:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .timeline-time {
+            background: rgba(20, 30, 51, 0.7);
+            padding: 0.85rem 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 0.25rem 0.65rem;
+            border-radius: 0.35rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .verbatim-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 3px solid #10b981;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .verbatim-header, .visual-header, .screenshots-header {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .verbatim-text {
+            font-size: 0.96rem;
+            line-height: 1.65;
+            color: #f1f5f9;
+            font-style: italic;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.5);
+            border-left: 3px solid #8b5cf6;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: #cbd5e1;
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .visual-details strong {
+            color: #e2e8f0;
+        }
+
+        /* Screenshots grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 16, 28, 0.7);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px dashed rgba(148, 163, 184, 0.2);
+        }
+
+        .segment-screenshots-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.65rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .screenshot-card {
+            background: #0b1120;
+            border-radius: 0.6rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .img-wrapper {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .img-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .zoom-badge {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 0.2rem 0.55rem;
+            border-radius: 0.35rem;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .img-wrapper:hover .zoom-badge {
+            opacity: 1;
+        }
+
+        .screenshot-caption {
+            padding: 0.65rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #93c5fd;
+        }
+
+        .caption-text {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Créer une Vidéo MOTION DESIGN avec Chat GPT</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📺 Labo Des Réseaux</span>
+                <a href="https://www.youtube.com/watch?v=9bPpTFAGlUo" target="_blank" rel="noopener" class="badge badge-yt">
+                    ▶️ Voir sur YouTube (9bPpTFAGlUo)
+                </a>
+                <span class="badge">📅 2026-10-17</span>
+                <span class="badge">⏱️ 5:07</span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            
+            <div class="summary-card">
+                <p>**La démocratisation de la création de vidéos en motion design par simple prompt connaît une accélération majeure avec l&#x27;arrivée de la fonctionnalité sur ChatGPT.** Alors que Claude s&#x27;est imposé comme la référence incontestée grâce à des rendus fluides, dynamiques et hautement professionnels via son outil Artifact et ses modèles avancés (comme Opus 5.5), son principal point faible reste le temps de traitement, qui peut atteindre plus d&#x27;une heure pour une seule vidéo. De son côté, **ChatGPT entre dans la danse avec son modèle Astra, misant sur une rapidité d&#x27;exécution redoutable** — générant des séquences en quelques minutes seulement — même si la qualité visuelle et le dynamisme brut restent pour l&#x27;instant en deçà des standards de son concurrent.</p><p>**Le test pratique mené par Marco démontre un contraste saisissant entre les deux IA tant sur le plan du workflow que sur les cas d&#x27;usage.** Pour une même introduction combinant facecam et motion design, ChatGPT produit un résultat en 8 minutes là où Claude en exige 22 avec un rendu beaucoup plus léché. Toutefois, l&#x27;analyse révèle que **la véritable force de ChatGPT ne réside pas seulement dans le divertissement visuel, mais dans sa capacité à générer rapidement des infographies et des diagrammes animés** (comme le mécanisme d&#x27;un moteur), ou à donner vie à des images fixes générées par ChatGPT Images 2.5. L&#x27;intégration d&#x27;outils tiers via des plugins, des connecteurs ou le protocole MCP (comme Xfield ou Hyperframe) offre également une passerelle d&#x27;optimisation incontournable pour les créateurs exigeants.</p><p>**En conclusion, Claude conserve une nette longueur d&#x27;avance en matière de qualité esthétique pure, mais OpenAI dispose d&#x27;un potentiel de progression considérable en capitalisant sur ses écosystèmes visuels et vidéo (notamment l&#x27;héritage de Sora).** Si ChatGPT propose aujourd&#x27;hui un compromis idéal axé sur la vitesse d&#x27;exécution et la vulgarisation technique à travers des schémas animés, l&#x27;avenir dépendra de la capacité d&#x27;OpenAI à combler l&#x27;écart qualitatif. Pour les créateurs de contenu et professionnels abonnés au *Labo des Réseaux*, le choix dépendra donc de l&#x27;arbitrage entre un rendu d&#x27;orfèvrerie chronophage (Claude) et une productivité instantanée aux ambitions graphiques plus modestes (ChatGPT).</p>
+            </div>
+
+            <div class="tools-box">
+                <h3>🛠️ Outils, Modèles & Logiciels Présentés</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">Claude / Claude.ai** (Modèle Opus 5 / Opus 5.5, Claude Design, Artifact)</span><span class="tool-tag">ChatGPT** (Modèle Astra / Astra Medium, ChatGPT Images 2.5)</span><span class="tool-tag">Xfield** (Application connectée via plugins et MCP)</span><span class="tool-tag">Hyperframe** (Application de motion design connectée via MCP)</span><span class="tool-tag">GitHub** (Mentionné dans les métadonnées de recherche)</span><span class="tool-tag">Google Drive / Gmail** (Écosystèmes mentionnés dans le champ lexical global)</span>
+                </div>
+            </div>
+
+            <div class="points-box">
+                <h3>🔑 Points Clés & Enseignements Stratégiques</h3>
+                <ul>
+                    <li><span class="point-bullet">✦</span><span>Prompts et direction artistique :** La création d&#x27;un motion design par IA repose sur un prompt textuel précis, enrichi d&#x27;un style artistique défini et de références visuelles (comme des logos ou des images d&#x27;entrée).</span></li><li><span class="point-bullet">✦</span><span>Le duel de la vitesse :** ChatGPT Astra se distingue par une rapidité foudroyante (2 à 8 minutes de génération), tandis que Claude privilégie la profondeur de calcul pour un rendu léché (nécessitant souvent plus d&#x27;une heure pour des projets complexes).</span></li><li><span class="point-bullet">✦</span><span>Supériorité esthétique de Claude :** Grâce à sa compréhension native du code pour générer et animer des images, Claude surclasse ChatGPT sur la fluidité, le dynamisme et le niveau de détail &quot;professionnel&quot;.</span></li><li><span class="point-bullet">✦</span><span>L&#x27;atout infographie de ChatGPT :** Même s&#x27;il pèche sur le motion design artistique pur, ChatGPT excelle dans la création et l&#x27;animation rapide de diagrammes et d&#x27;infographies techniques (ex: un moteur de voiture).</span></li><li><span class="point-bullet">✦</span><span>Génération et animation d&#x27;images fixes :** Il est possible d&#x27;utiliser ChatGPT Images 2.5 pour produire des visuels sources, puis de demander à ChatGPT de les animer sur de courtes séquences d&#x27;environ 8 secondes.</span></li><li><span class="point-bullet">✦</span><span>Le potentiel futur d&#x27;OpenAI :** En exploitant la data et les compétences technologiques issues de projets comme Sora, OpenAI possède le levier nécessaire pour rattraper son retard sur la génération vidéo de A à Z.</span></li><li><span class="point-bullet">✦</span><span>Intégration d&#x27;applications tierces :** Pour contourner les limites natives des chatbots, l&#x27;utilisation de connecteurs, de plugins ou du protocole MCP permet d&#x27;intégrer des outils spécialisés comme Xfield ou Hyperframe.</span></li><li><span class="point-bullet">✦</span><span>Hybridation des formats :** Il est possible de mixer des séquences réelles (facecam) et des éléments en motion design pour dynamiser une introduction de vidéo YouTube.</span></li><li><span class="point-bullet">✦</span><span>Arbitrage workflow vs qualité :** Le choix de l&#x27;outil dépend de l&#x27;objectif : opter pour Claude pour un film d&#x27;animation ou un spot publicitaire haut de gamme, ou choisir ChatGPT pour du contenu éducatif rapide ou du prototypage d&#x27;infographies.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle</h2>
+            
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:20</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les vidéos motion design générées par Claude ont envahi les réseaux. Normal, la promesse est belle, plus besoin de compétences pour créer une vidéo dynamique. Il suffit juste de prompter et pour les plus inspirés, ajouter un style artistique et des références visuelles. Mais alors devinez qui s&#x27;est réveillé pour nous proposer la même expérience ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation vidéo au design épuré, style éditorial minimaliste (type diapositives graphiques).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes explicatifs : &#x27;MOTION DESIGN&#x27;, &#x27;LE PHÉNOMÈNE CLAUDE&#x27;, &#x27;Tout commence par une phrase.&#x27;, &#x27;01 / LE PROMPT&#x27;, &#x27;La même expérience ?&#x27;, &#x27;UN NOUVEAU JOUEUR ENTRE EN SCÈNE&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Introduction du sujet sur le motion design généré par IA et teasing sur l&#x27;arrivée d&#x27;un nouveau concurrent.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:39</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il est maintenant possible de générer ces animations et motion design via ChatGPT et son modèle Astra. D&#x27;ailleurs cette introduction en est l&#x27;exemple. Et dans cette vidéo, on va faire le tour des possibilités. On ne pourra pas y échapper, on va comparer à Claude. Mais on verra quelques subtilités que ChatGPT a implantées. Et qui à l&#x27;avenir pourraient se montrer décisifs.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Diapositives graphiques de présentation vidéo (slides de motion design).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &#x27;ChatGPT entre en scène&#x27;, &#x27;Explorer les POSSIBILITÉS.&#x27;, &#x27;ANIMER&#x27;, &#x27;CRÉER&#x27;, &#x27;TESTER&#x27;, &#x27;UN AVANTAGE DÉCISIF ?&#x27;, &#x27;Ce qui pourrait tout changer&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle structurée de l&#x27;introduction et du plan de la vidéo par le créateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_02_000021.jpg" alt="Diapositive de présentation introduisant le sujet &#x27;ChatGPT entre en scène&#x27; avec une illustration de motion design et le logo de l&#x27;outil." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_02_000021.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Diapositive de présentation introduisant le sujet &#x27;ChatGPT entre en scène&#x27; avec une illustration de motion design et le logo de l&#x27;outil.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_02_000030.jpg" alt="Diapositive récapitulative listant les trois grands axes de la vidéo : &#x27;ANIMER&#x27;, &#x27;CRÉER&#x27; et &#x27;TESTER&#x27; pour explorer les possibilités." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_02_000030.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Diapositive récapitulative listant les trois grands axes de la vidéo : &#x27;ANIMER&#x27;, &#x27;CRÉER&#x27; et &#x27;TESTER&#x27; pour explorer les possibilités.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_02_000038.jpg" alt="Diapositive de transition orange avec le titre &#x27;UN AVANTAGE DÉCISIF ?&#x27; et la sous-mention &#x27;Ce qui pourrait tout changer&#x27;." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_02_000038.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:38</span>
+                        <span class="caption-text">Diapositive de transition orange avec le titre &#x27;UN AVANTAGE DÉCISIF ?&#x27; et la sous-mention &#x27;Ce qui pourrait tout changer&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:40 - 00:01:09</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais pour l&#x27;instant, tu l&#x27;as bien vu avec cette introduction. La qualité de motion design n&#x27;est vraiment pas la même qu&#x27;on peut avoir avec Opus 5.5. Par contre, en termes de workflow, super simple. Dans ChatGPT, tu sélectionnes ton modèle. Ici, Astra en Medium. Pour l&#x27;exercice, j&#x27;ai donc donné mon intro filmée. Et j&#x27;ai joint les logos de Claude et ChatGPT en précisant que je voulais que ChatGPT me refasse cette introduction en motion design en donnant un style artistique précis.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface utilisateur de ChatGPT / Application IA avec panneau latéral de sources et sorties</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt utilisateur : &quot;Je veux que tu me refasses cette introduction en motion design, utilise les logos pour t&#x27;aider et je veux un style Cover Story...&quot; ainsi que les fichiers joints (Intro.mp4, Logo Claude.webp, ChatGPT-Logo.svg.webp)</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre son prompt initial et les fichiers sources joints pour la génération de la vidéo par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_03_000054.jpg" alt="Capture de l&#x27;interface montrant une conversation avec le prompt demandant de refaire l&#x27;introduction en motion design." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_03_000054.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Capture de l&#x27;interface montrant une conversation avec le prompt demandant de refaire l&#x27;introduction en motion design.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_03_000107.jpg" alt="Vue similaire de l&#x27;interface de l&#x27;outil conversationnel avec le prompt et les fichiers joints (logos Claude, ChatGPT et fichier vidéo)." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_03_000107.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:07</span>
+                        <span class="caption-text">Vue similaire de l&#x27;interface de l&#x27;outil conversationnel avec le prompt et les fichiers joints (logos Claude, ChatGPT et fichier vidéo).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:09 - 00:01:28</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">D&#x27;ailleurs, je t&#x27;affiche juste à l&#x27;écran les différents styles que tu peux explorer en motion design, que tu sois sur Claude ou sur ChatGPT. Et je lui ai demandé de me faire un mix entre les deux, le facecam, le motion design, pour avoir cette introduction dynamique. En point de comparaison, bien sûr, je l&#x27;ai fait avec Claude. Et donc, j&#x27;ai eu mon résultat sur ChatGPT au bout de 8 minutes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, ChatGPT, Claude.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompts de demande de refonte d&#x27;introduction en motion design, fichiers vidéo importés, résultats de génération.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre la comparaison des interfaces ChatGPT et Claude pour la création de son introduction.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_04_000119.jpg" alt="Écran partagé comparant les interfaces de ChatGPT et de Claude avec les prompts et fichiers importés pour l&#x27;introduction en motion design." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_04_000119.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:19</span>
+                        <span class="caption-text">Écran partagé comparant les interfaces de ChatGPT et de Claude avec les prompts et fichiers importés pour l&#x27;introduction en motion design.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_04_000127.jpg" alt="Interface de ChatGPT affichant le résultat de la génération avec le fichier vidéo final &#x27;Intro_Cover_Story.mp4&#x27;." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_04_000127.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:27</span>
+                        <span class="caption-text">Interface de ChatGPT affichant le résultat de la génération avec le fichier vidéo final &#x27;Intro_Cover_Story.mp4&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:28 - 00:01:50</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est celui que tu as vu en introduction. Quand chez Claude, il m&#x27;a fallu 22 minutes pour avoir un résultat que tu peux voir s&#x27;afficher à l&#x27;écran. Il n&#x27;y a pas photo. Claude gagne le duel avec un motion design vraiment léché, très très propre et dynamique. Un travail de pro. Et la différence qu&#x27;on a en termes de qualité, ça va être sur le temps de travail que les deux vont consacrer à la tâche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, ChatGPT, Claude.ai, lecteur vidéo intégré</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompts textuels, code de motion design, fichiers générés (intro_CoverStory.mp4), habillage graphique style magazine</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre et compare les résultats du motion design généré par l&#x27;IA, mettant en valeur le rendu professionnel de Claude.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_05_000130.jpg" alt="Capture d&#x27;écran double affichant les interfaces de ChatGPT et Claude.ai côte à côte, avec un menu déroulant montrant des fichiers générés." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_05_000130.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:30</span>
+                        <span class="caption-text">Capture d&#x27;écran double affichant les interfaces de ChatGPT et Claude.ai côte à côte, avec un menu déroulant montrant des fichiers générés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_05_000139.jpg" alt="Aperçu d&#x27;une vidéo générée (intro_CoverStory.mp4) affichant un design de magazine avec le texte &#x27;PLUS BESOIN&#x27;." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_05_000139.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:39</span>
+                        <span class="caption-text">Aperçu d&#x27;une vidéo générée (intro_CoverStory.mp4) affichant un design de magazine avec le texte &#x27;PLUS BESOIN&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_05_000148.jpg" alt="Résultat final du motion design de type magazine (style couverture de presse avec le texte &#x27;MOTION&#x27; et &#x27;Normal&#x27;) avec un encart vidéo du créateur." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_05_000148.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:48</span>
+                        <span class="caption-text">Résultat final du motion design de type magazine (style couverture de presse avec le texte &#x27;MOTION&#x27; et &#x27;Normal&#x27;) avec un encart vidéo du créateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:50 - 00:02:09</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ChatGPT est très rapide. et sur un autre exemple d&#x27;une vidéo en total motion design, ici l&#x27;histoire du corbeau et du renard. Il m&#x27;a mis deux minutes pour me faire la première vidéo et ensuite trois minutes pour m&#x27;ajouter une voix off. Quand de ce côté, Claude pour le même prompt m&#x27;a mis 1h27 pour me réaliser la vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, interface de ChatGPT, interface de Claude (claude.ai).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompts de génération de vidéos en motion design (&#x27;Le_Corbeau_et_le_Renard_9x16.mp4&#x27;), durées d&#x27;exécution (2 min 17 s et 3 min 28 s sur ChatGPT).</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison des temps de génération et des fonctionnalités de création vidéo entre ChatGPT et Claude.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_06_000200.jpg" alt="Interface de ChatGPT montrant l&#x27;historique de génération d&#x27;une vidéo motion design sur le corbeau et le renard avec des durées d&#x27;exécution de 2 minutes et 3 minutes." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_06_000200.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:00</span>
+                        <span class="caption-text">Interface de ChatGPT montrant l&#x27;historique de génération d&#x27;une vidéo motion design sur le corbeau et le renard avec des durées d&#x27;exécution de 2 minutes et 3 minutes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_06_000208.jpg" alt="Interface de Claude montrant le panneau de discussion et l&#x27;aperçu vidéo d&#x27;une animation du corbeau et du renard générée par l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_06_000208.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:08</span>
+                        <span class="caption-text">Interface de Claude montrant le panneau de discussion et l&#x27;aperçu vidéo d&#x27;une animation du corbeau et du renard générée par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:09 - 00:02:36</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par contre, on compare les deux, c&#x27;est le jour et la nuit. Alors qu&#x27;est-ce qui fait qu&#x27;on a un écart si important aujourd&#x27;hui ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de comparaison comparative de différents modèles de génération d&#x27;images/vidéos (présentation visuelle côte à côte).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Illustrations graphiques de la fable &#x27;Le Corbeau et le Renard&#x27; avec des styles différents, accompagnées de texte et des labels des IA (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5).</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur compare les résultats visuels obtenus par différents modèles ou versions d&#x27;IA sur une même consigne narrative.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_07_000223.jpg" alt="Comparaison de trois versions de génération visuelle (GPT 6 Astra, GPT 6.1 Sol, et Opus 5.5) illustrant la fable de La Fontaine &#x27;Le Corbeau et le Renard&#x27; (introduction)." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_07_000223.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Comparaison de trois versions de génération visuelle (GPT 6 Astra, GPT 6.1 Sol, et Opus 5.5) illustrant la fable de La Fontaine &#x27;Le Corbeau et le Renard&#x27; (introduction).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_07_000234.jpg" alt="Comparaison des trois mêmes modèles (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5) montrant une étape ultérieure de la fable (&#x27;Le Compliment&#x27;)." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_07_000234.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:34</span>
+                        <span class="caption-text">Comparaison des trois mêmes modèles (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5) montrant une étape ultérieure de la fable (&#x27;Le Compliment&#x27;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:36 - 00:02:56</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et est-ce que OpenAI arrivera à rattraper son retard ? Donc dans un premier temps, pour comprendre l&#x27;avantage de Cloud, il avait déjà en Artifact un outil design basé sur le code avec Cloud Design. Opus 5 alors a cette compréhension en native qui lui permet de générer les images par code et de les animer avec beaucoup de fluidité et de dynamisme.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Claude Design (Artifact)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code CSS avec styles de cartes, balises HTML (`&lt;h1&gt;`, `&lt;circle&gt;`, `&lt;button&gt;`), graphiques d&#x27;animation (ease-in-out, 60 fps)</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des fonctionnalités de design et d&#x27;animation basées sur le code dans l&#x27;IA</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_08_000246.jpg" alt="Illustration de l&#x27;outil Claude Design montrant le rendu visuel généré à partir de code CSS/HTML dans Artifact." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_08_000246.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Illustration de l&#x27;outil Claude Design montrant le rendu visuel généré à partir de code CSS/HTML dans Artifact.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_08_000254.jpg" alt="Illustration des capacités d&#x27;animation fluide avec des paramètres de courbe (ease-in-out) et un affichage à 60 fps." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_08_000254.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:54</span>
+                        <span class="caption-text">Illustration des capacités d&#x27;animation fluide avec des paramètres de courbe (ease-in-out) et un affichage à 60 fps.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:56 - 00:03:19</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais pour autant, on peut imaginer que dans l&#x27;avenir, si OpenAI arrive à tirer un maximum de ses assets, Comme GPT Images ou même du point de vue de l&#x27;animation de la vidéo, pioché dans la data et les compétences qu&#x27;ils ont utilisées avec Sora, on peut imaginer deux prochains modèles plutôt doués dans l&#x27;animation, le motion design, et pourquoi pas la création de vidéos de A à Z.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de ChatGPT.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt utilisateur demandant une vidéo motion design sur Le Corbeau et le Renard, images de personnages (renard et corbeau), fichier vidéo généré « Le_Corbeau_et_le_Renard_Motion_Design.mp4 ».</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente une interface de génération de vidéo par IA avec ChatGPT pour illustrer les capacités d&#x27;animation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_09_000257.jpg" alt="Interface de ChatGPT montrant un prompt pour créer une vidéo motion design sur Le Corbeau et le Renard avec des personnages 3D." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_09_000257.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:57</span>
+                        <span class="caption-text">Interface de ChatGPT montrant un prompt pour créer une vidéo motion design sur Le Corbeau et le Renard avec des personnages 3D.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_09_000307.jpg" alt="Interface de ChatGPT affichant le résultat de la génération d&#x27;une vidéo verticale 9:16 avec des personnages animés, de la musique et des bruitages." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_09_000307.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:07</span>
+                        <span class="caption-text">Interface de ChatGPT affichant le résultat de la génération d&#x27;une vidéo verticale 9:16 avec des personnages animés, de la musique et des bruitages.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_09_000317.jpg" alt="Interface de ChatGPT avec le panneau latéral détaillant les fichiers source et les sorties de la vidéo générée." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_09_000317.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:17</span>
+                        <span class="caption-text">Interface de ChatGPT avec le panneau latéral détaillant les fichiers source et les sorties de la vidéo générée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:19 - 00:03:37</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">D&#x27;ailleurs, j&#x27;ai essayé avec le modèle GPT Astra de refaire l&#x27;exercice, mais cette fois-ci en donnant en référence des images directement créées avec ChatGPT Images 2.5. Pour ainsi, après 4 minutes de travail, avoir un résultat en motion design, mais ça manque encore d&#x27;animation et de dynamisme.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, interface ChatGPT avec le modèle GPT-6 Astra et outil de prévisualisation vidéo.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image d&#x27;un renard en origami/low-poly, interface de génération de vidéo au format vertical, texte &#x27;LE RENARD A UNE IDÉE&#x27; et &#x27;Et si quelques compliments suffisaient ?&#x27;, panneau latéral avec les fichiers sources.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du résultat obtenu en motion design après l&#x27;utilisation du modèle GPT Astra avec des images générées par ChatGPT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_10_000328.jpg" alt="Capture d&#x27;écran du navigateur montrant une image générée d&#x27;un renard stylisé avec des options d&#x27;édition (annoter, supprimer l&#x27;arrière-plan, etc.) sous l&#x27;interface ChatGPT." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_10_000328.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:28</span>
+                        <span class="caption-text">Capture d&#x27;écran du navigateur montrant une image générée d&#x27;un renard stylisé avec des options d&#x27;édition (annoter, supprimer l&#x27;arrière-plan, etc.) sous l&#x27;interface ChatGPT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_10_000336.jpg" alt="Capture d&#x27;écran montrant à gauche un aperçu vidéo vertical intitulé &#x27;LES FABLES EN PAPIER&#x27; avec le personnage du renard et du texte, et à droite l&#x27;interface de discussion avec le modèle GPT-6 Astra." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_10_000336.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:36</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant à gauche un aperçu vidéo vertical intitulé &#x27;LES FABLES EN PAPIER&#x27; avec le personnage du renard et du texte, et à droite l&#x27;interface de discussion avec le modèle GPT-6 Astra.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:38 - 00:03:56</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par contre, là où GPT Astra va devenir intéressant, ça va être dans la création d&#x27;infographies ou de diagrammes en animation. Par exemple ici, une infographie sur un moteur de voiture, qu&#x27;on peut par la suite demander à animer, et ainsi avoir le résultat suivant qui nous explique en mouvement le diagramme qu&#x27;on avait demandé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;interface de ChatGPT avec le modèle GPT-6 Astra</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface de chat IA, barre de texte &#x27;Sur quoi souhaitez-vous travailler ?&#x27;, génération en cours, infographie interactive d&#x27;un moteur essence (bougie, piston, bielle, vilebrequin)</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur démontre la génération et l&#x27;animation d&#x27;une infographie technique complexe d&#x27;un moteur à l&#x27;aide de l&#x27;intelligence artificielle</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_11_000339.jpg" alt="Interface de ChatGPT (GPT-6 Astra) avec la question initiale &#x27;Sur quoi souhaitez-vous travailler ?&#x27;" loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_11_000339.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:39</span>
+                        <span class="caption-text">Interface de ChatGPT (GPT-6 Astra) avec la question initiale &#x27;Sur quoi souhaitez-vous travailler ?&#x27;</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_11_000347.jpg" alt="Génération en cours d&#x27;une infographie sur un moteur de voiture dans l&#x27;interface de l&#x27;IA (26%)" loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_11_000347.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:47</span>
+                        <span class="caption-text">Génération en cours d&#x27;une infographie sur un moteur de voiture dans l&#x27;interface de l&#x27;IA (26%)</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_11_000355.jpg" alt="Affichage du diagramme animé final représentant le moteur essence à quatre temps avec ses composants" loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_11_000355.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:55</span>
+                        <span class="caption-text">Affichage du diagramme animé final représentant le moteur essence à quatre temps avec ses composants</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:56 - 00:04:17</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc une piste très intéressante à explorer, tout comme aussi la possibilité de générer notre image via ChatGPT et de demander à celui-ci de l&#x27;animer. Ça sera très sommaire, des animations de 8 secondes, mais on a un début de mouvement et qui sait peut-être par la suite la possibilité de transformer une image en vidéo sur ChatGPT.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, interface de ChatGPT.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Diagramme de moteur de voiture, prompt &quot;anime moi ce diagramme&quot;, fichier vidéo généré &quot;Moteur_4_temps_anime.mp4&quot;, et image plein écran d&#x27;un voilier sur l&#x27;eau.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente des exemples d&#x27;utilisation de ChatGPT pour générer des images et demander leur animation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_12_000357.jpg" alt="Interface ChatGPT affichant un diagramme de moteur de voiture et le résultat d&#x27;une animation vidéo générée." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_12_000357.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:57</span>
+                        <span class="caption-text">Interface ChatGPT affichant un diagramme de moteur de voiture et le résultat d&#x27;une animation vidéo générée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_12_000407.jpg" alt="Interface de ChatGPT affichant une image générée d&#x27;un voilier naviguant sur la mer ensoleillée." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_12_000407.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:07</span>
+                        <span class="caption-text">Interface de ChatGPT affichant une image générée d&#x27;un voilier naviguant sur la mer ensoleillée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_12_000415.jpg" alt="Même vue de l&#x27;interface de ChatGPT avec l&#x27;image du voilier, montrant une continuité visuelle dans la vidéo." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_12_000415.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:15</span>
+                        <span class="caption-text">Même vue de l&#x27;interface de ChatGPT avec l&#x27;image du voilier, montrant une continuité visuelle dans la vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:17 - 00:04:39</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">A voir donc comment ça évolue. Bien sûr, pour avoir un travail un petit peu plus abouti, il y a toujours la possibilité que ça soit sur ChatGPT ou Cloud de lier une application comme Xfield. via sur ChatGPT l&#x27;option plugin et dans Cloud l&#x27;option connecteur. Ainsi, via une nouvelle conversation, faire appel au MCP d&#x27;Xfield pour générer ces images, vidéos ou motion design.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, interface de ChatGPT (chatgpt.com/plugins), interface de présentation vidéo.
+[DESC_IMAGE_1] &quot;Sur quoi souhaitez-vous travailler ?&quot;, champ de texte &quot;Travailler avec ChatGPT&quot;, options &quot;Choisir un projet&quot;, &quot;Fichiers&quot;, &quot;@ Plugins&quot;.
+[DESC_IMAGE_2] Menu &quot;Plugins&quot;, barre de recherche, liste des plugins installés et populaires (Gmail, Google Drive, Health, GitHub, etc.).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications et conseils de création de contenu / IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface d&#x27;accueil de ChatGPT puis navigue vers la section des plugins pour illustrer l&#x27;intégration d&#x27;outils externes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_13_000418.jpg" alt="Interface principale de ChatGPT montrant la zone de saisie du prompt avec les options de fichiers et de plugins." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_13_000418.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:18</span>
+                        <span class="caption-text">Interface principale de ChatGPT montrant la zone de saisie du prompt avec les options de fichiers et de plugins.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_13_000428.jpg" alt="Page de gestion des plugins dans l&#x27;interface de ChatGPT permettant de connecter divers outils tiers." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_13_000428.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:28</span>
+                        <span class="caption-text">Page de gestion des plugins dans l&#x27;interface de ChatGPT permettant de connecter divers outils tiers.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/9bPpTFAGlUo/frame_13_000437.jpg" alt="Visuels artistiques et graphiques générés ou présentés à l&#x27;écran, illustrant le sujet de la vidéo." loading="lazy" onclick="openLightbox('../screenshots/9bPpTFAGlUo/frame_13_000437.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:37</span>
+                        <span class="caption-text">Visuels artistiques et graphiques générés ou présentés à l&#x27;écran, illustrant le sujet de la vidéo.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:39 - 00:05:07</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On a déjà fait des vidéos sur le sujet. Je te renvoie à celle-ci. Et il y a aussi par exemple des applications comme Hyperframe, pareil, on connecte via MCP qui permettent ici de se focaliser sur le motion design. Voilà pour cette courte vidéo. Pour t&#x27;informer de la possibilité de créer ton motion design avec JGPT, Claude, pour l&#x27;instant, sera toujours meilleur, à l&#x27;avenir maintenant et à OpenAI, de nous proposer de meilleurs résultats. C&#x27;était Marco, merci et à très bientôt sur le Labo des Réseaux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> AUCUNE</p>
+                        <p><strong>Contenu textuel & Code :</strong> AUCUNE</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur s&#x27;adresse directement à son audience pour conclure le sujet.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        </section>
+
+        <footer>
+            Généré automatiquement par l'agent de veille multimodale Antigravity — Pipeline Whisper-v3-large-turbo & Gemini-3.5-flash-lite.
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture plein écran" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

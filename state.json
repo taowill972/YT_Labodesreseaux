@@ -8,7 +8,8 @@
     "aCP21Uh03zo",
     "GLauPqEXpBg",
     "i3ybzy9qVow",
-    "_UBCQAy9kG8"
+    "_UBCQAy9kG8",
+    "9bPpTFAGlUo"
   ],
   "processed_videos": [
     {
@@ -82,11 +83,19 @@
       "md_file": "YT_Labodesreseaux_Transcript/2026-10-12_YT-_UBCQAy9kG8_J'ai créé un jeu d'enquête où les personnages IA me parlent (Claude + Fish Audio_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "html_file": "YT_Labodesreseaux_Transcript/2026-10-12_YT-_UBCQAy9kG8_J'ai créé un jeu d'enquête où les personnages IA me parlent (Claude + Fish Audio_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "screenshots_count": 54
+    },
+    {
+      "id": "9bPpTFAGlUo",
+      "title": "Créer une Vidéo MOTION DESIGN avec Chat GPT",
+      "upload_date": "20261017",
+      "md_file": "YT_Labodesreseaux_Transcript/2026-10-17_YT-9bPpTFAGlUo_Créer une Vidéo MOTION DESIGN avec Chat GPT_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "html_file": "YT_Labodesreseaux_Transcript/2026-10-17_YT-9bPpTFAGlUo_Créer une Vidéo MOTION DESIGN avec Chat GPT_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "screenshots_count": 30
     }
   ],
   "last_run_timestamp": "2026-10-10T07:50:46Z",
-  "completed_count": 9,
+  "completed_count": 10,
   "total_catalog_count": 1263,
   "status": "idle",
-  "last_detected_new": "_UBCQAy9kG8"
+  "last_detected_new": "9bPpTFAGlUo"
 }

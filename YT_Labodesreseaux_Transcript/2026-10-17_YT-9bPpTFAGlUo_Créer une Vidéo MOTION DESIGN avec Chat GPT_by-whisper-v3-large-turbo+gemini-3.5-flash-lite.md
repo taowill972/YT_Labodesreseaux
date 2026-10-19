@@ -12,38 +12,30 @@
 ## 📌 Synthèse Exécutive & Outils
 
 ### 💡 Résumé
-**La vidéo explore la nouvelle capacité de ChatGPT à générer des vidéos en motion design, une fonctionnalité autrefois dominée par des outils comme Claude (Opus 5.5). L'objectif est de comparer les deux plateformes en mettant en lumière les spécificités de ChatGPT, notamment son modèle Astra, et leur potentiel futur.** Le créateur souligne que si la qualité actuelle du motion design de ChatGPT n'égale pas encore celle de Claude, son avantage réside dans une rapidité de traitement considérablement réduite, rendant le workflow plus accessible pour les utilisateurs novices.
+**La démocratisation de la création de vidéos en motion design par simple prompt connaît une accélération majeure avec l'arrivée de la fonctionnalité sur ChatGPT.** Alors que Claude s'est imposé comme la référence incontestée grâce à des rendus fluides, dynamiques et hautement professionnels via son outil Artifact et ses modèles avancés (comme Opus 5.5), son principal point faible reste le temps de traitement, qui peut atteindre plus d'une heure pour une seule vidéo. De son côté, **ChatGPT entre dans la danse avec son modèle Astra, misant sur une rapidité d'exécution redoutable** — générant des séquences en quelques minutes seulement — même si la qualité visuelle et le dynamisme brut restent pour l'instant en deçà des standards de son concurrent.
 
-**Le tutoriel démontre la simplicité d'utilisation de ChatGPT pour créer des animations : sélection du modèle (Astra en Medium), fourniture d'un brief incluant un style artistique et des références visuelles, voire une vidéo d'introduction à refaire.** L'essai comparatif révèle que ChatGPT génère un résultat en motion design en 8 minutes, tandis que Claude nécessite 22 minutes pour une qualité supérieure, mais avec un workflow plus long. Un autre exemple, la fable du corbeau et du renard, montre ChatGPT produisant une vidéo en 2 minutes et une voix off en 3 minutes, contrastant avec 1h27 pour Claude, illustrant l'écart de performance et de qualité.
+**Le test pratique mené par Marco démontre un contraste saisissant entre les deux IA tant sur le plan du workflow que sur les cas d'usage.** Pour une même introduction combinant facecam et motion design, ChatGPT produit un résultat en 8 minutes là où Claude en exige 22 avec un rendu beaucoup plus léché. Toutefois, l'analyse révèle que **la véritable force de ChatGPT ne réside pas seulement dans le divertissement visuel, mais dans sa capacité à générer rapidement des infographies et des diagrammes animés** (comme le mécanisme d'un moteur), ou à donner vie à des images fixes générées par ChatGPT Images 2.5. L'intégration d'outils tiers via des plugins, des connecteurs ou le protocole MCP (comme Xfield ou Hyperframe) offre également une passerelle d'optimisation incontournable pour les créateurs exigeants.
 
-**Malgré les performances actuelles de Claude en matière de "léché" et de dynamisme, la vidéo projette un avenir prometteur pour OpenAI.** La capacité future d'intégrer les avancées de GPT-Image et Sora pourrait permettre à ChatGPT de rivaliser voire de surpasser Claude dans la création de vidéos et de motion design de A à Z. Les cas d'usage émergents pour ChatGPT, tels que la création d'infographies animées et la transformation d'images en courtes vidéos, sont également mis en avant comme des pistes intéressantes pour l'avenir de la plateforme.
+**En conclusion, Claude conserve une nette longueur d'avance en matière de qualité esthétique pure, mais OpenAI dispose d'un potentiel de progression considérable en capitalisant sur ses écosystèmes visuels et vidéo (notamment l'héritage de Sora).** Si ChatGPT propose aujourd'hui un compromis idéal axé sur la vitesse d'exécution et la vulgarisation technique à travers des schémas animés, l'avenir dépendra de la capacité d'OpenAI à combler l'écart qualitatif. Pour les créateurs de contenu et professionnels abonnés au *Labo des Réseaux*, le choix dépendra donc de l'arbitrage entre un rendu d'orfèvrerie chronophage (Claude) et une productivité instantanée aux ambitions graphiques plus modestes (ChatGPT).
 
 ### 🛠️ Outils, Modèles & Logiciels Présentés
-- **ChatGPT**
-- **Claude (Opus 5.5)**
-- **Modèle Astra (ChatGPT)**
-- **GPT-Image (2.5)**
-- **Sora (mentionné pour ses compétences en animation)**
-- **Xfield (via plugin/connecteur)**
-- **Hyperframe (via MCP)**
-- **Navigateur (interface d'accès)**
+- **Claude / Claude.ai** (Modèle Opus 5 / Opus 5.5, Claude Design, Artifact)**
+- **ChatGPT** (Modèle Astra / Astra Medium, ChatGPT Images 2.5)**
+- **Xfield** (Application connectée via plugins et MCP)**
+- **Hyperframe** (Application de motion design connectée via MCP)**
+- **GitHub** (Mentionné dans les métadonnées de recherche)**
+- **Google Drive / Gmail** (Écosystèmes mentionnés dans le champ lexical global)**
 
 ### 🔑 Points Clés & Enseignements Stratégiques
-- ChatGPT propose désormais la création de vidéos en motion design avec son modèle Astra.
-- La qualité actuelle du motion design de ChatGPT est inférieure à celle de Claude Opus 5.5, mais le workflow est plus simple.
-- ChatGPT est significativement plus rapide que Claude pour générer des vidéos (8 min vs 22 min pour une intro, 2 min vs 1h27 pour une fable).
-- Le créateur a comparé ChatGPT et Claude en utilisant des prompts similaires et des styles artistiques spécifiques.
-- La génération d'une vidéo motion design avec ChatGPT implique de sélectionner le modèle, de fournir une description textuelle et potentiellement des images ou une vidéo d'origine.
-- Il est possible de demander à ChatGPT de générer une introduction filmée en motion design avec un style artistique précis et des logos.
-- Claude Opus 5.5 se distingue par un motion design plus "léché", propre et dynamique, un travail de professionnel.
-- La différence de qualité entre les plateformes est liée au temps consacré par chacune à la tâche.
-- ChatGPT est particulièrement rapide pour générer des vidéos complètes en motion design et ajouter une voix off.
-- OpenAI pourrait rattraper son retard en intégrant des technologies comme GPT-Image et Sora pour améliorer le motion design et la génération de vidéos.
-- ChatGPT Astra peut exceller dans la création d'infographies et de diagrammes animés.
-- Il est possible de générer une image via ChatGPT puis de lui demander de l'animer de manière sommaire (environ 8 secondes).
-- Pour des résultats plus aboutis, il est possible de lier des applications externes comme Xfield ou Hyperframe via les plugins (ChatGPT) ou connecteurs (Claude).
-- L'intégration d'applications tierces via MCP permet de générer des images vidéo ou motion design.
-- Claude reste pour l'instant supérieur en qualité de motion design, mais l'avenir pourrait voir OpenAI proposer de meilleurs résultats.
+- Prompts et direction artistique :** La création d'un motion design par IA repose sur un prompt textuel précis, enrichi d'un style artistique défini et de références visuelles (comme des logos ou des images d'entrée).
+- Le duel de la vitesse :** ChatGPT Astra se distingue par une rapidité foudroyante (2 à 8 minutes de génération), tandis que Claude privilégie la profondeur de calcul pour un rendu léché (nécessitant souvent plus d'une heure pour des projets complexes).
+- Supériorité esthétique de Claude :** Grâce à sa compréhension native du code pour générer et animer des images, Claude surclasse ChatGPT sur la fluidité, le dynamisme et le niveau de détail "professionnel".
+- L'atout infographie de ChatGPT :** Même s'il pèche sur le motion design artistique pur, ChatGPT excelle dans la création et l'animation rapide de diagrammes et d'infographies techniques (ex: un moteur de voiture).
+- Génération et animation d'images fixes :** Il est possible d'utiliser ChatGPT Images 2.5 pour produire des visuels sources, puis de demander à ChatGPT de les animer sur de courtes séquences d'environ 8 secondes.
+- Le potentiel futur d'OpenAI :** En exploitant la data et les compétences technologiques issues de projets comme Sora, OpenAI possède le levier nécessaire pour rattraper son retard sur la génération vidéo de A à Z.
+- Intégration d'applications tierces :** Pour contourner les limites natives des chatbots, l'utilisation de connecteurs, de plugins ou du protocole MCP permet d'intégrer des outils spécialisés comme Xfield ou Hyperframe.
+- Hybridation des formats :** Il est possible de mixer des séquences réelles (facecam) et des éléments en motion design pour dynamiser une introduction de vidéo YouTube.
+- Arbitrage workflow vs qualité :** Le choix de l'outil dépend de l'objectif : opter pour Claude pour un film d'animation ou un spot publicitaire haut de gamme, ou choisir ChatGPT pour du contenu éducatif rapide ou du prototypage d'infographies.
 
 ---
 
@@ -52,56 +44,50 @@
 ### ⏱️ `[00:00:00 - 00:00:20]` | Segment #01
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Les vidéos motion design générées par Cloud ont envahi les réseaux. Normal, la promesse est belle, plus besoin de compétences pour créer une vidéo dynamique. Il suffit juste de prompter et pour les plus inspirés, ajouter un style artistique et des références visuelles. Mais alors devinez qui s'est réveillé pour nous proposer la même expérience ?
+> Les vidéos motion design générées par Claude ont envahi les réseaux. Normal, la promesse est belle, plus besoin de compétences pour créer une vidéo dynamique. Il suffit juste de prompter et pour les plus inspirés, ajouter un style artistique et des références visuelles. Mais alors devinez qui s'est réveillé pour nous proposer la même expérience ?
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interface de génération de vidéo par IA (simulée).
-**Contenu textuel & Code** : Texte : "MOTION DESIGN", "LE PHÉNOMÈNE CLAUDE", "Tout commence par une phrase.", "Crée une v", "UNE IDÉE → UNE INSTRUCTION → UNE ANIMATION".
-**Action / Démonstration** : Présentation du concept de génération de motion design par IA via un prompt.
-
-**Captures d'écran :**
-- ![Écran titre du dossier "Motion Design - Le Phénomène Claude".](../screenshots/9bPpTFAGlUo/frame_01_000001.jpg)  
-  *⏱️ 00:00:01 — Écran titre du dossier "Motion Design - Le Phénomène Claude".*
-- ![Démonstration de la génération d'une vidéo par IA à partir d'un prompt.](../screenshots/9bPpTFAGlUo/frame_01_000010.jpg)  
-  *⏱️ 00:00:10 — Démonstration de la génération d'une vidéo par IA à partir d'un prompt.*
+**Interface & Outils** : Présentation vidéo au design épuré, style éditorial minimaliste (type diapositives graphiques).
+**Contenu textuel & Code** : Textes explicatifs : 'MOTION DESIGN', 'LE PHÉNOMÈNE CLAUDE', 'Tout commence par une phrase.', '01 / LE PROMPT', 'La même expérience ?', 'UN NOUVEAU JOUEUR ENTRE EN SCÈNE'.
+**Action / Démonstration** : Introduction du sujet sur le motion design généré par IA et teasing sur l'arrivée d'un nouveau concurrent.
 
 ---
 
 ### ⏱️ `[00:00:20 - 00:00:39]` | Segment #02
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Il est maintenant possible de générer ces animations et motion design via ChatGPT et son modèle Astra. D'ailleurs cette introduction en est l'exemple. Et dans cette vidéo, on va faire le tour des possibilités. On ne pourra pas y échapper, on va comparer à Claude. Mais on verra quelques subtilités que ChatGPT a implantées et qui à l'avenir pourraient se montrer décisifs.
+> Il est maintenant possible de générer ces animations et motion design via ChatGPT et son modèle Astra. D'ailleurs cette introduction en est l'exemple. Et dans cette vidéo, on va faire le tour des possibilités. On ne pourra pas y échapper, on va comparer à Claude. Mais on verra quelques subtilités que ChatGPT a implantées. Et qui à l'avenir pourraient se montrer décisifs.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : ChatGPT, Le Labo des Réseaux (titre de la chaîne)
-**Contenu textuel & Code** : Textes d'introduction, titres de sections, illustrations, logo ChatGPT.
-**Action / Démonstration** : Présentation du sujet de la vidéo : la génération d'animations et de motion design avec ChatGPT. Exploration des possibilités et comparaison avec d'autres outils.
+**Interface & Outils** : Diapositives graphiques de présentation vidéo (slides de motion design).
+**Contenu textuel & Code** : Textes : 'ChatGPT entre en scène', 'Explorer les POSSIBILITÉS.', 'ANIMER', 'CRÉER', 'TESTER', 'UN AVANTAGE DÉCISIF ?', 'Ce qui pourrait tout changer'.
+**Action / Démonstration** : Présentation visuelle structurée de l'introduction et du plan de la vidéo par le créateur.
 
 **Captures d'écran :**
-- ![Diapositive d'introduction : "ChatGPT entre en scène." avec le logo ChatGPT et une illustration d'animations.](../screenshots/9bPpTFAGlUo/frame_02_000021.jpg)  
-  *⏱️ 00:00:21 — Diapositive d'introduction : "ChatGPT entre en scène." avec le logo ChatGPT et une illustration d'animations.*
-- ![Diapositive titrée "Explorer les POSSIBILITÉS." avec trois blocs : "ANIMER", "CRÉER", "TESTER".](../screenshots/9bPpTFAGlUo/frame_02_000030.jpg)  
-  *⏱️ 00:00:30 — Diapositive titrée "Explorer les POSSIBILITÉS." avec trois blocs : "ANIMER", "CRÉER", "TESTER".*
-- ![Diapositive titrée "UN AVANTAGE DÉCISIF ?" avec le sous-titre "Ce qui pourrait tout changer." et le logo ChatGPT.](../screenshots/9bPpTFAGlUo/frame_02_000038.jpg)  
-  *⏱️ 00:00:38 — Diapositive titrée "UN AVANTAGE DÉCISIF ?" avec le sous-titre "Ce qui pourrait tout changer." et le logo ChatGPT.*
+- ![Diapositive de présentation introduisant le sujet 'ChatGPT entre en scène' avec une illustration de motion design et le logo de l'outil.](../screenshots/9bPpTFAGlUo/frame_02_000021.jpg)  
+  *⏱️ 00:00:21 — Diapositive de présentation introduisant le sujet 'ChatGPT entre en scène' avec une illustration de motion design et le logo de l'outil.*
+- ![Diapositive récapitulative listant les trois grands axes de la vidéo : 'ANIMER', 'CRÉER' et 'TESTER' pour explorer les possibilités.](../screenshots/9bPpTFAGlUo/frame_02_000030.jpg)  
+  *⏱️ 00:00:30 — Diapositive récapitulative listant les trois grands axes de la vidéo : 'ANIMER', 'CRÉER' et 'TESTER' pour explorer les possibilités.*
+- ![Diapositive de transition orange avec le titre 'UN AVANTAGE DÉCISIF ?' et la sous-mention 'Ce qui pourrait tout changer'.](../screenshots/9bPpTFAGlUo/frame_02_000038.jpg)  
+  *⏱️ 00:00:38 — Diapositive de transition orange avec le titre 'UN AVANTAGE DÉCISIF ?' et la sous-mention 'Ce qui pourrait tout changer'.*
 
 ---
 
 ### ⏱️ `[00:00:40 - 00:01:09]` | Segment #03
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Mais pour l'instant, tu l'as bien vu avec cette introduction, la qualité de motion design n'est vraiment pas la même qu'on peut avoir avec Opus 5.5. Par contre, en termes de workflow, super simple. Dans ChatGPT, tu sélectionnes ton modèle, ici Astra en Medium. Pour l'exercice, j'ai donc donné mon intro filmée. Et j'ai joint les logos de Claude et ChatGPT en précisant que je voulais que ChatGPT me refasse cette introduction en motion design en donnant un style artistique précis.
+> Mais pour l'instant, tu l'as bien vu avec cette introduction. La qualité de motion design n'est vraiment pas la même qu'on peut avoir avec Opus 5.5. Par contre, en termes de workflow, super simple. Dans ChatGPT, tu sélectionnes ton modèle. Ici, Astra en Medium. Pour l'exercice, j'ai donc donné mon intro filmée. Et j'ai joint les logos de Claude et ChatGPT en précisant que je voulais que ChatGPT me refasse cette introduction en motion design en donnant un style artistique précis.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : ChatGPT
-**Contenu textuel & Code** : Fichier "Intro.mp4", "Logo Claude.webp", "ChatGPT-Logo.svg.webp". Prompt : "Je veux que tu me refasses cette introduction en motion design, utilise les logos pour t'aider et je veux un style Cover Story, je voudrais que tu utilise un peu la vidéo, intro mais la plus part du temps fait seulement du motion design à l'écran."
-**Action / Démonstration** : Utilisation de ChatGPT pour refaire une introduction en motion design en utilisant des logos et un style spécifique.
+**Interface & Outils** : Interface utilisateur de ChatGPT / Application IA avec panneau latéral de sources et sorties
+**Contenu textuel & Code** : Prompt utilisateur : "Je veux que tu me refasses cette introduction en motion design, utilise les logos pour t'aider et je veux un style Cover Story..." ainsi que les fichiers joints (Intro.mp4, Logo Claude.webp, ChatGPT-Logo.svg.webp)
+**Action / Démonstration** : Le créateur montre son prompt initial et les fichiers sources joints pour la génération de la vidéo par l'IA.
 
 **Captures d'écran :**
-- ![Capture d'écran de l'interface de ChatGPT montrant les fichiers sources, notamment "Intro.mp4", "Logo Claude.webp" et "ChatGPT-Logo.svg.webp", ainsi qu'un prompt décrivant une demande de refonte d'une introduction en motion design.](../screenshots/9bPpTFAGlUo/frame_03_000054.jpg)  
-  *⏱️ 00:00:54 — Capture d'écran de l'interface de ChatGPT montrant les fichiers sources, notamment "Intro.mp4", "Logo Claude.webp" et "ChatGPT-Logo.svg.webp", ainsi qu'un prompt décrivant une demande de refonte d'une introduction en motion design.*
-- ![Capture d'écran de l'interface de ChatGPT montrant les fichiers sources, notamment "Intro.mp4", "Logo Claude.webp" et "ChatGPT-Logo.svg.webp", ainsi qu'un prompt décrivant une demande de refonte d'une introduction en motion design.](../screenshots/9bPpTFAGlUo/frame_03_000107.jpg)  
-  *⏱️ 00:01:07 — Capture d'écran de l'interface de ChatGPT montrant les fichiers sources, notamment "Intro.mp4", "Logo Claude.webp" et "ChatGPT-Logo.svg.webp", ainsi qu'un prompt décrivant une demande de refonte d'une introduction en motion design.*
+- ![Capture de l'interface montrant une conversation avec le prompt demandant de refaire l'introduction en motion design.](../screenshots/9bPpTFAGlUo/frame_03_000054.jpg)  
+  *⏱️ 00:00:54 — Capture de l'interface montrant une conversation avec le prompt demandant de refaire l'introduction en motion design.*
+- ![Vue similaire de l'interface de l'outil conversationnel avec le prompt et les fichiers joints (logos Claude, ChatGPT et fichier vidéo).](../screenshots/9bPpTFAGlUo/frame_03_000107.jpg)  
+  *⏱️ 00:01:07 — Vue similaire de l'interface de l'outil conversationnel avec le prompt et les fichiers joints (logos Claude, ChatGPT et fichier vidéo).*
 
 ---
 
@@ -111,33 +97,35 @@
 > D'ailleurs, je t'affiche juste à l'écran les différents styles que tu peux explorer en motion design, que tu sois sur Claude ou sur ChatGPT. Et je lui ai demandé de me faire un mix entre les deux, le facecam, le motion design, pour avoir cette introduction dynamique. En point de comparaison, bien sûr, je l'ai fait avec Claude. Et donc, j'ai eu mon résultat sur ChatGPT au bout de 8 minutes.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : ChatGPT, Claude
-**Contenu textuel & Code** : Prompts de discussion, noms de fichiers vidéo (Intro.mp4, Intro_Cover_Story.mp4), logos des IA, pourcentage de motion design, durée et résolution de la vidéo générée.
-**Action / Démonstration** : Comparaison des réponses de ChatGPT et Claude concernant la création d'une introduction en motion design et affichage des résultats obtenus avec Claude.
+**Interface & Outils** : Navigateur web, ChatGPT, Claude.
+**Contenu textuel & Code** : Prompts de demande de refonte d'introduction en motion design, fichiers vidéo importés, résultats de génération.
+**Action / Démonstration** : Le créateur montre la comparaison des interfaces ChatGPT et Claude pour la création de son introduction.
 
 **Captures d'écran :**
-- ![Affichage des résultats de génération d'une introduction en motion design par Claude, avec le prompt et les détails de la vidéo générée.](../screenshots/9bPpTFAGlUo/frame_04_000119.jpg)  
-  *⏱️ 00:01:19 — Affichage des résultats de génération d'une introduction en motion design par Claude, avec le prompt et les détails de la vidéo générée.*
-- ![Démonstration à l'écran @ 00:01:27](../screenshots/9bPpTFAGlUo/frame_04_000127.jpg)  
-  *⏱️ 00:01:27 — Démonstration à l'écran @ 00:01:27*
+- ![Écran partagé comparant les interfaces de ChatGPT et de Claude avec les prompts et fichiers importés pour l'introduction en motion design.](../screenshots/9bPpTFAGlUo/frame_04_000119.jpg)  
+  *⏱️ 00:01:19 — Écran partagé comparant les interfaces de ChatGPT et de Claude avec les prompts et fichiers importés pour l'introduction en motion design.*
+- ![Interface de ChatGPT affichant le résultat de la génération avec le fichier vidéo final 'Intro_Cover_Story.mp4'.](../screenshots/9bPpTFAGlUo/frame_04_000127.jpg)  
+  *⏱️ 00:01:27 — Interface de ChatGPT affichant le résultat de la génération avec le fichier vidéo final 'Intro_Cover_Story.mp4'.*
 
 ---
 
-### ⏱️ `[00:01:29 - 00:01:50]` | Segment #05
+### ⏱️ `[00:01:28 - 00:01:50]` | Segment #05
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
 > C'est celui que tu as vu en introduction. Quand chez Claude, il m'a fallu 22 minutes pour avoir un résultat que tu peux voir s'afficher à l'écran. Il n'y a pas photo. Claude gagne le duel avec un motion design vraiment léché, très très propre et dynamique. Un travail de pro. Et la différence qu'on a en termes de qualité, ça va être sur le temps de travail que les deux vont consacrer à la tâche.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : ChatGPT, Navigateur Web
-**Contenu textuel & Code** : Prompt : "Je veux que tu me refasses cette introduction de vidéo. Et pour ça, j'utilise les logos pour t'aider et je veux que ce soit pour la vidéo Cover Story. Je voudrai que tu utilise un peu plus la musique mais la plus part du temps seulement du motion design à l'écran."
-**Action / Démonstration** : Utilisation de ChatGPT pour générer une introduction de motion design.
+**Interface & Outils** : Navigateur web, ChatGPT, Claude.ai, lecteur vidéo intégré
+**Contenu textuel & Code** : Prompts textuels, code de motion design, fichiers générés (intro_CoverStory.mp4), habillage graphique style magazine
+**Action / Démonstration** : Le créateur montre et compare les résultats du motion design généré par l'IA, mettant en valeur le rendu professionnel de Claude.
 
 **Captures d'écran :**
-- ![Interface de ChatGPT, avec le prompt pour refaire l'introduction d'un motion design et le début de la génération du résultat.](../screenshots/9bPpTFAGlUo/frame_05_000130.jpg)  
-  *⏱️ 00:01:30 — Interface de ChatGPT, avec le prompt pour refaire l'introduction d'un motion design et le début de la génération du résultat.*
-- ![Capture d'un fichier vidéo MP4 nommé "Intro_CoverStory.mp4" affichant un visuel de couverture de magazine.](../screenshots/9bPpTFAGlUo/frame_05_000139.jpg)  
-  *⏱️ 00:01:39 — Capture d'un fichier vidéo MP4 nommé "Intro_CoverStory.mp4" affichant un visuel de couverture de magazine.*
+- ![Capture d'écran double affichant les interfaces de ChatGPT et Claude.ai côte à côte, avec un menu déroulant montrant des fichiers générés.](../screenshots/9bPpTFAGlUo/frame_05_000130.jpg)  
+  *⏱️ 00:01:30 — Capture d'écran double affichant les interfaces de ChatGPT et Claude.ai côte à côte, avec un menu déroulant montrant des fichiers générés.*
+- ![Aperçu d'une vidéo générée (intro_CoverStory.mp4) affichant un design de magazine avec le texte 'PLUS BESOIN'.](../screenshots/9bPpTFAGlUo/frame_05_000139.jpg)  
+  *⏱️ 00:01:39 — Aperçu d'une vidéo générée (intro_CoverStory.mp4) affichant un design de magazine avec le texte 'PLUS BESOIN'.*
+- ![Résultat final du motion design de type magazine (style couverture de presse avec le texte 'MOTION' et 'Normal') avec un encart vidéo du créateur.](../screenshots/9bPpTFAGlUo/frame_05_000148.jpg)  
+  *⏱️ 00:01:48 — Résultat final du motion design de type magazine (style couverture de presse avec le texte 'MOTION' et 'Normal') avec un encart vidéo du créateur.*
 
 ---
 
@@ -147,146 +135,162 @@
 > ChatGPT est très rapide. et sur un autre exemple d'une vidéo en total motion design, ici l'histoire du corbeau et du renard. Il m'a mis deux minutes pour me faire la première vidéo et ensuite trois minutes pour m'ajouter une voix off. Quand de ce côté, Claude pour le même prompt m'a mis 1h27 pour me réaliser la vidéo.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : ChatGPT, Claude AI
-**Contenu textuel & Code** : Les interfaces montrent des résultats de génération vidéo (durée, nom de fichier, description), des prompts textuels, et des résumés de création.
-**Action / Démonstration** : Comparaison des performances de ChatGPT et Claude AI pour la création de vidéos motion design à partir d'un prompt.
+**Interface & Outils** : Navigateur web, interface de ChatGPT, interface de Claude (claude.ai).
+**Contenu textuel & Code** : Prompts de génération de vidéos en motion design ('Le_Corbeau_et_le_Renard_9x16.mp4'), durées d'exécution (2 min 17 s et 3 min 28 s sur ChatGPT).
+**Action / Démonstration** : Comparaison des temps de génération et des fonctionnalités de création vidéo entre ChatGPT et Claude.
 
 **Captures d'écran :**
-- ![Capture d'écran de l'interface de ChatGPT montrant la génération d'une vidéo motion design, avec la durée d'exécution et le résultat de la première génération.](../screenshots/9bPpTFAGlUo/frame_06_000200.jpg)  
-  *⏱️ 00:02:00 — Capture d'écran de l'interface de ChatGPT montrant la génération d'une vidéo motion design, avec la durée d'exécution et le résultat de la première génération.*
-- ![Capture d'écran de l'interface de Claude AI, montrant la description d'une vidéo motion design créée, avec des détails sur la création et un aperçu de la vidéo.](../screenshots/9bPpTFAGlUo/frame_06_000208.jpg)  
-  *⏱️ 00:02:08 — Capture d'écran de l'interface de Claude AI, montrant la description d'une vidéo motion design créée, avec des détails sur la création et un aperçu de la vidéo.*
+- ![Interface de ChatGPT montrant l'historique de génération d'une vidéo motion design sur le corbeau et le renard avec des durées d'exécution de 2 minutes et 3 minutes.](../screenshots/9bPpTFAGlUo/frame_06_000200.jpg)  
+  *⏱️ 00:02:00 — Interface de ChatGPT montrant l'historique de génération d'une vidéo motion design sur le corbeau et le renard avec des durées d'exécution de 2 minutes et 3 minutes.*
+- ![Interface de Claude montrant le panneau de discussion et l'aperçu vidéo d'une animation du corbeau et du renard générée par l'IA.](../screenshots/9bPpTFAGlUo/frame_06_000208.jpg)  
+  *⏱️ 00:02:08 — Interface de Claude montrant le panneau de discussion et l'aperçu vidéo d'une animation du corbeau et du renard générée par l'IA.*
 
 ---
 
-### ⏱️ `[00:02:09 - 00:02:39]` | Segment #07
+### ⏱️ `[00:02:09 - 00:02:36]` | Segment #07
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Par contre, on compare les deux, c'est le jour et la nuit. Alors qu'est-ce qui fait qu'on a un écart si important aujourd'hui et est-ce que OpenAI arrivera à rattraper son retard ?
+> Par contre, on compare les deux, c'est le jour et la nuit. Alors qu'est-ce qui fait qu'on a un écart si important aujourd'hui ?
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Interfaces graphiques d'applications d'apprentissage ou de narration basées sur des fables.
-**Contenu textuel & Code** : Différentes illustrations stylisées de fables, accompagnées de titres et de leçons de morale adaptées à chaque version d'IA. Textes tels que "Pas besoin de grimper. Il suffit de flatter.", "L'odeur du fromage attire un rusé.", "Maître Corbeau, sur un arbre perché, tenait en son bec un fromage.", "Et si votre voix était aussi belle que vos plumes ?", "Sans mentir, si votre ramage se rapporte à votre plumage, vous êtes le Phénix des hôtes de ces bois,". Les noms des IA sont indiqués en bas de chaque image.
-**Action / Démonstration** : Présentation des différences visuelles et de contenu des réponses de différentes IA face à des prompts liés à des fables.
+**Interface & Outils** : Interface de comparaison comparative de différents modèles de génération d'images/vidéos (présentation visuelle côte à côte).
+**Contenu textuel & Code** : Illustrations graphiques de la fable 'Le Corbeau et le Renard' avec des styles différents, accompagnées de texte et des labels des IA (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5).
+**Action / Démonstration** : Le créateur compare les résultats visuels obtenus par différents modèles ou versions d'IA sur une même consigne narrative.
 
 **Captures d'écran :**
-- ![Comparaison des résultats de trois IA (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5) pour la fable "Le Renard et le Corbeau".](../screenshots/9bPpTFAGlUo/frame_07_000224.jpg)  
-  *⏱️ 00:02:24 — Comparaison des résultats de trois IA (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5) pour la fable "Le Renard et le Corbeau".*
-- ![Comparaison des résultats de trois IA (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5) pour la fable "Le Corbeau et le Renard".](../screenshots/9bPpTFAGlUo/frame_07_000238.jpg)  
-  *⏱️ 00:02:38 — Comparaison des résultats de trois IA (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5) pour la fable "Le Corbeau et le Renard".*
+- ![Comparaison de trois versions de génération visuelle (GPT 6 Astra, GPT 6.1 Sol, et Opus 5.5) illustrant la fable de La Fontaine 'Le Corbeau et le Renard' (introduction).](../screenshots/9bPpTFAGlUo/frame_07_000223.jpg)  
+  *⏱️ 00:02:23 — Comparaison de trois versions de génération visuelle (GPT 6 Astra, GPT 6.1 Sol, et Opus 5.5) illustrant la fable de La Fontaine 'Le Corbeau et le Renard' (introduction).*
+- ![Comparaison des trois mêmes modèles (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5) montrant une étape ultérieure de la fable ('Le Compliment').](../screenshots/9bPpTFAGlUo/frame_07_000234.jpg)  
+  *⏱️ 00:02:34 — Comparaison des trois mêmes modèles (GPT 6 Astra, GPT 6.1 Sol, Opus 5.5) montrant une étape ultérieure de la fable ('Le Compliment').*
 
 ---
 
-### ⏱️ `[00:02:39 - 00:03:16]` | Segment #08
+### ⏱️ `[00:02:36 - 00:02:56]` | Segment #08
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Donc dans un premier temps, pour comprendre l'avantage de Cloud, il avait déjà en artefact un outil design basé sur le code avec Cloud Design. Opus 5 alors a cette compréhension en native qui lui permet de générer les images par code et de les animer avec beaucoup de fluidité et de dynamisme. Mais pour autant, on peut imaginer que dans l'avenir, si OpenAI arrive à tirer un maximum de ses assets, comme GPT-image ou même du point de vue de l'animation de la vidéo, pioché dans la data et les compétences qu'ils ont utilisées avec Sora, on peut imaginer deux prochains modèles plutôt doués dans l'animation, le motion design,
+> Et est-ce que OpenAI arrivera à rattraper son retard ? Donc dans un premier temps, pour comprendre l'avantage de Cloud, il avait déjà en Artifact un outil design basé sur le code avec Cloud Design. Opus 5 alors a cette compréhension en native qui lui permet de générer les images par code et de les animer avec beaucoup de fluidité et de dynamisme.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Navigateur web avec ChatGPT.
-**Contenu textuel & Code** : Prompt "créer une vidéo motion design sur le Corbeau et le Renard en utilisant les personnages 3D, vidéo vertical dynamique en utilisant du motion design et les références". Le résultat mentionne une vidéo de 9:16 secondes.
-**Action / Démonstration** : Démonstration de la génération d'une vidéo motion design via ChatGPT.
+**Interface & Outils** : Claude Design (Artifact)
+**Contenu textuel & Code** : Code CSS avec styles de cartes, balises HTML (`<h1>`, `<circle>`, `<button>`), graphiques d'animation (ease-in-out, 60 fps)
+**Action / Démonstration** : Présentation des fonctionnalités de design et d'animation basées sur le code dans l'IA
 
 **Captures d'écran :**
-- ![L'interface de ChatGPT est affichée, montrant le résultat d'une demande de création de vidéo motion design.](../screenshots/9bPpTFAGlUo/frame_08_000258.jpg)  
-  *⏱️ 00:02:58 — L'interface de ChatGPT est affichée, montrant le résultat d'une demande de création de vidéo motion design.*
-- ![Démonstration à l'écran @ 00:03:14](../screenshots/9bPpTFAGlUo/frame_08_000314.jpg)  
-  *⏱️ 00:03:14 — Démonstration à l'écran @ 00:03:14*
+- ![Illustration de l'outil Claude Design montrant le rendu visuel généré à partir de code CSS/HTML dans Artifact.](../screenshots/9bPpTFAGlUo/frame_08_000246.jpg)  
+  *⏱️ 00:02:46 — Illustration de l'outil Claude Design montrant le rendu visuel généré à partir de code CSS/HTML dans Artifact.*
+- ![Illustration des capacités d'animation fluide avec des paramètres de courbe (ease-in-out) et un affichage à 60 fps.](../screenshots/9bPpTFAGlUo/frame_08_000254.jpg)  
+  *⏱️ 00:02:54 — Illustration des capacités d'animation fluide avec des paramètres de courbe (ease-in-out) et un affichage à 60 fps.*
 
 ---
 
-### ⏱️ `[00:03:16 - 00:03:37]` | Segment #09
+### ⏱️ `[00:02:56 - 00:03:19]` | Segment #09
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> et pourquoi pas la création de vidéos de A à Z. D'ailleurs, j'ai essayé avec le modèle GPT-Astra de refaire l'exercice, mais cette fois-ci en donnant en référence des images directement créées avec ChatGPT-image 2.5. Pour ainsi, après 4 minutes de travail, avoir un résultat en motion design, mais ça manque encore d'animation et de dynamisme.
+> Mais pour autant, on peut imaginer que dans l'avenir, si OpenAI arrive à tirer un maximum de ses assets, Comme GPT Images ou même du point de vue de l'animation de la vidéo, pioché dans la data et les compétences qu'ils ont utilisées avec Sora, on peut imaginer deux prochains modèles plutôt doués dans l'animation, le motion design, et pourquoi pas la création de vidéos de A à Z.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : ChatGPT, interface de génération d'image et vidéo.
-**Contenu textuel & Code** : Image de renard générée par IA, texte "LE RENARD A UNE IDÉE." et "Et si quelques compliments suffisaient ?", prompt éventuel : "Claude vs ChatGPT motion c".
-**Action / Démonstration** : Le créateur montre les résultats d'une expérimentation avec un modèle IA pour la création de vidéos en motion design, en utilisant des images générées par ChatGPT-image 2.5 comme référence. Il mentionne que le résultat manque encore d'animation et de dynamisme.
+**Interface & Outils** : Navigateur web affichant l'interface de ChatGPT.
+**Contenu textuel & Code** : Prompt utilisateur demandant une vidéo motion design sur Le Corbeau et le Renard, images de personnages (renard et corbeau), fichier vidéo généré « Le_Corbeau_et_le_Renard_Motion_Design.mp4 ».
+**Action / Démonstration** : Le créateur présente une interface de génération de vidéo par IA avec ChatGPT pour illustrer les capacités d'animation.
 
 **Captures d'écran :**
-- ![Capture d'écran d'une interface ChatGPT affichant une image générée par IA d'un renard stylisé.](../screenshots/9bPpTFAGlUo/frame_09_000327.jpg)  
-  *⏱️ 00:03:27 — Capture d'écran d'une interface ChatGPT affichant une image générée par IA d'un renard stylisé.*
-- ![Capture d'écran d'une interface montrant une prévisualisation vidéo avec le même renard stylisé et une bulle de dialogue.](../screenshots/9bPpTFAGlUo/frame_09_000336.jpg)  
-  *⏱️ 00:03:36 — Capture d'écran d'une interface montrant une prévisualisation vidéo avec le même renard stylisé et une bulle de dialogue.*
+- ![Interface de ChatGPT montrant un prompt pour créer une vidéo motion design sur Le Corbeau et le Renard avec des personnages 3D.](../screenshots/9bPpTFAGlUo/frame_09_000257.jpg)  
+  *⏱️ 00:02:57 — Interface de ChatGPT montrant un prompt pour créer une vidéo motion design sur Le Corbeau et le Renard avec des personnages 3D.*
+- ![Interface de ChatGPT affichant le résultat de la génération d'une vidéo verticale 9:16 avec des personnages animés, de la musique et des bruitages.](../screenshots/9bPpTFAGlUo/frame_09_000307.jpg)  
+  *⏱️ 00:03:07 — Interface de ChatGPT affichant le résultat de la génération d'une vidéo verticale 9:16 avec des personnages animés, de la musique et des bruitages.*
+- ![Interface de ChatGPT avec le panneau latéral détaillant les fichiers source et les sorties de la vidéo générée.](../screenshots/9bPpTFAGlUo/frame_09_000317.jpg)  
+  *⏱️ 00:03:17 — Interface de ChatGPT avec le panneau latéral détaillant les fichiers source et les sorties de la vidéo générée.*
 
 ---
 
-### ⏱️ `[00:03:38 - 00:03:56]` | Segment #10
+### ⏱️ `[00:03:19 - 00:03:37]` | Segment #10
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Par contre, là où GPT Astra va devenir intéressant, ça va être dans la création d'infographies ou de diagrammes en animation. Par exemple ici, une infographie sur un moteur de voiture qu'on peut par la suite demander à animer, et ainsi avoir le résultat suivant qui nous explique en mouvement le diagramme qu'on avait demandé.
+> D'ailleurs, j'ai essayé avec le modèle GPT Astra de refaire l'exercice, mais cette fois-ci en donnant en référence des images directement créées avec ChatGPT Images 2.5. Pour ainsi, après 4 minutes de travail, avoir un résultat en motion design, mais ça manque encore d'animation et de dynamisme.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : ChatGPT
-**Contenu textuel & Code** : "Sur quoi souhaitez-vous travailler ?", "GPT-4 Astra Moyen", "Diagramme moteur voiture", "En cours depuis 22s", "Je te crée une infographie en coupe, avec les pièces du moteur et les quatre temps expliqués en français. J'utilise le skill de création d'images.", "anime moi ce diagramme", "LE MOTEUR ESSENCE", "Un cycle • 4 temps • 2 tours", "4 ÉCHAPPEMENT", "Bougie", "Piston", "Bielle", "Vilebrequin", "Le piston remonte et chasse le gaz brûlés."
-**Action / Démonstration** : Création d'une infographie de moteur de voiture et animation de celle-ci par GPT Astra.
+**Interface & Outils** : Navigateur web, interface ChatGPT avec le modèle GPT-6 Astra et outil de prévisualisation vidéo.
+**Contenu textuel & Code** : Image d'un renard en origami/low-poly, interface de génération de vidéo au format vertical, texte 'LE RENARD A UNE IDÉE' et 'Et si quelques compliments suffisaient ?', panneau latéral avec les fichiers sources.
+**Action / Démonstration** : Présentation du résultat obtenu en motion design après l'utilisation du modèle GPT Astra avec des images générées par ChatGPT.
 
 **Captures d'écran :**
-- ![Interface de ChatGPT avec une demande de travail, et le sélecteur de modèle "GPT-4 Astra Moyen" visible.](../screenshots/9bPpTFAGlUo/frame_10_000339.jpg)  
-  *⏱️ 00:03:39 — Interface de ChatGPT avec une demande de travail, et le sélecteur de modèle "GPT-4 Astra Moyen" visible.*
-- ![Interface de ChatGPT en cours de génération d'une infographie de moteur de voiture, avec une barre de progression affichant 26%.](../screenshots/9bPpTFAGlUo/frame_10_000347.jpg)  
-  *⏱️ 00:03:47 — Interface de ChatGPT en cours de génération d'une infographie de moteur de voiture, avec une barre de progression affichant 26%.*
-- ![Interface de ChatGPT affichant une infographie animée d'un moteur essence avec le titre "LE MOTEUR ESSENCE", expliquant le cycle "4 ÉCHAPPEMENT". Un bouton "anime moi ce diagramme" est visible.](../screenshots/9bPpTFAGlUo/frame_10_000355.jpg)  
-  *⏱️ 00:03:55 — Interface de ChatGPT affichant une infographie animée d'un moteur essence avec le titre "LE MOTEUR ESSENCE", expliquant le cycle "4 ÉCHAPPEMENT". Un bouton "anime moi ce diagramme" est visible.*
+- ![Capture d'écran du navigateur montrant une image générée d'un renard stylisé avec des options d'édition (annoter, supprimer l'arrière-plan, etc.) sous l'interface ChatGPT.](../screenshots/9bPpTFAGlUo/frame_10_000328.jpg)  
+  *⏱️ 00:03:28 — Capture d'écran du navigateur montrant une image générée d'un renard stylisé avec des options d'édition (annoter, supprimer l'arrière-plan, etc.) sous l'interface ChatGPT.*
+- ![Capture d'écran montrant à gauche un aperçu vidéo vertical intitulé 'LES FABLES EN PAPIER' avec le personnage du renard et du texte, et à droite l'interface de discussion avec le modèle GPT-6 Astra.](../screenshots/9bPpTFAGlUo/frame_10_000336.jpg)  
+  *⏱️ 00:03:36 — Capture d'écran montrant à gauche un aperçu vidéo vertical intitulé 'LES FABLES EN PAPIER' avec le personnage du renard et du texte, et à droite l'interface de discussion avec le modèle GPT-6 Astra.*
 
 ---
 
-### ⏱️ `[00:03:56 - 00:04:19]` | Segment #11
+### ⏱️ `[00:03:38 - 00:03:56]` | Segment #11
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Donc une piste très intéressante à explorer, tout comme aussi la possibilité de générer notre image via ChatGPT et de demander à celui-ci de l'animer. Ça sera très sommaire, des animations de 8 secondes, mais on a un début de mouvement et qui sait peut-être par la suite, la possibilité de transformer une image en vidéo sur ChatGPT, à voir donc comment ça évolue.
+> Par contre, là où GPT Astra va devenir intéressant, ça va être dans la création d'infographies ou de diagrammes en animation. Par exemple ici, une infographie sur un moteur de voiture, qu'on peut par la suite demander à animer, et ainsi avoir le résultat suivant qui nous explique en mouvement le diagramme qu'on avait demandé.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : ChatGPT
-**Contenu textuel & Code** : "anime moi ce diagramme", "Diagramme moteur voiture", "Moteur_4_temps_anime.mp4"
-**Action / Démonstration** : Génération d'une animation à partir d'un diagramme via ChatGPT.
+**Interface & Outils** : Navigateur web affichant l'interface de ChatGPT avec le modèle GPT-6 Astra
+**Contenu textuel & Code** : Interface de chat IA, barre de texte 'Sur quoi souhaitez-vous travailler ?', génération en cours, infographie interactive d'un moteur essence (bougie, piston, bielle, vilebrequin)
+**Action / Démonstration** : Le créateur démontre la génération et l'animation d'une infographie technique complexe d'un moteur à l'aide de l'intelligence artificielle
 
 **Captures d'écran :**
-- ![Interface de ChatGPT affichant une animation d'un moteur 4 temps et le prompt utilisé pour la générer.](../screenshots/9bPpTFAGlUo/frame_11_000357.jpg)  
-  *⏱️ 00:03:57 — Interface de ChatGPT affichant une animation d'un moteur 4 temps et le prompt utilisé pour la générer.*
-- ![Interface de ChatGPT, page d'accueil, invitant l'utilisateur à indiquer sur quoi il souhaite travailler.](../screenshots/9bPpTFAGlUo/frame_11_000417.jpg)  
-  *⏱️ 00:04:17 — Interface de ChatGPT, page d'accueil, invitant l'utilisateur à indiquer sur quoi il souhaite travailler.*
+- ![Interface de ChatGPT (GPT-6 Astra) avec la question initiale 'Sur quoi souhaitez-vous travailler ?'](../screenshots/9bPpTFAGlUo/frame_11_000339.jpg)  
+  *⏱️ 00:03:39 — Interface de ChatGPT (GPT-6 Astra) avec la question initiale 'Sur quoi souhaitez-vous travailler ?'*
+- ![Génération en cours d'une infographie sur un moteur de voiture dans l'interface de l'IA (26%)](../screenshots/9bPpTFAGlUo/frame_11_000347.jpg)  
+  *⏱️ 00:03:47 — Génération en cours d'une infographie sur un moteur de voiture dans l'interface de l'IA (26%)*
+- ![Affichage du diagramme animé final représentant le moteur essence à quatre temps avec ses composants](../screenshots/9bPpTFAGlUo/frame_11_000355.jpg)  
+  *⏱️ 00:03:55 — Affichage du diagramme animé final représentant le moteur essence à quatre temps avec ses composants*
 
 ---
 
-### ⏱️ `[00:04:19 - 00:04:39]` | Segment #12
+### ⏱️ `[00:03:56 - 00:04:17]` | Segment #12
 
 **🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> Bien sûr pour avoir un travail un petit peu plus abouti il y a toujours la possibilité que ça soit sur ChatGPT ou Cloud de lier une application comme Xfield via sur ChatGPT l'option plugin et dans Cloud l'option connecteur. Ainsi via une nouvelle conversation faire appel au MCP d'Xfield pour générer ces images vidéo ou motion design.
+> Donc une piste très intéressante à explorer, tout comme aussi la possibilité de générer notre image via ChatGPT et de demander à celui-ci de l'animer. Ça sera très sommaire, des animations de 8 secondes, mais on a un début de mouvement et qui sait peut-être par la suite la possibilité de transformer une image en vidéo sur ChatGPT.
+
+**👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
+**Interface & Outils** : Navigateur web, interface de ChatGPT.
+**Contenu textuel & Code** : Diagramme de moteur de voiture, prompt "anime moi ce diagramme", fichier vidéo généré "Moteur_4_temps_anime.mp4", et image plein écran d'un voilier sur l'eau.
+**Action / Démonstration** : Le créateur présente des exemples d'utilisation de ChatGPT pour générer des images et demander leur animation.
+
+**Captures d'écran :**
+- ![Interface ChatGPT affichant un diagramme de moteur de voiture et le résultat d'une animation vidéo générée.](../screenshots/9bPpTFAGlUo/frame_12_000357.jpg)  
+  *⏱️ 00:03:57 — Interface ChatGPT affichant un diagramme de moteur de voiture et le résultat d'une animation vidéo générée.*
+- ![Interface de ChatGPT affichant une image générée d'un voilier naviguant sur la mer ensoleillée.](../screenshots/9bPpTFAGlUo/frame_12_000407.jpg)  
+  *⏱️ 00:04:07 — Interface de ChatGPT affichant une image générée d'un voilier naviguant sur la mer ensoleillée.*
+- ![Même vue de l'interface de ChatGPT avec l'image du voilier, montrant une continuité visuelle dans la vidéo.](../screenshots/9bPpTFAGlUo/frame_12_000415.jpg)  
+  *⏱️ 00:04:15 — Même vue de l'interface de ChatGPT avec l'image du voilier, montrant une continuité visuelle dans la vidéo.*
+
+---
+
+### ⏱️ `[00:04:17 - 00:04:39]` | Segment #13
+
+**🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
+> A voir donc comment ça évolue. Bien sûr, pour avoir un travail un petit peu plus abouti, il y a toujours la possibilité que ça soit sur ChatGPT ou Cloud de lier une application comme Xfield. via sur ChatGPT l'option plugin et dans Cloud l'option connecteur. Ainsi, via une nouvelle conversation, faire appel au MCP d'Xfield pour générer ces images, vidéos ou motion design.
+
+**👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
+**Interface & Outils** : Navigateur web, interface de ChatGPT (chatgpt.com/plugins), interface de présentation vidéo.
+[DESC_IMAGE_1] "Sur quoi souhaitez-vous travailler ?", champ de texte "Travailler avec ChatGPT", options "Choisir un projet", "Fichiers", "@ Plugins".
+[DESC_IMAGE_2] Menu "Plugins", barre de recherche, liste des plugins installés et populaires (Gmail, Google Drive, Health, GitHub, etc.).
+**Contenu textuel & Code** : Explications et conseils de création de contenu / IA.
+**Action / Démonstration** : Le créateur montre l'interface d'accueil de ChatGPT puis navigue vers la section des plugins pour illustrer l'intégration d'outils externes.
+
+**Captures d'écran :**
+- ![Interface principale de ChatGPT montrant la zone de saisie du prompt avec les options de fichiers et de plugins.](../screenshots/9bPpTFAGlUo/frame_13_000418.jpg)  
+  *⏱️ 00:04:18 — Interface principale de ChatGPT montrant la zone de saisie du prompt avec les options de fichiers et de plugins.*
+- ![Page de gestion des plugins dans l'interface de ChatGPT permettant de connecter divers outils tiers.](../screenshots/9bPpTFAGlUo/frame_13_000428.jpg)  
+  *⏱️ 00:04:28 — Page de gestion des plugins dans l'interface de ChatGPT permettant de connecter divers outils tiers.*
+- ![Visuels artistiques et graphiques générés ou présentés à l'écran, illustrant le sujet de la vidéo.](../screenshots/9bPpTFAGlUo/frame_13_000437.jpg)  
+  *⏱️ 00:04:37 — Visuels artistiques et graphiques générés ou présentés à l'écran, illustrant le sujet de la vidéo.*
+
+---
+
+### ⏱️ `[00:04:39 - 00:05:07]` | Segment #14
+
+**🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
+> On a déjà fait des vidéos sur le sujet. Je te renvoie à celle-ci. Et il y a aussi par exemple des applications comme Hyperframe, pareil, on connecte via MCP qui permettent ici de se focaliser sur le motion design. Voilà pour cette courte vidéo. Pour t'informer de la possibilité de créer ton motion design avec JGPT, Claude, pour l'instant, sera toujours meilleur, à l'avenir maintenant et à OpenAI, de nous proposer de meilleurs résultats. C'était Marco, merci et à très bientôt sur le Labo des Réseaux.
 
 **👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
 **Interface & Outils** : AUCUNE
 **Contenu textuel & Code** : AUCUNE
-**Action / Démonstration** : AUCUNE
-
----
-
-### ⏱️ `[00:04:39 - 00:05:04]` | Segment #13
-
-**🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> On a déjà fait des vidéos sur le sujet je te renvoie à celle-ci. Et il y a aussi par exemple des applications comme Hyperframe, pareil on connecte via MCP, qui permettent ici de se focaliser sur le motion design. Voilà pour cette courte vidéo. Pour t'informer de la possibilité de créer ton motion design avec JGPT, Claude pour l'instant sera toujours meilleur, à l'avenir maintenant et à OpenAI, de nous proposer de meilleurs résultats.
-
-**👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : Aucun logiciel ou interface d'outil visible dans le segment pertinent.
-**Contenu textuel & Code** : Illustration stylisée combinant des éléments architecturaux, des avions, des sièges d'aéroport et des sacs de courses.
-**Action / Démonstration** : Le créateur de contenu mentionne des applications pour le motion design.
-
-**Captures d'écran :**
-- ![Visuel artistique présentant des éléments liés au voyage et au commerce, avec un bâtiment de style néoclassique, des avions, une salle d'attente et un sac de shopping.](../screenshots/9bPpTFAGlUo/frame_13_000440.jpg)  
-  *⏱️ 00:04:40 — Visuel artistique présentant des éléments liés au voyage et au commerce, avec un bâtiment de style néoclassique, des avions, une salle d'attente et un sac de shopping.*
-
----
-
-### ⏱️ `[00:05:04 - 00:05:07]` | Segment #14
-
-**🔊 Audio (Transcription Intégrale Mot pour Mot en Français) :**
-> C'était Marco, merci et à très bientôt sur le Labo des Réseaux.
-
-**👁️ Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :**
-**Interface & Outils** : 
-**Contenu textuel & Code** : 
-**Action / Démonstration** : 
+**Action / Démonstration** : Le créateur s'adresse directement à son audience pour conclure le sujet.
 
 ---
