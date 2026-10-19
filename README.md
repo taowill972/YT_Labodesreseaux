@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `10 / 1266` (`0.8%`)
+- **Vidéos traitées** : `11 / 1267` (`0.9%`)
 - **Modèle Audio** : `whisper-v3-large-turbo` (Faster-Whisper, 100% Verbatim Français)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse d'écrans, interfaces & démonstrations)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -17,6 +17,7 @@
 
 | Date | Réf. Vidéo | Titre Français / Sujet | Fiche Markdown | Fiche Interactive HTML | Captures |
 | :--- | :--- | :--- | :--- | :--- | :---: |
+| 2026-10-19 | [G0dtF8wN0co](https://www.youtube.com/watch?v=G0dtF8wN0co) | **Créer un influenceur IA de A à Z avec Seedance 2.5 (Techniques inédites)** | [2026-10-19_YT-G0dtF8wN0co_Créer un influenceur IA de A à Z avec Seedance 2.5 (Techniques inédites)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md](YT_Labodesreseaux_Transcript/2026-10-19_YT-G0dtF8wN0co_Créer un influenceur IA de A à Z avec Seedance 2.5 (Techniques inédites)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [Voir Rapport HTML](YT_Labodesreseaux_Transcript/2026-10-19_YT-G0dtF8wN0co_Créer un influenceur IA de A à Z avec Seedance 2.5 (Techniques inédites)_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | `44` |
 | 2026-10-17 | [9bPpTFAGlUo](https://www.youtube.com/watch?v=9bPpTFAGlUo) | **Créer une Vidéo MOTION DESIGN avec Chat GPT** | [2026-10-17_YT-9bPpTFAGlUo_Créer une Vidéo MOTION DESIGN avec Chat GPT_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md](YT_Labodesreseaux_Transcript/2026-10-17_YT-9bPpTFAGlUo_Créer une Vidéo MOTION DESIGN avec Chat GPT_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [Voir Rapport HTML](YT_Labodesreseaux_Transcript/2026-10-17_YT-9bPpTFAGlUo_Créer une Vidéo MOTION DESIGN avec Chat GPT_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | `30` |
 | 2026-10-12 | [_UBCQAy9kG8](https://www.youtube.com/watch?v=_UBCQAy9kG8) | **J'ai créé un jeu d'enquête où les personnages IA me parlent (Claude + Fish Audio)** | [2026-10-12_YT-_UBCQAy9kG8_J'ai créé un jeu d'enquête où les personnages IA me parlent (Claude + Fish Audio_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md](YT_Labodesreseaux_Transcript/2026-10-12_YT-_UBCQAy9kG8_J'ai créé un jeu d'enquête où les personnages IA me parlent (Claude + Fish Audio_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [Voir Rapport HTML](YT_Labodesreseaux_Transcript/2026-10-12_YT-_UBCQAy9kG8_J'ai créé un jeu d'enquête où les personnages IA me parlent (Claude + Fish Audio_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | `54` |
 | 2026-10-11 | [i3ybzy9qVow](https://www.youtube.com/watch?v=i3ybzy9qVow) | **Créer un influenceur IA en 3 clics !** | [2026-10-11_YT-i3ybzy9qVow_Créer un influenceur IA en 3 clics !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md](YT_Labodesreseaux_Transcript/2026-10-11_YT-i3ybzy9qVow_Créer un influenceur IA en 3 clics !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md) | [Voir Rapport HTML](YT_Labodesreseaux_Transcript/2026-10-11_YT-i3ybzy9qVow_Créer un influenceur IA en 3 clics !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html) | `29` |
