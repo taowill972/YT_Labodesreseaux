@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Créer un influenceur IA en 3 clics ! — Labo des Réseaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-box {
+            margin-bottom: 1.5rem;
+        }
+        .tools-box h3, .points-box h3 {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tool-tag {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #e2e8f0;
+            padding: 0.35rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .points-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .points-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Timeline Section */
+        section.timeline-section {
+            margin-top: 2rem;
+        }
+
+        .timeline-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            margin-bottom: 1.8rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        .timeline-block:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .timeline-time {
+            background: rgba(20, 30, 51, 0.7);
+            padding: 0.85rem 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 0.25rem 0.65rem;
+            border-radius: 0.35rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .verbatim-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-left: 3px solid #10b981;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .verbatim-header, .visual-header, .screenshots-header {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .verbatim-text {
+            font-size: 0.96rem;
+            line-height: 1.65;
+            color: #f1f5f9;
+            font-style: italic;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.5);
+            border-left: 3px solid #8b5cf6;
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: #cbd5e1;
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .visual-details strong {
+            color: #e2e8f0;
+        }
+
+        /* Screenshots grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 16, 28, 0.7);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px dashed rgba(148, 163, 184, 0.2);
+        }
+
+        .segment-screenshots-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.65rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .screenshot-card {
+            background: #0b1120;
+            border-radius: 0.6rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .img-wrapper {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .img-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .zoom-badge {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 0.2rem 0.55rem;
+            border-radius: 0.35rem;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .img-wrapper:hover .zoom-badge {
+            opacity: 1;
+        }
+
+        .screenshot-caption {
+            padding: 0.65rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #93c5fd;
+        }
+
+        .caption-text {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Créer un influenceur IA en 3 clics !</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📺 Labo Des Réseaux</span>
+                <a href="https://www.youtube.com/watch?v=i3ybzy9qVow" target="_blank" rel="noopener" class="badge badge-yt">
+                    ▶️ Voir sur YouTube (i3ybzy9qVow)
+                </a>
+                <span class="badge">📅 2026-10-11</span>
+                <span class="badge">⏱️ 6:49</span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            
+            <div class="summary-card">
+                <p>**Les réseaux sociaux traversent une mutation profonde avec l&#x27;émergence fulgurante des influenceurs virtuels générés par intelligence artificielle.** Contrairement aux standards de beauté lisses et parfaits observés par le passé, la nouvelle tendance privilégie des looks excentriques, loufoques et singuliers qui se démarquent des créateurs humains traditionnels. Ce phénomène s&#x27;accompagne surtout d&#x27;une révolution technique majeure portée par les modèles de vidéo-édition par IA, capables d&#x27;intégrer des avatars de synthèse au cœur de contenus viraux existants.</p><p>**Le tutoriel central de la vidéo démontre comment exploiter la plateforme Xfield pour concevoir de toutes pièces un influenceur virtuel en quelques clics.** Grâce à un générateur intuitif basé sur l&#x27;assemblage de tags (gabarit, genre, coupe de cheveux, accessoires) ou via l&#x27;utilisation de références visuelles textuelles et faciales, la création d&#x27;avatar devient instantanément accessible. Le processus se poursuit en transférant cet influenceur dans le modèle de génération vidéo *Genjutsu*, permettant de le mettre en scène dans des mèmes ou des challenges populaires en reprenant simplement une vidéo de référence d&#x27;une durée maximale de 30 secondes.</p><p>**Au-delà de la prouesse technique, cette démocratisation soulève des questions fondamentales sur l&#x27;avenir des plateformes et la propriété intellectuelle.** Le créateur analyse les parallèles possibles avec le phénomène du &quot;brain rot&quot; et met en garde contre l&#x27;uniformisation des contenus face à la facilité de duplication. Pour réussir durablement, la valeur ajoutée ne résidera plus dans la simple reproduction de chorégraphies ou de trends, mais dans l&#x27;originalité narrative, l&#x27;incarnation vocale et la singularité créative conférée à ces nouveaux avatars numériques.</p>
+            </div>
+
+            <div class="tools-box">
+                <h3>🛠️ Outils, Modèles & Logiciels Présentés</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">Xfield :** Plateforme principale de génération d&#x27;influenceurs IA et d&#x27;édition vidéo (incluant le générateur d&#x27;avatars et l&#x27;outil de redimensionnement de référence).</span><span class="tool-tag">Genjutsu (par Xfield) :** Modèle phare d&#x27;édition et de génération vidéo par IA pour animer les influenceurs et remplacer les personnages dans un plan.</span><span class="tool-tag">Cling Motion :** Modèle d&#x27;IA vidéo spécialisé dans l&#x27;édition et la réutilisation de mouvements.</span><span class="tool-tag">Seed Dance 2.5 :** Modèle de génération et d&#x27;édition vidéo avancé utilisé pour transposer des chorégraphies ou des mouvements.</span><span class="tool-tag">ChatGPT Image 2.5 :** Modèle de génération d&#x27;images alternatif pour concevoir des avatars personnalisés en amont.</span><span class="tool-tag">Nano Banana 2.1 :** Modèle image alternatif mentionné pour la création libre d&#x27;influenceurs virtuels.</span>
+                </div>
+            </div>
+
+            <div class="points-box">
+                <h3>🔑 Points Clés & Enseignements Stratégiques</h3>
+                <ul>
+                    <li><span class="point-bullet">✦</span><span>Changement esthétique majeur :** La tendance actuelle des influenceurs IA s&#x27;oriente vers des looks décalés et imparfaits pour rompre avec l&#x27;uniformité visuelle du passé.</span></li><li><span class="point-bullet">✦</span><span>Génération modulaire sur Xfield :** Le générateur d&#x27;influenceurs permet d&#x27;assembler des caractéristiques variées (gabarit, coupe, barbe, accessoires) ou d&#x27;utiliser la fonction &quot;Reset All&quot; pour une création totalement aléatoire.</span></li><li><span class="point-bullet">✦</span><span>Personnalisation avancée par référence :** Il est possible d&#x27;injecter une tenue personnalisée (ex: tenue de glacier) ou de baser l&#x27;avatar sur un visage de référence existant (comme &quot;Marco&quot;).</span></li><li><span class="point-bullet">✦</span><span>Modération des paramètres :** Il est conseillé de doser les modifications lors de l&#x27;utilisation d&#x27;un visage de référence pour éviter de dénaturer complètement l&#x27;identité visuelle du personnage créé.</span></li><li><span class="point-bullet">✦</span><span>Fonctionnement de Genjutsu :** Ce modèle vidéo accepte des fichiers de référence allant jusqu&#x27;à 30 secondes (avec un outil de découpe/redimensionnement intégré si la vidéo source est plus longue).</span></li><li><span class="point-bullet">✦</span><span>Multiplication des avatars :** La plateforme permet de synchroniser plusieurs influenceurs créés (ex: quatre personnages) pour correspondre exactement au nombre de sujets présents dans la vidéo de tendance source.</span></li><li><span class="point-bullet">✦</span><span>Diversité des cas d&#x27;usage :** Au-delà du remplacement de personnages dans des mèmes ou des danses (&quot;Toc toc qui frappe à ma porte&quot;), l&#x27;outil permet d&#x27;insérer des produits ou de modifier des tenues sur un plan existant.</span></li><li><span class="point-bullet">✦</span><span>Modèles alternatifs d&#x27;édition :** En complément de Genjutsu, l&#x27;utilisation de *Seed Dance 2.5* (en mode édition) et de *Cling Motion* offre des alternatives puissantes pour animer les créations.</span></li><li><span class="point-bullet">✦</span><span>Émancipation des modèles images :** La création d&#x27;avatars peut s&#x27;affranchir de l&#x27;outil natif d&#x27;Xfield en s&#x27;appuyant sur des générateurs d&#x27;images externes comme *ChatGPT Image 2.5* ou *Nano Banana 2.1*.</span></li><li><span class="point-bullet">✦</span><span>Enjeux de propriété intellectuelle :** L&#x27;utilisation de vidéos tierces comme simples &quot;références&quot; pour animer des IA bouscule les notions traditionnelles de droit d&#x27;auteur et de vol de contenu sur les réseaux sociaux.</span></li><li><span class="point-bullet">✦</span><span>Risque de saturation des flux :** La facilité d&#x27;exécution (génération en 3 clics) menace d&#x27;inonder les plateformes de contenus clones automatisés enchaînant uniquement des challenges visuels.</span></li><li><span class="point-bullet">✦</span><span>Nécessité d&#x27;une voix et d&#x27;un lore :** Pour survivre et émerger durablement, les créateurs doivent doter leurs influenceurs IA d&#x27;une voix, d&#x27;une histoire (lore) et d&#x27;une réelle originalité stratégique plutôt que de se limiter à de simples chorégraphies.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle</h2>
+            
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:01 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les réseaux sociaux sont en train de changer avec l&#x27;arrivée des influenceurs IA. Alors les influenceurs IA, ça n&#x27;a rien de nouveau. Ce qui est nouveau, en revanche, c&#x27;est la place qu&#x27;ils ont pris ces dernières semaines.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Studio vidéo personnel avec équipement d&#x27;enregistrement audio et éclairage LED.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun élément d&#x27;interface ou texte affiché à l&#x27;écran, uniquement le présentateur en plan fixe.</p>
+                        <p><strong>Action / Démonstration :</strong> Le youtubeur introduit le sujet de la vidéo en parlant face caméra et en changeant d&#x27;apparence.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:21 - 00:00:43</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et il y a deux raisons à ça. La première, c&#x27;est une tendance à leur donner des looks un peu bizarres. Des looks qui sortent justement de la beauté parfaite que l&#x27;IA produisait jusqu&#x27;ici. Et disons-le, qui changent aussi du look des influenceurs classiques qui commencent à se ressembler un petit peu. Mais le plus gros changement, c&#x27;est l&#x27;évolution des modèles IA vidéo d&#x27;édition.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de logiciel de montage vidéo génératif.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre de prévisualisation vidéo avec portrait d&#x27;influenceur, timeline de montage colorée et texte &#x27;L&#x27;ÉVOLUTION DES MODÈLES VIDÉO IA&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;évolution des modèles de génération vidéo par intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_02_000042.jpg" alt="Interface de montage vidéo affichant un modèle de visage généré par IA et une timeline." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_02_000042.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Interface de montage vidéo affichant un modèle de visage généré par IA et une timeline.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:44 - 00:01:04</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Clingmotion, Seed Dance 2.5 ou encore Genjutsu de Xfield, ce sont des modèles capables de reprendre facilement en référence des memes, des challenges, des trends, des scènes cultes, pour y mettre en scène tes propres influenceurs IA. C&#x27;est ce qui fonctionne en ce moment sur les réseaux, et dans cette vidéo, on voit comment le faire en 3 clics sur Xfield.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kling Motion</p>
+                        <p><strong>Contenu textuel & Code :</strong> Modèles vidéo d&#x27;édition, Kling Motion - Transfert de mouvement</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des outils de transfert de mouvement pour intégrer des influenceurs IA dans des vidéos existantes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_03_000045.jpg" alt="Interface montrant le modèle Kling Motion pour le transfert de mouvement." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_03_000045.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:45</span>
+                        <span class="caption-text">Interface montrant le modèle Kling Motion pour le transfert de mouvement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:05 - 00:01:25</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On est donc sur Xfield, je te mets le lien pour accéder à la page pour créer ton influenceur IA en description et commentaire épinglé. Et sur cette page, tu vas avoir à gauche un générateur d&#x27;influenceurs IA. Tu vas pouvoir assembler plusieurs éléments ensemble pour créer ton influenceur un peu loufoque. Gabarit, forme, taille, genre, couleur de cheveux, coupe de cheveux, barbe, accessoires.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web Xfield (interface de génération d&#x27;influenceurs IA).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de sélection de personnages (Average, Bold, Extreme, Insect, Frog, Cat, etc.), genres (Female, Male, Non-binary), boutons de génération et vignettes de prévisualisation vidéo.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur navigue sur la plateforme Xfield et montre les options de personnalisation pour créer un influenceur IA loufoque.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_04_000106.jpg" alt="Page d&#x27;accueil du site Xfield montrant les différentes fonctionnalités d&#x27;intelligence artificielle disponibles." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_04_000106.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Xfield montrant les différentes fonctionnalités d&#x27;intelligence artificielle disponibles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_04_000115.jpg" alt="Panneau latéral gauche du générateur d&#x27;influenceur IA permettant de sélectionner le type de personnage (gabarit, têtes loufoques)." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_04_000115.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Panneau latéral gauche du générateur d&#x27;influenceur IA permettant de sélectionner le type de personnage (gabarit, têtes loufoques).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_04_000124.jpg" alt="Menu de configuration du panneau latéral permettant de choisir le genre, la corpulence, la coiffure et le style de l&#x27;influenceur." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_04_000124.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Menu de configuration du panneau latéral permettant de choisir le genre, la corpulence, la coiffure et le style de l&#x27;influenceur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:26 - 00:01:44</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On retrouve énormément d&#x27;éléments et de combinaisons possibles. Tu peux en sélectionner autant que tu veux, tu n&#x27;es pas obligé de tout sélectionner non plus. et une fois que tu as fini de sélectionner les différentes caractéristiques de ton influenceur, tu as l&#x27;ensemble de ces caractéristiques qui sont résumées par les tags ici et tu n&#x27;as qu&#x27;à lancer la création.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de génération d&#x27;influenceurs virtuels (style plateforme d&#x27;intelligence artificielle vidéo).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de sélection de style et d&#x27;accessoires, aperçus vidéo d&#x27;influenceurs, tags résumant les caractéristiques sélectionnées, bouton de génération en bas à gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment sélectionner différentes combinaisons d&#x27;éléments et d&#x27;accessoires pour configurer un influenceur virtuel avant de lancer la génération.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_05_000127.jpg" alt="Interface du générateur d&#x27;influenceur virtuel montrant les options de style vestimentaire et les exemples de vidéos générées." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_05_000127.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:27</span>
+                        <span class="caption-text">Interface du générateur d&#x27;influenceur virtuel montrant les options de style vestimentaire et les exemples de vidéos générées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_05_000142.jpg" alt="Interface du générateur d&#x27;influenceur virtuel montrant les accessoires et la zone de résumé des tags avec une flèche rouge pointant vers les paramètres sélectionnés." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_05_000142.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:42</span>
+                        <span class="caption-text">Interface du générateur d&#x27;influenceur virtuel montrant les accessoires et la zone de résumé des tags avec une flèche rouge pointant vers les paramètres sélectionnés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:44 - 00:02:02</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Selon ton compte, il se peut que tu aies quelques générations gratuites. Bon, et sinon, c&#x27;est seulement quelques crédits. En fait, la génération d&#x27;influenceurs IA, c&#x27;est pas vraiment ce qui va nous coûter le plus cher en crédit. C&#x27;est plutôt avec la vidéo qu&#x27;on va dépenser nos crédits. Encore que le modèle qu&#x27;on va utiliser, Genjutsu, s&#x27;en sort pas trop mal niveau coût.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;un outil de création d&#x27;influenceurs IA et de génération multimédia.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de création d&#x27;influenceurs, accessoires, bouton &#x27;Generate Free&#x27;, options de batch size et compteur de générations gratuites.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur lance la génération gratuite d&#x27;un personnage influenceur IA et consulte le résultat obtenu.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_06_000145.jpg" alt="Interface du générateur d&#x27;influenceurs IA montrant le bouton &#x27;Generate Free&#x27; et les options de personnalisation avec un compteur de 5 générations gratuites." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_06_000145.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:45</span>
+                        <span class="caption-text">Interface du générateur d&#x27;influenceurs IA montrant le bouton &#x27;Generate Free&#x27; et les options de personnalisation avec un compteur de 5 générations gratuites.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_06_000153.jpg" alt="L&#x27;interface en cours de génération avec le compteur qui passe à 4 générations gratuites restantes et un aperçu en chargement dans l&#x27;historique." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_06_000153.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:53</span>
+                        <span class="caption-text">L&#x27;interface en cours de génération avec le compteur qui passe à 4 générations gratuites restantes et un aperçu en chargement dans l&#x27;historique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_06_000201.jpg" alt="Visualisation du résultat généré montrant un personnage influenceur IA en pied avec ses détails et l&#x27;option de conversion vidéo &#x27;Turn to motion with Genjutsu&#x27;." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_06_000201.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:01</span>
+                        <span class="caption-text">Visualisation du résultat généré montrant un personnage influenceur IA en pied avec ses détails et l&#x27;option de conversion vidéo &#x27;Turn to motion with Genjutsu&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:02 - 00:02:20</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc là, tu vois, j&#x27;ai mon premier influenceur. Quelques détails sur la création d&#x27;influenceur que je voulais aussi te montrer. La possibilité de choisir une tenue personnalisée. Par exemple, pour mon prochain influenceur, je lui ai donné en référence une tenue de glacier qu&#x27;on avait utilisé sur un autre projet. Et autre possibilité, tu peux donner en référence un visage.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Générateur d&#x27;influenceur virtuel par IA (interface web avec onglets Explore, AI Influencer, History).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de configuration de personnage, options de tenues personnalisées, galerie de générations précédentes.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre un exemple d&#x27;influenceur généré et explique comment choisir une tenue personnalisée à partir d&#x27;une référence.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_07_000203.jpg" alt="Visualisation détaillée du premier influenceur virtuel généré avec ses paramètres de caractérisation." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_07_000203.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:03</span>
+                        <span class="caption-text">Visualisation détaillée du premier influenceur virtuel généré avec ses paramètres de caractérisation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_07_000211.jpg" alt="Fenêtre de sélection des fichiers importés (uploads) montrant différentes références d&#x27;objets et de vêtements." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_07_000211.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Fenêtre de sélection des fichiers importés (uploads) montrant différentes références d&#x27;objets et de vêtements.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_07_000219.jpg" alt="Interface principale du générateur d&#x27;influenceurs virtuels affichant l&#x27;historique des créations et les options de design." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_07_000219.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:19</span>
+                        <span class="caption-text">Interface principale du générateur d&#x27;influenceurs virtuels affichant l&#x27;historique des créations et les options de design.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:21 - 00:02:41</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc moi, par exemple, avec ce nouvel influenceur, je vais lui donner Marco en référence. Et après, je peux modifier son aspect, son style avec les différentes options. Bon, là, je te conseille d&#x27;y aller mollo avec les éléments. sinon ça ne ressemblera plus vraiment à ton personnage de référence. Voilà, ça c&#x27;est mon marco un peu modifié. Et enfin, tu peux aussi laisser faire le hasard.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application web de génération d&#x27;influenceurs virtuels par IA (interface &quot;AI Influencer&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de configuration (Gender, Build, options de morphologie), boutons &quot;Generate&quot;, aperçus de personnages générés sous différents angles.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le résultat du personnage de référence &quot;Marco&quot; sous plusieurs angles, puis présente l&#x27;interface permettant de modifier ses paramètres et son style.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_08_000222.jpg" alt="Affichage en gros plan de quatre vues différentes (visage, plein pied de face, de dos et de profil) du personnage de référence nommé Marco généré par l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_08_000222.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Affichage en gros plan de quatre vues différentes (visage, plein pied de face, de dos et de profil) du personnage de référence nommé Marco généré par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_08_000239.jpg" alt="Interface de l&#x27;outil de création d&#x27;influenceurs virtuels par IA montrant les options de personnalisation du genre, de la corpulence (build) et les boutons de génération." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_08_000239.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:39</span>
+                        <span class="caption-text">Interface de l&#x27;outil de création d&#x27;influenceurs virtuels par IA montrant les options de personnalisation du genre, de la corpulence (build) et les boutons de génération.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:41 - 00:03:00</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Là, je vais en bas de la fenêtre de génération. J&#x27;efface à l&#x27;ensemble des tags sélectionnés en cliquant sur Reset All. Et après, je peux sélectionner la génération automatique qui va me choisir aléatoirement des éléments pour créer mon influenceur IA. Je vais m&#x27;amuser comme ça à créer quelques influenceurs IA. Le but, ça va être ensuite de les mettre en scène ensemble.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de génération d&#x27;influenceurs IA (outil en ligne avec onglet &#x27;AI Influencer&#x27;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu latéral &#x27;Create Influencer&#x27;, sélections de visages, accessoires, tags sélectionnés, bouton &#x27;Reset all&#x27;, et aperçus de personnages générés aléatoirement dans la zone principale.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre le processus de génération aléatoire et la gestion des tags pour créer différents influenceurs IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_09_000259.jpg" alt="Interface du générateur d&#x27;influenceurs IA montrant les options de création de personnages et l&#x27;historique des générations aléatoires." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_09_000259.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:59</span>
+                        <span class="caption-text">Interface du générateur d&#x27;influenceurs IA montrant les options de création de personnages et l&#x27;historique des générations aléatoires.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:00 - 00:03:22</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et pour ça, il me suffit d&#x27;en sélectionner un et de cliquer sur Turn to Motion with Genjutsu. Je suis redirigé en fait sur la fenêtre de génération vidéo avec le modèle Genjutsu de sélectionner. Ce modèle fonctionne avec une vidéo de référence. Ça va être jusqu&#x27;à 30 secondes max pour la vidéo de référence. Et pas de souci, si tu as une vidéo de plus de 30 secondes, tu peux la charger sur Xfield.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;un générateur d&#x27;IA (type outil de création d&#x27;influenceurs virtuels / Higgsfield Genjutsu).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de configuration (Proportions, Head shape, Motion), grille de personnages générés et fenêtre de sélection de vidéo de référence.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre comment passer de la création de personnages au transfert de mouvement via Genjutsu en important une vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_10_000301.jpg" alt="Interface principale du générateur d&#x27;influenceurs virtuels affichant une grille de personnages personnalisables." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_10_000301.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:01</span>
+                        <span class="caption-text">Interface principale du générateur d&#x27;influenceurs virtuels affichant une grille de personnages personnalisables.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_10_000311.jpg" alt="Basculement vers l&#x27;onglet Motion avec l&#x27;option d&#x27;ajout d&#x27;une vidéo de référence pour le modèle Genjutsu." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_10_000311.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:11</span>
+                        <span class="caption-text">Basculement vers l&#x27;onglet Motion avec l&#x27;option d&#x27;ajout d&#x27;une vidéo de référence pour le modèle Genjutsu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_10_000320.jpg" alt="Fenêtre d&#x27;édition et de recadrage de la vidéo de référence avec timeline de découpage (jusqu&#x27;à 30 secondes max)." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_10_000320.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:20</span>
+                        <span class="caption-text">Fenêtre d&#x27;édition et de recadrage de la vidéo de référence avec timeline de découpage (jusqu&#x27;à 30 secondes max).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:22 - 00:03:47</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il faudra juste ensuite sélectionner les 30 secondes que tu souhaites en référence pour que Xfield la resize. Donc moi ici pour mon exemple, je vais utiliser en référence une vidéo de la trend « Toc toc qui frappe à ma porte » que tu as sûrement dû voir passer sur les réseaux sociaux. Et en référence, j&#x27;ajoute mes influenceurs. Donc vu qu&#x27;il y a 4 personnes dans ma vidéo de référence, et bien tout simplement, je vais sélectionner 4 de mes influenceurs hier.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Higgsfield AI (outil AI Influencer / Genjutsu)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Galerie d&#x27;influenceurs virtuels, bouton &quot;Turn to motion&quot;, aperçu vidéo de référence, bouton de génération &quot;Generate + 91&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et ajout de plusieurs influenceurs virtuels pour les intégrer dans la vidéo de référence du trend de mouvement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_11_000335.jpg" alt="Interface du générateur montrant la grille d&#x27;influenceurs IA et le panneau de sélection de mouvement." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_11_000335.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:35</span>
+                        <span class="caption-text">Interface du générateur montrant la grille d&#x27;influenceurs IA et le panneau de sélection de mouvement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_11_000346.jpg" alt="Affichage de la fenêtre modale permettant de sélectionner et d&#x27;ajouter plusieurs influenceurs IA comme référence." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_11_000346.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:46</span>
+                        <span class="caption-text">Affichage de la fenêtre modale permettant de sélectionner et d&#x27;ajouter plusieurs influenceurs IA comme référence.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:48 - 00:04:09</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voilà le résultat. C&#x27;est vraiment bluffant. Alors je te le disais en intro, les possibilités sont assez grandes. tu peux choisir des vidéos de chorégraphie, des mèmes internet, des vidéos virales que tu as vu que tu aimerais recréer avec tes personnages IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de génération vidéo par IA (type Higgsfield Genjutsu / AI Influencer).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu de sélection des personnages &quot;AI Influencer&quot;, boutons de création, onglets &quot;Motion transfer&quot;, &quot;Objects swap&quot;, et bouton &quot;Generate&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface de sélection des personnages et des styles pour illustrer les possibilités de création de vidéos virales avec l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_12_000407.jpg" alt="Capture d&#x27;écran de l&#x27;interface du générateur vidéo par IA montrant les différents personnages disponibles (&quot;AI Influencer&quot;) et les options de génération." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_12_000407.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:07</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface du générateur vidéo par IA montrant les différents personnages disponibles (&quot;AI Influencer&quot;) et les options de génération.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:09 - 00:04:28</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En fait, n&#x27;importe quelle vidéo de 30 secondes, tu peux la reprendre pour y mettre en scène tes influenceurs IA. Comme tu le vois à l&#x27;écran, j&#x27;ai fait plusieurs tests avec à chaque fois d&#x27;excellents résultats. Et ici, je me suis concentré sur le remplacement de personnages, mais rien ne t&#x27;empêche aussi d&#x27;ajouter un produit sur un plan existant ou tout simplement changer la tenue d&#x27;un personnage.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéos comparatives (split-screen) intégrées dans le montage du tutoriel.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Séquences vidéo montrant divers personnages et influenceurs virtuels générés ou modifiés par l&#x27;IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente plusieurs exemples concrets de remplacement de personnages dans des vidéos existantes.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:28 - 00:04:49</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est aussi des choses possibles avec Jenjutsu. Et si Genjutsu est un super modèle d&#x27;édition IA qui en plus ne coûte pas très cher en crédit, il y a d&#x27;autres modèles de vidéos spécialisés dans l&#x27;édition disponibles sur Xfield. On peut notamment citer Seed Dance 2.5 en mode édition ou encore Cling Motion. Et là aussi, tu pourras avec ces modèles facilement y utiliser tes influenceurs IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme Xfield (générateur de vidéo IA).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de sélection de modèles IA (&#x27;Seedance 2.5 Edit&#x27;, &#x27;Kling Motion&#x27;), panneau de prompt, paramètres de résolution (1080p, Bitrate High) et bouton &#x27;Generate&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface d&#x27;édition vidéo et parcourt la liste des différents modèles de génération et d&#x27;édition disponibles sur Xfield.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_14_000439.jpg" alt="Interface de la plateforme Xfield avec l&#x27;onglet &#x27;Edit Video&#x27; ouvert, montrant le modèle &#x27;Seedance 2.5 Edit&#x27; sélectionné et l&#x27;aperçu d&#x27;une pièce avec un micro." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_14_000439.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:39</span>
+                        <span class="caption-text">Interface de la plateforme Xfield avec l&#x27;onglet &#x27;Edit Video&#x27; ouvert, montrant le modèle &#x27;Seedance 2.5 Edit&#x27; sélectionné et l&#x27;aperçu d&#x27;une pièce avec un micro.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_14_000448.jpg" alt="Menu déroulant des modèles d&#x27;édition vidéo sur Xfield, affichant Seedance, Kling et Higgsfield Genjutsu." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_14_000448.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:48</span>
+                        <span class="caption-text">Menu déroulant des modèles d&#x27;édition vidéo sur Xfield, affichant Seedance, Kling et Higgsfield Genjutsu.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:49 - 00:05:15</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et pareil pour la création des influenceurs IA, tu peux le faire aussi à l&#x27;aide de modèles images classiques Et tu pourras avoir de bons résultats avec par exemple JGPT Image 2.5 ou encore Nano Banana 2.1. C&#x27;est aussi une option qui t&#x27;offre un peu plus de liberté malgré le fait que le générateur d&#x27;influenceurs IA d&#x27;XField est vraiment bien fait et on voit, ils ont tout à fait compris la traîne d&#x27;actuel autour de ces influenceurs IA.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de génération d&#x27;images et de modèles d&#x27;influenceurs virtuels (GPT Image 2).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau latéral avec le prompt « est ce que tu peux me faire avec la coupe de cheveux la moustache et le look du deuxième personnage en ref », miniatures de référence et sélecteur de modèle.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de la création et de la personnalisation d&#x27;un influenceur IA multi-angles à l&#x27;aide d&#x27;un modèle d&#x27;image.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_15_000450.jpg" alt="Interface d&#x27;un générateur d&#x27;images montrant un personnage virtuel généré avec le modèle GPT Image 2." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_15_000450.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:50</span>
+                        <span class="caption-text">Interface d&#x27;un générateur d&#x27;images montrant un personnage virtuel généré avec le modèle GPT Image 2.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_15_000502.jpg" alt="Même interface de génération d&#x27;images, affichant le panneau latéral de configuration avec le prompt textuel et les images de référence." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_15_000502.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:02</span>
+                        <span class="caption-text">Même interface de génération d&#x27;images, affichant le panneau latéral de configuration avec le prompt textuel et les images de référence.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_15_000514.jpg" alt="Visualisation de quatre angles de vue différents d&#x27;un influenceur virtuel complet généré par l&#x27;outil d&#x27;intelligence artificielle." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_15_000514.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:14</span>
+                        <span class="caption-text">Visualisation de quatre angles de vue différents d&#x27;un influenceur virtuel complet généré par l&#x27;outil d&#x27;intelligence artificielle.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:15 - 00:05:36</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bon alors, qu&#x27;est-ce que vont devenir les réseaux sociaux ? Ces influenceurs IA, ils me rappellent un autre phénomène qu&#x27;on a connu il y a quelques mois, le brain rot. Des personnages IA mis en scène dans différentes situations, avec un lore autour de ces personnages, des histoires qui s&#x27;entremêlaient, des codes, une vraie notoriété, et beaucoup de créateurs qui voulaient surfer sur cette tendance.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Studio vidéo YouTube (Labo Des Réseaux) avec incrustation d&#x27;infographies animées.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes : &#x27;POUR CONCLURE&#x27;, &#x27;QUE VONT DEVENIR&#x27;, &#x27;BRAINROT&#x27;, listes à puces avec coches vertes détaillant les caractéristiques du phénomène (personnages IA, lore, histoires liées, codes, notoriété, créateurs).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du sujet par le créateur face caméra, illustré par des graphiques animés séquentiels.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:37 - 00:06:03</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et bien avec ces influenceurs IA, on est peut-être au début d&#x27;une trend du même genre. Le souci, c&#x27;est que ces influenceurs repoussent ici un peu plus la notion de propriété intellectuelle sur les réseaux. Une notion qui a déjà été bien mise à mal avec l&#x27;arrivée du format vertical sur les réseaux, Et la question se pose, est-ce qu&#x27;utiliser une vidéo déjà existante, mais seulement comme référence pour sa création IA, sera considéré comme du vol de contenu ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Studio vidéo et graphismes animés du Labo Des Réseaux</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes explicatifs, graphismes et schémas conceptuels sur la propriété intellectuelle et les influenceurs IA</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation orale du sujet par le créateur avec appui visuel graphique</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:03 - 00:06:22</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Est-ce que les influenceurs IA vont réussir à s&#x27;installer dans le temps ? Est-ce que les réseaux vont se remplir d&#x27;avatar IA qui enchaînent les challenges et les corées ? Je n&#x27;ai pas une boule de cristal, en tout cas on voit bien des influenceurs IA aujourd&#x27;hui émerger. Mais comme les créateurs à succès d&#x27;aujourd&#x27;hui, il faudra que ces influenceurs arrivent à proposer autre chose que des corées.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun logiciel ou interface technique n&#x27;est affiché.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte à l&#x27;écran : &#x27;LES INFLUENCEURS IA&#x27;, &#x27;COMME&#x27;, &#x27;CRÉATEURS À SUCCÈS&#x27;, &#x27;INFLUENCEURS IA&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur présente le sujet face caméra en s&#x27;appuyant sur des illustrations graphiques.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:22 - 00:06:42</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En tout cas, s&#x27;ils veulent durer dans le temps. Donc les modèles vidéo IA d&#x27;édition, c&#x27;est très bien pour ton influenceur. Mais n&#x27;hésite pas à lui donner une voix pour lui faire faire autre chose que ce que tout le monde propose. Car proposer un contenu original n&#x27;a jamais été aussi important qu&#x27;à une époque où tout le monde peut recopier la même chose en 3 clics.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Vidéo YouTube face caméra avec habillage graphique animé (incrustations textuelles et illustrations).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes animés : &#x27;CRÉATEURS À SUCCÈS&#x27;, &#x27;INFLUENCEURS IA&#x27;, &#x27;TON INFLUENCEUR IA&#x27;, &#x27;LES MODÈLES D&#x27;ÉDITION&#x27;, &#x27;DONNE-LUI UNE VOIX&#x27;.
+[HONEST_NOTE] Le segment montre uniquement le présentateur face caméra avec des graphismes animés illustrant ses propos, sans interface logicielle ni outil technique réel.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et mise en contexte pratique.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:42 - 00:06:49</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si tu veux tester la création d&#x27;influenceurs IA, je te remets le lien en description, en commentaire épinglé. Merci et à bientôt sur le Labo des Réseaux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, site Higgsfield (section AI Influencer).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu supérieur avec les onglets Explore, Image, Video, Audio, MCP, Katana, API, AI Influencer Free, ChatGPT Plugin, Genjutsu, et une flèche rose de redirection vers le lien en description.</p>
+                        <p><strong>Action / Démonstration :</strong> Le créateur montre l&#x27;interface de la plateforme Higgsfield et indique l&#x27;emplacement du lien en description pour tester la création d&#x27;influenceurs IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_20_000646.jpg" alt="Interface du site web Higgsfield affichant le menu &#x27;AI Influencer&#x27; et une flèche rose pointant vers le lien en bas." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_20_000646.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:46</span>
+                        <span class="caption-text">Interface du site web Higgsfield affichant le menu &#x27;AI Influencer&#x27; et une flèche rose pointant vers le lien en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/i3ybzy9qVow/frame_20_000648.jpg" alt="Vue légèrement modifiée de l&#x27;interface du site web Higgsfield sur le menu &#x27;AI Influencer&#x27; avec la flèche rose de redirection." loading="lazy" onclick="openLightbox('../screenshots/i3ybzy9qVow/frame_20_000648.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:48</span>
+                        <span class="caption-text">Vue légèrement modifiée de l&#x27;interface du site web Higgsfield sur le menu &#x27;AI Influencer&#x27; avec la flèche rose de redirection.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        </section>
+
+        <footer>
+            Généré automatiquement par l'agent de veille multimodale Antigravity — Pipeline Whisper-v3-large-turbo & Gemini-3.5-flash-lite.
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture plein écran" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

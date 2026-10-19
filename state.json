@@ -6,7 +6,8 @@
     "u66ICS8uDTE",
     "2Ned0kvFNqM",
     "aCP21Uh03zo",
-    "GLauPqEXpBg"
+    "GLauPqEXpBg",
+    "i3ybzy9qVow"
   ],
   "processed_videos": [
     {
@@ -64,10 +65,19 @@
       "md_file": "YT_Labodesreseaux_Transcript/2026-09-23_YT-GLauPqEXpBg_Filmora contre GPT-6 Astra j'ai testé 2 Workflows de MONTAGE IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
       "html_file": "YT_Labodesreseaux_Transcript/2026-09-23_YT-GLauPqEXpBg_Filmora contre GPT-6 Astra j'ai testé 2 Workflows de MONTAGE IA_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
       "screenshots_count": 60
+    },
+    {
+      "id": "i3ybzy9qVow",
+      "title": "Créer un influenceur IA en 3 clics !",
+      "upload_date": "20261011",
+      "md_file": "YT_Labodesreseaux_Transcript/2026-10-11_YT-i3ybzy9qVow_Créer un influenceur IA en 3 clics !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.md",
+      "html_file": "YT_Labodesreseaux_Transcript/2026-10-11_YT-i3ybzy9qVow_Créer un influenceur IA en 3 clics !_by-whisper-v3-large-turbo+gemini-3.5-flash-lite.html",
+      "screenshots_count": 29
     }
   ],
   "last_run_timestamp": "2026-10-10T07:50:46Z",
-  "completed_count": 7,
+  "completed_count": 8,
   "total_catalog_count": 1263,
-  "status": "idle"
+  "status": "idle",
+  "last_detected_new": "i3ybzy9qVow"
 }
